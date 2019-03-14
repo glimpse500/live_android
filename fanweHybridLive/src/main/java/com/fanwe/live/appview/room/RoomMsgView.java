@@ -31,11 +31,13 @@ import java.util.List;
 public class RoomMsgView extends RoomLooperMainView<MsgModel> {
     public RoomMsgView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        // To do
         init();
     }
 
     public RoomMsgView(Context context) {
         super(context);
+        //To do
         init();
     }
 
@@ -66,6 +68,7 @@ public class RoomMsgView extends RoomLooperMainView<MsgModel> {
         lv_content = find(R.id.lv_content);
 
         lv_content.setItemAnimator(null);
+        LogUtil.i("LiveMsgRecyclerAdapter ");
         adapter = new LiveMsgRecyclerAdapter(getActivity());
         lv_content.setAdapter(adapter);
 
@@ -80,6 +83,7 @@ public class RoomMsgView extends RoomLooperMainView<MsgModel> {
                 for (CustomMsgLiveMsg msg : listMsg) {
                     MsgModel msgModel = msg.parseToMsgModel();
                     if (msgModel != null) {
+                        //LogUtil.i("msgModel : " + msgModel.getCustomMsg().toString());
                         adapter.getData().add(msgModel);
                     }
                 }

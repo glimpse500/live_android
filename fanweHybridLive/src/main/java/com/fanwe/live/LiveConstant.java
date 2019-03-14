@@ -72,11 +72,11 @@ public class LiveConstant {
         /**
          * 腾讯sdk
          */
-        public static final int TENCENT = 0;
+        public static final int TENCENT = 1;
         /**
          * 金山sdk
          */
-        public static final int KSY = 1;
+        public static final int KSY = 0;
     }
 
     /**

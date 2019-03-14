@@ -59,7 +59,6 @@ public class TIMMsgModel extends MsgModel {
         }
     }
 
-    @Override
     public void setTimMessage(TIMMessage timMessage) {
         // 解析消息
         this.timMessage = timMessage;

@@ -224,7 +224,8 @@ public class LiveActivity extends BaseActivity implements
 
         getMsgBusiness().parseMsg(event.msg, groupId);
         getLiveBusiness().getMsgBusiness().parseMsg(event.msg, groupId);
-
+        LogUtil.i("onEventMainThread : " +  event.msg.toString());
+        /*
         try {
             if (LiveConstant.CustomMsgType.MSG_DATA == event.msg.getCustomMsgType()) {
                 String peer = event.msg.getConversationPeer();
@@ -238,7 +239,7 @@ public class LiveActivity extends BaseActivity implements
             }
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     @Override

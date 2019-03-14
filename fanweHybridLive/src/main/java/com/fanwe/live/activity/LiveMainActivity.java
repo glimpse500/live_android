@@ -50,12 +50,12 @@ public class LiveMainActivity extends BaseActivity {
         LogUtil.i("LiveMainActivity");
         fl_main_content = (FrameLayout) findViewById(R.id.fl_main_content);
         mIsExitApp = true;
-        checkUpdate();
+        //checkUpdate();
         //AppRuntimeWorker.startContext();
         //CommonInterface.requestUser_apns(null);
         //CommonInterface.requestMyUserInfo(null);
 
-        //checkVideo();
+        checkVideo();
 
         initTabs();
 

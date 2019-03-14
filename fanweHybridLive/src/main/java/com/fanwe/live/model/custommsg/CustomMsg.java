@@ -8,7 +8,6 @@ import com.fanwe.live.LiveConstant;
 import com.fanwe.live.LiveConstant.CustomMsgType;
 import com.fanwe.live.dao.UserModelDao;
 import com.fanwe.live.model.UserModel;
-import com.tencent.TIMCustomElem;
 import com.tencent.TIMMessage;
 
 import java.io.Serializable;
@@ -68,28 +67,33 @@ public class CustomMsg implements ICustomMsg, Serializable {
         this.type = type;
     }
 
-    public TIMMessage parseToTIMMessage() {
-        TIMMessage msg = null;
-
+    public ByteMsg parsetoByteMsg() {
+        //TIMMessage msg = null;
+        ByteMsg bMsg = null;
         try {
             String json = SDJsonUtil.object2Json(this);
             byte[] bytes = json.getBytes(LiveConstant.DEFAULT_CHARSET);
 
+            bMsg = new ByteMsg(bytes);
+            //To do
+
+            /*
             TIMCustomElem elemCustom = new TIMCustomElem();
             elemCustom.setData(bytes);
 
             msg = new TIMMessage();
-            msg.addElement(elemCustom);
+            msg.addElement(elemCustom);*/
+
             LogUtil.i("send json:" + json);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return msg;
+        return bMsg;
     }
-
     public final MsgModel parseToMsgModel() {
-        TIMMessage timMessage = parseToTIMMessage();
-        MsgModel msgModel = new TIMMsgModel(timMessage);
+        //TO DO
+        ByteMsg bMsg = parsetoByteMsg();
+        MsgModel msgModel = new LiveMsgModel(bMsg);
         return msgModel;
     }
 

@@ -12,7 +12,7 @@ android {
         targetSdkVersion 22
         versionCode 2019030202
         versionName "2.0.18"
-        buildConfigField 'String', 'SERVER_URL_INIT_URL', '"' +'http://34.80.63.243'  + '/app.php?act=init"'
+        buildConfigField 'String', 'SERVER_URL_INIT_URL', '"' +'http://34.80.92.191'  + '/app.php?act=init"'
 
         multiDexEnabled true
 
@@ -98,7 +98,7 @@ android {
             dimension "version"
             versionCode 2019030201
             versionName "2.5.3"
-            buildConfigField 'String', 'SERVER_URL', '"http://34.80.63.243"'
+            buildConfigField 'String', 'SERVER_URL', '"http://34.80.92.191"'
         }
 
 

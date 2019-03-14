@@ -20,6 +20,7 @@ import com.fanwe.library.common.SDHandlerManager;
 import com.fanwe.library.common.SDSelectManager;
 import com.fanwe.library.common.SDSelectManager.Mode;
 import com.fanwe.library.handler.PhotoHandler;
+import com.fanwe.library.utils.LogUtil;
 import com.fanwe.library.utils.SDResourcesUtil;
 import com.fanwe.library.utils.SDToast;
 import com.fanwe.library.utils.SDViewUtil;
@@ -140,7 +141,7 @@ public class LiveCreateRoomActivity extends BaseActivity implements TencentLocat
 
     private void init() {
         initView();
-        setShareShow();
+        //setShareShow();
         showLocation();
         initData();
         mPopRunnable = new PopTipsRunnable();
@@ -286,6 +287,8 @@ public class LiveCreateRoomActivity extends BaseActivity implements TencentLocat
     public void onEventMainThread(EUpLoadImageComplete event) {
         if (!TextUtils.isEmpty(event.server_full_path)) {
             image_path = event.server_path;
+            LogUtil.i("event.server_full_path" + event.server_full_path);
+            LogUtil.i("image_path = " +  image_path);
             GlideUtil.load(event.server_full_path).into(iv_room_image);
         }
     }
@@ -387,6 +390,7 @@ public class LiveCreateRoomActivity extends BaseActivity implements TencentLocat
         CommonInterface.requestAddVideo(image_path, getTopic(), mTagId, getCity(), getProvince(), getShareType(), isLocate, isPrivate, new AppRequestCallback<Video_add_videoActModel>() {
             @Override
             protected void onSuccess(SDResponse resp) {
+                LogUtil.i(" requestCreatetLive onSuccess");
                 if (actModel.isOk()) {
                     CreateLiveData data = new CreateLiveData();
                     data.setRoomId(actModel.getRoom_id());
@@ -398,6 +402,7 @@ public class LiveCreateRoomActivity extends BaseActivity implements TencentLocat
 
             @Override
             protected void onError(SDResponse resp) {
+                LogUtil.i(" requestCreatetLive onError");
                 SDToast.showToast("请求房间id失败");
                 dismissProgressDialog();
                 super.onError(resp);
@@ -405,6 +410,7 @@ public class LiveCreateRoomActivity extends BaseActivity implements TencentLocat
 
             @Override
             protected void onFinish(SDResponse resp) {
+                LogUtil.i(" requestCreatetLive onFinish");
                 isInAddVideo = false;
                 super.onFinish(resp);
             }

@@ -251,7 +251,8 @@ public class LivePrivateChatBusiness extends BaseBusiness {
                     model.remove();
                 }
 
-                model.setTimMessage(timMessage);
+                //TO DO
+                //model.setTimMessage(timMessage);
 
                 mCallback.onAdapterUpdateData(index, model);
             }
@@ -261,8 +262,8 @@ public class LivePrivateChatBusiness extends BaseBusiness {
                 mCallback.onAdapterUpdateData(index);
             }
         });
-
-        model.setTimMessage(timMessageSending);
+        //TO DO
+        //model.setTimMessage(timMessageSending);
         mCallback.onAdapterUpdateData(index, model);
         return timMessageSending;
     }

@@ -217,7 +217,7 @@ public class IMHelper {
             return;
         }
         TIMConversation conversation = getConversationGroup(id);
-        TIMMessage tMsg = customMsg.parseToTIMMessage();
+        TIMMessage tMsg = customMsg.parsetoByteMsg();
         conversation.sendMessage(tMsg, new TIMValueCallBack<TIMMessage>() {
 
             @Override
@@ -245,7 +245,7 @@ public class IMHelper {
             return null;
         }
         TIMConversation conversation = getConversationC2C(id);
-        TIMMessage tMsg = customMsg.parseToTIMMessage();
+        TIMMessage tMsg = customMsg.parsetoByteMsg();
         conversation.sendMessage(tMsg, new TIMValueCallBack<TIMMessage>() {
 
             @Override

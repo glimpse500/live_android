@@ -39,17 +39,6 @@ import java.util.Map;
  * Created by Administrator on 2016/7/5.
  */
 public class LiveLoginActivity extends BaseActivity {
-    //微信
-    private LinearLayout ll_weixin;
-    private ImageView iv_weixin;
-
-    //QQ
-    private LinearLayout ll_qq;
-    private ImageView iv_qq;
-
-    //新浪
-    private LinearLayout ll_sina;
-    private ImageView iv_sina;
 
     //手机
     private LinearLayout ll_shouji;
@@ -83,25 +72,12 @@ public class LiveLoginActivity extends BaseActivity {
     }
 
     private void register() {
-        /*
-        ll_weixin = find(R.id.ll_weixin);
-        iv_weixin = find(R.id.iv_weixin);
-        ll_qq = find(R.id.ll_qq);
-        iv_qq = find(R.id.iv_qq);
-        ll_sina = find(R.id.ll_sina);
-        iv_sina = find(R.id.iv_sina);
-        */
         ll_shouji = find(R.id.ll_shouji);
         iv_shouji = find(R.id.iv_shouji);
         tv_visitors = find(R.id.tv_visitors);
         tv_agreement = find(R.id.tv_agreement);
 
-        /*
-        iv_qq.setOnClickListener(this);
-        iv_sina.setOnClickListener(this);
-        iv_weixin.setOnClickListener(this);
         iv_shouji.setOnClickListener(this);
-        */
         tv_visitors.setOnClickListener(this);
         tv_agreement.setOnClickListener(this);
 
@@ -119,31 +95,6 @@ public class LiveLoginActivity extends BaseActivity {
     private void initLoginIcon() {
         InitActModel model = InitActModelDao.query();
         if (model != null) {
-            /*
-            //微信
-            int has_wx_login = model.getHas_wx_login();
-            if (has_wx_login == 1) {
-                SDViewUtil.setVisible(ll_weixin);
-            } else {
-                SDViewUtil.setGone(ll_weixin);
-            }
-
-            //QQ
-            int has_qq_login = model.getHas_qq_login();
-            if (has_qq_login == 1) {
-                SDViewUtil.setVisible(ll_qq);
-            } else {
-                SDViewUtil.setGone(ll_qq);
-            }
-
-            //新浪
-            int has_sina_login = model.getHas_sina_login();
-            if (has_sina_login == 1) {
-                SDViewUtil.setVisible(ll_sina);
-            } else {
-                SDViewUtil.setGone(ll_sina);
-            }*/
-
             //手机
             int has_mobile_login = model.getHas_mobile_login();
             if (has_mobile_login == 1) {
@@ -152,13 +103,13 @@ public class LiveLoginActivity extends BaseActivity {
                 SDViewUtil.setGone(ll_shouji);
             }
 
-            //游客
-            int has_visitors_login = model.getHas_visitors_login();
+
+          int has_visitors_login = model.getHas_visitors_login();
             if (has_visitors_login == 1) {
                 SDViewUtil.setVisible(tv_visitors);
-            } else {
-                SDViewUtil.setGone(tv_visitors);
-          }
+          } else {
+               SDViewUtil.setGone(tv_visitors);
+            }
         }
     }
 
@@ -169,13 +120,8 @@ public class LiveLoginActivity extends BaseActivity {
             return;
         }
 
-        if (v == iv_weixin) {
-            clickLoginWeiXing();
-        } else if (v == iv_qq) {
-            clickLoginQQ();
-        } else if (v == iv_sina) {
-            clickLoginSina();
-        } else if (v == iv_shouji) {
+
+        if (v == iv_shouji) {
             clickLoginShouJi();
         } else if (v == tv_visitors) {
             clickLoginVisitors();
@@ -185,9 +131,6 @@ public class LiveLoginActivity extends BaseActivity {
     }
 
     private void enableClickLogin(boolean enable) {
-        iv_weixin.setClickable(enable);
-        iv_qq.setClickable(enable);
-        iv_sina.setClickable(enable);
         iv_shouji.setClickable(enable);
         tv_visitors.setClickable(enable);
     }
@@ -205,102 +148,7 @@ public class LiveLoginActivity extends BaseActivity {
         }
     }
 
-    private void clickLoginWeiXing() {
-        CommonOpenLoginSDK.loginWx(this, wxListener);
-    }
 
-    /**
-     * 微信授权监听
-     */
-    private UMAuthListener wxListener = new UMAuthListener() {
-
-        @Override
-        public void onStart(SHARE_MEDIA share_media) {
-
-        }
-
-        @Override
-        public void onComplete(SHARE_MEDIA share_media, int i, Map<String, String> map) {
-            SDToast.showToast("授权成功");
-            String openid = map.get("openid");
-            String access_token = map.get("access_token");
-            requestWeiXinLogin(openid, access_token);
-        }
-
-        @Override
-        public void onError(SHARE_MEDIA share_media, int i, Throwable throwable) {
-
-        }
-
-        @Override
-        public void onCancel(SHARE_MEDIA share_media, int i) {
-
-        }
-    };
-
-    private void clickLoginQQ() {
-        CommonOpenLoginSDK.umQQlogin(this, qqListener);
-    }
-
-    /**
-     * qq授权监听
-     */
-    private UMAuthListener qqListener = new UMAuthListener() {
-        @Override
-        public void onStart(SHARE_MEDIA share_media) {
-
-        }
-
-        @Override
-        public void onComplete(SHARE_MEDIA platform, int action, Map<String, String> data) {
-            SDToast.showToast("授权成功");
-            String openid = data.get("openid");
-            String access_token = data.get("access_token");
-            requestQQ(openid, access_token);
-        }
-
-        @Override
-        public void onError(SHARE_MEDIA platform, int action, Throwable t) {
-            SDToast.showToast("授权失败");
-        }
-
-        @Override
-        public void onCancel(SHARE_MEDIA platform, int action) {
-            SDToast.showToast("授权取消");
-        }
-    };
-
-    private void clickLoginSina() {
-        CommonOpenLoginSDK.umSinalogin(this, sinaListener);
-    }
-
-    /**
-     * 新浪授权监听
-     */
-    private UMAuthListener sinaListener = new UMAuthListener() {
-        @Override
-        public void onStart(SHARE_MEDIA share_media) {
-
-        }
-
-        @Override
-        public void onComplete(SHARE_MEDIA platform, int action, Map<String, String> data) {
-            SDToast.showToast("授权成功");
-            String access_token = data.get("access_token");
-            String uid = data.get("uid");
-            requestSinaLogin(access_token, uid);
-        }
-
-        @Override
-        public void onError(SHARE_MEDIA platform, int action, Throwable t) {
-            SDToast.showToast("授权失败");
-        }
-
-        @Override
-        public void onCancel(SHARE_MEDIA platform, int action) {
-            SDToast.showToast("授权取消");
-        }
-    };
 
     private void clickLoginShouJi() {
         Intent intent = new Intent(this, LiveMobielRegisterActivity.class);
@@ -347,89 +195,6 @@ public class LiveLoginActivity extends BaseActivity {
         });
     }
 
-    private void requestWeiXinLogin(final String openid, final String access_token) {
-        CommonInterface.requestWxLogin(openid, access_token, new AppRequestCallback<App_do_updateActModel>() {
-            @Override
-            protected void onStart() {
-                super.onStart();
-                enableClickLogin(false);
-            }
-
-            @Override
-            protected void onFinish(SDResponse resp) {
-                super.onFinish(resp);
-                enableClickLogin(true);
-            }
-
-            @Override
-            protected void onSuccess(SDResponse resp) {
-                if (actModel.getStatus() == 1) {
-                    if (actModel.getNeed_bind_mobile() == 1) {
-                        startBindMobileActivity(LoginType.WX_LOGIN, openid, access_token);
-                    } else {
-                        startMainActivity(actModel);
-                    }
-                    setFirstLoginAndNewLevel(actModel);
-                }
-            }
-        });
-    }
-
-    private void requestQQ(final String openid, final String access_token) {
-        CommonInterface.requestQqLogin(openid, access_token, new AppRequestCallback<App_do_updateActModel>() {
-            @Override
-            protected void onStart() {
-                super.onStart();
-                enableClickLogin(false);
-            }
-
-            @Override
-            protected void onFinish(SDResponse resp) {
-                super.onFinish(resp);
-                enableClickLogin(true);
-            }
-
-            @Override
-            protected void onSuccess(SDResponse resp) {
-                if (actModel.getStatus() == 1) {
-                    if (actModel.getNeed_bind_mobile() == 1) {
-                        startBindMobileActivity(LoginType.QQ_LOGIN, openid, access_token);
-                    } else {
-                        startMainActivity(actModel);
-                    }
-                    setFirstLoginAndNewLevel(actModel);
-                }
-            }
-        });
-    }
-
-    private void requestSinaLogin(final String access_token, final String uid) {
-        CommonInterface.requestSinaLogin(access_token, uid, new AppRequestCallback<App_do_updateActModel>() {
-            @Override
-            protected void onStart() {
-                super.onStart();
-                enableClickLogin(false);
-            }
-
-            @Override
-            protected void onFinish(SDResponse resp) {
-                super.onFinish(resp);
-                enableClickLogin(true);
-            }
-
-            @Override
-            protected void onSuccess(SDResponse resp) {
-                if (actModel.getStatus() == 1) {
-                    if (actModel.getNeed_bind_mobile() == 1) {
-                        startBindMobileActivity(LoginType.SINA_LOGIN, uid, access_token);
-                    } else {
-                        startMainActivity(actModel);
-                    }
-                    setFirstLoginAndNewLevel(actModel);
-                }
-            }
-        });
-    }
 
     private void setFirstLoginAndNewLevel(App_do_updateActModel actModel) {
         InitActModel initActModel = InitActModelDao.query();

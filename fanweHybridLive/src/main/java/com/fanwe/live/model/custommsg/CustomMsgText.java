@@ -25,16 +25,16 @@ public class CustomMsgText extends CustomMsg {
 
 
     @Override
-    public TIMMessage parseToTIMMessage() {
-        TIMMessage timMessage = super.parseToTIMMessage();
+    public ByteMsg parsetoByteMsg() {
+        ByteMsg bMsg = super.parsetoByteMsg();
         if (AppRuntimeWorker.getHas_dirty_words() == 1) {
-            if (timMessage != null) {
-                TIMTextElem textElem = new TIMTextElem();
-                textElem.setText(text);
-                int ret = timMessage.addElement(textElem);
-                LogUtil.i("CustomMsgText add TIMTextElem:" + ret);
+            if (bMsg != null) {
+                //TIMTextElem textElem = new TIMTextElem();
+                bMsg.setText(text);
+                //int ret = timMessage.addElement(textElem);
+                LogUtil.i("CustomMsgText add TIMTextElem:" + text);
             }
         }
-        return timMessage;
+        return bMsg;
     }
 }

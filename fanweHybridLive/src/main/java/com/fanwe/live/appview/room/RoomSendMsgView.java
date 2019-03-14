@@ -9,6 +9,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.fanwe.library.utils.LogUtil;
+import com.fanwe.live.LiveConstant;
+import com.fanwe.live.model.custommsg.CustomMsgPopMsg;
+import com.fanwe.live.model.custommsg.MsgModel;
 import com.fanwe.hybrid.dao.InitActModelDao;
 import com.fanwe.hybrid.http.AppHttpUtil;
 import com.fanwe.hybrid.http.AppRequestCallback;
@@ -28,11 +32,15 @@ import com.fanwe.live.R;
 import com.fanwe.live.common.AppRuntimeWorker;
 import com.fanwe.live.common.CommonInterface;
 import com.fanwe.live.dao.UserModelDao;
+import com.fanwe.live.event.EImOnNewMessages;
 import com.fanwe.live.model.App_pop_msgActModel;
 import com.fanwe.live.model.UserModel;
 import com.fanwe.live.model.custommsg.CustomMsgText;
+import com.fanwe.live.model.custommsg.LiveMsgModel;
+import com.sunday.eventbus.SDEventManager;
 import com.tencent.TIMMessage;
 import com.tencent.TIMValueCallBack;
+
 
 public class RoomSendMsgView extends RoomView {
 
@@ -210,6 +218,23 @@ public class RoomSendMsgView extends RoomView {
 
     protected void sendMessage() {
         if (mIsPopMsg) {
+            LogUtil.i("mIsPopMsg : " + mStrContent);
+            CustomMsgPopMsg customMsg = new CustomMsgPopMsg();
+            customMsg.setDesc(mStrContent);
+
+            MsgModel msg = new LiveMsgModel();
+            if (msg != null) {
+                msg.setCustomMsg(customMsg);
+                msg.setLocalPost(true);
+                msg.setSelf(true);
+                msg.setCustomMsgType(LiveConstant.CustomMsgType.MSG_POP_MSG);
+                //msg.setConversationPeer(conversationId);
+
+                EImOnNewMessages event = new EImOnNewMessages();
+                event.msg = msg;
+                SDEventManager.post(event);
+            }
+            /*
             AppRequestParams params = CommonInterface.requestPopMsgParams(getLiveActivity().getRoomId(), mStrContent);
             AppHttpUtil.getInstance().post(params, new AppRequestCallback<App_pop_msgActModel>() {
                 @Override
@@ -226,7 +251,7 @@ public class RoomSendMsgView extends RoomView {
                 protected void onError(SDResponse resp) {
                     CommonInterface.requestMyUserInfo(null);
                 }
-            });
+            });*/
         } else {
             String groupId = getLiveActivity().getGroupId();
             if (TextUtils.isEmpty(groupId)) {

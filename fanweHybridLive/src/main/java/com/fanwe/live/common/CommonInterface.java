@@ -1536,6 +1536,8 @@ public class CommonInterface {
         params.putCtl("avatar");
         params.putAct("uploadImage");
         params.putFile("file", file);
+        LogUtil.i("Upload Image" + file.getPath());
+        LogUtil.i("Upload Image usable space " + file.getUsableSpace());
         AppHttpUtil.getInstance().post(params, listener);
     }
 

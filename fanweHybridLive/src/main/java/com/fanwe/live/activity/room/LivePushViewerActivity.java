@@ -159,7 +159,7 @@ public class LivePushViewerActivity extends LiveLayoutViewerExtendActivity imple
     @Override
     protected void initIM() {
         super.initIM();
-
+        /*
         final String groupId = getGroupId();
         getViewerIM().joinGroup(groupId, new TIMCallBack() {
             @Override
@@ -171,7 +171,7 @@ public class LivePushViewerActivity extends LiveLayoutViewerExtendActivity imple
             public void onSuccess() {
                 onSuccessJoinGroup(groupId);
             }
-        });
+        });*/
     }
 
     /**

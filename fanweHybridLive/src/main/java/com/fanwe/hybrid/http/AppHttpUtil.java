@@ -61,7 +61,6 @@ public class AppHttpUtil extends SDHttpUtil {
 
             @Override
             public void onError(Throwable t, boolean b) {
-                LogUtil.i("onError");
                 LogUtil.i(t.toString());
                 response.setThrowable(t);
                 callback.notifyError(response);

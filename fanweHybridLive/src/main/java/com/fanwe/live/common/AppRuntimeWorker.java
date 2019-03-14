@@ -881,6 +881,7 @@ public class AppRuntimeWorker {
      */
     private static void createPushLiveInside(CreateLiveData data, Activity activity) {
         int sdkType = data.getSdkType();
+        LogUtil.i("createPushLiveInside sdkType:" + sdkType);
         if (sdkType == LiveConstant.LiveSdkType.TENCENT) {
             Intent intent = new Intent(activity, LivePushCreaterActivity.class);
             intent.putExtra(LivePushCreaterActivity.EXTRA_ROOM_ID, data.getRoomId());

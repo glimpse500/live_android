@@ -222,6 +222,8 @@ public class LiveBusiness extends LiveBaseBusiness implements LiveMsgBusiness.Li
 
             @Override
             protected void onSuccess(SDResponse sdResponse) {
+                LogUtil.i("requestRoomInfo onSuccess");
+                LogUtil.i(sdResponse.getResult());
                 LiveInformation.getInstance().setRoomInfo(actModel);
                 if (actModel.isOk()) {
                     onRequestRoomInfoSuccess(actModel);
@@ -232,6 +234,8 @@ public class LiveBusiness extends LiveBaseBusiness implements LiveMsgBusiness.Li
 
             @Override
             protected void onError(SDResponse resp) {
+                LogUtil.i("requestRoomInfo onError");
+                LogUtil.i(resp.getResult());
                 super.onError(resp);
 
                 String msg = "request error";

@@ -569,6 +569,7 @@ public abstract class MsgModel {
      *
      * @param timMessage
      */
-    public abstract void setTimMessage(TIMMessage timMessage);
+    //TO DO
+//   / public abstract void setTimMessage(TIMMessage timMessage);
 
 }

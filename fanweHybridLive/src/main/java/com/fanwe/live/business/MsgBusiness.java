@@ -13,12 +13,16 @@ public class MsgBusiness {
      * @param groupId 要筛选的消息群组id
      */
     public void parseMsg(MsgModel msg, String groupId) {
+
+        //TO DO
+        onMsgGroup(msg);
+        /*
         String peer = msg.getConversationPeer();
         if (peer.equals(groupId)) {
             onMsgGroup(msg);
         } else {
             onMsgC2C(msg);
-        }
+        }*/
     }
 
     /**

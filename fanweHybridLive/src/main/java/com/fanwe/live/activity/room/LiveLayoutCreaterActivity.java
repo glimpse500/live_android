@@ -333,6 +333,7 @@ public class LiveLayoutCreaterActivity extends LiveLayoutExtendActivity implemen
     public void onBsRequestRoomInfoSuccess(App_get_videoActModel actModel) {
         super.onBsRequestRoomInfoSuccess(actModel);
 
+        /*
         String shareType = actModel.getShare_type();
         if (!TextUtils.isEmpty(shareType)) {
             RoomShareModel share = actModel.getShare();
@@ -343,6 +344,7 @@ public class LiveLayoutCreaterActivity extends LiveLayoutExtendActivity implemen
                 String clickUrl = share.getShare_url();
 
                 // 弹出分享页面
+
                 if (shareType.equalsIgnoreCase(SHARE_MEDIA.WEIXIN.toString())) {
                     UmengSocialManager.shareWeixin(title, content, imageUrl, clickUrl, this, null);
                 } else if (shareType.equalsIgnoreCase(SHARE_MEDIA.WEIXIN_CIRCLE.toString())) {
@@ -355,7 +357,7 @@ public class LiveLayoutCreaterActivity extends LiveLayoutExtendActivity implemen
                     UmengSocialManager.shareSina(title, content, imageUrl, clickUrl, this, null);
                 }
             }
-        }
+        }*/
     }
 
     @Override

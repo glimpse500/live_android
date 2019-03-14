@@ -165,11 +165,12 @@ public class LiveKSYPushCreaterActivity extends LiveLayoutCreaterExtendActivity 
         if (isClosedBack()) {
             final String groupId = actModel.getGroup_id();
             requestUpdateLiveStateComeback();
-            getCreaterIM().onSuccessJoinGroup(groupId);
-            getCreaterIM().sendCreaterComebackMsg(null);
+            //==Modify==
+            //getCreaterIM().onSuccessJoinGroup(groupId);
+            //getCreaterIM().sendCreaterComebackMsg(null);
         }
 
-        initIM();
+        //initIM();
         startPush(actModel.getPush_rtmp());
     }
 

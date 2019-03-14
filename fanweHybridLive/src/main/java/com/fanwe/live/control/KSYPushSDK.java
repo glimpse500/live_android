@@ -91,6 +91,7 @@ public class KSYPushSDK implements IPushSDK, SDHeadsetPlugReceiver.HeadsetPlugCa
         mPusher.setTargetFps(15); //编码帧率
 
         int resolutionType = AppRuntimeWorker.getVideoResolutionType();
+        LogUtil.i("setConfigDefault resolutionType " + resolutionType);
         switch (resolutionType) {
             case LiveConstant.VideoQualityType.VIDEO_QUALITY_STANDARD:
                 mPusher.setTargetResolution(RecorderConstants.VIDEO_RESOLUTION_360P);

@@ -3,6 +3,7 @@ package com.fanwe.live.appview.room;
 import android.content.Context;
 import android.util.AttributeSet;
 
+import com.fanwe.library.utils.LogUtil;
 import com.fanwe.live.R;
 import com.fanwe.live.model.custommsg.CustomMsgPopMsg;
 import com.fanwe.live.view.LivePopMsgView;
@@ -54,8 +55,9 @@ public class RoomPopMsgView extends RoomLooperMainView<CustomMsgPopMsg> {
 
     @Override
     public void onMsgPopMsg(CustomMsgPopMsg msg) {
+        LogUtil.i("CustomMsgPopMsg :" +  msg.getDesc());
         super.onMsgPopMsg(msg);
-        offerModel(msg);
+        //offerModel(msg);
     }
 
     @Override

@@ -28,139 +28,33 @@ import com.tencent.TIMVideoElem;
 import java.io.File;
 import java.util.List;
 
-public class TIMMsgModel extends MsgModel {
-    private TIMMessage timMessage;
-
-    private TIMCustomElem timCustomElem;
-    private TIMFileElem timFileElem;
-    private TIMGroupSystemElem timGroupSystemElem;
-    private TIMImageElem timImageElem;
-    private TIMSoundElem timSoundElem;
-    private TIMTextElem timTextElem;
-    private TIMVideoElem timVideoElem;
-
+public class LiveMsgModel extends MsgModel {
     private boolean printLog = false;
-
-    public TIMMsgModel(TIMMessage timMessage) {
+    private ByteMsg bMsg;
+    public LiveMsgModel(ByteMsg bMsg)
+    {
         super();
-        setTimMessage(timMessage);
+        this.bMsg = bMsg;
+    }
+    public ByteMsg getByteMsg(){
+        return this.bMsg;
     }
 
-    public TIMMsgModel(TIMMessage timMessage, boolean printLog) {
+    public LiveMsgModel( boolean printLog) {
         super();
         this.printLog = printLog;
-        setTimMessage(timMessage);
     }
 
     @Override
     public void remove() {
-        if (timMessage != null) {
-            timMessage.remove();
-        }
-    }
-    
-    public void setTimMessage(TIMMessage timMessage) {
-        // 解析消息
-        this.timMessage = timMessage;
-        readElement();
-        parseCustomElem();
+        LogUtil.i("Live Msg Model remove");
     }
 
-    /**
-     * 将消息的elem解析出来
-     */
-    private void readElement() {
-        if (timMessage != null) {
-            switch (timMessage.status()) {
-                case SendFail:
-                    setStatus(MsgStatus.SendFail);
-                    break;
-                case Sending:
-                    setStatus(MsgStatus.Sending);
-                    break;
-                case SendSucc:
-                    setStatus(MsgStatus.SendSuccess);
-                    break;
-                case HasDeleted:
-                    setStatus(MsgStatus.HasDeleted);
-                    break;
-                default:
-                    setStatus(MsgStatus.Invalid);
-                    break;
-            }
-
-            switch (timMessage.getConversation().getType()) {
-                case C2C:
-                    setConversationType(ConversationType.C2C);
-                    break;
-                case Group:
-                    setConversationType(ConversationType.Group);
-                    break;
-                case System:
-                    setConversationType(ConversationType.System);
-                    break;
-                default:
-                    setConversationType(ConversationType.Invalid);
-                    break;
-            }
-
-            setSelf(timMessage.isSelf());
-            String peer = timMessage.getConversation().getPeer();
-            setConversationPeer(peer);
-            setUnreadNum(timMessage.getConversation().getUnreadMessageNum());
-            setTimestamp(timMessage.timestamp());
-
-            long count = timMessage.getElementCount();
-            TIMElem elem = null;
-            for (int i = 0; i < count; i++) {
-                elem = timMessage.getElement(i);
-                if (elem == null) {
-                    continue;
-                }
-                TIMElemType elemType = elem.getType();
-                switch (elemType) {
-                    case Custom:
-                        this.timCustomElem = (TIMCustomElem) elem;
-                        break;
-                    case File:
-                        this.timFileElem = (TIMFileElem) elem;
-                        break;
-                    case GroupSystem:
-                        this.timGroupSystemElem = (TIMGroupSystemElem) elem;
-                        peer = timGroupSystemElem.getGroupId();
-                        setConversationPeer(peer);
-                        break;
-                    case Image:
-                        this.timImageElem = (TIMImageElem) elem;
-                        break;
-                    case Sound:
-                        this.timSoundElem = (TIMSoundElem) elem;
-                        break;
-                    case Text:
-                        this.timTextElem = (TIMTextElem) elem;
-                        break;
-                    case Video:
-                        this.timVideoElem = (TIMVideoElem) elem;
-                        break;
-
-                    default:
-                        break;
-                }
-            }
-        }
-    }
-
-    /**
-     * 将TIMCustomElem解析成自定义消息
-     */
     private void parseCustomElem() {
-        if (timCustomElem != null || timGroupSystemElem != null) {
+        if (bMsg != null ) {
             CustomMsg customMsg = parseToModel(CustomMsg.class);
             if (customMsg != null) {
                 int type = customMsg.getType();
-                if (ApkConstant.DEBUG && printLog) {
-                    LogUtil.i("--------result:" + getConversationType() + " " + getConversationPeer() + " type:" + type);
-                }
 
                 UserModel sender = customMsg.getSender();
                 UserModelDao.updateLevelUp(sender);
@@ -174,105 +68,17 @@ public class TIMMsgModel extends MsgModel {
                 }
                 CustomMsg realCustomMsg = parseToModel(realCustomMsgClass);
                 setCustomMsg(realCustomMsg);
-
-                switch (type) {
-                    case CustomMsgType.MSG_TEXT:
-                        CustomMsgText customMsgText = getCustomMsgReal();
-                        if (timTextElem != null) {
-                            customMsgText.setText(timTextElem.getText());
-                        }
-                        break;
-                    case CustomMsgType.MSG_POP_MSG:
-                        CustomMsgPopMsg customMsgPopMsg = getCustomMsgReal();
-                        if (timTextElem != null) {
-                            customMsgPopMsg.setDesc(timTextElem.getText());
-                        }
-                        break;
-                    case CustomMsgType.MSG_PRIVATE_VOICE:
-                        CustomMsgPrivateVoice customMsgPrivateVoice = getCustomMsgReal();
-                        if (customMsgPrivateVoice != null && timSoundElem != null) {
-                            String uuid = timSoundElem.getUuid();
-
-                            if (!TextUtils.isEmpty(uuid)) {
-                                File file = SDMediaRecorder.getInstance().getFile(uuid);
-                                if (file.exists()) {
-                                    String path = file.getAbsolutePath();
-                                    customMsgPrivateVoice.setPath(path);
-                                }
-                            } else {
-                                // 主动post解析
-                            }
-                        }
-                        break;
-                    case CustomMsgType.MSG_PRIVATE_IMAGE:
-                        CustomMsgPrivateImage customMsgPrivateImage = getCustomMsgReal();
-                        if (customMsgPrivateImage != null && timImageElem != null) {
-                            List<TIMImage> listImage = timImageElem.getImageList();
-                            if (!SDCollectionUtil.isEmpty(listImage)) {
-                                TIMImage image = listImage.get(0);
-                                String url = image.getUrl();
-                                customMsgPrivateImage.setUrl(url);
-                            }
-                        }
-                        break;
-                    default:
-                        break;
-                }
             }
         }
     }
-
-    /**
-     * 检测声音文件是否存在
-     *
-     * @param listener
-     * @return true-本地不存在缓存，需要下载
-     */
-    public boolean checkSoundFile(final TIMValueCallBack<String> listener) {
-        boolean needDownload = false;
-        if (getCustomMsgType() == LiveConstant.CustomMsgType.MSG_PRIVATE_VOICE) {
-            if (timSoundElem != null) {
-                String uuid = timSoundElem.getUuid();
-                if (!TextUtils.isEmpty(uuid)) {
-                    File file = SDMediaRecorder.getInstance().getFile(uuid);
-                    if (file != null && !file.exists()) {
-                        // 需要下载文件
-                        needDownload = true;
-                        final String path = file.getAbsolutePath();
-                        timSoundElem.getSoundToFile(path, new TIMCallBack() {
-                            @Override
-                            public void onError(int i, String s) {
-                                if (listener != null) {
-                                    listener.onError(i, s);
-                                }
-                            }
-
-                            @Override
-                            public void onSuccess() {
-                                if (listener != null) {
-                                    listener.onSuccess(path);
-                                }
-                            }
-                        });
-                    }
-                }
-            }
-        }
-        return needDownload;
-    }
-
     public <T extends CustomMsg> T parseToModel(Class<T> clazz) {
         T model = null;
         String json = null;
         try {
             byte[] data = null;
-            if (timGroupSystemElem != null) {
-                data = timGroupSystemElem.getUserData();
-            }
             if (data == null) {
-                data = timCustomElem.getData();
+                data = bMsg.getData();
             }
-
             json = new String(data, LiveConstant.DEFAULT_CHARSET);
             model = SDJsonUtil.json2Object(json, clazz);
 

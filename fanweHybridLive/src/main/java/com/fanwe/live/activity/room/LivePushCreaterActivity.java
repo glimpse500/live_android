@@ -10,6 +10,7 @@ import com.fanwe.hybrid.event.EUnLogin;
 import com.fanwe.lib.dialog.ISDDialogConfirm;
 import com.fanwe.lib.dialog.impl.SDDialogBase;
 import com.fanwe.library.receiver.SDNetworkReceiver;
+import com.fanwe.library.utils.LogUtil;
 import com.fanwe.library.utils.SDToast;
 import com.fanwe.live.LiveInformation;
 import com.fanwe.live.R;
@@ -190,11 +191,13 @@ public class LivePushCreaterActivity extends LiveLayoutCreaterExtendActivity {
         if (isClosedBack()) {
             final String groupId = actModel.getGroup_id();
             requestUpdateLiveStateComeback();
-            getCreaterIM().onSuccessJoinGroup(groupId);
-            getCreaterIM().sendCreaterComebackMsg(null);
+            // ==Modify==
+            //getCreaterIM().onSuccessJoinGroup(groupId);
+            //getCreaterIM().sendCreaterComebackMsg(null);
         }
 
-        initIM();
+        //initIM();
+        LogUtil.i("push rtmp " + actModel.getPush_rtmp());
         startPush(actModel.getPush_rtmp());
     }
 

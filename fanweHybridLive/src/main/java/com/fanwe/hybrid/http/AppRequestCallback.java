@@ -107,6 +107,7 @@ public abstract class AppRequestCallback<D> extends SDModelRequestCallback<D> {
         super.onSuccessBefore(resp);
 
         dealRequestParams();
+        LogUtil.i("onSuccessBefore done");
     }
 
     private void dealRequestParams() {
