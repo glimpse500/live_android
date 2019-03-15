@@ -22,8 +22,8 @@ public class CustomMsgPrivateVoice extends CustomMsg {
     }
 
     @Override
-    public TIMMessage parsetoByteMsg() {
-        TIMMessage timMessage = super.parsetoByteMsg();
+    public TIMMessage parsetoTIMMessage() {
+        TIMMessage timMessage = super.parsetoTIMMessage();
         if (timMessage != null) {
             TIMSoundElem elem = new TIMSoundElem();
             elem.setPath(path);

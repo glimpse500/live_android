@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 
 import com.fanwe.lib.looper.ISDLooper;
+import com.fanwe.library.utils.LogUtil;
 
 import java.util.LinkedList;
 
@@ -94,6 +95,7 @@ public abstract class RoomLooperView<T> extends RoomView {
 
                 @Override
                 public void run() {
+                    LogUtil.i("startLooper" );
                     onLooperWork(mQueue);
                     onAfterLooperWork();
                 }

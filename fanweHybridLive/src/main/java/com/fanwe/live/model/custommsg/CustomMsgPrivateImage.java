@@ -51,8 +51,8 @@ public class CustomMsgPrivateImage extends CustomMsg {
     }
 
     @Override
-    public TIMMessage parsetoByteMsg() {
-        TIMMessage timMessage = super.parsetoByteMsg();
+    public TIMMessage parsetoTIMMessage() {
+        TIMMessage timMessage = super.parsetoTIMMessage();
         if (timMessage != null) {
             TIMImageElem elem = new TIMImageElem();
             elem.setPath(path);

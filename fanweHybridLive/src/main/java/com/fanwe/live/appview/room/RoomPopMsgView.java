@@ -57,7 +57,7 @@ public class RoomPopMsgView extends RoomLooperMainView<CustomMsgPopMsg> {
     public void onMsgPopMsg(CustomMsgPopMsg msg) {
         LogUtil.i("CustomMsgPopMsg :" +  msg.getDesc());
         super.onMsgPopMsg(msg);
-        //offerModel(msg);
+        offerModel(msg);
     }
 
     @Override
@@ -68,7 +68,9 @@ public class RoomPopMsgView extends RoomLooperMainView<CustomMsgPopMsg> {
     @Override
     protected void onLooperWork(LinkedList<CustomMsgPopMsg> queue) {
         for (LivePopMsgView item : listView) {
+            LogUtil.i("onLooperWork = ");
             if (item.canPlay()) {
+                LogUtil.i("item.canPlay() = ");
                 item.playMsg(queue.poll());
             }
         }

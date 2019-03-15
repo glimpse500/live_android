@@ -29,33 +29,34 @@ import java.io.File;
 import java.util.List;
 
 public class LiveMsgModel extends MsgModel {
-    private boolean printLog = false;
-    private ByteMsg bMsg;
-    public LiveMsgModel(ByteMsg bMsg)
-    {
-        super();
-        this.bMsg = bMsg;
-    }
-    public ByteMsg getByteMsg(){
-        return this.bMsg;
-    }
 
-    public LiveMsgModel( boolean printLog) {
+    private ByteMsg bMsg;
+    private boolean printLog = false;
+
+    public LiveMsgModel(ByteMsg bMsg) {
         super();
-        this.printLog = printLog;
+        setTimMessage(bMsg);
     }
 
     @Override
     public void remove() {
-        LogUtil.i("Live Msg Model remove");
+        LogUtil.i("revmove");
     }
 
+    public void setTimMessage(ByteMsg bMsg) {
+        // 解析消息
+        this.bMsg = bMsg;
+        parseCustomElem();
+    }
+
+    /**
+     * 将TIMCustomElem解析成自定义消息
+     */
     private void parseCustomElem() {
-        if (bMsg != null ) {
+        if (bMsg != null) {
             CustomMsg customMsg = parseToModel(CustomMsg.class);
             if (customMsg != null) {
                 int type = customMsg.getType();
-
                 UserModel sender = customMsg.getSender();
                 UserModelDao.updateLevelUp(sender);
 
@@ -71,6 +72,9 @@ public class LiveMsgModel extends MsgModel {
             }
         }
     }
+
+
+
     public <T extends CustomMsg> T parseToModel(Class<T> clazz) {
         T model = null;
         String json = null;
@@ -79,6 +83,7 @@ public class LiveMsgModel extends MsgModel {
             if (data == null) {
                 data = bMsg.getData();
             }
+
             json = new String(data, LiveConstant.DEFAULT_CHARSET);
             model = SDJsonUtil.json2Object(json, clazz);
 

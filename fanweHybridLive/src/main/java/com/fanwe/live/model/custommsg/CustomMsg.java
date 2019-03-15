@@ -9,7 +9,7 @@ import com.fanwe.live.LiveConstant.CustomMsgType;
 import com.fanwe.live.dao.UserModelDao;
 import com.fanwe.live.model.UserModel;
 import com.tencent.TIMMessage;
-
+import com.tencent.TIMCustomElem;
 import java.io.Serializable;
 
 public class CustomMsg implements ICustomMsg, Serializable {
@@ -67,8 +67,8 @@ public class CustomMsg implements ICustomMsg, Serializable {
         this.type = type;
     }
 
-    public ByteMsg parsetoByteMsg() {
-        //TIMMessage msg = null;
+    public TIMMessage parsetoTIMMessage() {
+        TIMMessage msg = null;
         ByteMsg bMsg = null;
         try {
             String json = SDJsonUtil.object2Json(this);
@@ -77,13 +77,24 @@ public class CustomMsg implements ICustomMsg, Serializable {
             bMsg = new ByteMsg(bytes);
             //To do
 
-            /*
             TIMCustomElem elemCustom = new TIMCustomElem();
             elemCustom.setData(bytes);
 
             msg = new TIMMessage();
-            msg.addElement(elemCustom);*/
+            msg.addElement(elemCustom);
 
+            LogUtil.i("send json:" + json);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return msg;
+    }
+    public ByteMsg parsetoByteMessage() {
+        ByteMsg bMsg = null;
+        try {
+            String json = SDJsonUtil.object2Json(this);
+            byte[] bytes = json.getBytes(LiveConstant.DEFAULT_CHARSET);
+            bMsg = new ByteMsg(bytes);
             LogUtil.i("send json:" + json);
         } catch (Exception e) {
             e.printStackTrace();
@@ -92,7 +103,8 @@ public class CustomMsg implements ICustomMsg, Serializable {
     }
     public final MsgModel parseToMsgModel() {
         //TO DO
-        ByteMsg bMsg = parsetoByteMsg();
+        //TIMMessage timMessage = parsetoTIMMessage();
+        ByteMsg bMsg = parsetoByteMessage();
         MsgModel msgModel = new LiveMsgModel(bMsg);
         return msgModel;
     }

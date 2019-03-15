@@ -14,14 +14,10 @@ import com.fanwe.live.LiveConstant;
 import com.fanwe.live.model.custommsg.CustomMsgPopMsg;
 import com.fanwe.live.model.custommsg.MsgModel;
 import com.fanwe.hybrid.dao.InitActModelDao;
-import com.fanwe.hybrid.http.AppHttpUtil;
-import com.fanwe.hybrid.http.AppRequestCallback;
-import com.fanwe.hybrid.http.AppRequestParams;
 import com.fanwe.hybrid.model.InitActModel;
 import com.fanwe.lib.blocker.SDEqualsDurationBlocker;
 import com.fanwe.lib.switchbutton.ISDSwitchButton;
 import com.fanwe.lib.switchbutton.SDSwitchButton;
-import com.fanwe.library.adapter.http.model.SDResponse;
 import com.fanwe.library.receiver.SDNetworkReceiver;
 import com.fanwe.library.utils.SDKeyboardUtil;
 import com.fanwe.library.utils.SDResourcesUtil;
@@ -30,13 +26,10 @@ import com.fanwe.library.utils.SDViewUtil;
 import com.fanwe.live.IMHelper;
 import com.fanwe.live.R;
 import com.fanwe.live.common.AppRuntimeWorker;
-import com.fanwe.live.common.CommonInterface;
 import com.fanwe.live.dao.UserModelDao;
 import com.fanwe.live.event.EImOnNewMessages;
-import com.fanwe.live.model.App_pop_msgActModel;
 import com.fanwe.live.model.UserModel;
 import com.fanwe.live.model.custommsg.CustomMsgText;
-import com.fanwe.live.model.custommsg.LiveMsgModel;
 import com.sunday.eventbus.SDEventManager;
 import com.tencent.TIMMessage;
 import com.tencent.TIMValueCallBack;
@@ -222,7 +215,7 @@ public class RoomSendMsgView extends RoomView {
             CustomMsgPopMsg customMsg = new CustomMsgPopMsg();
             customMsg.setDesc(mStrContent);
 
-            MsgModel msg = new LiveMsgModel();
+            MsgModel msg = customMsg.parseToMsgModel();
             if (msg != null) {
                 msg.setCustomMsg(customMsg);
                 msg.setLocalPost(true);
