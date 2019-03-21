@@ -19,6 +19,9 @@ import com.fanwe.live.model.custommsg.CustomMsgPrivateVoice;
 import com.fanwe.live.model.custommsg.MsgModel;
 import com.fanwe.live.model.custommsg.MsgStatus;
 import com.fanwe.live.model.custommsg.TIMMsgModel;
+import com.fanwe.socketio.SocketIOHelper;
+import com.fanwe.socketio.SocketIOMessage;
+import com.fanwe.socketio.SocketIOValueCallBack;
 import com.tencent.TIMConversation;
 import com.tencent.TIMMessage;
 import com.tencent.TIMValueCallBack;
@@ -238,6 +241,28 @@ public class LivePrivateChatBusiness extends BaseBusiness {
 
     public TIMMessage sendIMMsg(final MsgModel model) {
         final int index = mCallback.onAdapterIndexOf(model);
+        /*
+        SocketIOMessage sMsg =  SocketIOHelper.sendMsgC2C(mUserId,model.getCustomMsg(),new SocketIOValueCallBack<SocketIOMessage>() {
+            @Override
+            public void onSuccess(TIMMessage timMessage) {
+                if (mLastMsg == null) {
+                    mLastMsg = timMessage;
+                }
+                if (model.getStatus() == MsgStatus.SendFail) {
+                    model.remove();
+                }
+                //TO DO
+                //model.setTimMessage(timMessage);
+
+                mCallback.onAdapterUpdateData(index, model);
+            }
+
+            @Override
+            public void onError(int arg0, String arg1) {
+                mCallback.onAdapterUpdateData(index);
+            }
+        });*/
+
 
         TIMMessage timMessageSending = IMHelper.sendMsgC2C(mUserId, model.getCustomMsg(), new TIMValueCallBack<TIMMessage>() {
 

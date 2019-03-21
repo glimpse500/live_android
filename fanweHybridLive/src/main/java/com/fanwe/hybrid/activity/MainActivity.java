@@ -200,6 +200,7 @@ public class MainActivity extends BaseActivity implements OnCropBitmapListner, P
 
                 if (!isFirstLoadCompleteWhenLoginSuccess) {
                     isFirstLoadCompleteWhenLoginSuccess = true;
+                    //To do
                     onFirstLoadCompleteWhenLoginSuccess();
                 }
 

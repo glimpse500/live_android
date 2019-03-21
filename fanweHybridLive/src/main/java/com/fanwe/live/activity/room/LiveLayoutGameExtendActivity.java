@@ -39,6 +39,8 @@ import com.fanwe.live.model.App_pop_propActModel;
 import com.fanwe.live.model.LiveGiftModel;
 import com.fanwe.live.model.custommsg.CustomMsgEndVideo;
 
+import org.xutils.common.util.LogUtil;
+
 import java.util.List;
 
 /**
@@ -345,19 +347,21 @@ public class LiveLayoutGameExtendActivity extends LiveLayoutGameActivity impleme
                 return;
             }
             SDToast.showToast("发送完成");
-
+            LogUtil.i("sendGift ");
             AppRequestParams params = CommonInterface.requestSendGiftParams(model.getId(), 1, 0, getRoomId());
             AppHttpUtil.getInstance().post(params, new AppRequestCallback<App_pop_propActModel>() {
                 @Override
                 protected void onSuccess(SDResponse resp) {
                     // 扣费
+                    LogUtil.i("sendGift onSuccess" + resp.getResult());
                     if (actModel.isOk()) {
-                        UserModelDao.payDiamonds(model.getDiamonds());
+                        //UserModelDao.payDiamonds(model.getDiamonds());
                     }
                 }
 
                 @Override
                 protected void onError(SDResponse resp) {
+                    LogUtil.i("sendGift onError" + resp.getResult());
                     CommonInterface.requestMyUserInfo(null);
                 }
             });

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
@@ -19,6 +20,7 @@ import com.fanwe.lib.dialog.impl.SDDialogBase;
 import com.fanwe.library.adapter.http.model.SDResponse;
 import com.fanwe.library.common.SDHandlerManager;
 import com.fanwe.library.listener.SDViewVisibilityCallback;
+import com.fanwe.library.utils.LogUtil;
 import com.fanwe.library.utils.SDToast;
 import com.fanwe.library.utils.SDViewUtil;
 import com.fanwe.live.R;
@@ -322,8 +324,10 @@ public class LiveLayoutViewerActivity extends LiveLayoutExtendActivity {
 
         bindShowApplyLinkMic();
         sendViewerJoinMsg();
-
-        mRoomViewerBottomView.showMenuFullScreen(getLiveBusiness().isPCCreate());
+        //TO DO
+        //mRoomViewerBottomView.showMenuFullScreen(getLiveBusiness().isPCCreate());
+        LogUtil.i("force mRoomViewerBottomView show");
+        mRoomViewerBottomView.showMenuFullScreen(true);
     }
 
     /**

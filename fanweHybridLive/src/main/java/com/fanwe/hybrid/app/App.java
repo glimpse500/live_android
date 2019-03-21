@@ -29,6 +29,7 @@ import com.fanwe.library.utils.LogUtil;
 import com.fanwe.library.utils.SDPackageUtil;
 import com.fanwe.live.DebugHelper;
 import com.fanwe.live.LiveConstant;
+import com.fanwe.live.LiveInitChat;
 import com.fanwe.live.LiveIniter;
 import com.fanwe.live.R;
 import com.fanwe.live.activity.LiveLoginActivity;
@@ -86,7 +87,7 @@ public class App extends Application implements ITXLiveBaseListener {
             SDHeadsetPlugReceiver.registerReceiver(this);
             x.Ext.init(this);
             SDTencentMapManager.getInstance().init(this);
-            //new LiveIniter().init(this);
+            new LiveInitChat().init(this);
             initSystemListener();
             SDMediaRecorder.getInstance().init(this);
             LogUtil.isDebug = ApkConstant.DEBUG;

@@ -1,6 +1,6 @@
 package com.fanwe.live.model;
 
-import com.fanwe.hybrid.model.BaseActModel;
+        import com.fanwe.hybrid.model.BaseActModel;
 
 /**
  * @author 作者 E-mail:

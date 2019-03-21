@@ -10,4 +10,6 @@ import com.fanwe.live.model.custommsg.MsgModel;
  */
 public class EImOnNewMessages {
     public MsgModel msg;
+    public String json;
+    public int msgType;
 }

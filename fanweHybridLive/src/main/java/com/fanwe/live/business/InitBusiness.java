@@ -165,7 +165,7 @@ public class InitBusiness extends BaseBusiness {
     public static void startMainActivity(final Activity activity) {
         startMainActivityInternal(activity);
 
-        //update
+        //To Do
         /*
         if (ApkConstant.hasUpdateAeskeyHttp()) {
             startMainActivityInternal(activity);

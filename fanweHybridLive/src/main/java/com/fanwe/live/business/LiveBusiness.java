@@ -225,9 +225,12 @@ public class LiveBusiness extends LiveBaseBusiness implements LiveMsgBusiness.Li
                 LogUtil.i("requestRoomInfo onSuccess");
                 LogUtil.i(sdResponse.getResult());
                 LiveInformation.getInstance().setRoomInfo(actModel);
+                LogUtil.i("actModel :"+ actModel.isOk());
                 if (actModel.isOk()) {
+
                     onRequestRoomInfoSuccess(actModel);
                 } else {
+                    LogUtil.i("requestRoomInfoError");
                     onRequestRoomInfoError(actModel);
                 }
             }
@@ -266,7 +269,8 @@ public class LiveBusiness extends LiveBaseBusiness implements LiveMsgBusiness.Li
                 setTicket(userModel.getTicket());
             }
         }
-
+        //To Do
+        LogUtil.i("onRequestRoomInfoSuccess : " + actModel.getSdk_type());
         bindShowOperateViewer(actModel);
 
         // 绑定观众数量
@@ -312,6 +316,7 @@ public class LiveBusiness extends LiveBaseBusiness implements LiveMsgBusiness.Li
      * @param actModel
      */
     public void onRequestViewerListSuccess(App_viewerActModel actModel) {
+        LogUtil.i("onRequestViewerListSuccess : ");
         if (actModel != null) {
             setViewerNumber(actModel.getWatch_number());
             setViewerList(actModel.getList());

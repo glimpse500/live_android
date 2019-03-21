@@ -2,6 +2,7 @@ package com.fanwe.live.activity.room;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
@@ -15,6 +16,7 @@ import com.fanwe.library.utils.SDKeyboardListener;
 import com.fanwe.library.utils.SDResourcesUtil;
 import com.fanwe.library.utils.SDViewUtil;
 import com.fanwe.library.view.SDReplaceableLayout;
+import com.fanwe.live.LiveConstant;
 import com.fanwe.live.R;
 import com.fanwe.live.appview.room.RoomGiftGifView;
 import com.fanwe.live.appview.room.RoomGiftPlayView;
@@ -26,20 +28,34 @@ import com.fanwe.live.appview.room.RoomPopMsgView;
 import com.fanwe.live.appview.room.RoomRemoveViewerView;
 import com.fanwe.live.appview.room.RoomSendMsgView;
 import com.fanwe.live.appview.room.RoomViewerJoinRoomView;
+import com.fanwe.live.business.LiveMsgBusiness;
 import com.fanwe.live.common.CommonInterface;
 import com.fanwe.live.dialog.LiveAddViewerDialog;
 import com.fanwe.live.dialog.LiveChatC2CDialog;
 import com.fanwe.live.dialog.LiveRechargeDialog;
 import com.fanwe.live.dialog.LiveRedEnvelopeNewDialog;
+import com.fanwe.live.event.EImOnNewMessages;
 import com.fanwe.live.model.App_get_videoActModel;
 import com.fanwe.live.model.App_plugin_statusActModel;
 import com.fanwe.live.model.LiveQualityData;
 import com.fanwe.live.model.UserModel;
+import com.fanwe.live.model.custommsg.CustomMsg;
+import com.fanwe.live.model.custommsg.CustomMsgPopMsg;
 import com.fanwe.live.model.custommsg.CustomMsgRedEnvelope;
+import com.fanwe.live.model.custommsg.LiveMsgModel;
+import com.fanwe.live.model.custommsg.MsgModel;
+import com.fanwe.socketio.SocketIOHelper;
+import com.fanwe.socketio.SocketIOMessage;
+import com.sunday.eventbus.SDEventManager;
 import com.umeng.socialize.UMShareListener;
 import com.umeng.socialize.bean.SHARE_MEDIA;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+import com.google.gson.Gson;
 import java.util.List;
+
+import io.socket.emitter.Emitter;
 
 /**
  * 公共界面
@@ -88,6 +104,7 @@ public class LiveLayoutActivity extends LiveActivity {
                 }
             }
         });
+        SocketIOHelper.joinGroup(Integer.toString(getRoomId()));
     }
 
     protected void initLayout(View view) {

@@ -187,4 +187,10 @@ dependencies {
     implementation 'jp.wasabeef:glide-transformations:2.0.1'
     implementation 'com.scottsu:states-layout:1.1.5'
     //鲜肉===============================================end
+
+    // socketio
+    implementation 'com.android.support:recyclerview-v7:25.0.+'
+    implementation('io.socket:socket.io-client:0.8.3') {
+        exclude group: 'org.json', module: 'json'
+    }
 }

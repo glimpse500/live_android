@@ -31,6 +31,7 @@ import com.fanwe.live.model.JoinPlayBackData;
 import com.fanwe.live.model.LiveRoomModel;
 import com.fanwe.live.model.UserModel;
 import com.fanwe.live.utils.LiveNetChecker;
+import com.fanwe.socketio.SocketIOHelper;
 
 import java.util.List;
 
@@ -767,7 +768,6 @@ public class AppRuntimeWorker {
     public static String getUsersig() {
         return SDConfig.getString(AppConfigKey.LIVE_USERSIG, null);
     }
-
     /**
      * IM登录
      *
@@ -775,6 +775,7 @@ public class AppRuntimeWorker {
      */
     public static boolean startContext() {
         UserModel user = UserModelDao.query();
+        LogUtil.i("startContext ");
         LogUtil.i("UserModel : " + user.toString());
         if (user == null) {
             return false;
@@ -784,14 +785,49 @@ public class AppRuntimeWorker {
             SDToast.showToast("用户id为空");
             return false;
         }
-
+        /*//TO do
         String usersig = getUsersig();
         if (TextUtils.isEmpty(usersig)) {
+            LogUtil.i("TextUtils.isEmpty(usersig) ");
             CommonInterface.requestUsersig(null);
             return false;
-        }
+        }*/
 
         //IMHelper.loginIM(identifier, usersig);
+        //String socketIO_ID = user.getNick_name() + "(" + user.getUser_id()+ ")";
+        //LogUtil.i("loginSocketIO " + socketIO_ID);
+        //SocketIOHelper.loginSocketIO(identifier, socketIO_ID,activity);
+        return true;
+    }
+    /**
+     * IM登录
+     *
+     * @return
+     */
+    public static boolean startContext(Activity activity) {
+        UserModel user = UserModelDao.query();
+        LogUtil.i("startContext ");
+        LogUtil.i("UserModel : " + user.toString());
+        if (user == null) {
+            return false;
+        }
+        String identifier = user.getUser_id();
+        if (TextUtils.isEmpty(identifier)) {
+            SDToast.showToast("用户id为空");
+            return false;
+        }
+        /*//TO do
+        String usersig = getUsersig();
+        if (TextUtils.isEmpty(usersig)) {
+            LogUtil.i("TextUtils.isEmpty(usersig) ");
+            CommonInterface.requestUsersig(null);
+            return false;
+        }*/
+
+        //IMHelper.loginIM(identifier, usersig);
+        String socketIO_ID = user.getNick_name() + "(" + user.getUser_id()+ ")";
+        LogUtil.i("loginSocketIO " + socketIO_ID);
+        SocketIOHelper.loginSocketIO(identifier, socketIO_ID,activity);
         return true;
     }
 
@@ -799,7 +835,9 @@ public class AppRuntimeWorker {
      * IM退出登录
      */
     public static void logout() {
-        IMHelper.logoutIM(null);
+        //TO DO
+        //IMHelper.logoutIM(null);
+        SocketIOHelper.logoutSocketIO();
     }
 
     /**
@@ -989,4 +1027,5 @@ public class AppRuntimeWorker {
         }
         return result;
     }
+
 }

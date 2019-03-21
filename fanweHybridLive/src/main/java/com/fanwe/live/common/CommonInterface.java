@@ -111,6 +111,7 @@ import com.fanwe.live.model.SociatyListModel;
 import com.fanwe.live.model.UserModel;
 import com.fanwe.live.model.User_friendsActModel;
 import com.fanwe.live.model.User_set_blackActModel;
+import com.fanwe.live.model.User_is_blackActModel;
 import com.fanwe.live.model.Video_add_videoActModel;
 import com.fanwe.live.model.Video_check_statusActModel;
 import com.fanwe.live.model.Video_private_room_friendsActModel;
@@ -206,7 +207,7 @@ public class CommonInterface {
         AppRequestParams params = new AppRequestParams();
         params.putCtl("user");
         params.putAct("usersig");
-        /*
+
         AppHttpUtil.getInstance().post(params, new AppRequestCallbackWrapper<App_usersigActModel>(listener) {
 
             @Override
@@ -217,7 +218,7 @@ public class CommonInterface {
                     AppRuntimeWorker.startContext();
                 }
             }
-        });*/
+        });
     }
 
     /**
@@ -561,6 +562,20 @@ public class CommonInterface {
         params.put("to_user_id", to_user_id);
         AppHttpUtil.getInstance().post(params, listener);
     }
+    /**
+     * 確認是否在黑名單 // add by xinggu
+     *
+     * @param cur_user_id 要確認的用户id
+     * @param listener
+     */
+    public static void requestIs_black(String cur_user_id, AppRequestCallback<User_is_blackActModel> listener) {
+        AppRequestParams params = new AppRequestParams();
+        params.putCtl("user");
+        params.putAct("is_black");
+        params.put("cur_user_id", cur_user_id);
+        AppHttpUtil.getInstance().post(params, listener);
+    }
+
 
     /**
      * 黑名单列表

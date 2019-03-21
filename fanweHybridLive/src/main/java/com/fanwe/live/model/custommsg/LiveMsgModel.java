@@ -3,39 +3,22 @@ package com.fanwe.live.model.custommsg;
 import android.text.TextUtils;
 
 import com.fanwe.hybrid.constant.ApkConstant;
-import com.fanwe.lib.recorder.SDMediaRecorder;
 import com.fanwe.library.utils.LogUtil;
-import com.fanwe.library.utils.SDCollectionUtil;
 import com.fanwe.library.utils.SDJsonUtil;
 import com.fanwe.live.LiveConstant;
-import com.fanwe.live.LiveConstant.CustomMsgType;
+
 import com.fanwe.live.dao.UserModelDao;
 import com.fanwe.live.model.UserModel;
-import com.tencent.TIMCallBack;
-import com.tencent.TIMCustomElem;
-import com.tencent.TIMElem;
-import com.tencent.TIMElemType;
-import com.tencent.TIMFileElem;
-import com.tencent.TIMGroupSystemElem;
-import com.tencent.TIMImage;
-import com.tencent.TIMImageElem;
-import com.tencent.TIMMessage;
-import com.tencent.TIMSoundElem;
-import com.tencent.TIMTextElem;
-import com.tencent.TIMValueCallBack;
-import com.tencent.TIMVideoElem;
-
-import java.io.File;
-import java.util.List;
+import com.fanwe.socketio.SocketIOMessage;
 
 public class LiveMsgModel extends MsgModel {
 
-    private ByteMsg bMsg;
+    private SocketIOMessage sMsg;
     private boolean printLog = false;
 
-    public LiveMsgModel(ByteMsg bMsg) {
+    public LiveMsgModel(SocketIOMessage sMsg) {
         super();
-        setTimMessage(bMsg);
+        setSocketIOMessage(sMsg);
     }
 
     @Override
@@ -43,9 +26,9 @@ public class LiveMsgModel extends MsgModel {
         LogUtil.i("revmove");
     }
 
-    public void setTimMessage(ByteMsg bMsg) {
+    public void setSocketIOMessage(SocketIOMessage sMsg) {
         // 解析消息
-        this.bMsg = bMsg;
+        this.sMsg = sMsg;
         parseCustomElem();
     }
 
@@ -53,7 +36,7 @@ public class LiveMsgModel extends MsgModel {
      * 将TIMCustomElem解析成自定义消息
      */
     private void parseCustomElem() {
-        if (bMsg != null) {
+        if (sMsg != null) {
             CustomMsg customMsg = parseToModel(CustomMsg.class);
             if (customMsg != null) {
                 int type = customMsg.getType();
@@ -81,7 +64,7 @@ public class LiveMsgModel extends MsgModel {
         try {
             byte[] data = null;
             if (data == null) {
-                data = bMsg.getData();
+                data = sMsg.getData();
             }
 
             json = new String(data, LiveConstant.DEFAULT_CHARSET);

@@ -131,7 +131,7 @@ public class BaseActModel implements Serializable {
     }
 
     public boolean isOk() {
-        LogUtil.i(Integer.toString(this.status));
+        LogUtil.i("status = " + Integer.toString(this.status));
         return this.status == 1;
     }
 

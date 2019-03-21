@@ -26,9 +26,19 @@ import com.fanwe.live.dialog.common.AppDialogConfirm;
 import com.fanwe.live.event.EIMLoginError;
 import com.fanwe.live.event.EImOnForceOffline;
 import com.fanwe.live.event.EReSelectTabLiveBottom;
+import com.fanwe.socketio.SocketIOConstant;
 import com.fanwe.xianrou.activity.QKCreateEntranceActivity;
 import com.fanwe.xianrou.appview.main.QKTabSmallVideoView;
 import com.sunday.eventbus.SDEventManager;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.net.URISyntaxException;
+
+import io.socket.client.IO;
+import io.socket.client.Socket;
+import io.socket.emitter.Emitter;
 
 public class LiveMainActivity extends BaseActivity {
     private FrameLayout fl_main_content;
@@ -36,9 +46,8 @@ public class LiveMainActivity extends BaseActivity {
     private LiveMainRankingView mMainRankingView;
     private QKTabSmallVideoView mSmallVideoView;
     private LiveMainMeView mMainMeView;
-
+    private Socket mSocket;
     private LiveMainBottomNavigationView mBottomNavigationView;
-
     @Override
     protected int onCreateContentView() {
         return R.layout.act_live_main;
@@ -50,13 +59,13 @@ public class LiveMainActivity extends BaseActivity {
         LogUtil.i("LiveMainActivity");
         fl_main_content = (FrameLayout) findViewById(R.id.fl_main_content);
         mIsExitApp = true;
+        //this.getActivity();
         //checkUpdate();
         //AppRuntimeWorker.startContext();
+        AppRuntimeWorker.startContext(getActivity());
         //CommonInterface.requestUser_apns(null);
-        //CommonInterface.requestMyUserInfo(null);
-
+        CommonInterface.requestMyUserInfo(null);
         checkVideo();
-
         initTabs();
 
         //initUpgradeDialog();
@@ -198,7 +207,8 @@ public class LiveMainActivity extends BaseActivity {
 
             @Override
             public void onClickConfirm(View v, SDDialogBase dialog) {
-                AppRuntimeWorker.startContext();
+                //AppRuntimeWorker.startContext();
+                AppRuntimeWorker.startContext(getActivity());
             }
         }).show();
     }
@@ -221,7 +231,8 @@ public class LiveMainActivity extends BaseActivity {
 
             @Override
             public void onClickConfirm(View v, SDDialogBase dialog) {
-                AppRuntimeWorker.startContext();
+                //AppRuntimeWorker.startContext();
+                AppRuntimeWorker.startContext(getActivity());
             }
         }).show();
     }

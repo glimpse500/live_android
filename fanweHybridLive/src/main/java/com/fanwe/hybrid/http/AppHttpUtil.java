@@ -75,6 +75,7 @@ public class AppHttpUtil extends SDHttpUtil {
             public void onSuccess(String result) {
                 LogUtil.i("onSuccess");
                 LogUtil.i(result);
+
                 response.setResult(result);
                 callback.notifySuccess(response);
             }

@@ -17,6 +17,7 @@ import com.fanwe.live.dao.UserModelDao;
 import com.fanwe.live.model.UserModel;
 import com.fanwe.live.model.custommsg.CustomMsgLight;
 import com.fanwe.live.view.HeartLayout;
+import com.fanwe.socketio.SocketIOHelper;
 
 import java.util.LinkedList;
 
@@ -130,9 +131,10 @@ public class RoomHeartView extends RoomLooperMainView<CustomMsgLight> {
         if (sendImMsg) {
             LogUtil.i("add heart im");
             String groupId = getLiveActivity().getGroupId();
-            IMHelper.sendMsgGroup(groupId, msg, null);
+           //IMHelper.sendMsgGroup(groupId, msg, null);
+            //SocketIOHelper.sendMsgGroup(groupId,msg);
             if (msg.getShowMsg() == 1) {
-                IMHelper.postMsgLocal(msg, groupId);
+                //SocketIOHelper.sendMsgGroup(groupId,msg);
             } else {
                 addHeartInside(name);
             }

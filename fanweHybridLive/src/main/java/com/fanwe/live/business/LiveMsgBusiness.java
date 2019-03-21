@@ -18,11 +18,16 @@ import com.fanwe.live.model.custommsg.CustomMsgRedEnvelope;
 import com.fanwe.live.model.custommsg.CustomMsgRejectLinkMic;
 import com.fanwe.live.model.custommsg.CustomMsgStopLinkMic;
 import com.fanwe.live.model.custommsg.CustomMsgStopLive;
+import com.fanwe.live.model.custommsg.CustomMsgText;
 import com.fanwe.live.model.custommsg.CustomMsgViewerJoin;
 import com.fanwe.live.model.custommsg.CustomMsgViewerQuit;
 import com.fanwe.live.model.custommsg.CustomMsgWarning;
 import com.fanwe.live.model.custommsg.MsgModel;
 import com.fanwe.live.model.custommsg.data.DataLinkMicInfoModel;
+import com.fanwe.live.model.custommsg.CustomMsg;
+import com.google.gson.Gson;
+
+import org.json.JSONObject;
 
 /**
  * 直播间消息业务类
@@ -32,6 +37,86 @@ public class LiveMsgBusiness extends MsgBusiness {
 
     public void setBusinessCallback(LiveMsgBusinessCallback businessCallback) {
         this.mBusinessCallback = businessCallback;
+    }
+
+    public static CustomMsg json2CustomMsg(String json, int type){
+        CustomMsg cMsg = new CustomMsg();
+        //int type = msg.getCustomMsgType();
+        if (LiveConstant.CustomMsgType.MSG_TEXT == type) {
+            LogUtil.i("json to MSG_TEXT");
+            cMsg = new Gson().fromJson(json, CustomMsgText.class);
+        }
+        else if (LiveConstant.CustomMsgType.MSG_RED_ENVELOPE == type) {
+            LogUtil.i("json to MSG_RED_ENVELOPE");
+            cMsg = new Gson().fromJson(json, CustomMsgRedEnvelope.class);
+            //onMsgRedEnvelope(msg);
+        } else if (LiveConstant.CustomMsgType.MSG_GIFT == type) {
+            LogUtil.i("json to MSG_GIFT");
+            cMsg = new Gson().fromJson(json, CustomMsgGift.class);
+            //onMsgGift(msg);
+        } else if (LiveConstant.CustomMsgType.MSG_POP_MSG == type) {
+            LogUtil.i("json to cusotomMsgPopMsg");
+            cMsg = new Gson().fromJson(json, CustomMsgPopMsg.class);
+            //onMsgPopMsg(msg);
+        } else if (LiveConstant.CustomMsgType.MSG_VIEWER_JOIN == type) {
+            LogUtil.i("json to MSG_VIEWER_JOIN");
+            cMsg = new Gson().fromJson(json, CustomMsgViewerJoin.class);
+            //onMsgViewerJoin(msg);
+        } else if (LiveConstant.CustomMsgType.MSG_VIEWER_QUIT == type) {
+            LogUtil.i("json to MSG_VIEWER_QUIT");
+            cMsg = new Gson().fromJson(json, CustomMsgViewerQuit.class);
+           //onMsgViewerQuit(msg);
+        } else if (LiveConstant.CustomMsgType.MSG_CREATER_LEAVE == type) {
+            LogUtil.i("json to MSG_CREATER_LEAVE");
+            cMsg = new Gson().fromJson(json, CustomMsgCreaterLeave.class);
+            //onMsgCreaterLeave(msg);
+        } else if (LiveConstant.CustomMsgType.MSG_CREATER_COME_BACK == type) {
+            LogUtil.i("json to MSG_CREATER_COME_BACK");
+            cMsg = new Gson().fromJson(json, CustomMsgCreaterComeback.class);
+           // onMsgCreaterComeback(msg);
+        } else if (LiveConstant.CustomMsgType.MSG_LIGHT == type) {
+            LogUtil.i("json to MSG_LIGHT");
+            cMsg = new Gson().fromJson(json, CustomMsgLight.class);
+           // onMsgLight(msg);
+        } else if (LiveConstant.CustomMsgType.MSG_END_VIDEO == type) {
+            LogUtil.i("json to MSG_END_VIDEO");
+            cMsg = new Gson().fromJson(json, CustomMsgEndVideo.class);
+            //onMsgEndVideo(msg);
+        } else if (LiveConstant.CustomMsgType.MSG_DATA == type) {
+            LogUtil.i("json to MSG_DATA");
+            cMsg = new Gson().fromJson(json, CustomMsgData.class);
+            //onMsgData(msg);
+        } else if (LiveConstant.CustomMsgType.MSG_GAME_BANKER == type) {
+            LogUtil.i("json to MSG_GAME_BANKER");
+            cMsg = new Gson().fromJson(json, CustomMsgGameBanker.class);
+            //onMsgGameBanker(msg);
+        } else if (LiveConstant.CustomMsgType.MSG_LARGE_GIFT == type) {
+            LogUtil.i("json to MSG_LARGE_GIFT");
+            cMsg = new Gson().fromJson(json, CustomMsgLargeGift.class);
+            //onMsgLargeGift(msg);
+        }
+        return cMsg;
+        /*
+        //大分类
+        if (msg.isAuctionMsg()) {
+            //竞拍消息
+            onMsgAuction(msg);
+        }
+        if (msg.isShopPushMsg()) {
+            onMsgShop(msg);
+        }
+        if (msg.isPayModeMsg()) {
+            //付费模式消息
+            onMsgPayMode(msg);
+        }
+        if (msg.isGameMsg()) {
+            //游戏消息
+            onMsgGame(msg);
+        }
+        if (msg.isLiveChatMsg()) {
+            //直播间聊天列表消息
+            onMsgLiveChat(msg);
+        }*/
     }
 
     @Override
@@ -83,6 +168,7 @@ public class LiveMsgBusiness extends MsgBusiness {
         }
         if (msg.isLiveChatMsg()) {
             //直播间聊天列表消息
+            LogUtil.i("live chat message" + msg.getCustomMsg());
             onMsgLiveChat(msg);
         }
     }

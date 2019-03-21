@@ -8,8 +8,10 @@ import com.fanwe.live.LiveConstant;
 import com.fanwe.live.LiveConstant.CustomMsgType;
 import com.fanwe.live.dao.UserModelDao;
 import com.fanwe.live.model.UserModel;
+import com.fanwe.socketio.SocketIOMessage;
 import com.tencent.TIMMessage;
 import com.tencent.TIMCustomElem;
+
 import java.io.Serializable;
 
 public class CustomMsg implements ICustomMsg, Serializable {
@@ -89,23 +91,24 @@ public class CustomMsg implements ICustomMsg, Serializable {
         }
         return msg;
     }
-    public ByteMsg parsetoByteMessage() {
-        ByteMsg bMsg = null;
+    public SocketIOMessage parsetoSocketIOMessage() {
+        SocketIOMessage sMsg = null;
         try {
             String json = SDJsonUtil.object2Json(this);
             byte[] bytes = json.getBytes(LiveConstant.DEFAULT_CHARSET);
-            bMsg = new ByteMsg(bytes);
+            sMsg = new SocketIOMessage(bytes);
+            sMsg.setJson(json);
             LogUtil.i("send json:" + json);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return bMsg;
+        return sMsg;
     }
     public final MsgModel parseToMsgModel() {
         //TO DO
         //TIMMessage timMessage = parsetoTIMMessage();
-        ByteMsg bMsg = parsetoByteMessage();
-        MsgModel msgModel = new LiveMsgModel(bMsg);
+        SocketIOMessage sMsg = parsetoSocketIOMessage();
+        MsgModel msgModel = new LiveMsgModel(sMsg);
         return msgModel;
     }
 

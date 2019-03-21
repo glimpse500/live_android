@@ -58,10 +58,12 @@ public class LivePushViewerActivity extends LiveLayoutViewerExtendActivity imple
 
         initPlayer();
         initLinkMicGroupView();
-
+        requestRoomInfo();
         if (validateParams(getRoomId(), getGroupId(), getCreaterId())) {
             requestRoomInfo();
         }
+        //To do , to be removed
+        hideLoadingVideo();
     }
 
     /**
@@ -313,18 +315,28 @@ public class LivePushViewerActivity extends LiveLayoutViewerExtendActivity imple
         String gId = actModel.getGroup_id();
         String cId = actModel.getUser_id();
 
+
         if (!validateParams(rId, gId, cId)) {
-            return;
+            SDToast.showToast("Illeagl RoomID | Group ID | UserID");
+            /*to do
+                return;
+                    */
         }
 
         super.onBsRequestRoomInfoSuccess(actModel);
+        LogUtil.i("switchVideoViewMode");
         switchVideoViewMode();
+        LogUtil.i("startJoinRoom");
         getViewerBusiness().startJoinRoom();
     }
 
     private void switchVideoViewMode() {
         if (mPlayView == null) {
+            LogUtil.i("no play view");
+            SDToast.showToast("No PlayView");
+            /*to do
             return;
+            */
         }
         if (getLiveBusiness().isPCCreate()) {
             getPlayer().setRenderModeAdjustResolution();
@@ -406,7 +418,12 @@ public class LivePushViewerActivity extends LiveLayoutViewerExtendActivity imple
         if (getRoomInfo() == null) {
             return;
         }
+
         String url = getRoomInfo().getPlay_url();
+        LogUtil.i("playUrlByRoomInfo:" + url);
+        getPlayer().stopPlay();
+        getPlayer().setUrl(url);
+        getPlayer().startPlay();
         if (validatePlayUrl(url)) {
             getPlayer().stopPlay();
             getPlayer().setUrl(url);

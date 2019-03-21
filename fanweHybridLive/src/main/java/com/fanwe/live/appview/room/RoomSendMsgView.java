@@ -33,8 +33,13 @@ import com.fanwe.live.model.custommsg.CustomMsgText;
 import com.sunday.eventbus.SDEventManager;
 import com.tencent.TIMMessage;
 import com.tencent.TIMValueCallBack;
-
-
+import com.fanwe.hybrid.http.AppHttpUtil;
+import com.fanwe.hybrid.http.AppRequestCallback;
+import com.fanwe.hybrid.http.AppRequestParams;
+import com.fanwe.live.common.CommonInterface;
+import com.fanwe.live.model.App_pop_msgActModel;
+import com.fanwe.library.adapter.http.model.SDResponse;
+import com.fanwe.socketio.SocketIOHelper;
 public class RoomSendMsgView extends RoomView {
 
     public RoomSendMsgView(Context context, AttributeSet attrs, int defStyle) {
@@ -212,39 +217,32 @@ public class RoomSendMsgView extends RoomView {
     protected void sendMessage() {
         if (mIsPopMsg) {
             LogUtil.i("mIsPopMsg : " + mStrContent);
-            CustomMsgPopMsg customMsg = new CustomMsgPopMsg();
-            customMsg.setDesc(mStrContent);
-
-            MsgModel msg = customMsg.parseToMsgModel();
-            if (msg != null) {
-                msg.setCustomMsg(customMsg);
-                msg.setLocalPost(true);
-                msg.setSelf(true);
-                msg.setCustomMsgType(LiveConstant.CustomMsgType.MSG_POP_MSG);
-                //msg.setConversationPeer(conversationId);
-
-                EImOnNewMessages event = new EImOnNewMessages();
-                event.msg = msg;
-                SDEventManager.post(event);
-            }
-            /*
             AppRequestParams params = CommonInterface.requestPopMsgParams(getLiveActivity().getRoomId(), mStrContent);
             AppHttpUtil.getInstance().post(params, new AppRequestCallback<App_pop_msgActModel>() {
                 @Override
                 protected void onSuccess(SDResponse resp) {
-                    if (actModel.isOk()) {
-                        // 扣费
-                        UserModelDao.payDiamonds(mPopMsgDiamonds);
+                    LogUtil.i("sendMessage onSuccess :" + resp.getResult());
+                    LogUtil.i("actModel.isOk()" + actModel.isOk());
+
+                    if (actModel.isOk() | actModel.getStatus() == 2) {
+                        if (actModel.getStatus() == 1)
+                            UserModelDao.payDiamonds(mPopMsgDiamonds);
+                        LogUtil.i("sendMsgGroup :" + mStrContent);
+                        CustomMsgPopMsg customMsg = new CustomMsgPopMsg();
+                        customMsg.setDesc(mStrContent);
+                        SocketIOHelper.sendMsgGroup(getLiveActivity().getGroupId(),customMsg);
+
                     } else {
                         CommonInterface.requestMyUserInfo(null);
                     }
                 }
-
                 @Override
                 protected void onError(SDResponse resp) {
+                    LogUtil.i("sendMessage onError :" +resp.getResult());
                     CommonInterface.requestMyUserInfo(null);
                 }
-            });*/
+            });
+
         } else {
             String groupId = getLiveActivity().getGroupId();
             if (TextUtils.isEmpty(groupId)) {
@@ -266,8 +264,10 @@ public class RoomSendMsgView extends RoomView {
 
             final CustomMsgText msg = new CustomMsgText();
             msg.setText(mStrContent);
+            LogUtil.i("sendMsgGroup :" + mStrContent);
+            SocketIOHelper.sendMsgGroup(getLiveActivity().getGroupId(),msg);
+            /*
             IMHelper.sendMsgGroup(groupId, msg, new TIMValueCallBack<TIMMessage>() {
-
                 @Override
                 public void onSuccess(TIMMessage timMessage) {
                     IMHelper.postMsgLocal(msg, timMessage.getConversation().getPeer());
@@ -279,7 +279,7 @@ public class RoomSendMsgView extends RoomView {
                         SDToast.showToast("该词已被禁用");
                     }
                 }
-            });
+            });*/
         }
         et_content.setText("");
     }

@@ -20,6 +20,8 @@ import com.fanwe.live.model.custommsg.CustomMsgPrivateGift;
 import com.tencent.TIMMessage;
 import com.tencent.TIMValueCallBack;
 
+import org.xutils.common.util.LogUtil;
+
 public class RoomSendGiftView extends RoomView {
     public RoomSendGiftView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -73,11 +75,12 @@ public class RoomSendGiftView extends RoomView {
     }
 
     private void sendGift(final LiveGiftModel giftModel, int is_plus) {
+        LogUtil.i("-----------Gift");
         if (giftModel != null) {
             if (getLiveActivity().getRoomInfo() == null) {
                 return;
             }
-
+            LogUtil.d(" Room sendGift");
             if (getLiveActivity().getRoomInfo().getLive_in() == 0) {
                 //私聊发礼物接口
                 final String createrId = getLiveActivity().getCreaterId();
@@ -111,6 +114,7 @@ public class RoomSendGiftView extends RoomView {
                 AppHttpUtil.getInstance().post(params, new AppRequestCallback<App_pop_propActModel>() {
                     @Override
                     protected void onSuccess(SDResponse resp) {
+                        LogUtil.d(" Room sendGift onSuccess" + resp.getResult());
                         // 扣费
                         if (actModel.isOk()) {
                             view_send_gift.sendGiftSuccess(giftModel);
@@ -119,6 +123,7 @@ public class RoomSendGiftView extends RoomView {
 
                     @Override
                     protected void onError(SDResponse resp) {
+                        LogUtil.d(" Room sendGift onError" + resp.getResult());
                         CommonInterface.requestMyUserInfo(null);
                     }
                 });
