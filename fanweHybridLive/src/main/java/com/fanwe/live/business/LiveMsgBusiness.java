@@ -14,6 +14,10 @@ import com.fanwe.live.model.custommsg.CustomMsgGift;
 import com.fanwe.live.model.custommsg.CustomMsgLargeGift;
 import com.fanwe.live.model.custommsg.CustomMsgLight;
 import com.fanwe.live.model.custommsg.CustomMsgPopMsg;
+import com.fanwe.live.model.custommsg.CustomMsgPrivateGift;
+import com.fanwe.live.model.custommsg.CustomMsgPrivateImage;
+import com.fanwe.live.model.custommsg.CustomMsgPrivateText;
+import com.fanwe.live.model.custommsg.CustomMsgPrivateVoice;
 import com.fanwe.live.model.custommsg.CustomMsgRedEnvelope;
 import com.fanwe.live.model.custommsg.CustomMsgRejectLinkMic;
 import com.fanwe.live.model.custommsg.CustomMsgStopLinkMic;
@@ -93,6 +97,23 @@ public class LiveMsgBusiness extends MsgBusiness {
         } else if (LiveConstant.CustomMsgType.MSG_LARGE_GIFT == type) {
             LogUtil.i("json to MSG_LARGE_GIFT");
             cMsg = new Gson().fromJson(json, CustomMsgLargeGift.class);
+            //onMsgLargeGift(msg);
+        } else if (LiveConstant.CustomMsgType.MSG_PRIVATE_TEXT == type) {
+            LogUtil.i("json to MSG_PRIVATE_TEXT");
+            cMsg = new Gson().fromJson(json, CustomMsgPrivateText.class);
+
+            //onMsgLargeGift(msg);
+        } else if (LiveConstant.CustomMsgType.MSG_PRIVATE_IMAGE == type) {
+            LogUtil.i("json to MSG_LARGE_GIFT");
+            cMsg = new Gson().fromJson(json, CustomMsgPrivateVoice.class);
+            //onMsgLargeGift(msg);
+        } else if (LiveConstant.CustomMsgType.MSG_PRIVATE_GIFT == type) {
+            LogUtil.i("json to MSG_LARGE_GIFT");
+            cMsg = new Gson().fromJson(json, CustomMsgPrivateImage.class);
+            //onMsgLargeGift(msg);
+        } else if (LiveConstant.CustomMsgType.MSG_PRIVATE_GIFT == type) {
+            LogUtil.i("json to MSG_LARGE_GIFT");
+            cMsg = new Gson().fromJson(json, CustomMsgPrivateGift.class);
             //onMsgLargeGift(msg);
         }
         return cMsg;

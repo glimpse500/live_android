@@ -1,12 +1,23 @@
 package com.fanwe.socketio;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 import com.fanwe.library.utils.LogUtil;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.tencent.IMCoreWrapper;
 
 
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class SocketIOManager {
     private String identification = "";
@@ -29,14 +40,31 @@ public class SocketIOManager {
         LogUtil.i("addMessageListener");
         this.msgListeners.add(var1);
     }
-    public long getConversationCount() {
+    public long getConversationCount(Activity activity) {
         //To Do
-        long tmpConversationCount = 0;
-        return tmpConversationCount;
+        SharedPreferences pref = activity.getSharedPreferences("msg_handle", Context.MODE_PRIVATE);
+        Gson gson = new Gson();
+        Type map_type = new TypeToken<HashSet<String>>(){}.getType();
+        Set<String> set = gson.fromJson(pref.getString("Conversations", ""), map_type);
+        LogUtil.i("if (set == null) ");
+        if (set == null)
+            return 0;
+        LogUtil.i("set size " + set.size());
+        return set.size();
     }
-    public SocketIOConversation getConversationByIndex(long var1) {
-        //To Do
-        return new SocketIOConversation();
+    public SocketIOConversation getConversationByIndex(Activity activity,int var1) {
+        SharedPreferences pref = activity.getSharedPreferences("msg_handle", Context.MODE_PRIVATE);
+        Gson gson = new Gson();
+        Type map_type = new TypeToken<HashSet<String>>(){}.getType();
+        Set<String> set = gson.fromJson(pref.getString("Conversations", ""), map_type);
+        if (set == null)
+            return new SocketIOConversation();
+        Type sockietIO_type = new TypeToken<SocketIOConversation>(){}.getType();
+        LogUtil.i("getConversationByIndex : " + set.toArray()[var1] );
+        String json2 = pref.getString( (String)set.toArray()[var1], "");
+        SocketIOConversation conversation = gson.fromJson(json2, sockietIO_type);
+
+        return conversation;
     }
     public void setRefreshListener(SocketIORefreshListener var1) {
         this.refreshListener = var1;
@@ -54,7 +82,8 @@ public class SocketIOManager {
     }
 
     public SocketIOConversation getConversation(SocketIOConversationType var1, String var2) {
-        if (!IMCoreWrapper.get().isReady()) {
+        if (!SocketIOHelper.connected()) {
+            LogUtil.i("not connected");
             return this.defaultConversation;
         } else if (var2 == null) {
             LogUtil.i("get conversation with null peer");

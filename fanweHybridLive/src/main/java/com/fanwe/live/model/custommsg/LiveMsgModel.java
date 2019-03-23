@@ -29,7 +29,7 @@ public class LiveMsgModel extends MsgModel {
     public void setSocketIOMessage(SocketIOMessage sMsg) {
         // 解析消息
         this.sMsg = sMsg;
-        parseCustomElem();
+        this.parseCustomElem();
     }
 
     /**
@@ -42,6 +42,7 @@ public class LiveMsgModel extends MsgModel {
                 int type = customMsg.getType();
                 UserModel sender = customMsg.getSender();
                 UserModelDao.updateLevelUp(sender);
+                setConversationPeer(sMsg.getPeer());
 
                 Class realCustomMsgClass = LiveConstant.mapCustomMsgClass.get(type);
                 if (realCustomMsgClass == null) {

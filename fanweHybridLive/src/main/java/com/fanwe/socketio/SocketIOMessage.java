@@ -5,6 +5,7 @@ public class SocketIOMessage {
     byte[] data;
     String text;
     String json;
+    String peer;
     private SocketIOConversation conversation;
 
     public SocketIOMessage()
@@ -26,6 +27,12 @@ public class SocketIOMessage {
         this.text = text;
     }
 
+    public void setPeer(String peer){
+        this.peer = peer;
+    }
+    public String getPeer(){
+        return this.peer;
+    }
     public void setData(byte[] var1) {
         this.data = var1;
     }

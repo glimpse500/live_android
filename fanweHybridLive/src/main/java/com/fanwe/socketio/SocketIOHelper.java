@@ -27,9 +27,6 @@ import com.fanwe.live.model.custommsg.MsgModel;
 import com.sunday.eventbus.SDEventManager;
 import com.fanwe.live.model.custommsg.LiveMsgModel;
 import com.fanwe.live.model.custommsg.CustomMsg;
-import com.tencent.TIMConversation;
-import com.tencent.TIMConversationType;
-import com.tencent.TIMManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -39,6 +36,7 @@ import io.socket.client.Socket;
 import io.socket.emitter.Emitter;
 
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.List;
 import com.fanwe.library.utils.SDToast;
 import com.tencent.TIMMessage;
@@ -68,37 +66,10 @@ public class SocketIOHelper {
 
         }
     };
-    private static Emitter.Listener onNewMessage = new Emitter.Listener() {
-        @Override
-        public void call(final Object... args) {
-            JSONObject data = (JSONObject) args[0];
-            String username;
-            String json_message;
-            try {
-                username = data.getString("username");
-                json_message = data.getString("message");
-                LogUtil.i("on json_message  :" + json_message);
-                JSONObject message_body = new JSONObject(json_message);
-                LogUtil.i("on message_body  :" + message_body);
-                CustomMsg cMsg = LiveMsgBusiness.json2CustomMsg(json_message,Integer.valueOf(message_body.getString("type")));
-                SocketIOMessage sMsg = cMsg.parsetoSocketIOMessage();
-                MsgModel msg = new LiveMsgModel(sMsg);
 
-                if (msg != null) {
-                    msg.setCustomMsg(cMsg);
-                    //msg.setConversationPeer(conversationId);
-                    EImOnNewMessages event = new EImOnNewMessages();
-                    event.msg = msg;
-                    LogUtil.i("SDEventManager.post(event);  :");
-                    SDEventManager.post(event);
-                }
-            }
-            catch (JSONException e) {
-                //Log.e(TAG, e.getMessage());
-                return;
-            }
-        }
-    };
+    public static String getUserID(){
+        return mUserID;
+    }
     public static void loginSocketIO(String userId, String userSig,Activity act) {
         if (isInLogin) {
             return;
@@ -147,7 +118,7 @@ public class SocketIOHelper {
 
     public static void postERefreshMsgUnReaded(boolean isFromSetLocalReade) {
         ERefreshMsgUnReaded event = new ERefreshMsgUnReaded();
-        event.model = SocketIOHelper.getC2CTotalUnreadMessageModel();
+        event.model = SocketIOHelper.getC2CTotalUnreadMessageModel(activity);
         event.isFromSetLocalReaded = isFromSetLocalReade;
         SDEventManager.post(event);
     }
@@ -165,7 +136,36 @@ public class SocketIOHelper {
         }
 
     }
-
+    public static List<MsgModel> getC2CMsgList(Activity activity) {
+        LogUtil.i("getC2CMsgList");
+        List<MsgModel> listMsg = new ArrayList<>();
+        UserModel user = UserModelDao.query();
+        if (user != null) {
+            long count = SocketIOManager.getInstance().getConversationCount(activity);
+            LogUtil.i("count = " + count);
+            for (int i = 0; i < count; ++i) {
+                SocketIOConversation conversation = SocketIOManager.getInstance().getConversationByIndex(activity,i);
+                LogUtil.i("conversation.getType()  = " + conversation.getType());
+                if (SocketIOConversationType.C2C == conversation.getType()) {
+                    // 自己对自己发的消息过滤
+                    LogUtil.i("conversation.getPeer()  = " + conversation.getPeer() + " : " + user.getUser_id());
+                    if (!conversation.getPeer().equals(user.getUser_id())) {
+                        List<SocketIOMessage> list = conversation.getLastMsgs(1);
+                        LogUtil.i("list get i "+ list.get(i).getJson());
+                        if (list != null && list.size() > 0) {
+                            SocketIOMessage sMsg = list.get(0);
+                            MsgModel msg = new LiveMsgModel(sMsg);
+                            msg.setConversationPeer(conversation.getPeer());
+                            if (msg.isPrivateMsg()) {
+                                listMsg.add(msg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return listMsg;
+    }
     public static void sendMsgGroup(String id, CustomMsg customMsg) {
         if (TextUtils.isEmpty(id)) {
             return;
@@ -214,7 +214,9 @@ public class SocketIOHelper {
             }
         });*/
     }
-    public static TotalConversationUnreadMessageModel getC2CTotalUnreadMessageModel() {
+    public static boolean connected(){return isConnected;}
+
+    public static TotalConversationUnreadMessageModel getC2CTotalUnreadMessageModel(Activity activity) {
         TotalConversationUnreadMessageModel totalUnreadMessageModel = new TotalConversationUnreadMessageModel();
 
         UserModel user = UserModelDao.query();
@@ -223,9 +225,9 @@ public class SocketIOHelper {
         }
 
         long totalUnreadNum = 0;
-        long cnt = SocketIOManager.getInstance().getConversationCount();
-        for (long i = 0; i < cnt; ++i) {
-            SocketIOConversation conversation = SocketIOManager.getInstance().getConversationByIndex(i);
+        long cnt = SocketIOManager.getInstance().getConversationCount(activity);
+        for (int i = 0; i < cnt; ++i) {
+            SocketIOConversation conversation = SocketIOManager.getInstance().getConversationByIndex(activity,i);
             SocketIOConversationType type = conversation.getType();
             if (type == SocketIOConversationType.C2C) {
                 // 自己对自己发的消息过滤
@@ -262,13 +264,11 @@ public class SocketIOHelper {
         }
         return conversation;
     }
-    public static SocketIOMessage sendMsgC2C(String id,final CustomMsg customMsg,final SocketIOValueCallBack<SocketIOMessage> callback) {
+    public static void sendMsgC2C(final String id,final CustomMsg customMsg,final SocketIOValueCallBack<SocketIOMessage> callback) {
         if (TextUtils.isEmpty(id)) {
-            return null;
+            callback.onError(0,"無聊天對象");
         }
-        //SocketIOConversation conversation = getConversationC2C(id);
-        final SocketIOMessage sMsg = customMsg.parsetoSocketIOMessage();
-        if (!isConnected) {
+        else if (!isConnected) {
             SDToast.showToast("聊天室異常");
             callback.onError(0,"聊天室異常");
         }
@@ -276,8 +276,13 @@ public class SocketIOHelper {
             CommonInterface.requestIs_black(customMsg.getSender().getUser_id(), new AppRequestCallback<User_is_blackActModel>() {
                 protected void onSuccess(SDResponse resp) {
                     if (actModel.isOk()) {
-                        mSocket.emit("c2c_msg",customMsg.getUser_id(),customMsg.getUser_id(),customMsg.parsetoSocketIOMessage().getJson());
-                        callback.onSuccess(sMsg);
+                        SocketIOMessage sMsg = customMsg.parsetoSocketIOMessage();
+                        sMsg.setPeer(customMsg.getSender().getUser_id());
+                        mSocket.emit("c2c_msg",id,customMsg.parsetoSocketIOMessage().getJson());
+                        //LogUtil.i("requestIs_black :" + customMsg.parsetoSocketIOMessage().getJson());
+
+                        callback.onSuccess(customMsg.parsetoSocketIOMessage());
+
                     }
                     else {
                         callback.onError(1,"無法傳送訊息");
@@ -305,7 +310,7 @@ public class SocketIOHelper {
             }
         }
     });*/
-        return sMsg;
+        //return sMsg;
     }
     public static SocketIOConversation getConversationC2C(String id) {
         SocketIOConversation conversation = null;
@@ -314,7 +319,40 @@ public class SocketIOHelper {
         }
         return conversation;
     }
+    private static Emitter.Listener onNewMessage = new Emitter.Listener() {
+        @Override
+        public void call(final Object... args) {
+            JSONObject data = (JSONObject) args[0];
+            String username;
+            String json_message;
+            try {
+                username = data.getString("username");
+                json_message = data.getString("message");
+                LogUtil.i("on json_message  :" + json_message);
+                JSONObject message_body = new JSONObject(json_message);
+                LogUtil.i("on message_body  :" + message_body);
+                CustomMsg cMsg = LiveMsgBusiness.json2CustomMsg(json_message,Integer.valueOf(message_body.getString("type")));
+                SocketIOMessage sMsg = cMsg.parsetoSocketIOMessage();
+                MsgModel msg = new LiveMsgModel(sMsg);
+                if (msg != null) {
+                    msg.setCustomMsg(cMsg);
+                    msg.setConversationPeer(cMsg.getSender().getUser_id());
+                    EImOnNewMessages event = new EImOnNewMessages();
+                    SocketIOConversation conversation = SocketIOManager.getInstance().getConversation(SocketIOConversationType.C2C,cMsg.getSender().getUser_id());
 
+                    conversation.writeLocalMessage(sMsg,activity);
+                    event.msg = msg;
+                    //event.sMsg = sMsg;
+                    LogUtil.i("SDEventManager.post(event);  :");
+                    SDEventManager.post(event);
+                }
+            }
+            catch (JSONException e) {
+                //Log.e(TAG, e.getMessage());
+                return;
+            }
+        }
+    };
     private static Emitter.Listener onConnect = new Emitter.Listener() {
         @Override
         public void call(Object... args) {
@@ -356,6 +394,7 @@ public class SocketIOHelper {
             activity.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
+                    isConnected = false;
                     SDToast.showToast("onConnectError");
                 }
             });
