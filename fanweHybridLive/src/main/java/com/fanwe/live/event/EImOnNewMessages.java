@@ -1,6 +1,8 @@
 package com.fanwe.live.event;
 
 import com.fanwe.live.model.custommsg.MsgModel;
+import com.fanwe.socketio.SocketIOManager;
+import com.fanwe.socketio.SocketIOMessage;
 
 /**
  * im消息
@@ -10,6 +12,7 @@ import com.fanwe.live.model.custommsg.MsgModel;
  */
 public class EImOnNewMessages {
     public MsgModel msg;
+    public SocketIOMessage sMsg;
     public String json;
     public int msgType;
 }

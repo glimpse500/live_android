@@ -11,6 +11,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+
 import com.fanwe.hybrid.dao.InitActModelDao;
 import com.fanwe.lib.player.SDMediaPlayer;
 import com.fanwe.lib.recorder.SDMediaRecorder;
@@ -20,6 +21,7 @@ import com.fanwe.library.title.SDTitleItem;
 import com.fanwe.library.title.SDTitleSimple;
 import com.fanwe.library.title.SDTitleSimple.SDTitleSimpleListener;
 import com.fanwe.library.utils.ImageFileCompresser;
+import com.fanwe.library.utils.LogUtil;
 import com.fanwe.library.utils.SDCollectionUtil;
 import com.fanwe.library.utils.SDDateUtil;
 import com.fanwe.library.utils.SDDialogUtil;
@@ -111,6 +113,7 @@ public class LivePrivateChatView extends BaseAppView {
     private LivePrivateChatBusiness mChatBusiness;
 
     private void init() {
+
         setContentView(R.layout.view_live_private_chat);
 
         title = find(R.id.title);
@@ -119,8 +122,8 @@ public class LivePrivateChatView extends BaseAppView {
         lv_content = find(R.id.lv_content);
         fl_bottom_extend = find(R.id.fl_bottom_extend);
 
-        mChatBusiness = new LivePrivateChatBusiness(mPrivateChatBusinessCallback);
-
+        mChatBusiness = new LivePrivateChatBusiness(getActivity(),mPrivateChatBusinessCallback);
+        getContext();
         mContentSizeLocker = new SDViewSizeLocker(findViewById(R.id.view_pull_to_refresh));
         initTitle();
 
@@ -156,8 +159,10 @@ public class LivePrivateChatView extends BaseAppView {
      * @param userId
      */
     public void setUserId(String userId) {
+
         mChatBusiness.setUserId(userId);
         mChatBusiness.requestUserInfo();
+        LogUtil.i("setUserId ,loadHistoryMessage");
         mChatBusiness.loadHistoryMessage(20);
     }
 
@@ -831,6 +836,7 @@ public class LivePrivateChatView extends BaseAppView {
 
         @Override
         public void onAdapterAppendData(MsgModel model) {
+            LogUtil.i("onAdapterAppendData");
             mAdapter.appendData(model);
             lv_content.scrollToEndDelayed(SCROLL_DELAY);
         }

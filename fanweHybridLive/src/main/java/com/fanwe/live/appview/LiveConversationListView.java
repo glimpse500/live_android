@@ -14,6 +14,7 @@ import com.fanwe.library.common.SDHandlerManager;
 import com.fanwe.library.listener.SDItemClickCallback;
 import com.fanwe.library.listener.SDItemLongClickCallback;
 import com.fanwe.library.model.SDTaskRunnable;
+import com.fanwe.library.utils.LogUtil;
 import com.fanwe.library.utils.SDCollectionUtil;
 import com.fanwe.live.IMHelper;
 import com.fanwe.live.R;
@@ -27,6 +28,10 @@ import com.fanwe.live.model.LiveConversationListModel;
 import com.fanwe.live.model.UserModel;
 import com.fanwe.live.model.custommsg.MsgModel;
 import com.fanwe.live.view.pulltorefresh.IPullToRefreshViewWrapper;
+import com.fanwe.socketio.SocketIOConversation;
+import com.fanwe.socketio.SocketIOConversationType;
+import com.fanwe.socketio.SocketIOHelper;
+import com.fanwe.socketio.SocketIOManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -130,6 +135,10 @@ public class LiveConversationListView extends BaseAppView {
             @Override
             protected void onSuccess(SDResponse resp) {
                 if (actModel.isOk()) {
+                    LogUtil.i("mListFollow : " +  actModel.getList());
+                    for (int i = 0;i < actModel.getList().size();i++){
+                        LogUtil.i(" mListFollow i : " +  actModel.getList().get(i).getNick_name());
+                    }
                     mListFollow = actModel.getList();
                     filterMsg(actModel.getList());
                 }
@@ -149,22 +158,28 @@ public class LiveConversationListView extends BaseAppView {
      * @param listFollow 关注列表
      */
     private void filterMsg(final List<UserModel> listFollow) {
+        LogUtil.i("filterMsg");
         SDHandlerManager.getBackgroundHandler().post(new SDTaskRunnable<String>() {
             @Override
             public String onBackground() {
                 synchronized (mLock) {
-                    List<MsgModel> listMsg = IMHelper.getC2CMsgList();
+                   // List<MsgModel> listMsg = IMHelper.getC2CMsgList();
+                    List<MsgModel> listMsg = SocketIOHelper.getC2CMsgList(getActivity());
                     if (listMsg != null) {
                         mListMsgFollow.clear();
                         mListMsgUnknow.clear();
 
                         if (SDCollectionUtil.isEmpty(listFollow)) {
+                            LogUtil.i(" SDCollectionUtil.isEmpty(listFollow) " );
                             mListMsgUnknow.addAll(listMsg);
                         } else {
+                            LogUtil.i(" Else " );
                             for (MsgModel msg : listMsg) {
                                 boolean isFollow = false;
                                 String peer = msg.getConversationPeer();
+                                LogUtil.i("peer" + peer);
                                 for (UserModel user : listFollow) {
+                                    LogUtil.i("user.getUser_id() i " + user.getUser_id());
                                     if (peer.equals(user.getUser_id())) {
                                         isFollow = true;
                                         break;
@@ -173,7 +188,10 @@ public class LiveConversationListView extends BaseAppView {
                                 if (isFollow) {
                                     // 好友
                                     mListMsgFollow.add(msg);
+                                    LogUtil.i("mListMsgFollow.size" + mListMsgFollow.size()+ " " +  mListMsgUnknow.size() );
+
                                 } else {
+                                    LogUtil.i("mListMsgUnknow.size" + mListMsgFollow.size() + " " +  mListMsgUnknow.size() );
                                     mListMsgUnknow.add(msg);
                                 }
                             }
@@ -276,6 +294,7 @@ public class LiveConversationListView extends BaseAppView {
 
     public void onEventMainThread(EImOnNewMessages event) {
         MsgModel msg = event.msg;
+        LogUtil.i("onEventMainThread msg.isLocalPost() : " + msg.isLocalPost());
         if (msg.isLocalPost()) {
         } else {
             if (msg.isPrivateMsg()) {
@@ -285,6 +304,7 @@ public class LiveConversationListView extends BaseAppView {
     }
 
     private void dealNewMsg(final MsgModel msg) {
+
         SDHandlerManager.getBackgroundHandler().post(new SDTaskRunnable<LiveConversationListModel>() {
             @Override
             public LiveConversationListModel onBackground() {
@@ -297,7 +317,6 @@ public class LiveConversationListView extends BaseAppView {
                             break;
                         }
                     }
-
                     LiveConversationListModel model = null;
                     if (containIndex < 0) {
                         boolean isFollowMsg = false;
@@ -331,6 +350,7 @@ public class LiveConversationListView extends BaseAppView {
 
             @Override
             public void onMainThread(LiveConversationListModel model) {
+                LogUtil.i("onMainThread");
                 if (model != null) {
                     notifyAdapter();
                     notifyTotalUnreadNumListener();

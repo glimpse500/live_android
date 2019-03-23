@@ -97,6 +97,7 @@ public class CustomMsg implements ICustomMsg, Serializable {
             String json = SDJsonUtil.object2Json(this);
             byte[] bytes = json.getBytes(LiveConstant.DEFAULT_CHARSET);
             sMsg = new SocketIOMessage(bytes);
+            sMsg.setPeer(user_id);
             sMsg.setJson(json);
             LogUtil.i("send json:" + json);
         } catch (Exception e) {
@@ -108,6 +109,7 @@ public class CustomMsg implements ICustomMsg, Serializable {
         //TO DO
         //TIMMessage timMessage = parsetoTIMMessage();
         SocketIOMessage sMsg = parsetoSocketIOMessage();
+
         MsgModel msgModel = new LiveMsgModel(sMsg);
         return msgModel;
     }

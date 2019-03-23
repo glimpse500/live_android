@@ -193,4 +193,6 @@ dependencies {
     implementation('io.socket:socket.io-client:0.8.3') {
         exclude group: 'org.json', module: 'json'
     }
+    //GSON
+    implementation 'com.google.code.gson:gson:2.8.5'
 }

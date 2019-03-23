@@ -2,6 +2,7 @@ package com.fanwe.live.business;
 
 import com.fanwe.hybrid.http.AppRequestCallback;
 import com.fanwe.library.adapter.http.model.SDResponse;
+import com.fanwe.library.utils.LogUtil;
 import com.fanwe.library.utils.SDCollectionUtil;
 import com.fanwe.live.IMHelper;
 import com.fanwe.live.LiveInformation;
@@ -16,10 +17,14 @@ import com.fanwe.live.model.custommsg.CustomMsgPrivateGift;
 import com.fanwe.live.model.custommsg.CustomMsgPrivateImage;
 import com.fanwe.live.model.custommsg.CustomMsgPrivateText;
 import com.fanwe.live.model.custommsg.CustomMsgPrivateVoice;
+import com.fanwe.live.model.custommsg.LiveMsgModel;
 import com.fanwe.live.model.custommsg.MsgModel;
 import com.fanwe.live.model.custommsg.MsgStatus;
 import com.fanwe.live.model.custommsg.TIMMsgModel;
+import com.fanwe.socketio.SocketIOConversation;
+import com.fanwe.socketio.SocketIOConversationType;
 import com.fanwe.socketio.SocketIOHelper;
+import com.fanwe.socketio.SocketIOManager;
 import com.fanwe.socketio.SocketIOMessage;
 import com.fanwe.socketio.SocketIOValueCallBack;
 import com.tencent.TIMConversation;
@@ -30,20 +35,27 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import android.content.Context;
+import android.app.Activity;
+import android.util.Log;
 
 /**
  * 私聊业务类
  */
 public class LivePrivateChatBusiness extends BaseBusiness {
-    public LivePrivateChatBusiness(LivePrivateChatBusinessCallback callback) {
+    public LivePrivateChatBusiness(Activity activity,LivePrivateChatBusinessCallback callback) {
         mCallback = callback;
+        mActivity = activity;
+
     }
 
     private TIMMessage mLastMsg;
+    private SocketIOMessage mLastsMsg;
     /**
      * 私聊的用户id
      */
     private String mUserId;
+    private Activity mActivity;
     private LivePrivateChatBusinessCallback mCallback;
 
     /**
@@ -65,11 +77,25 @@ public class LivePrivateChatBusiness extends BaseBusiness {
      *
      * @param lastMsg
      */
-    public void setLastMsg(TIMMessage lastMsg) {
-        mLastMsg = lastMsg;
+    public void setLastMsg(SocketIOMessage lastMsg) {
+        mLastsMsg = lastMsg;
     }
 
     /**
+     * 设置最后一条im消息，加载历史消息的时候会从从最后一条消息往前加载
+     *
+     * @param lastMsg
+     */
+    /*
+    public void setLastMsg(TIMMessage lastMsg) {
+        mLastMsg = lastMsg;
+    }*/
+
+
+
+
+    /**
+     *
      * 是否可以发私信
      *
      * @return
@@ -125,12 +151,48 @@ public class LivePrivateChatBusiness extends BaseBusiness {
             }
         });
     }
-
     /**
      * 加载历史消息
      *
      * @param count
      */
+
+    public void loadHistoryMessage(int count) {
+        SocketIOConversation conversation = SocketIOHelper.getConversationC2C(mUserId);
+        if (conversation == null) {
+            return;
+        }
+        final List<MsgModel> listLocal = new ArrayList<>();
+        conversation.getLocalMessage(count, mLastsMsg, mActivity,new SocketIOValueCallBack<List<SocketIOMessage>>() {
+            @Override
+            public void onSuccess(List<SocketIOMessage> list) {
+                LogUtil.i(" loadHistoryMessage onSuccess = ");
+                if (!SDCollectionUtil.isEmpty(list)) {
+                    Collections.reverse(list);
+                    setLastMsg(list.get(0));
+                    for (SocketIOMessage msg : list) {
+                        MsgModel msgModel = new LiveMsgModel(msg);
+                        if (msgModel.isPrivateMsg() && msgModel.getStatus() != MsgStatus.HasDeleted) {
+                            listLocal.add(msgModel);
+                        }
+                    }
+                }
+                mCallback.onLoadHistoryMessageSuccess(listLocal);
+            }
+
+            @Override
+            public void onError(int arg0, String str) {
+                LogUtil.i(" loadHistoryMessage onError = " + str);
+                mCallback.onLoadHistoryMessageError();
+            }
+        });
+    }
+    /**
+     * 加载历史消息
+     *
+     * @param count
+     */
+    /*
     public void loadHistoryMessage(int count) {
         TIMConversation conversation = IMHelper.getConversationC2C(mUserId);
         if (conversation == null) {
@@ -160,7 +222,7 @@ public class LivePrivateChatBusiness extends BaseBusiness {
                 mCallback.onLoadHistoryMessageError();
             }
         });
-    }
+    }*/
 
     /**
      * 接收IM新消息的时候调用
@@ -169,6 +231,10 @@ public class LivePrivateChatBusiness extends BaseBusiness {
      */
     public void onEventMainThread(EImOnNewMessages event) {
         // 判断新消息来源是否是当前用户
+        LogUtil.i("onEventMainThread" + event.msg.getConversationPeer());
+        LogUtil.i("mUserId" + mUserId);
+        LogUtil.i("event.msg.isPrivateMsg() " + event.msg.isPrivateMsg());
+        LogUtil.i("event.msg.getCustomMsgType() " + event.msg.getCustomMsgType() );
         if (event.msg.getConversationPeer().equals(mUserId)) {
             if (event.msg.isPrivateMsg()) {
                 mCallback.onAdapterAppendData(event.msg);
@@ -184,8 +250,9 @@ public class LivePrivateChatBusiness extends BaseBusiness {
     public void sendIMText(String content) {
         CustomMsgPrivateText msg = new CustomMsgPrivateText();
         msg.setText(content);
-
+        msg.setUser_id(mUserId);
         MsgModel msgModel = msg.parseToMsgModel();
+        //msgModel.setConversationPeer();
         mCallback.onAdapterAppendData(msgModel);
 
         sendIMMsg(msgModel);
@@ -239,17 +306,21 @@ public class LivePrivateChatBusiness extends BaseBusiness {
         sendIMMsg(msgModel);
     }
 
-    public TIMMessage sendIMMsg(final MsgModel model) {
+    public void sendIMMsg(final MsgModel model) {
         final int index = mCallback.onAdapterIndexOf(model);
-        /*
-        SocketIOMessage sMsg =  SocketIOHelper.sendMsgC2C(mUserId,model.getCustomMsg(),new SocketIOValueCallBack<SocketIOMessage>() {
+
+        SocketIOHelper.sendMsgC2C(mUserId,model.getCustomMsg(),new SocketIOValueCallBack<SocketIOMessage>() {
             @Override
-            public void onSuccess(TIMMessage timMessage) {
-                if (mLastMsg == null) {
-                    mLastMsg = timMessage;
+            public void onSuccess(SocketIOMessage sMsg) {
+                SocketIOConversation conversation = SocketIOManager.getInstance().getConversation(SocketIOConversationType.C2C,mUserId);
+                if (mLastsMsg == null) {
+                    mLastsMsg = sMsg;
                 }
                 if (model.getStatus() == MsgStatus.SendFail) {
                     model.remove();
+                }
+                else{
+                    conversation.writeLocalMessage(sMsg,mActivity);
                 }
                 //TO DO
                 //model.setTimMessage(timMessage);
@@ -261,9 +332,10 @@ public class LivePrivateChatBusiness extends BaseBusiness {
             public void onError(int arg0, String arg1) {
                 mCallback.onAdapterUpdateData(index);
             }
-        });*/
+        });
 
-
+        //TO DO
+        /*
         TIMMessage timMessageSending = IMHelper.sendMsgC2C(mUserId, model.getCustomMsg(), new TIMValueCallBack<TIMMessage>() {
 
             @Override
@@ -276,7 +348,7 @@ public class LivePrivateChatBusiness extends BaseBusiness {
                     model.remove();
                 }
 
-                //TO DO
+
                 //model.setTimMessage(timMessage);
 
                 mCallback.onAdapterUpdateData(index, model);
@@ -287,10 +359,12 @@ public class LivePrivateChatBusiness extends BaseBusiness {
                 mCallback.onAdapterUpdateData(index);
             }
         });
-        //TO DO
-        //model.setTimMessage(timMessageSending);
+
+       model.setTimMessage(timMessageSending);
+        */
+
         mCallback.onAdapterUpdateData(index, model);
-        return timMessageSending;
+
     }
 
     @Override
