@@ -26,7 +26,7 @@
                 android:layout_width="@dimen/height_user_head_l"
                 android:layout_height="@dimen/height_user_head_l">
 
-                <com.fanwe.library.view.CircleImageView
+                <com.oolive.library.view.CircleImageView
                     android:id="@+id/iv_user_head_xr_view_holder_user_dynamic_comment_reply"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -105,7 +105,7 @@
                 <!--android:textColor="@color/textColorSecondary"-->
                 <!--android:textSize="@dimen/text_size_caption"/>-->
 
-                <com.fanwe.live.view.LivePrivateChatSpanTextView
+                <com.oolive.live.view.LivePrivateChatSpanTextView
                     android:id="@+id/tv_content_xr_view_holder_user_dynamic_comment_reply"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

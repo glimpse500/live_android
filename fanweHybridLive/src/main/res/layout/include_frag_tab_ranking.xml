@@ -7,21 +7,21 @@
     android:paddingRight="15dp"
     android:orientation="horizontal">
 
-    <com.fanwe.live.view.LiveTabUnderline
+    <com.oolive.live.view.LiveTabUnderline
         android:id="@+id/tab_rank_day"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="match_parent"
         android:background="@color/white" />
 
-    <com.fanwe.live.view.LiveTabUnderline
+    <com.oolive.live.view.LiveTabUnderline
         android:id="@+id/tab_rank_month"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="match_parent"
         android:background="@color/white" />
 
-    <com.fanwe.live.view.LiveTabUnderline
+    <com.oolive.live.view.LiveTabUnderline
         android:id="@+id/tab_rank_total"
         android:layout_width="0dp"
         android:layout_weight="1"

@@ -19,7 +19,7 @@
             android:clipChildren="false"
             android:orientation="horizontal">
 
-            <com.fanwe.libgame.dice.view.DiceScoreBoardBigView
+            <com.oolive.libgame.dice.view.DiceScoreBoardBigView
                 android:id="@+id/view_dice_score_board_big_view_dice_panel_body"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
                 android:clipChildren="false"
                 app:layout_marginTopPercent="20%"/>
 
-            <com.fanwe.libgame.dice.view.DiceScoreBoardMiddleView
+            <com.oolive.libgame.dice.view.DiceScoreBoardMiddleView
                 android:id="@+id/view_dice_score_board_middle_view_dice_panel_body"
                 android:layout_width="0dp"
                 android:clipChildren="false"
@@ -38,7 +38,7 @@
                 app:layout_marginBottomPercent="20%"
                 app:layout_marginTopPercent="20%"/>
 
-            <com.fanwe.libgame.dice.view.DiceScoreBoardSmallView
+            <com.oolive.libgame.dice.view.DiceScoreBoardSmallView
                 android:id="@+id/view_dice_score_board_small_view_dice_panel_body"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -49,7 +49,7 @@
                 app:layout_marginTopPercent="20%"/>
         </com.zhy.android.percent.support.PercentLinearLayout>
 
-        <com.fanwe.libgame.dice.view.DiceAnimView
+        <com.oolive.libgame.dice.view.DiceAnimView
             android:id="@+id/view_dice_anim_view_dice_panel_body"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>

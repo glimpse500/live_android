@@ -25,7 +25,7 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <com.fanwe.library.view.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                <com.oolive.library.view.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/iv_envelope_head"
                     android:layout_width="70dp"
                     android:layout_height="70dp"

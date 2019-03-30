@@ -124,11 +124,11 @@
         android:layout_alignParentBottom="true"></FrameLayout>
 
     <!-- 底部扩展 -->
-    <com.fanwe.library.view.SDReplaceableLayout
+    <com.oolive.library.view.SDReplaceableLayout
         android:id="@+id/fl_bottom_extend"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"></com.fanwe.library.view.SDReplaceableLayout>
+        android:layout_alignParentBottom="true"></com.oolive.library.view.SDReplaceableLayout>
 
     <!-- 点亮心心 -->
     <FrameLayout
@@ -140,9 +140,9 @@
         android:layout_marginBottom="40dp"></FrameLayout>
 
     <!-- 播放音乐 -->
-    <com.fanwe.live.view.LiveDragRelativeLayout
+    <com.oolive.live.view.LiveDragRelativeLayout
         android:id="@+id/fl_live_play_music"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></com.fanwe.live.view.LiveDragRelativeLayout>
+        android:layout_height="match_parent"></com.oolive.live.view.LiveDragRelativeLayout>
 
 </RelativeLayout>

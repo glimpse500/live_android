@@ -13,7 +13,7 @@
         android:gravity="center_vertical|left"
         android:orientation="horizontal" >
 
-        <com.fanwe.library.title.SDTitleItem
+        <com.oolive.library.title.SDTitleItem
             android:id="@+id/title_left"
             android:layout_width="wrap_content"
             android:layout_height="match_parent" />
@@ -27,7 +27,7 @@
         android:gravity="center"
         android:orientation="horizontal" >
 
-        <com.fanwe.library.title.SDTitleItem
+        <com.oolive.library.title.SDTitleItem
             android:id="@+id/title_middle"
             android:layout_width="wrap_content"
             android:layout_height="match_parent" />

@@ -24,7 +24,7 @@
             android:textColor="@color/white"
             android:textSize="11sp" />
 
-        <com.fanwe.xianrou.widget.QKDiamondTextView
+        <com.oolive.xianrou.widget.QKDiamondTextView
             style="@style/res.Text.Shadow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

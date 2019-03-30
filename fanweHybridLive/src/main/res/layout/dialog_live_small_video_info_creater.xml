@@ -32,7 +32,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <com.fanwe.library.view.CircleImageView android:id="@+id/iv_head"
+        <com.oolive.library.view.CircleImageView android:id="@+id/iv_head"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="80dp"
             android:layout_height="80dp"

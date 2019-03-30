@@ -20,7 +20,7 @@
 
         <include layout="@layout/item_name_sex_level" />
 
-        <com.fanwe.live.view.LivePrivateChatSpanTextView
+        <com.oolive.live.view.LivePrivateChatSpanTextView
             android:id="@+id/tv_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
             android:textColor="@color/res_text_gray_m"
             android:textSize="10sp" />
 
-        <com.fanwe.live.view.LiveUnReadNumTextView
+        <com.oolive.live.view.LiveUnReadNumTextView
             android:id="@+id/tv_unreadnum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

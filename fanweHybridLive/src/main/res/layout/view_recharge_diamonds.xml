@@ -48,7 +48,7 @@
             android:overScrollMode="never"
             android:scrollbars="none">
 
-            <com.fanwe.library.customview.SDGridLinearLayout
+            <com.oolive.library.customview.SDGridLinearLayout
                 android:id="@+id/lv_pay_rule"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

@@ -18,20 +18,20 @@
             android:layout_weight="1"
             android:background="@color/res_bg_activity">
 
-            <com.fanwe.library.view.SDRecyclerView
+            <com.oolive.library.view.SDRecyclerView
                 android:id="@+id/lv_content"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
         </com.fanwe.lib.pulltorefresh.SDPullToRefreshView>
 
-        <com.fanwe.live.appview.LivePrivateChatBarView
+        <com.oolive.live.appview.LivePrivateChatBarView
             android:id="@+id/view_chat_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <!-- 底部扩展布局 -->
-        <com.fanwe.library.view.SDReplaceableLayout
+        <com.oolive.library.view.SDReplaceableLayout
             android:id="@+id/fl_bottom_extend"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
     </LinearLayout>
 
 
-    <com.fanwe.live.appview.LivePrivateChatRecordView
+    <com.oolive.live.appview.LivePrivateChatRecordView
         android:id="@+id/view_record"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

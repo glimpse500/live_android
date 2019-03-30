@@ -1,0 +1,69 @@
+package com.oolive.live.activity;
+
+import android.os.Bundle;
+import android.view.View;
+
+import com.oolive.hybrid.activity.BaseTitleActivity;
+import com.oolive.library.model.ImageModel;
+import com.oolive.library.title.SDTitleItem;
+import com.oolive.library.utils.SDToast;
+import com.oolive.live.R;
+import com.oolive.live.appview.SDSelectImageView;
+import com.oolive.live.event.ESelectImage;
+import com.sunday.eventbus.SDEventManager;
+
+import java.util.List;
+
+/**
+ * Created by Administrator on 2016/9/1.
+ */
+public class SelectPhotoActivity extends BaseTitleActivity {
+    private SDSelectImageView view_select_image;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.act_select_photo);
+
+        mTitle.setMiddleTextTop("图片");
+        mTitle.initRightItem(1);
+        mTitle.getItemRight(0).setTextBot("发送");
+
+        view_select_image = find(R.id.view_select_image);
+
+        view_select_image.callback.set(selectImageCallback);
+        view_select_image.setSelectMode(SDSelectImageView.EnumSelectMode.multi);
+        view_select_image.loadImage();
+    }
+
+    private SDSelectImageView.SelectImageCallback selectImageCallback = new SDSelectImageView.SelectImageCallback() {
+        @Override
+        public boolean onSelect(int position, ImageModel model) {
+            if (view_select_image.getSelectedImages().size() > 9) {
+                SDToast.showToast("最多只能选择9张");
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        @Override
+        public void onItemClick(int position, ImageModel item, View view) {
+
+        }
+    };
+
+    @Override
+    public void onCLickRight_SDTitleSimple(SDTitleItem v, int index) {
+        List<ImageModel> listImage = view_select_image.getSelectedImages();
+
+        if (listImage.isEmpty()) {
+            SDToast.showToast("请选择图片");
+        } else {
+            ESelectImage event = new ESelectImage();
+            event.listImage.addAll(listImage);
+            SDEventManager.post(event);
+            finish();
+        }
+    }
+}

@@ -66,7 +66,7 @@
                             android:layout_centerInParent="true"
                             android:src="@drawable/ic_private_chat_white" />
 
-                        <com.fanwe.live.view.LiveUnReadNumTextView
+                        <com.oolive.live.view.LiveUnReadNumTextView
                             android:id="@+id/tv_total_unreadnum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -83,13 +83,13 @@
                     </RelativeLayout>
                 </RelativeLayout>
 
-                <com.fanwe.live.appview.LiveUserInfoCommonView
+                <com.oolive.live.appview.LiveUserInfoCommonView
                     android:id="@+id/view_live_user_info"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/rl_layout_title" />
 
-                <com.fanwe.live.appview.LiveUserInfoTabCommonView
+                <com.oolive.live.appview.LiveUserInfoTabCommonView
                     android:id="@+id/view_live_user_info_tab"
                     android:layout_width="match_parent"
                     android:layout_height="71dp"
@@ -126,7 +126,7 @@
                         style="@style/fra_tab_me_tv"
                         android:text="0" />
 
-                    <com.fanwe.xianrou.widget.QKDiamondTextView
+                    <com.oolive.xianrou.widget.QKDiamondTextView
                         style="@style/fra_tab_me_tv"
                         android:text="$" />
 
@@ -173,7 +173,7 @@
                         style="@style/fra_tab_me_tv"
                         android:text="0" />
 
-                    <com.fanwe.live.view.LiveStringTicketTextView
+                    <com.oolive.live.view.LiveStringTicketTextView
                         android:id="@+id/tv_ticket_name"
                         style="@style/fra_tab_me_tv"
                         android:layout_gravity="center"
@@ -349,7 +349,7 @@
                     android:layout_height="1px"
                     android:layout_weight="1" />
 
-                <com.fanwe.xianrou.widget.QKDiamondTextView
+                <com.oolive.xianrou.widget.QKDiamondTextView
                     android:id="@+id/tv_use_diamonds"
                     style="@style/fra_tab_me_tv"
                     android:layout_marginRight="10dp"

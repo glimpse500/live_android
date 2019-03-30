@@ -142,11 +142,11 @@
         android:layout_alignParentBottom="true"></FrameLayout>
 
     <!-- 底部扩展 -->
-    <com.fanwe.library.view.SDReplaceableLayout
+    <com.oolive.library.view.SDReplaceableLayout
         android:id="@+id/fl_bottom_extend"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"></com.fanwe.library.view.SDReplaceableLayout>
+        android:layout_alignParentBottom="true"></com.oolive.library.view.SDReplaceableLayout>
 
     <!-- 点亮心心 -->
     <FrameLayout

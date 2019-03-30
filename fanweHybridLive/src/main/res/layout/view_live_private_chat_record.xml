@@ -54,7 +54,7 @@
 
     </LinearLayout>
 
-    <com.fanwe.live.view.LiveRecordView
+    <com.oolive.live.view.LiveRecordView
         android:id="@+id/view_record_gesture"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

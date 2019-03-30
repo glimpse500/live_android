@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp">
 
-                <com.fanwe.library.view.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                <com.oolive.library.view.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/civ_head_other"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
@@ -43,7 +43,7 @@
                     app:civ_border_color="@color/white"
                     app:civ_border_width="1dp" />
 
-                <com.fanwe.library.view.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                <com.oolive.library.view.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/civ_level_other"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
@@ -112,7 +112,7 @@
                     android:textColor="#666666"
                     android:textSize="15sp" />
 
-                <com.fanwe.live.view.LiveStringTicketTextView
+                <com.oolive.live.view.LiveStringTicketTextView
                     android:id="@+id/tv_ticket_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

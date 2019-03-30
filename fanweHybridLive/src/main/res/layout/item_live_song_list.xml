@@ -80,7 +80,7 @@
             android:textColor="@color/live_song_download_text"
             android:textSize="@dimen/res_text_s" />
 
-        <com.fanwe.live.view.progressbar.RoundProgressBarWidthNumber
+        <com.oolive.live.view.progressbar.RoundProgressBarWidthNumber
             android:id="@+id/pb_download"
             android:layout_width="30dp"
             android:layout_height="30dp"

@@ -39,7 +39,7 @@
             android:src="@drawable/ic_live_play_music"
             android:visibility="visible" />
 
-        <com.fanwe.live.music.lrc.LrcView
+        <com.oolive.live.music.lrc.LrcView
             android:id="@+id/lrc_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -32,15 +32,15 @@
         android:layout_weight="1"
         android:gravity="right">
 
-        <com.fanwe.live.view.TabLeftImage
+        <com.oolive.live.view.TabLeftImage
             android:id="@+id/left_tab_sort0"
             android:layout_width="50dp"
-            android:layout_height="30dp"></com.fanwe.live.view.TabLeftImage>
+            android:layout_height="30dp"></com.oolive.live.view.TabLeftImage>
 
-        <com.fanwe.live.view.TabLeftImage
+        <com.oolive.live.view.TabLeftImage
             android:id="@+id/left_tab_sort1"
             android:layout_width="50dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="7dp"></com.fanwe.live.view.TabLeftImage>
+            android:layout_marginLeft="7dp"></com.oolive.live.view.TabLeftImage>
     </LinearLayout>
 </LinearLayout>

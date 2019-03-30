@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true" />
 
-    <com.fanwe.live.appview.LiveLinkMicGroupView
+    <com.oolive.live.appview.LiveLinkMicGroupView
         android:id="@+id/view_link_mic_group"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
@@ -23,7 +23,7 @@
         android:layout_height="match_parent" />
 
     <!-- 关闭按钮 -->
-    <com.fanwe.live.appview.room.RoomCloseView
+    <com.oolive.live.appview.room.RoomCloseView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"

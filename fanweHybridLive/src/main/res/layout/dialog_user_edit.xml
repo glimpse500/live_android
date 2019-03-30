@@ -13,7 +13,7 @@
         android:orientation="vertical"
         android:layout_margin="15dp">
 
-        <com.fanwe.library.customview.ClearEditText
+        <com.oolive.library.customview.ClearEditText
             android:id="@+id/et_edit_dialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
             android:text="0/0"
             android:textColor="@color/res_text_gray_m" />
 
-        <com.fanwe.xianrou.widget.QKDiamondTextView
+        <com.oolive.xianrou.widget.QKDiamondTextView
             android:id="@+id/tv_text_nick_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

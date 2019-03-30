@@ -69,7 +69,7 @@
                 android:layout_height="1px"
                 android:background="@color/res_stroke" />
 
-            <com.fanwe.library.customview.SDGridLinearLayout
+            <com.oolive.library.customview.SDGridLinearLayout
                 android:id="@+id/ll_payment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -98,7 +98,7 @@
                 android:layout_height="1px"
                 android:background="@color/res_stroke" />
 
-            <com.fanwe.library.customview.SDGridLinearLayout
+            <com.oolive.library.customview.SDGridLinearLayout
                 android:id="@+id/ll_payment_rule"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: :fanwei-jubaosdk-release-v5.6:@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-fanwei-jubaosdk-release-v5.6.aar/770bd7a3dd9c2d3974e16332617ecc13/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-fanwei-jubaosdk-release-v5.6.aar/770bd7a3dd9c2d3974e16332617ecc13/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-fanwei-jubaosdk-release-v5.6.aar/770bd7a3dd9c2d3974e16332617ecc13/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

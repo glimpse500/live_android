@@ -16,14 +16,14 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <com.fanwe.live.view.LiveTabUnderline
+        <com.oolive.live.view.LiveTabUnderline
             android:id="@+id/tab_rank_merits"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="@dimen/height_title_bar"
             android:background="@color/white" />
 
-        <com.fanwe.live.view.LiveTabUnderline
+        <com.oolive.live.view.LiveTabUnderline
             android:id="@+id/tab_rank_contribution"
             android:layout_width="0dp"
             android:layout_weight="1"

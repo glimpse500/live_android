@@ -7,7 +7,7 @@
     android:weightSum="4"
     android:orientation="horizontal">
 
-    <com.fanwe.live.view.LiveTabUnderline
+    <com.oolive.live.view.LiveTabUnderline
         android:id="@+id/tab_live_anchor"
         android:layout_width="0dp"
         android:layout_weight="1"
@@ -20,7 +20,7 @@
         android:layout_gravity="center"
         android:background="@color/divider_line" />
 
-    <com.fanwe.live.view.LiveTabUnderline
+    <com.oolive.live.view.LiveTabUnderline
         android:id="@+id/tab_live_member_list"
         android:layout_width="0dp"
         android:layout_weight="1"
@@ -33,7 +33,7 @@
         android:layout_gravity="center"
         android:background="@color/divider_line" />
 
-    <com.fanwe.live.view.LiveTabUnderline
+    <com.oolive.live.view.LiveTabUnderline
         android:id="@+id/tab_live_member_apply"
         android:layout_width="0dp"
         android:layout_weight="1"
@@ -46,7 +46,7 @@
         android:layout_gravity="center"
         android:background="@color/divider_line" />
 
-    <com.fanwe.live.view.LiveTabUnderline
+    <com.oolive.live.view.LiveTabUnderline
         android:id="@+id/tab_live_exit_apply"
         android:layout_width="0dp"
         android:layout_weight="1"

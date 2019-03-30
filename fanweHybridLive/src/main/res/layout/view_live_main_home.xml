@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.fanwe.live.appview.title.LiveMainHomeTitleView
+    <com.oolive.live.appview.title.LiveMainHomeTitleView
         android:id="@+id/view_title"
         android:layout_width="match_parent"
         android:layout_height="@dimen/res_height_title_bar"

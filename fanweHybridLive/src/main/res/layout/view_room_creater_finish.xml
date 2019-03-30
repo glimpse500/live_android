@@ -13,7 +13,7 @@
         android:scaleType="centerCrop"
         android:src="@color/res_blur_m" />
 
-    <com.fanwe.live.view.InterceptTouchEventLinearLayout
+    <com.oolive.live.view.InterceptTouchEventLinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
@@ -27,7 +27,7 @@
             android:textColor="@color/white"
             android:textSize="@dimen/res_text_title_bar" />
 
-        <com.fanwe.library.view.CircleImageView
+        <com.oolive.library.view.CircleImageView
             android:id="@+id/civ_head_img"
             android:layout_width="92dp"
             android:layout_height="92dp"
@@ -101,7 +101,7 @@
                         android:textColor="@color/white"
                         android:textSize="@dimen/res_text_s" />
 
-                    <com.fanwe.live.view.LiveStringTicketTextView
+                    <com.oolive.live.view.LiveStringTicketTextView
                         style="@style/fra_tab_me_tv"
                         android:textColor="@color/white"
                         android:layout_gravity="center"
@@ -169,6 +169,6 @@
             android:textSize="@dimen/res_text_m"
             android:visibility="invisible" />
 
-    </com.fanwe.live.view.InterceptTouchEventLinearLayout>
+    </com.oolive.live.view.InterceptTouchEventLinearLayout>
 
 </RelativeLayout>

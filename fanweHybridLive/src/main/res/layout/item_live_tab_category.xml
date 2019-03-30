@@ -5,7 +5,7 @@
     android:gravity="left|center_vertical"
     android:orientation="horizontal">
 
-    <com.fanwe.live.appview.ItemLiveTabCategorySingle
+    <com.oolive.live.appview.ItemLiveTabCategorySingle
         android:id="@+id/item_view0"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

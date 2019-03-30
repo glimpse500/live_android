@@ -16,7 +16,7 @@
         android:layout_height="@dimen/height_live_main_bottom_bar"
         android:layout_alignParentBottom="true">
 
-        <com.fanwe.live.appview.main.LiveMainBottomNavigationView
+        <com.oolive.live.appview.main.LiveMainBottomNavigationView
             android:id="@+id/view_bottom_navigation"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

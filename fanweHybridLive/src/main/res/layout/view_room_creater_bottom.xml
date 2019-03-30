@@ -8,21 +8,21 @@
     android:paddingRight="@dimen/margin_live_bottom_menu">
 
     <!-- 发消息 -->
-    <com.fanwe.live.appview.room.RoomMenuView
+    <com.oolive.live.appview.room.RoomMenuView
         android:id="@+id/menu_send_msg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_live_bottom_menu" />
 
     <!-- 插件中心 -->
-    <com.fanwe.live.appview.room.RoomMenuView
+    <com.oolive.live.appview.room.RoomMenuView
         android:id="@+id/menu_creater_plugin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_live_bottom_menu" />
 
     <!-- 开始按钮 -->
-    <com.fanwe.live.appview.room.RoomMenuView
+    <com.oolive.live.appview.room.RoomMenuView
         android:id="@+id/menu_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,7 +30,7 @@
         android:visibility="gone" />
 
     <!-- 等待按钮 -->
-    <com.fanwe.live.appview.room.RoomMenuView
+    <com.oolive.live.appview.room.RoomMenuView
         android:id="@+id/menu_waiting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
         android:visibility="gone" />
 
     <!-- 显示隐藏底部扩展 -->
-    <com.fanwe.live.appview.room.RoomMenuView
+    <com.oolive.live.appview.room.RoomMenuView
         android:id="@+id/menu_bottom_extend_switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,7 +46,7 @@
         android:visibility="gone" />
 
     <!-- 上庄按钮 -->
-    <com.fanwe.live.appview.room.RoomMenuView
+    <com.oolive.live.appview.room.RoomMenuView
         android:id="@+id/menu_open_banker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -54,7 +54,7 @@
         android:visibility="gone" />
 
     <!-- 下庄按钮 -->
-    <com.fanwe.live.appview.room.RoomMenuView
+    <com.oolive.live.appview.room.RoomMenuView
         android:id="@+id/menu_stop_banker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
         android:visibility="gone" />
 
     <!-- 打开庄家列表按钮 -->
-    <com.fanwe.live.appview.room.RoomMenuView
+    <com.oolive.live.appview.room.RoomMenuView
         android:id="@+id/menu_open_banker_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -75,7 +75,7 @@
         android:layout_weight="1" />
 
     <!-- 付费模式 -->
-    <com.fanwe.live.appview.room.RoomMenuView
+    <com.oolive.live.appview.room.RoomMenuView
         android:id="@+id/menu_pay_mode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -83,7 +83,7 @@
         android:visibility="gone" />
 
     <!-- 付费模式提档 -->
-    <com.fanwe.live.appview.room.RoomMenuView
+    <com.oolive.live.appview.room.RoomMenuView
         android:id="@+id/menu_pay_mode_upgrade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -91,14 +91,14 @@
         android:visibility="gone" />
 
     <!-- 私聊消息 -->
-    <com.fanwe.live.appview.room.RoomMenuView
+    <com.oolive.live.appview.room.RoomMenuView
         android:id="@+id/menu_private_msg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_live_bottom_menu" />
 
     <!-- 分享 -->
-    <com.fanwe.live.appview.room.RoomMenuView
+    <com.oolive.live.appview.room.RoomMenuView
         android:id="@+id/menu_share"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

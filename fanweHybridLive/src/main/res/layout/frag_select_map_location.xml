@@ -25,7 +25,7 @@
                 android:layout_marginLeft="10dp"
                 android:src="@drawable/ic_search_white_title" />
 
-            <com.fanwe.library.customview.ClearEditText
+            <com.oolive.library.customview.ClearEditText
                 android:id="@+id/et_search"
                 style="@style/res.Edit"
                 android:layout_width="match_parent"

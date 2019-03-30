@@ -13,21 +13,21 @@
         android:orientation="horizontal"
         android:layout_marginBottom="10dp">
 
-        <com.fanwe.library.view.SDTabUnderline
+        <com.oolive.library.view.SDTabUnderline
             android:id="@+id/tab_live_menb"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="@dimen/height_title_bar"
             android:background="@color/white" />
 
-        <com.fanwe.library.view.SDTabUnderline
+        <com.oolive.library.view.SDTabUnderline
             android:id="@+id/tab_live_apply"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="@dimen/height_title_bar"
             android:background="@color/white" />
 
-        <com.fanwe.library.view.SDTabUnderline
+        <com.oolive.library.view.SDTabUnderline
             android:id="@+id/tab_live_logout"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -41,7 +41,7 @@
         android:layout_height="1px"
         android:background="@color/res_stroke_deep"/>-->
 
-    <com.fanwe.library.customview.SDViewPager
+    <com.oolive.library.customview.SDViewPager
         android:id="@+id/vpg_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

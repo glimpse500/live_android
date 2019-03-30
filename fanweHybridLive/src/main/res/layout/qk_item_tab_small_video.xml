@@ -37,7 +37,7 @@
             android:orientation="horizontal"
             android:padding="@dimen/base_p_m_10">
 
-            <com.fanwe.library.view.CircleImageView
+            <com.oolive.library.view.CircleImageView
                 android:id="@+id/iv_avatar"
                 android:layout_width="30dp"
                 android:layout_height="30dp"

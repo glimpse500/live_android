@@ -23,7 +23,7 @@
             android:layout_height="17dp"
             android:src="@drawable/ic_devote" />
 
-        <com.fanwe.live.view.LiveStringTicketTextView
+        <com.oolive.live.view.LiveStringTicketTextView
             style="@style/frag_tab_me_item_title"
             android:layout_marginLeft="10dp"
             android:text="贡献榜" />
@@ -36,7 +36,7 @@
         android:layout_weight="1">
 
 
-        <com.fanwe.library.view.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        <com.oolive.library.view.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/iv_third"
             android:layout_width="35dp"
             android:layout_height="35dp"
@@ -47,7 +47,7 @@
             app:civ_border_color="@color/white"
             app:civ_border_width="1dp" />
 
-        <com.fanwe.library.view.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        <com.oolive.library.view.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/iv_second"
             android:layout_width="35dp"
             android:layout_height="35dp"
@@ -58,7 +58,7 @@
             app:civ_border_color="@color/white"
             app:civ_border_width="1dp" />
 
-        <com.fanwe.library.view.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        <com.oolive.library.view.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/iv_first"
             android:layout_width="35dp"
             android:layout_height="35dp"

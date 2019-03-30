@@ -14,7 +14,7 @@
         android:orientation="horizontal"
         android:paddingLeft="2dp">
 
-        <com.fanwe.library.view.CircleImageView android:id="@+id/iv_head_image"
+        <com.oolive.library.view.CircleImageView android:id="@+id/iv_head_image"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="37dp"
             android:layout_height="37dp"
@@ -66,7 +66,7 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <com.fanwe.live.view.SDOutLineTextView
+        <com.oolive.live.view.SDOutLineTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="x"
@@ -76,7 +76,7 @@
             app:outlineColor="@color/white"
             app:outlineSize="3sp" />
 
-        <com.fanwe.live.view.SDOutLineTextView
+        <com.oolive.live.view.SDOutLineTextView
             android:id="@+id/tv_gift_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

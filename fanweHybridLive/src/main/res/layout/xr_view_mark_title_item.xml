@@ -11,7 +11,7 @@
         android:layout_height="@dimen/height_icon_m"
         android:layout_gravity="center" />
 
-    <com.fanwe.xianrou.widget.XRSimpleCircleView
+    <com.oolive.xianrou.widget.XRSimpleCircleView
         android:id="@+id/view_marker_xr_view_mark_title_item"
         android:layout_width="9dp"
         android:layout_height="9dp"

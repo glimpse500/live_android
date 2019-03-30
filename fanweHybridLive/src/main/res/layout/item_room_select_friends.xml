@@ -7,7 +7,7 @@
     android:minHeight="50dp"
     android:padding="10dp">
 
-    <com.fanwe.library.view.CircleImageView
+    <com.oolive.library.view.CircleImageView
         android:id="@+id/civ_head_img"
         android:layout_width="35dp"
         android:layout_height="35dp"

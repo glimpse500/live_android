@@ -22,13 +22,13 @@
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <com.fanwe.live.view.RoomPluginToolView
+            <com.oolive.live.view.RoomPluginToolView
                 android:id="@+id/view_star_store"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp" />
 
-            <com.fanwe.live.view.RoomPluginToolView
+            <com.oolive.live.view.RoomPluginToolView
                 android:id="@+id/view_shop_store"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

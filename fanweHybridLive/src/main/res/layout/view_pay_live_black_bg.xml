@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
 
-    <com.fanwe.live.view.InterceptTouchEventLinearLayout
+    <com.oolive.live.view.InterceptTouchEventLinearLayout
         android:id="@+id/view_paymodel_bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,7 +16,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.fanwe.live.appview.LiveVideoView
+        <com.oolive.live.appview.LiveVideoView
             android:id="@+id/view_video"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

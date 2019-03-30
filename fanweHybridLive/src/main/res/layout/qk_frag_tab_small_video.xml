@@ -54,7 +54,7 @@
                 android:layout_centerInParent="true"
                 android:src="@drawable/ic_private_chat_tab_live_title" />
 
-            <com.fanwe.live.view.unread.LiveC2CTotalUnreadTextView
+            <com.oolive.live.view.unread.LiveC2CTotalUnreadTextView
                 android:id="@+id/tv_total_unreadnum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

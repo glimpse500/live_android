@@ -4,26 +4,26 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <com.fanwe.live.view.CustomHorizontalScrollView
+    <com.oolive.live.view.CustomHorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.fanwe.live.view.LivePopMsgView
+        <com.oolive.live.view.LivePopMsgView
             android:id="@+id/view_pop_msg0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp" />
-    </com.fanwe.live.view.CustomHorizontalScrollView>
+    </com.oolive.live.view.CustomHorizontalScrollView>
 
-    <com.fanwe.live.view.CustomHorizontalScrollView
+    <com.oolive.live.view.CustomHorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.fanwe.live.view.LivePopMsgView
+        <com.oolive.live.view.LivePopMsgView
             android:id="@+id/view_pop_msg1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp" />
-    </com.fanwe.live.view.CustomHorizontalScrollView>
+    </com.oolive.live.view.CustomHorizontalScrollView>
 
 </LinearLayout>

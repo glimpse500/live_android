@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">乐逍遥</string>
+    <string name="app_name">oo直播</string>
 
     <!--是否展示星店 小店插件-->
     <integer name="is_viewer_show_plug">1</integer>

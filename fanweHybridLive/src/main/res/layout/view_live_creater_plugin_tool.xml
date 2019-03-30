@@ -15,36 +15,36 @@
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <com.fanwe.live.view.RoomPluginToolView
+            <com.oolive.live.view.RoomPluginToolView
                 android:id="@+id/view_music"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <com.fanwe.live.view.RoomPluginToolView
+            <com.oolive.live.view.RoomPluginToolView
                 android:id="@+id/view_beauty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp" />
 
-            <com.fanwe.live.view.RoomPluginToolView
+            <com.oolive.live.view.RoomPluginToolView
                 android:id="@+id/view_mic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp" />
 
-            <com.fanwe.live.view.RoomPluginToolView
+            <com.oolive.live.view.RoomPluginToolView
                 android:id="@+id/view_switch_camera"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp" />
 
-            <com.fanwe.live.view.RoomPluginToolView
+            <com.oolive.live.view.RoomPluginToolView
                 android:id="@+id/view_flash_light"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp" />
 
-            <com.fanwe.live.view.RoomPluginToolView
+            <com.oolive.live.view.RoomPluginToolView
                 android:id="@+id/view_push_mirror"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

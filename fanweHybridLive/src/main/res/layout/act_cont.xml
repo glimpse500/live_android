@@ -5,7 +5,7 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-    <com.fanwe.live.appview.room.RoomContributionView
+    <com.oolive.live.appview.room.RoomContributionView
         android:id="@+id/view_room_cont"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

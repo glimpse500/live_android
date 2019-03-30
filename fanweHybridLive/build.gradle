@@ -4,7 +4,7 @@ android {
     useLibrary 'org.apache.http.legacy'
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.fanwe.live"
+        applicationId "com.oolive.live"
         minSdkVersion 15
         targetSdkVersion 27
         versionCode 190330
@@ -67,7 +67,7 @@ android {
     productFlavors {
 
         //方维互动直播（演示站）
-        fanwe {
+        oolive {
             dimension "version"
             versionCode 2019030201
             versionName "2.5.3"

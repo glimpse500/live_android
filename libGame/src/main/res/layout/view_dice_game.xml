@@ -10,13 +10,13 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <com.fanwe.libgame.dice.view.DicePanelBodyView
+        <com.oolive.libgame.dice.view.DicePanelBodyView
             android:id="@+id/view_dice_panel_body"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"/>
 
-        <com.fanwe.libgame.dice.view.DiceClockView
+        <com.oolive.libgame.dice.view.DiceClockView
             android:id="@+id/view_clock"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -31,7 +31,7 @@
         android:layout_height="@dimen/res_height_title_bar"
         android:orientation="horizontal">
 
-        <com.fanwe.libgame.dice.view.DiceBottomView
+        <com.oolive.libgame.dice.view.DiceBottomView
             android:id="@+id/view_game_bottom"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

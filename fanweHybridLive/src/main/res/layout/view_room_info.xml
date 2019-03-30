@@ -34,7 +34,7 @@
                     android:layout_height="32dp"
                     android:layout_marginLeft="1dp">
 
-                    <com.fanwe.library.view.CircleImageView android:id="@+id/iv_head_image"
+                    <com.oolive.library.view.CircleImageView android:id="@+id/iv_head_image"
                         xmlns:app="http://schemas.android.com/apk/res-auto"
                         android:layout_width="@dimen/width_live_viewer_head_image"
                         android:layout_height="@dimen/height_live_viewer_head_image"
@@ -44,7 +44,7 @@
                         app:civ_border_color="@color/white"
                         app:civ_border_width="0dp" />
 
-                    <com.fanwe.library.view.CircleImageView android:id="@+id/iv_level"
+                    <com.oolive.library.view.CircleImageView android:id="@+id/iv_level"
                         xmlns:app="http://schemas.android.com/apk/res-auto"
                         android:layout_width="10dp"
                         android:layout_height="10dp"
@@ -129,7 +129,7 @@
                 android:src="@drawable/ic_live_minus_viewer" />
         </LinearLayout>
 
-        <com.fanwe.library.view.SDRecyclerView
+        <com.oolive.library.view.SDRecyclerView
             android:id="@+id/hlv_viewer"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -162,7 +162,7 @@
             android:paddingLeft="8dp"
             android:paddingRight="8dp">
 
-            <com.fanwe.live.view.LiveStringTicketTextView
+            <com.oolive.live.view.LiveStringTicketTextView
                 style="@style/res.Text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -187,10 +187,10 @@
         </LinearLayout>
 
         <!-- 速率 -->
-        <com.fanwe.live.appview.RoomSdkInfoView
+        <com.oolive.live.appview.RoomSdkInfoView
             android:id="@+id/view_sdk_info"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></com.fanwe.live.appview.RoomSdkInfoView>
+            android:layout_height="wrap_content"></com.oolive.live.appview.RoomSdkInfoView>
 
         <View
             android:layout_width="0dp"
@@ -209,7 +209,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <com.fanwe.live.view.LiveStringAccountTextView
+                <com.oolive.live.view.LiveStringAccountTextView
                     style="@style/res.Text.Shadow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

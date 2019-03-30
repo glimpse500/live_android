@@ -17,7 +17,7 @@
             android:layout_weight="6"
             android:orientation="vertical">
 
-            <com.fanwe.library.view.SDFitImageView
+            <com.oolive.library.view.SDFitImageView
                 android:id="@+id/iv_head_img"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
