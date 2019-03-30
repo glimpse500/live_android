@@ -2,7 +2,7 @@ package com.fanwe.xianrou.dialog;
 
 import android.app.Activity;
 import android.content.DialogInterface;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;

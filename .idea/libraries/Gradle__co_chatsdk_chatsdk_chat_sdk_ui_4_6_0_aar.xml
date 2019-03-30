@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: co.chatsdk.chatsdk:chat-sdk-ui:4.6.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-chat-sdk-ui-4.6.0.aar/6f26ec04d6e0d0d6bed82e404fa3ea59/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-chat-sdk-ui-4.6.0.aar/6f26ec04d6e0d0d6bed82e404fa3ea59/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/co.chatsdk.chatsdk/chat-sdk-ui/4.6.0/714f7cd7eb7303f7f79bf2dd2a5df30e65c60b9d/chat-sdk-ui-4.6.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

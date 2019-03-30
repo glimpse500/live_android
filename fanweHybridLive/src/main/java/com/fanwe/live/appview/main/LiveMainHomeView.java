@@ -2,7 +2,7 @@ package com.fanwe.live.appview.main;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
+import androidx.viewpager.widget.ViewPager.OnPageChangeListener;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.SparseArray;

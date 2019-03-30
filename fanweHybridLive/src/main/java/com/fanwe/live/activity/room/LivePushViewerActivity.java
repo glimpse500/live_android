@@ -63,7 +63,7 @@ public class LivePushViewerActivity extends LiveLayoutViewerExtendActivity imple
             requestRoomInfo();
         }
         //To do , to be removed
-        hideLoadingVideo();
+        //hideLoadingVideo();
     }
 
     /**

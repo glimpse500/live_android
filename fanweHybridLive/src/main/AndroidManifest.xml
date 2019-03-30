@@ -44,7 +44,13 @@
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-
+    <uses-sdk tools:overrideLibrary="chatsdk.co.chat_sdk_firebase_ui,
+                                                                        com.firebase.ui.auth,
+                                                                        co.chatsdk.firebase.push,
+                                                                        co.chatsdk.ui,
+                                                                        co.chatsdk.firebase,
+                                                                        co.chatsdk.firebase.file_storage,
+                                                                        co.chatsdk.core"/>
     <application
         android:name="com.fanwe.hybrid.app.App"
         android:allowBackup="true"

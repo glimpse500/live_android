@@ -1,8 +1,8 @@
 package com.fanwe.xianrou.adapter.viewholder;
 
 import android.content.Context;
-import android.support.annotation.LayoutRes;
-import android.support.v7.widget.AppCompatRadioButton;
+import androidx.annotation.LayoutRes;
+import androidx.appcompat.widget.AppCompatRadioButton;
 import android.view.ViewGroup;
 import android.widget.TextView;
 

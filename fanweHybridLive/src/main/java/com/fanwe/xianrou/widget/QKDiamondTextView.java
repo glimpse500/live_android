@@ -1,7 +1,7 @@
 package com.fanwe.xianrou.widget;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 
 import com.fanwe.live.common.AppRuntimeWorker;

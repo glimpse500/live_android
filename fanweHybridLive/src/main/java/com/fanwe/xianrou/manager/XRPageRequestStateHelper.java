@@ -1,6 +1,6 @@
 package com.fanwe.xianrou.manager;
 
-import android.support.annotation.IntRange;
+import androidx.annotation.IntRange;
 
 /**
  * @包名 com.fanwe.xianrou.manager

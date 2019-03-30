@@ -1,7 +1,7 @@
 package com.fanwe.xianrou.adapter.viewholder;
 
 import android.content.Context;
-import android.support.annotation.LayoutRes;
+import androidx.annotation.LayoutRes;
 import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;

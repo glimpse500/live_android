@@ -1,10 +1,10 @@
 package com.fanwe.xianrou.util;
 
 import android.app.Activity;
-import android.support.annotation.MenuRes;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.PopupMenu;
+import androidx.annotation.MenuRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.PopupMenu;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;

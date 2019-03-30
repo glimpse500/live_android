@@ -1,6 +1,6 @@
 package com.fanwe.xianrou.widget.recyclerviewheader;
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 
 /**

@@ -1,9 +1,9 @@
 package com.fanwe.baimei.dialog;
 
 import android.app.Activity;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.fanwe.baimei.adapter.BMDiceResultHistoryAdapter;
 import com.fanwe.baimei.model.BMDiceResultHistoryModel;

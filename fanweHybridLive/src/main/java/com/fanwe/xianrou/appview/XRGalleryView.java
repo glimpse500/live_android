@@ -1,8 +1,8 @@
 package com.fanwe.xianrou.appview;
 
 import android.content.Context;
-import android.support.annotation.IntRange;
-import android.support.v4.view.ViewPager;
+import androidx.annotation.IntRange;
+import androidx.viewpager.widget.ViewPager;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;

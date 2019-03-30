@@ -11,7 +11,7 @@ import com.fanwe.live.R;
 /**
  * Created by shibx on 2016/8/18.
  */
-public class RoomTimerTextView extends android.support.v7.widget.AppCompatTextView {
+public class RoomTimerTextView extends androidx.appcompat.widget.AppCompatTextView {
     private CountDownTimer timer;
 
     public RoomTimerTextView(Context context) {

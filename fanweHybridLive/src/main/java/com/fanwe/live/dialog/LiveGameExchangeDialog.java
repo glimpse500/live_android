@@ -1,7 +1,7 @@
 package com.fanwe.live.dialog;
 
 import android.app.Activity;
-import android.support.annotation.IntDef;
+import androidx.annotation.IntDef;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;

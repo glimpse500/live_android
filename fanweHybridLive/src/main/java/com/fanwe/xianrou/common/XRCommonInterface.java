@@ -1,6 +1,6 @@
 package com.fanwe.xianrou.common;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.text.TextUtils;
 
 import com.fanwe.hybrid.http.AppHttpUtil;

@@ -1,6 +1,6 @@
 package com.fanwe.xianrou.widget.recyclerviewheader;
 
-import android.support.v7.widget.GridLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 
 /**
  * Created by cundong on 2015/10/23.

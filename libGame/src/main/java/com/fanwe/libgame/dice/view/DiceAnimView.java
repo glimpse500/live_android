@@ -1,8 +1,8 @@
 package com.fanwe.libgame.dice.view;
 
 import android.content.Context;
-import android.support.annotation.IntRange;
-import android.support.annotation.Nullable;
+import androidx.annotation.IntRange;
+import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 
 import com.fanwe.games.R;

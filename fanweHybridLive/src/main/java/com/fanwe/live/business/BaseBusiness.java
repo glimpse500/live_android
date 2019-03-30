@@ -1,6 +1,6 @@
 package com.fanwe.live.business;
 
-import android.support.annotation.CallSuper;
+import androidx.annotation.CallSuper;
 
 import com.fanwe.hybrid.http.AppHttpUtil;
 
