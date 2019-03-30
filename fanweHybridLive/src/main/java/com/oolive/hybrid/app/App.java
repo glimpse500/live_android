@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import androidx.multidex.MultiDex;
+
+
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.util.Log;
@@ -39,6 +41,7 @@ import com.oolive.live.event.EUserLoginSuccess;
 import com.oolive.live.event.EUserLogout;
 import com.oolive.live.model.App_userinfoActModel;
 import com.oolive.live.utils.StorageFileUtils;
+import com.oolive.socketio.SocketIOHelper;
 import com.squareup.leakcanary.LeakCanary;
 import com.sunday.eventbus.SDEventManager;
 import com.tencent.rtmp.ITXLiveBaseListener;
@@ -47,7 +50,14 @@ import com.umeng.analytics.MobclickAgent;
 
 import org.xutils.x;
 
+import co.chatsdk.core.error.ChatSDKException;
+import co.chatsdk.core.session.ChatSDK;
+import co.chatsdk.core.session.Configuration;
+import co.chatsdk.firebase.FirebaseNetworkAdapter;
+import co.chatsdk.firebase.file_storage.FirebaseFileStorageModule;
+import co.chatsdk.ui.manager.BaseInterfaceAdapter;
 import de.greenrobot.event.SubscriberExceptionEvent;
+import io.reactivex.functions.Consumer;
 
 public class App extends Application implements ITXLiveBaseListener {
     private static App instance;
@@ -62,6 +72,8 @@ public class App extends Application implements ITXLiveBaseListener {
         super.onCreate();
         instance = this;
         init();
+
+        SocketIOHelper.init(getApplicationContext());
     }
 
     private void init() {
@@ -214,6 +226,7 @@ public class App extends Application implements ITXLiveBaseListener {
         SDNetworkReceiver.unregisterReceiver(this);
         SDHandlerManager.stopBackgroundHandler();
         SDMediaRecorder.getInstance().release();
+        SocketIOHelper.logout();
         super.onTerminate();
     }
 

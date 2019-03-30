@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: co.chatsdk.chatsdk:chat-sdk-firebase-push:4.6.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/chat-sdk-firebase-push-4.6.0.aar/30271be5aad5015e82db6af9e7b56163/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/chat-sdk-firebase-push-4.6.0.aar/30271be5aad5015e82db6af9e7b56163/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/co.chatsdk.chatsdk/chat-sdk-firebase-push/4.6.0/ae5bfa0834ad93807fa24c8d5ef16d2dc354d0ca/chat-sdk-firebase-push-4.6.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

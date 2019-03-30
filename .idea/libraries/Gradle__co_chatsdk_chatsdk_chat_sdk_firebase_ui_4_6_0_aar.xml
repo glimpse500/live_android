@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: co.chatsdk.chatsdk:chat-sdk-firebase-ui:4.6.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/chat-sdk-firebase-ui-4.6.0.aar/40971e76b3e8fdcffa0a918e701cd048/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/chat-sdk-firebase-ui-4.6.0.aar/40971e76b3e8fdcffa0a918e701cd048/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/co.chatsdk.chatsdk/chat-sdk-firebase-ui/4.6.0/bce002ecacee3d53c175c7c70d6014c1a7963671/chat-sdk-firebase-ui-4.6.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

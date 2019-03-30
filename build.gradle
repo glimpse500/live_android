@@ -21,11 +21,12 @@ allprojects {
         flatDir {
             dirs 'libs'
         }
+        maven { url "http://dl.bintray.com/chat-sdk/chat-sdk-android" }
         maven { url "https://maven.google.com" }
         maven { url "https://jitpack.io" }
+
     }
 }
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-apply plugin: 'com.google.gms.google-services'

@@ -1,6 +1,8 @@
 package com.oolive.socketio;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.text.TextUtils;
 
 import com.oolive.hybrid.constant.ApkConstant;
@@ -26,6 +28,18 @@ import com.oolive.live.model.custommsg.CustomMsg;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import co.chatsdk.core.dao.Thread;
+import co.chatsdk.core.dao.User;
+import co.chatsdk.core.error.ChatSDKException;
+import co.chatsdk.core.session.ChatSDK;
+import co.chatsdk.core.session.Configuration;
+import co.chatsdk.core.types.AccountDetails;
+import co.chatsdk.firebase.FirebaseNetworkAdapter;
+import co.chatsdk.firebase.file_storage.FirebaseFileStorageModule;
+import co.chatsdk.ui.manager.BaseInterfaceAdapter;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 import io.socket.client.IO;
 import io.socket.client.Socket;
 import io.socket.emitter.Emitter;
@@ -44,6 +58,11 @@ public class SocketIOHelper {
     private static Boolean isConnected = false;
     private static String mUsername = null;
     private static String mUserID = null;
+    private static String roomID;
+    private static User chatSdkUser_self = null;
+    private static ChatSDK chatSDK;
+    private static final String password = "oolive_pwd";
+    protected ProgressDialog progressDialog;
     private static Emitter.Listener onLogin = new Emitter.Listener() {
 
         @Override
@@ -59,7 +78,34 @@ public class SocketIOHelper {
 
         }
     };
+    public static void init(Context context){
 
+        // The Chat SDK needs access to the application's context
+
+        try {
+            // Create a new configuration
+            Configuration.Builder builder = new Configuration.Builder(context);
+            // Perform any other configuration steps (optional)
+            builder.firebaseRootPath("prod");
+            // Initialize the Chat SDK
+            ChatSDK.initialize(builder.build(), new FirebaseNetworkAdapter(), new BaseInterfaceAdapter(context));
+            // File storage is needed for profile image upload and image messages
+
+            // Push notification module
+            //FirebasePushModule.activate();
+            // Activate any other modules you need.
+            // ...
+
+        } catch (ChatSDKException e) {
+            // Handle any exceptions
+            e.printStackTrace();
+        }
+        // File storage is needed for profile image upload and image messages
+        FirebaseFileStorageModule.activate();
+
+        // Uncomment this to enable Firebase UI
+        // FirebaseUIModule.activate(EmailAuthProvider.PROVIDER_ID, PhoneAuthProvider.PROVIDER_ID);
+    }
     public static String getUserID(){
         return mUserID;
     }
@@ -74,33 +120,56 @@ public class SocketIOHelper {
             LogUtil.e("login  error because of null InitActModel");
             return;
         }
-        try {
-            LogUtil.i("try to connet to SocketIO server : " + SocketIOConstant.CHAT_SERVER_URL);
-            mSocket = IO.socket(SocketIOConstant.CHAT_SERVER_URL);
-            mSocket.on(Socket.EVENT_CONNECT,onConnect);
-            mSocket.on(Socket.EVENT_DISCONNECT,onDisconnect);
-            mSocket.on(Socket.EVENT_CONNECT_ERROR, onConnectError);
-            mSocket.on(Socket.EVENT_CONNECT_TIMEOUT, onConnectError);
-            IO.Options opts = new IO.Options();
-           // opts.forceNew = true;
-            //opts.reconnection = true;
-            mSocket.connect();
-        } catch (URISyntaxException e) {
-            throw new RuntimeException(e);
-        }
-        //mSocket.on("typing", onTyping);
-        //mSocket.on("stop typing", onStopTyping);
-        //mSocket.connect();
 
-        mSocket.on("login", onLogin);
-        mSocket.on("new message", onNewMessage);
-        LogUtil.i("login : ");
-        mSocket.emit("add user", userId);
-        LogUtil.i("add user : " + userId);
-        mUsername = userSig;
-        mUserID = userId;
+        String username = "user_" + userId + "@oolive.com";
+        String userID = "user@" +userId;
+        //login catch
+        if (ChatSDK.auth().isAuthenticatedThisSession()) {
+            LogUtil.i("登入成功!! ");
+            SDToast.showToast("登入成功!! ");
+        } else if (ChatSDK.auth().isAuthenticated()) {
+            Disposable d = ChatSDK.auth().authenticate().subscribe(() -> {
+                LogUtil.i("登入成功!! ");
+                SDToast.showToast("登入成功!! ");
+            }, throwable -> {
+                loginChatSDK(userID,username);
+            });
+        } else {
+            loginChatSDK(userID,username);
+        }
+        //ChatSDK.currentUser().setEntityID(userID);
+        //ChatSDK.currentUser().update();
+        //LogUtil.i("chatSdkUserId + " +  ChatSDK.currentUser().getEntityID());
         isConnected = true;
         isInLogin = true;
+    }
+    public static void loginChatSDK(String userID,String username){
+        AccountDetails details = new AccountDetails();
+        details.type = AccountDetails.Type.Username;
+        details.username = username;
+        details.password = password;
+        Disposable d = ChatSDK.auth().authenticate(details).subscribe(() -> {
+            ChatSDK.currentUser().setEntityID(userID);
+            LogUtil.i("登入成功!! (帳號) " );
+            SDToast.showToast("登入成功!! (帳號)");
+
+        }, throwable -> {
+            LogUtil.i("註冊聊天帳號 " );
+            SDToast.showToast("註冊聊天帳號" );
+            details.type = AccountDetails.Type.Register;
+            ChatSDK.auth().authenticate(details).subscribe(() -> {
+                ChatSDK.currentUser().setEntityID(userID);
+                LogUtil.i("註冊聊天帳號成功 " );
+                SDToast.showToast("註冊聊天帳號成功" );
+            }, throwable2 -> {
+                LogUtil.i("註冊聊天帳號失敗 " );
+                SDToast.showToast("註冊聊天帳號失敗");
+            });
+        });
+        LogUtil.i("details.type!!"  + details.type );
+    }
+    public static void logout(){
+        ChatSDK.auth().logout();
     }
     public static void logoutSocketIO(){
         mSocket.off("login", onLogin);
@@ -115,18 +184,22 @@ public class SocketIOHelper {
         event.isFromSetLocalReaded = isFromSetLocalReade;
         SDEventManager.post(event);
     }
-    public static void joinGroup(String room_id){
-        LogUtil.i("join + " +  room_id);
-        if (ApkConstant.DEBUG)
-            room_id = "8888";
-        if (!room_id.equals(cur_group)) {
-            LogUtil.i("leave + " +  cur_group);
-            mSocket.emit("leave", cur_group);
-            cur_group = room_id;
-            LogUtil.i("join + " +  room_id);
-            mSocket.emit("join", room_id);
+    public static void joinGroup(String room_id) {
+        roomID = "room@" + room_id;
+        LogUtil.i("chatSdkUser_self ID = " + chatSdkUser_self.getId());
+        Disposable d = ChatSDK.thread().createThread(roomID, chatSdkUser_self)
+                .observeOn(AndroidSchedulers.mainThread())
+                .doFinally(() -> {
 
-        }
+                })
+                .subscribe(thread -> {
+                    SDToast.showToast("創建房間成功!!" + thread.getEntityID());
+                    thread.setEntityID(roomID);
+                    thread.update();
+                }, throwable -> {
+                    SDToast.showToast("創建房間失敗!! " + throwable.toString());
+                });
+
 
     }
     public static List<MsgModel> getC2CMsgList(Activity activity) {
@@ -177,35 +250,6 @@ public class SocketIOHelper {
             event.msg = msg;
             SDEventManager.post(event);
         }
-
-
-        //SocketIOConversation conversation = getConversationGroup(id);
-
-        //SocketIOMessage sMsg = customMsg.parsetoSocketIOMessage();
-
-
-        /*
-
-        conversation.sendMessage(tMsg, new TIMValueCallBack<TIMMessage>() {
-
-            @Override
-            public void onSuccess(TIMMessage timMessage) {
-                if (callback != null) {
-                    callback.onSuccess(timMessage);
-                }
-            }
-
-            @Override
-            public void onError(int code, String desc) {
-                LogUtil.i("sendMsgGroup error:" + code + "," + desc);
-                if (code == 10017 || code == 20012) {
-                    SDToast.showToast("你已被禁言");
-                }
-                if (callback != null) {
-                    callback.onError(code, desc);
-                }
-            }
-        });*/
     }
     public static boolean connected(){return isConnected;}
 
@@ -272,6 +316,7 @@ public class SocketIOHelper {
                         SocketIOMessage sMsg = customMsg.parsetoSocketIOMessage();
                         sMsg.setPeer(customMsg.getSender().getUser_id());
                         mSocket.emit("c2c_msg",id,customMsg.parsetoSocketIOMessage().getJson());
+
                         //LogUtil.i("requestIs_black :" + customMsg.parsetoSocketIOMessage().getJson());
 
                         callback.onSuccess(customMsg.parsetoSocketIOMessage());
@@ -281,29 +326,9 @@ public class SocketIOHelper {
                         callback.onError(1,"無法傳送訊息");
                     }
                 }
-
             });
         }
-    /*
-        @Override
-        public void onSuccess(TIMMessage timMessage) {
-            if (callback != null) {
-                callback.onSuccess(timMessage);
-            }
-        }
 
-        @Override
-        public void onError(int code, String desc) {
-            LogUtil.i("sendMsgC2C error:" + code + "," + desc);
-            if (code == 10017 || code == 20012) {
-                SDToast.showToast("你已被禁言");
-            }
-            if (callback != null) {
-                callback.onError(code, desc);
-            }
-        }
-    });*/
-        //return sMsg;
     }
     public static SocketIOConversation getConversationC2C(String id) {
         SocketIOConversation conversation = null;
@@ -312,85 +337,5 @@ public class SocketIOHelper {
         }
         return conversation;
     }
-    private static Emitter.Listener onNewMessage = new Emitter.Listener() {
-        @Override
-        public void call(final Object... args) {
-            JSONObject data = (JSONObject) args[0];
-            String username;
-            String json_message;
-            try {
-                username = data.getString("username");
-                json_message = data.getString("message");
-                LogUtil.i("on json_message  :" + json_message);
-                JSONObject message_body = new JSONObject(json_message);
-                LogUtil.i("on message_body  :" + message_body);
-                CustomMsg cMsg = LiveMsgBusiness.json2CustomMsg(json_message,Integer.valueOf(message_body.getString("type")));
-                SocketIOMessage sMsg = cMsg.parsetoSocketIOMessage();
-                MsgModel msg = new LiveMsgModel(sMsg);
-                if (msg != null) {
-                    msg.setCustomMsg(cMsg);
-                    msg.setConversationPeer(cMsg.getSender().getUser_id());
-                    EImOnNewMessages event = new EImOnNewMessages();
-                    SocketIOConversation conversation = SocketIOManager.getInstance().getConversation(SocketIOConversationType.C2C,cMsg.getSender().getUser_id());
 
-                    conversation.writeLocalMessage(sMsg,activity);
-                    event.msg = msg;
-                    //event.sMsg = sMsg;
-                    LogUtil.i("SDEventManager.post(event);  :");
-                    SDEventManager.post(event);
-                }
-            }
-            catch (JSONException e) {
-                //Log.e(TAG, e.getMessage());
-                return;
-            }
-        }
-    };
-    private static Emitter.Listener onConnect = new Emitter.Listener() {
-        @Override
-        public void call(Object... args) {
-            activity.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    if(!isConnected) {
-                        if(null!=mUsername){
-                            mSocket.emit("add user", mUserID);
-                            if (!cur_group.equals("-1"))
-                                joinGroup(cur_group);
-
-                        }
-                        SDToast.showToast("連接聊天室成功");
-                        isConnected = true;
-                    }
-                }
-            });
-        }
-    };
-
-    private static Emitter.Listener onDisconnect = new Emitter.Listener() {
-        @Override
-        public void call(Object... args) {
-            activity.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    isConnected = false;
-                    cur_group = "-1";
-                    SDToast.showToast("嘗試重新連接聊天室...");
-                }
-            });
-        }
-    };
-
-    private static Emitter.Listener onConnectError = new Emitter.Listener() {
-        @Override
-        public void call(Object... args) {
-            activity.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    isConnected = false;
-                    SDToast.showToast("onConnectError");
-                }
-            });
-        }
-    };
 }
