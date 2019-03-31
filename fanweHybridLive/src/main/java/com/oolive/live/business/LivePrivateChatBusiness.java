@@ -296,6 +296,7 @@ public class LivePrivateChatBusiness extends BaseBusiness {
         MsgModel msgModel = msg.parseToMsgModel();
         //msgModel.setConversationPeer();
         mCallback.onAdapterAppendData(msgModel);
+        LogUtil.i("Send IM Text " + content);
         sendIMMsg(msgModel);
     }
 
