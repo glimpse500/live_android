@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.text.TextUtils;
 
+import com.oolive.chat.ChatSDKHelper;
 import com.oolive.hybrid.dao.InitActModelDao;
 import com.oolive.hybrid.model.Api_linkModel;
 import com.oolive.hybrid.model.InitActModel;
@@ -765,66 +766,41 @@ public class AppRuntimeWorker {
     public static String getUsersig() {
         return SDConfig.getString(AppConfigKey.LIVE_USERSIG, null);
     }
-    /**
-     * IM登录
-     *
-     * @return
-     */
-    public static boolean startContext() {
-        UserModel user = UserModelDao.query();
-        LogUtil.i("startContext ");
-        LogUtil.i("UserModel : " + user.toString());
-        if (user == null) {
-            return false;
-        }
-        String identifier = user.getUser_id();
-        if (TextUtils.isEmpty(identifier)) {
-            SDToast.showToast("用户id为空");
-            return false;
-        }
-        /*//TO do
-        String usersig = getUsersig();
-        if (TextUtils.isEmpty(usersig)) {
-            LogUtil.i("TextUtils.isEmpty(usersig) ");
-            CommonInterface.requestUsersig(null);
-            return false;
-        }*/
 
-        //IMHelper.loginIM(identifier, usersig);
-        //String socketIO_ID = user.getNick_name() + "(" + user.getUser_id()+ ")";
-        //LogUtil.i("loginSocketIO " + socketIO_ID);
-        //SocketIOHelper.loginSocketIO(identifier, socketIO_ID,activity);
-        return true;
-    }
-    /**
+
+    /*
      * IM登录
      *
      * @return
      */
     public static boolean startContext(Activity activity) {
         UserModel user = UserModelDao.query();
-        LogUtil.i("startContext ");
-        LogUtil.i("UserModel : " + user.toString());
         if (user == null) {
             return false;
         }
+        LogUtil.i("startContext ");
+        LogUtil.i("UserModel : " + user.toString());
         String identifier = user.getUser_id();
         if (TextUtils.isEmpty(identifier)) {
             SDToast.showToast("用户id为空");
             return false;
         }
-        /*//TO do
+        /*
         String usersig = getUsersig();
         if (TextUtils.isEmpty(usersig)) {
             LogUtil.i("TextUtils.isEmpty(usersig) ");
-            CommonInterface.requestUsersig(null);
+            CommonInterface.requestChatID(null);
             return false;
         }*/
-
-        //IMHelper.loginIM(identifier, usersig);
+        String chatID = ChatSDKHelper.getChatID();
+        if (chatID == null)
+            CommonInterface.requestChatID(null);
+        CommonInterface.requestChatID(null);
         String socketIO_ID = user.getNick_name() + "(" + user.getUser_id()+ ")";
         LogUtil.i("loginSocketIO " + socketIO_ID);
-        SocketIOHelper.loginSocketIO(identifier, socketIO_ID,activity);
+        //SocketIOHelper.loginSocketIO(identifier, socketIO_ID,activity);
+        ChatSDKHelper.loginChatSDK(identifier, socketIO_ID,activity);
+
         return true;
     }
 
@@ -834,6 +810,8 @@ public class AppRuntimeWorker {
     public static void logout() {
         //TO DO
         //IMHelper.logoutIM(null);
+        ChatSDKHelper.logout();
+        LogUtil.i("ChatSDK logout ");
         SocketIOHelper.logoutSocketIO();
     }
 

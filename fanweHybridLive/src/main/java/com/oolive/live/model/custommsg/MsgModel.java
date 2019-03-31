@@ -44,6 +44,11 @@ public abstract class MsgModel {
      * 会话的对方id或者群组Id
      */
     private String conversationtPeer;
+
+    /**
+     * ChatSDK Perr
+     */
+    private String conversationtPeerChatID;
     /**
      * 消息在腾讯服务端生成的时间戳
      */
@@ -496,10 +501,19 @@ public abstract class MsgModel {
         return conversationtPeer;
     }
 
-    public void setConversationPeer(String conversationtPeer) {
+    public void setConversationPeer(String conversationtPeerChatID) {
         this.conversationtPeer = conversationtPeer;
     }
+    public String getConversationPeerChatID() {
+        if (conversationtPeerChatID == null) {
+            conversationtPeerChatID = "";
+        }
+        return conversationtPeerChatID;
+    }
 
+    public void setConversationPeerChatID(String conversationtPeerChatID) {
+        this.conversationtPeerChatID = conversationtPeerChatID;
+    }
     public long getTimestamp() {
         return timestamp;
     }

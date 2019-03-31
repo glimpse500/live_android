@@ -42,6 +42,7 @@ public class O2OShoppingLiveImFragment extends BaseFragment {
             public void onChatItemClickListener(LiveConversationListModel itemLiveChatListModel) {
                 Intent intent = new Intent(getActivity(), LivePrivateChatActivity.class);
                 intent.putExtra(LivePrivateChatActivity.EXTRA_USER_ID, itemLiveChatListModel.getPeer());
+                intent.putExtra(LivePrivateChatActivity.EXTRA_CHAT_ID, itemLiveChatListModel.getPeerChatID());
                 startActivity(intent);
             }
         });

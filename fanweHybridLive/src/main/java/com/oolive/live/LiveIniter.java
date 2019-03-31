@@ -106,7 +106,7 @@ public class LiveIniter {
 
             @Override
             public void onUserSigExpired() {
-                CommonInterface.requestUsersig(null);
+                //CommonInterface.requestUsersig(null);
             }
         });
 

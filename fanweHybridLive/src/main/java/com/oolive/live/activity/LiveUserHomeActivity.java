@@ -417,6 +417,7 @@ public class LiveUserHomeActivity extends BaseActivity {
 
         Intent intent = new Intent(getActivity(), LivePrivateChatActivity.class);
         intent.putExtra(LivePrivateChatActivity.EXTRA_USER_ID, to_user.getUser_id());
+        intent.putExtra(LivePrivateChatActivity.EXTRA_CHAT_ID, to_user.getChat_id());
         startActivity(intent);
     }
 

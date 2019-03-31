@@ -4,6 +4,8 @@
       <root url="jar://$PROJECT_DIR$/libCore/libs/eventbus-1.6-src-modify.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/libCore/libs/eventbus-1.6-src-modify.jar!/" />
+    </SOURCES>
   </library>
 </component>

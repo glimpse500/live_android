@@ -771,7 +771,7 @@ public class MainActivity extends BaseActivity implements OnCropBitmapListner, P
             @Override
             protected void onSuccess(SDResponse resp) {
                 if (actModel.getStatus() == 1) {
-                    CommonInterface.requestUsersig(null);
+                    CommonInterface.requestChatID(null);
                 }
             }
         });

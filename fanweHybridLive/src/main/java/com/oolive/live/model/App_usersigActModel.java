@@ -1,6 +1,6 @@
 package com.oolive.live.model;
 
-import com.oolive.hybrid.model.BaseActModel;
+        import com.oolive.hybrid.model.BaseActModel;
 
 public class App_usersigActModel extends BaseActModel {
 

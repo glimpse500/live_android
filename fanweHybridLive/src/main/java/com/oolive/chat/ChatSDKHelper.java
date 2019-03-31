@@ -1,17 +1,18 @@
-package com.oolive.socketio;
+package com.oolive.chat;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+
 import android.content.Context;
 import android.text.TextUtils;
 
+import com.fanwe.library.adapter.http.model.SDResponse;
 import com.oolive.hybrid.constant.ApkConstant;
 import com.oolive.hybrid.dao.InitActModelDao;
 import com.oolive.hybrid.http.AppRequestCallback;
 import com.oolive.hybrid.model.InitActModel;
-import com.fanwe.library.adapter.http.model.SDResponse;
 import com.oolive.library.utils.LogUtil;
-import com.oolive.live.business.LiveMsgBusiness;
+import com.oolive.library.utils.SDToast;
 import com.oolive.live.common.CommonInterface;
 import com.oolive.live.dao.UserModelDao;
 import com.oolive.live.event.EImOnNewMessages;
@@ -20,169 +21,214 @@ import com.oolive.live.model.ConversationUnreadMessageModel;
 import com.oolive.live.model.TotalConversationUnreadMessageModel;
 import com.oolive.live.model.UserModel;
 import com.oolive.live.model.User_is_blackActModel;
-import com.oolive.live.model.custommsg.MsgModel;
-import com.sunday.eventbus.SDEventManager;
-import com.oolive.live.model.custommsg.LiveMsgModel;
 import com.oolive.live.model.custommsg.CustomMsg;
+import com.oolive.live.model.custommsg.LiveMsgModel;
+import com.oolive.live.model.custommsg.MsgModel;
+import com.oolive.socketio.SocketIOConversation;
+import com.oolive.socketio.SocketIOConversationType;
+import com.oolive.socketio.SocketIOHelper;
+import com.oolive.socketio.SocketIOManager;
+import com.oolive.socketio.SocketIOMessage;
+import com.oolive.socketio.SocketIOValueCallBack;
+import com.sunday.eventbus.SDEventManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import co.chatsdk.core.dao.DaoCore;
+import co.chatsdk.core.dao.Message;
 import co.chatsdk.core.dao.Thread;
 import co.chatsdk.core.dao.User;
 import co.chatsdk.core.error.ChatSDKException;
+import co.chatsdk.core.events.EventType;
+import co.chatsdk.core.events.NetworkEvent;
+import co.chatsdk.core.hook.Hook;
+import co.chatsdk.core.hook.HookEvent;
 import co.chatsdk.core.session.ChatSDK;
 import co.chatsdk.core.session.Configuration;
 import co.chatsdk.core.types.AccountDetails;
 import co.chatsdk.firebase.FirebaseNetworkAdapter;
 import co.chatsdk.firebase.file_storage.FirebaseFileStorageModule;
 import co.chatsdk.ui.manager.BaseInterfaceAdapter;
+import io.reactivex.Completable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
-import io.socket.client.IO;
 import io.socket.client.Socket;
 import io.socket.emitter.Emitter;
 
-import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.List;
-import com.oolive.library.utils.SDToast;
-
-public class SocketIOHelper {
+public class ChatSDKHelper {
     private static Socket mSocket;
     private static boolean isInLogin = false;
-    private static int numUsers;
-    private static String cur_group = "-1";
-    private static Activity activity = null;
+    private static Context appContext = null;
     private static Boolean isConnected = false;
-    private static String mUsername = null;
-    private static String mUserID = null;
     private static String roomID;
     private static User chatSdkUser_self = null;
     private static ChatSDK chatSDK;
+    private static String chat_id;
     private static final String password = "oolive_pwd";
-    protected ProgressDialog progressDialog;
-    private static Emitter.Listener onLogin = new Emitter.Listener() {
-
-        @Override
-        public void call(Object... args) {
-            JSONObject data = (JSONObject) args[0];
-
-            try {
-                numUsers = data.getInt("numUsers");
-            } catch (JSONException e) {
-                numUsers = -1;
-                return;
-            }
-
-        }
-    };
+    private static ProgressDialog progressDialog;
+    private static boolean register = false;
+    private static Disposable  msgListener = null;
     public static void init(Context context){
-
-        // The Chat SDK needs access to the application's context
-
+        LogUtil.e("Initial Chat SDK");
+        if (appContext == null)
+            appContext = context;
         try {
-            // Create a new configuration
             Configuration.Builder builder = new Configuration.Builder(context);
-            // Perform any other configuration steps (optional)
-            builder.firebaseRootPath("prod");
-            // Initialize the Chat SDK
+            builder.firebaseRootPath("live_chat");
             ChatSDK.initialize(builder.build(), new FirebaseNetworkAdapter(), new BaseInterfaceAdapter(context));
-            // File storage is needed for profile image upload and image messages
-
-            // Push notification module
-            //FirebasePushModule.activate();
-            // Activate any other modules you need.
-            // ...
-
         } catch (ChatSDKException e) {
-            // Handle any exceptions
             e.printStackTrace();
         }
-        // File storage is needed for profile image upload and image messages
         FirebaseFileStorageModule.activate();
+    }
+    public static void listenForReceivedMessage () {
+        ChatSDK.hook().addHook(new Hook(data -> Completable.create(emitter -> {
+            Message message = (Message) data.get(HookEvent.Message);
+            emitter.onComplete();
+        })), HookEvent.MessageReceived);
+    }
 
-        // Uncomment this to enable Firebase UI
-        // FirebaseUIModule.activate(EmailAuthProvider.PROVIDER_ID, PhoneAuthProvider.PROVIDER_ID);
-    }
-    public static String getUserID(){
-        return mUserID;
-    }
-    public static void loginSocketIO(String userId, String userSig,Activity act) {
+    public static void loginChatSDK(String raw_userID, String userSig, Activity activity) {
+
         if (isInLogin) {
             return;
         }
-        if (activity == null)
-            activity = act;
         InitActModel initActModel = InitActModelDao.query();
         if (initActModel == null) {
             LogUtil.e("login  error because of null InitActModel");
             return;
         }
-
-        String username = "user_" + userId + "@oolive.com";
-        String userID = "user@" +userId;
-        //login catch
-        if (ChatSDK.auth().isAuthenticatedThisSession()) {
-            LogUtil.i("登入成功!!  (cache_1)");
-            SDToast.showToast("登入成功!!  (cache_1) ");
+        Action doFinally = new Action() {
+            public void run() throws Exception {
+                LogUtil.i("doFinally" );
+                dismissProgressDialog();
+            }
+        };
+        showProgressDialog("登入聊天伺服器中",activity);
+        if (ChatSDK.auth().isAuthenticatedThisSession() && getChatID() != null && getChatID() .equals(ChatSDK.currentUserID())) {
+            isConnected = true;
+            isInLogin = true;
+            LogUtil.i("已經登入!!  (cache_1) ");
+            dismissProgressDialog();
         } else if (ChatSDK.auth().isAuthenticated()) {
-            Disposable d = ChatSDK.auth().authenticate().subscribe(() -> {
-                LogUtil.i("登入成功!!  (cache_2) ");
-                SDToast.showToast("登入成功!!  (cache_2) ");
+            ChatSDK.auth().authenticate().subscribe(() ->
+            {
+                LogUtil.i("cache2 " + ChatSDK.currentUser().getEntityID());
+                if (getChatID() == null || getChatID().equals(ChatSDK.currentUserID())) {
+                    LogUtil.i("登入成功!!  (cache_2) " + ChatSDK.currentUserID());
+                    SDToast.showToast("登入成功!!  (cache_2) " + ChatSDK.currentUserID());
+                    isInLogin = true;
+                    dismissProgressDialog();
+                }
+                else{
+                    registe_login(raw_userID,activity);
+                }
             }, throwable -> {
-                loginChatSDK(userID,username);
+                isInLogin = false;
+                registe_login(raw_userID,activity);
             });
         } else {
-            loginChatSDK(userID,username);
+            registe_login(raw_userID,activity);
+            isInLogin = false;
         }
-        //ChatSDK.currentUser().setEntityID(userID);
-        //ChatSDK.currentUser().update();
-        //LogUtil.i("chatSdkUserId + " +  ChatSDK.currentUser().getEntityID());
-        isConnected = true;
-        isInLogin = true;
     }
-    public static void loginChatSDK(String userID,String username){
+    private static void listenMsg(){
+        msgListener = ChatSDK.events().sourceOnMain()
+                .filter(NetworkEvent.filterType(EventType.MessageAdded))
+                .subscribe(new Consumer<NetworkEvent>() {
+                    @Override
+                    public void accept(NetworkEvent networkEvent) throws Exception {
+                        Message message = networkEvent.message;
+
+                    }
+                });
+    }
+    private static void registe_login(String raw_userID,Activity activity){
+        String username = "user_" + raw_userID + "@oolive.com";
         AccountDetails details = new AccountDetails();
         details.type = AccountDetails.Type.Username;
         details.username = username;
         details.password = password;
+        showProgressDialog("驗證帳號中",activity);
         Disposable d = ChatSDK.auth().authenticate(details).subscribe(() -> {
-            ChatSDK.currentUser().setEntityID(userID);
-            LogUtil.i("登入成功!! (帳號) " );
-            SDToast.showToast("登入成功!! (帳號)");
-
-        }, throwable -> {
-            LogUtil.i("註冊聊天帳號 " );
-            SDToast.showToast("註冊聊天帳號" );
-            details.type = AccountDetails.Type.Register;
-            ChatSDK.auth().authenticate(details).subscribe(() -> {
-                ChatSDK.currentUser().setEntityID(userID);
-                LogUtil.i("註冊聊天帳號成功 " );
-                SDToast.showToast("註冊聊天帳號成功" );
-            }, throwable2 -> {
-                LogUtil.i("註冊聊天帳號失敗 " );
-                SDToast.showToast("註冊聊天帳號失敗");
+                    LogUtil.i("登入成功!! (帳號) "+ ChatSDK.currentUser().getEntityID() );
+                    SDToast.showToast("登入成功!! (帳號)"+ ChatSDK.currentUser().getEntityID());
+                    CommonInterface.updateChatID(null,ChatSDK.currentUser().getEntityID());
+                    isInLogin = true;
+                    register = true;
+                    dismissProgressDialog();
+                }, throwable -> {
+                    details.type = AccountDetails.Type.Register;
+                    ChatSDK.auth().authenticate(details).subscribe(() -> {
+                        LogUtil.i("註冊聊天帳號成功 "+ ChatSDK.currentUserID() );
+                        SDToast.showToast("註冊聊天帳號成功" + ChatSDK.currentUserID());
+                        isInLogin = true;
+                        register = true;
+                        dismissProgressDialog();
+                    }, throwable2 -> {
+                        LogUtil.i("註冊聊天帳號失敗 " +throwable2.toString());
+                        register=false;
+                        dismissProgressDialog();
+                    });
             });
-        });
-        LogUtil.i("details.type!!"  + details.type );
+    }
+    protected static void showProgressDialog( String message,Activity activity) {
+        if (progressDialog == null) {
+            progressDialog = new ProgressDialog(activity);
+        }
+        LogUtil.i("progressDialog.show() in;" +  message);
+        if (!progressDialog.isShowing()) {
+            progressDialog = new ProgressDialog(activity);
+            progressDialog.setMessage(message);
+            progressDialog.show();
+            LogUtil.i("progressDialog.show();" );
+        }
+        else{
+            progressDialog.setMessage(message);
+            LogUtil.i("setMessage.show();" + message );
+        }
+    }
+    protected static void dismissProgressDialog() {
+        // For handling orientation changed.
+        LogUtil.i("dismissProgressDialog() in;" );
+        try {
+            if (progressDialog != null && progressDialog.isShowing()) {
+                progressDialog.dismiss();
+                LogUtil.i("progressDialog.dismiss();" );
+            }
+        } catch (Exception e) {
+            ChatSDK.logError(e);
+        }
+    }
+    public static void loginOrrRegister(String userID,String username){
+
     }
     public static void logout(){
+        isInLogin = false;
+        ChatSDKHelper.setChatID(null);
         ChatSDK.auth().logout();
     }
-    public static void logoutSocketIO(){
-        //mSocket.off("login", onLogin);
-    }
     public static void postERefreshMsgUnReaded() {
+
         postERefreshMsgUnReaded(false);
     }
-
+    public static void  setChatID(String ChatID){
+        chat_id = ChatID;
+    }
+    public static String getChatID(){
+        return chat_id;
+    }
     public static void postERefreshMsgUnReaded(boolean isFromSetLocalReade) {
         ERefreshMsgUnReaded event = new ERefreshMsgUnReaded();
-        event.model = SocketIOHelper.getC2CTotalUnreadMessageModel(activity);
-        event.isFromSetLocalReaded = isFromSetLocalReade;
-        SDEventManager.post(event);
+        //event.model = SocketIOHelper.getC2CTotalUnreadMessageModel(appContext);
+        //event.isFromSetLocalReaded = isFromSetLocalReade;
+        //SDEventManager.post(event);
     }
     public static void joinGroup(String room_id) {
         roomID = "room@" + room_id;
@@ -190,7 +236,6 @@ public class SocketIOHelper {
         Disposable d = ChatSDK.thread().createThread(roomID, chatSdkUser_self)
                 .observeOn(AndroidSchedulers.mainThread())
                 .doFinally(() -> {
-
                 })
                 .subscribe(thread -> {
                     SDToast.showToast("創建房間成功!!" + thread.getEntityID());
@@ -199,8 +244,6 @@ public class SocketIOHelper {
                 }, throwable -> {
                     SDToast.showToast("創建房間失敗!! " + throwable.toString());
                 });
-
-
     }
     public static List<MsgModel> getC2CMsgList(Activity activity) {
         LogUtil.i("getC2CMsgList");
@@ -221,7 +264,7 @@ public class SocketIOHelper {
                         if (list != null && list.size() > 0) {
                             SocketIOMessage sMsg = list.get(0);
                             MsgModel msg = new LiveMsgModel(sMsg);
-                            msg.setConversationPeer(conversation.getPeer());
+                            //msg.setConversationPeer(conversation.getPeer());
                             if (msg.isPrivateMsg()) {
                                 listMsg.add(msg);
                             }
@@ -301,7 +344,7 @@ public class SocketIOHelper {
         }
         return conversation;
     }
-    public static void sendMsgC2C(final String id,final CustomMsg customMsg,final SocketIOValueCallBack<SocketIOMessage> callback) {
+    public static void sendMsgC2C(final String id, final Thread c2cThread, final CustomMsg customMsg, final SocketIOValueCallBack<SocketIOMessage> callback) {
         if (TextUtils.isEmpty(id)) {
             callback.onError(0,"無聊天對象");
         }
@@ -313,14 +356,12 @@ public class SocketIOHelper {
             CommonInterface.requestIs_black(customMsg.getSender().getUser_id(), new AppRequestCallback<User_is_blackActModel>() {
                 protected void onSuccess(SDResponse resp) {
                     if (actModel.isOk()) {
-                        SocketIOMessage sMsg = customMsg.parsetoSocketIOMessage();
-                        sMsg.setPeer(customMsg.getSender().getUser_id());
-                        mSocket.emit("c2c_msg",id,customMsg.parsetoSocketIOMessage().getJson());
+                        String json = customMsg.parsetoSocketIOMessage().getJson();
+                        ChatSDK.thread().sendMessageWithText(json, c2cThread).subscribe(messageSendProgress -> {
+                            LogUtil.i("customMsg.parsetoSocketIOMessage().getJson() =  " + json);
+                        }, throwable -> {
 
-                        //LogUtil.i("requestIs_black :" + customMsg.parsetoSocketIOMessage().getJson());
-
-                        callback.onSuccess(customMsg.parsetoSocketIOMessage());
-
+                        });
                     }
                     else {
                         callback.onError(1,"無法傳送訊息");

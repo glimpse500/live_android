@@ -2,6 +2,7 @@ package com.oolive.live.common;
 
 import android.text.TextUtils;
 
+import com.oolive.chat.ChatSDKHelper;
 import com.oolive.games.model.App_banker_applyActModel;
 import com.oolive.games.model.App_banker_listActModel;
 import com.oolive.games.model.App_getGamesActModel;
@@ -94,6 +95,7 @@ import com.oolive.live.model.App_userinfoActModel;
 import com.oolive.live.model.App_usersigActModel;
 import com.oolive.live.model.App_video_cstatusActModel;
 import com.oolive.live.model.App_viewerActModel;
+import com.oolive.live.model.ChatModel;
 import com.oolive.live.model.Deal_send_propActModel;
 import com.oolive.live.model.IndexSearch_areaActModel;
 import com.oolive.live.model.Index_focus_videoActModel;
@@ -199,7 +201,7 @@ public class CommonInterface {
 
     /**
      * 请求当前用户的usersig
-     * 騰訊雲通訊uim_sdkappid
+     * 替換成ChatSDK
      */
     public static void requestUsersig(AppRequestCallback<App_usersigActModel> listener) {
 
@@ -214,12 +216,54 @@ public class CommonInterface {
                 if (actModel.getStatus() == 1) {
                     String usersig = actModel.getUsersig();
                     AppRuntimeWorker.setUsersig(usersig);
-                    AppRuntimeWorker.startContext();
+                    //AppRuntimeWorker.startContext();
                 }
             }
         });
     }
+    /**
+     * 请求当前用户的chatID
+     * ChatSDK
+     */
+    public static void requestChatID(AppRequestCallback<ChatModel> listener) {
 
+        AppRequestParams params = new AppRequestParams();
+        params.putCtl("user");
+        params.putAct("chat_id");
+        AppHttpUtil.getInstance().post(params, new AppRequestCallbackWrapper<ChatModel>(listener) {
+
+            @Override
+            protected void onSuccess(SDResponse resp) {
+                if (actModel.getStatus() == 1) {
+                    String chat_ID = actModel.getChat_ID();
+                    ChatSDKHelper.setChatID(actModel.getChat_ID());
+                    //AppRuntimeWorker.startContext();
+                }
+            }
+        });
+    }
+    /**
+     * 请求当前用户的chatID
+     * ChatSDK
+     */
+    public static void updateChatID(AppRequestCallback<ChatModel> listener,String chat_id) {
+
+        AppRequestParams params = new AppRequestParams();
+        params.putCtl("user");
+        params.putAct("chat_id");
+        params.put("chat_id",chat_id);
+
+        AppHttpUtil.getInstance().post(params, new AppRequestCallbackWrapper<ChatModel>(listener) {
+
+            @Override
+            protected void onSuccess(SDResponse resp) {
+                if (actModel.getStatus() == 1) {
+                    String chat_ID = actModel.getChat_ID();
+                    ChatSDKHelper.setChatID(actModel.getChat_ID());
+                }
+            }
+        });
+    }
     /**
      * 获得礼物列表
      *

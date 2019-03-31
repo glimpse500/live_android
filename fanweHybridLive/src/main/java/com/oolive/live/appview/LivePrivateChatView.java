@@ -5,6 +5,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Rect;
 import androidx.fragment.app.FragmentActivity;
+import co.chatsdk.core.dao.Thread;
+import co.chatsdk.core.dao.User;
+import co.chatsdk.core.session.ChatSDK;
+
 import android.text.InputFilter;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -110,6 +114,7 @@ public class LivePrivateChatView extends BaseAppView {
     private SDViewSizeLocker mContentSizeLocker;
 
     private LivePrivateChatBusiness mChatBusiness;
+
 
     private void init() {
 

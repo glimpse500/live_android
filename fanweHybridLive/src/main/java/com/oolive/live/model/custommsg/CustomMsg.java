@@ -26,6 +26,11 @@ public class CustomMsg implements ICustomMsg, Serializable {
      */
     private String user_id;
 
+    /**
+     * chatSDK
+     */
+    private String chat_id;
+
     public CustomMsg() {
         type = LiveConstant.CustomMsgType.MSG_NONE;
         deviceType = "Android";
@@ -50,6 +55,14 @@ public class CustomMsg implements ICustomMsg, Serializable {
 
     public void setUser_id(String user_id) {
         this.user_id = user_id;
+    }
+
+    public String getChat_id() {
+        return chat_id;
+    }
+
+    public void setChat_id(String chat_id) {
+        this.chat_id = chat_id;
     }
 
     public String getDeviceType() {
@@ -97,6 +110,7 @@ public class CustomMsg implements ICustomMsg, Serializable {
             byte[] bytes = json.getBytes(LiveConstant.DEFAULT_CHARSET);
             sMsg = new SocketIOMessage(bytes);
             sMsg.setPeer(user_id);
+            sMsg.setPeerChatID(chat_id);
             sMsg.setJson(json);
             LogUtil.i("send json:" + json);
         } catch (Exception e) {
@@ -108,7 +122,6 @@ public class CustomMsg implements ICustomMsg, Serializable {
         //TO DO
         //TIMMessage timMessage = parsetoTIMMessage();
         SocketIOMessage sMsg = parsetoSocketIOMessage();
-
         MsgModel msgModel = new LiveMsgModel(sMsg);
         return msgModel;
     }

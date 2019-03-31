@@ -110,7 +110,7 @@ public class LiveInitChat {
 
             @Override
             public void onUserSigExpired() {
-                CommonInterface.requestUsersig(null);
+                //CommonInterface.requestUsersig(null);
             }
         });
 

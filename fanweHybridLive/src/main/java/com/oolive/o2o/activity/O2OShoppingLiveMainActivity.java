@@ -63,7 +63,7 @@ public class O2OShoppingLiveMainActivity extends BaseActivity {
         mIsExitApp = false;
         checkUpdate();
 
-        AppRuntimeWorker.startContext();
+        AppRuntimeWorker.startContext(getActivity());
         CommonInterface.requestUser_apns(null);
         CommonInterface.requestMyUserInfo(null);
 
@@ -192,7 +192,7 @@ public class O2OShoppingLiveMainActivity extends BaseActivity {
 
             @Override
             public void onClickConfirm(View v, SDDialogBase dialog) {
-                AppRuntimeWorker.startContext();
+                AppRuntimeWorker.startContext(getActivity());
             }
         }).show();
     }

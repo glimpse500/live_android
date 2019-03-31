@@ -1,9 +1,12 @@
 package com.oolive.live.business;
 
+import com.oolive.chat.ChatSDKHelper;
 import com.oolive.hybrid.http.AppRequestCallback;
 import com.fanwe.library.adapter.http.model.SDResponse;
+import com.oolive.library.receiver.SDNetworkReceiver;
 import com.oolive.library.utils.LogUtil;
 import com.oolive.library.utils.SDCollectionUtil;
+import com.oolive.library.utils.SDToast;
 import com.oolive.live.IMHelper;
 import com.oolive.live.LiveInformation;
 import com.oolive.live.common.CommonInterface;
@@ -35,6 +38,17 @@ import java.util.List;
 
 import android.app.Activity;
 
+import co.chatsdk.core.dao.Message;
+import co.chatsdk.core.dao.Thread;
+import co.chatsdk.core.dao.User;
+import co.chatsdk.core.events.EventType;
+import co.chatsdk.core.events.NetworkEvent;
+import co.chatsdk.core.session.ChatSDK;
+import co.chatsdk.ui.utils.ToastHelper;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
+
 /**
  * 私聊业务类
  */
@@ -51,6 +65,9 @@ public class LivePrivateChatBusiness extends BaseBusiness {
      * 私聊的用户id
      */
     private String mUserId;
+    private String mChatId;
+    private co.chatsdk.core.dao.Thread c2cThread;
+    private static Disposable msgListener;
     private Activity mActivity;
     private LivePrivateChatBusinessCallback mCallback;
 
@@ -68,6 +85,14 @@ public class LivePrivateChatBusiness extends BaseBusiness {
         return mUserId;
     }
 
+    public void setChatId(String mChatId) {
+        this.mChatId = mChatId;
+        LiveInformation.getInstance().setCurrentChatPeer(mChatId);
+    }
+
+    public String getChatId() {
+        return mChatId;
+    }
     /**
      * 设置最后一条im消息，加载历史消息的时候会从从最后一条消息往前加载
      *
@@ -119,7 +144,27 @@ public class LivePrivateChatBusiness extends BaseBusiness {
             @Override
             protected void onSuccess(SDResponse resp) {
                 if (actModel.isOk()) {
+                    setChatId(actModel.getUser().getChat_id());
+                    LogUtil.i("requestUserInfo setChatId" + actModel.getUser().getChat_id());
                     mCallback.onRequestUserInfoSuccess(actModel.getUser());
+                    User peer = ChatSDK.db().fetchUserWithEntityID(actModel.getUser().getChat_id());
+                    List<User> user_list = new ArrayList<>();
+                    user_list.add(ChatSDK.currentUser());
+                    user_list.add(peer);
+                    c2cThread = ChatSDK.db().fetchThreadWithUsers(user_list);
+                    if (c2cThread == null){
+                        ChatSDK.thread().createThread("c2cMsgThread", user_list)
+                                .observeOn(AndroidSchedulers.mainThread())
+                                .doFinally(() -> {
+                                    // Runs when process completed with error or success
+                                })
+                                .subscribe(thread -> {
+                                   c2cThread = thread;
+                                }, throwable -> {
+                                    SDToast.showToast("創建私聊異常");
+                                });
+                    }
+
                 } else {
 
                 }
@@ -247,10 +292,10 @@ public class LivePrivateChatBusiness extends BaseBusiness {
         CustomMsgPrivateText msg = new CustomMsgPrivateText();
         msg.setText(content);
         msg.setUser_id(mUserId);
+        msg.setChat_id(mChatId);
         MsgModel msgModel = msg.parseToMsgModel();
         //msgModel.setConversationPeer();
         mCallback.onAdapterAppendData(msgModel);
-
         sendIMMsg(msgModel);
     }
 
@@ -262,7 +307,6 @@ public class LivePrivateChatBusiness extends BaseBusiness {
     public void sendIMImage(File file) {
         CustomMsgPrivateImage msg = new CustomMsgPrivateImage();
         msg.setPath(file.getAbsolutePath());
-
         MsgModel msgModel = msg.parseToMsgModel();
         mCallback.onAdapterAppendData(msgModel);
 
@@ -297,6 +341,7 @@ public class LivePrivateChatBusiness extends BaseBusiness {
         msg.fillData(model);
 
         MsgModel msgModel = msg.parseToMsgModel();
+
         mCallback.onAdapterAppendData(msgModel);
 
         sendIMMsg(msgModel);
@@ -305,7 +350,7 @@ public class LivePrivateChatBusiness extends BaseBusiness {
     public void sendIMMsg(final MsgModel model) {
         final int index = mCallback.onAdapterIndexOf(model);
 
-        SocketIOHelper.sendMsgC2C(mUserId,model.getCustomMsg(),new SocketIOValueCallBack<SocketIOMessage>() {
+        ChatSDKHelper.sendMsgC2C(mUserId,c2cThread,model.getCustomMsg(),new SocketIOValueCallBack<SocketIOMessage>() {
             @Override
             public void onSuccess(SocketIOMessage sMsg) {
                 SocketIOConversation conversation = SocketIOManager.getInstance().getConversation(SocketIOConversationType.C2C,mUserId);

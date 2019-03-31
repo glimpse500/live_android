@@ -48,15 +48,16 @@ public class LiveMainActivity extends BaseActivity {
     @Override
     protected void init(Bundle savedInstanceState) {
         super.init(savedInstanceState);
-        LogUtil.i("LiveMainActivity");
+        LogUtil.i("LiveMainActivity start");
         fl_main_content = (FrameLayout) findViewById(R.id.fl_main_content);
         mIsExitApp = true;
         //this.getActivity();
         //checkUpdate();
         //AppRuntimeWorker.startContext();
-        AppRuntimeWorker.startContext(getActivity());
-        //CommonInterface.requestUser_apns(null);
         CommonInterface.requestMyUserInfo(null);
+        AppRuntimeWorker.startContext(this);
+        //CommonInterface.requestUser_apns(null);
+
         checkVideo();
         initTabs();
 

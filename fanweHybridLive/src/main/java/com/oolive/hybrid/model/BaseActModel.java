@@ -23,6 +23,7 @@ public class BaseActModel implements Serializable {
     protected int status; // 接口返回状态，1-成功，其他值失败，或者其他业务
     protected long expiry_after; // 接口的json数据过期时间点，如果大于0，则要缓存这个json(单位秒)
     protected String error; // 接口返回的提示信息
+
     private long init_version;
 
     //add
@@ -32,6 +33,7 @@ public class BaseActModel implements Serializable {
      *
      * @return
      */
+
     public boolean isExpired() {
         return System.currentTimeMillis() > (expiry_after * 1000);
     }

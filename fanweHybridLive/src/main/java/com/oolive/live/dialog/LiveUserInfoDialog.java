@@ -116,6 +116,8 @@ public class LiveUserInfoDialog extends LiveBaseDialog {
 
     private String to_user_id;
 
+    private String to_user_chat_id;
+
     private String db_user_id;
 
     private String identifierCreater_id;
@@ -138,6 +140,11 @@ public class LiveUserInfoDialog extends LiveBaseDialog {
 
     private void init_id(String user_id) {
         this.to_user_id = user_id;
+
+
+
+        String to_user_chat_id = "";
+        this.to_user_chat_id = to_user_chat_id;
         UserModel user = UserModelDao.query();
         if (user != null) {
             this.db_user_id = user.getUser_id();

@@ -11,6 +11,7 @@ import com.oolive.live.model.custommsg.MsgModel;
 
 public class LiveConversationListModel extends UserModel {
     private String peer; //会话对方id
+    private String peer_chatID;
     private String text; //展示文字
     private long unreadNum; //未读数量
     private long time; //时间
@@ -40,6 +41,7 @@ public class LiveConversationListModel extends UserModel {
             return;
         }
         setPeer(msg.getConversationPeer());
+        setPeerChatID(msg.getConversationPeerChatID());
         setText(msg.getCustomMsg().getConversationDesc());
         setUnreadNum(msg.getUnreadNum());
         setTime(msg.getTimestamp());
@@ -56,7 +58,14 @@ public class LiveConversationListModel extends UserModel {
     public void updateUnreadNumber() {
         setUnreadNum(IMHelper.getC2CUnreadNumber(peer));
     }
+    public String getPeerChatID(){
+        return peer_chatID;
+    }
 
+    public void setPeerChatID(String peer_chatID)
+    {
+        this.peer_chatID = peer_chatID;
+    }
     public String getPeer() {
         return peer;
     }

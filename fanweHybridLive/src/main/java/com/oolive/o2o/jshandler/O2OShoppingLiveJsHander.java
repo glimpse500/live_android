@@ -103,7 +103,7 @@ public class O2OShoppingLiveJsHander extends ShopJsHandler {
                         joinLiveData.setRoomId(room_id);
                         joinLiveData.setLoadingVideoImageUrl(loadingVideoImageUrl);
 
-                        AppRuntimeWorker.startContext();
+                        AppRuntimeWorker.startContext(getActivity());
                         AppRuntimeWorker.joinLive(joinLiveData, getActivity());
                     }
                     dialog.dismiss();
@@ -205,7 +205,7 @@ public class O2OShoppingLiveJsHander extends ShopJsHandler {
                     if (actModel.getStatus() == 1) {
                         UserModel.dealLoginSuccess(actModel.getUser(), true);
 
-                        AppRuntimeWorker.startContext();
+                        AppRuntimeWorker.startContext(getActivity());
                         Intent intent = new Intent(getActivity(), LiveCreateRoomActivity.class);
                         startActivity(intent);
                     }

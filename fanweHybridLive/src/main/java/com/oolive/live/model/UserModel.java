@@ -20,6 +20,7 @@ public class UserModel implements SDSelectManager.Selectable, Serializable {
     static final long serialVersionUID = 0;
 
     private String user_id = ""; // 用户id
+    private String chat_id = "";
     private String luck_num = ""; // 靓号
     private String nick_name; // 昵称
     private String signature; // 签名
@@ -110,6 +111,8 @@ public class UserModel implements SDSelectManager.Selectable, Serializable {
         int level = AppRuntimeWorker.getPrivate_letter_lv();
         return this.user_level >= level;
     }
+    public String getChat_id(){return chat_id;}
+    public void setChat_id(String chat_id){this.chat_id = chat_id;}
 
     public int getLogin_type() {
         return login_type;

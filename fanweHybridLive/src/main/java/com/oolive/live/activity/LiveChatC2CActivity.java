@@ -37,6 +37,7 @@ public class LiveChatC2CActivity extends BaseActivity {
             public void onChatItemClickListener(LiveConversationListModel itemLiveChatListModel) {
                 Intent intent = new Intent(LiveChatC2CActivity.this, LivePrivateChatActivity.class);
                 intent.putExtra(LivePrivateChatActivity.EXTRA_USER_ID, itemLiveChatListModel.getPeer());
+                intent.putExtra(LivePrivateChatActivity.EXTRA_CHAT_ID, itemLiveChatListModel.getPeerChatID());
                 startActivity(intent);
             }
         });
