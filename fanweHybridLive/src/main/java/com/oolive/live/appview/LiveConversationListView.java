@@ -297,6 +297,7 @@ public class LiveConversationListView extends BaseAppView {
         } else {
             if (msg.isPrivateMsg()) {
                 dealNewMsg(msg);
+
             }
         }
     }

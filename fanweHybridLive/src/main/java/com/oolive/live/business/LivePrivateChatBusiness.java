@@ -78,6 +78,7 @@ public class LivePrivateChatBusiness extends BaseBusiness {
      */
     public void setUserId(String userId) {
         mUserId = userId;
+
         LiveInformation.getInstance().setCurrentChatPeer(userId);
     }
 
@@ -279,6 +280,8 @@ public class LivePrivateChatBusiness extends BaseBusiness {
         if (event.msg.getConversationPeer().equals(mUserId)) {
             if (event.msg.isPrivateMsg()) {
                 mCallback.onAdapterAppendData(event.msg);
+                SocketIOConversation conversation = SocketIOManager.getInstance().getConversation(SocketIOConversationType.C2C,mUserId);
+                conversation.setMsgRead(mActivity);
             }
         }
     }
@@ -354,6 +357,7 @@ public class LivePrivateChatBusiness extends BaseBusiness {
         ChatSDKHelper.sendMsgC2C(mUserId,c2cThread,model.getCustomMsg(),new SocketIOValueCallBack<SocketIOMessage>() {
             @Override
             public void onSuccess(SocketIOMessage sMsg) {
+                LogUtil.i("sendIMMsg success");
                 SocketIOConversation conversation = SocketIOManager.getInstance().getConversation(SocketIOConversationType.C2C,mUserId);
                 if (mLastsMsg == null) {
                     mLastsMsg = sMsg;
@@ -362,7 +366,7 @@ public class LivePrivateChatBusiness extends BaseBusiness {
                     model.remove();
                 }
                 else{
-                    conversation.writeLocalMessage(sMsg,mActivity);
+                    conversation.writeLocalMessage(sMsg,mActivity,true);
                 }
                 //TO DO
                 //model.setTimMessage(timMessage);

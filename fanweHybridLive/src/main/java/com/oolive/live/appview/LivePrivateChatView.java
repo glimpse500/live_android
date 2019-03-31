@@ -16,6 +16,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 
+import com.oolive.chat.ChatSDKHelper;
 import com.oolive.hybrid.dao.InitActModelDao;
 import com.fanwe.lib.player.SDMediaPlayer;
 import com.fanwe.lib.recorder.SDMediaRecorder;
@@ -165,6 +166,8 @@ public class LivePrivateChatView extends BaseAppView {
     public void setUserId(String userId) {
 
         mChatBusiness.setUserId(userId);
+        ChatSDKHelper.setCurrentPeer(userId);
+
         mChatBusiness.requestUserInfo();
         LogUtil.i("setUserId ,loadHistoryMessage");
         mChatBusiness.loadHistoryMessage(20);
@@ -841,6 +844,7 @@ public class LivePrivateChatView extends BaseAppView {
 
         @Override
         public void onAdapterAppendData(MsgModel model) {
+
             LogUtil.i("onAdapterAppendData");
             mAdapter.appendData(model);
             lv_content.scrollToEndDelayed(SCROLL_DELAY);

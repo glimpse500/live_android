@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.oolive.chat.ChatSDKHelper;
 import com.oolive.library.utils.LogUtil;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -19,6 +20,7 @@ public class SocketIOConversation {
     private String peer = "";
     private String identifer = "";
     private ArrayList<SocketIOMessage> msglist = null;
+    private int unReadNum = 0;
     //private SocketIOConversation conversation;
     public SocketIOConversation(){
 
@@ -34,9 +36,7 @@ public class SocketIOConversation {
         return this.peer;
     }
     public long getUnreadMessageNum() {
-        //To Do
-        long unReadMsg = 0;
-        return unReadMsg;
+        return unReadNum;
     }
     void setPeer(String var1) {
         this.peer = var1;
@@ -46,15 +46,34 @@ public class SocketIOConversation {
     }
     public List<SocketIOMessage> getLastMsgs( int cnt) {
         List subList;
+        LogUtil.i("msglist.size = " + msglist.size());
+        LogUtil.i("cnt = " + cnt);
         if (msglist != null){
             subList = msglist.subList(Math.max(msglist.size() - cnt, 0), msglist.size());
         }
         else
             subList = new ArrayList();
+        LogUtil.i("subList  (i) " + subList.get(0).toString());
         return subList;
     }
     boolean valid() {
         return this.type != SocketIOConversationType.Invalid;
+    }
+    public void setMsgRead(Activity activity){
+        SharedPreferences pref = activity.getSharedPreferences("msg_handle", Context.MODE_PRIVATE);
+        Gson gson = new Gson();
+        String key = ChatSDKHelper.getUserID() + "_" +getPeer();
+        Type type = new TypeToken<SocketIOConversation>(){}.getType();
+        String json = pref.getString(key, "");
+        SocketIOConversation conversation = gson.fromJson(json, type);
+        if (conversation == null)
+            conversation = this;
+        conversation.unReadNum = 0;
+
+        SharedPreferences.Editor prefsEditor = pref.edit();
+        String save_json = gson.toJson(conversation);
+        prefsEditor.putString(key, save_json);
+        prefsEditor.commit();
     }
     public void getLocalMessage(int cnt, SocketIOMessage var2, Activity activity, SocketIOValueCallBack<List<SocketIOMessage>> callBack) {
         if (callBack != null) {
@@ -63,16 +82,23 @@ public class SocketIOConversation {
             } else {
                  SharedPreferences pref = activity.getSharedPreferences("msg_handle", Context.MODE_PRIVATE);
                  Gson gson = new Gson();
-                 String key = SocketIOHelper.getUserID() + "_" +getPeer();
+                 String key = ChatSDKHelper.getUserID() + "_" +getPeer();
                  Type type = new TypeToken<SocketIOConversation>(){}.getType();
                  String json = pref.getString(key, "");
                  SocketIOConversation conversation = gson.fromJson(json, type);
                  if (conversation == null)
                      conversation = this;
+                 conversation.unReadNum = 0;
+
                  List<SocketIOMessage> list = conversation.msglist;
                  List<SocketIOMessage> subList = new ArrayList<SocketIOMessage>();
                  if (list != null)
                      subList = list.subList(Math.max(list.size() - cnt, 0), list.size());
+
+                 SharedPreferences.Editor prefsEditor = pref.edit();
+                 String save_json = gson.toJson(conversation);
+                 prefsEditor.putString(key, save_json);
+                 prefsEditor.commit();
                  /*
                  LogUtil.i("subLlist : ");
                  for (int i = 0;i < subList.size();i++){
@@ -83,12 +109,12 @@ public class SocketIOConversation {
             }
         }
     }
-    public void writeLocalMessage(SocketIOMessage sMsg, Activity activity) {
+    public void writeLocalMessage(SocketIOMessage sMsg, Activity activity,boolean fromSelf) {
         //SharedPreferences  mPrefs = activity.getPreferences(Activity.MODE_PRIVATE);
         SharedPreferences pref = activity.getSharedPreferences("msg_handle", Context.MODE_PRIVATE);
 
         Gson gson = new Gson();
-        String key = SocketIOHelper.getUserID() + "_" +getPeer();
+        String key = ChatSDKHelper.getUserID() + "_" +getPeer();
         Type type = new TypeToken<SocketIOConversation>(){}.getType();
         String json = pref.getString(key, "");
 
@@ -98,7 +124,9 @@ public class SocketIOConversation {
         if (conversation.msglist == null)
             conversation.msglist  = new ArrayList<SocketIOMessage>();
         conversation.msglist .add(sMsg);
-
+        if (!fromSelf)
+            conversation.unReadNum +=1;
+        LogUtil.i("msglist.size = " + conversation.msglist.size());
         SharedPreferences.Editor prefsEditor = pref.edit();
         String save_json = gson.toJson(conversation);
         prefsEditor.putString(key, save_json);
@@ -112,7 +140,7 @@ public class SocketIOConversation {
 
         if (key_list == null)
             key_list = new LinkedList<String>();
-        LogUtil.i("Conversations" + key_list.size() + key);
+        LogUtil.i("" + key_list.size() + key);
         if (!key_list.contains(key) )
             key_list.add(key);
 

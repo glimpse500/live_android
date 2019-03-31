@@ -70,7 +70,9 @@ public class ChatSDKHelper {
     private static String roomID;
     private static User chatSdkUser_self = null;
     private static ChatSDK chatSDK;
+    private static String userID;
     private static String chat_id;
+    private static String peer;
     private static final String password = "oolive_pwd";
     private static ProgressDialog progressDialog;
     private static boolean register = false;
@@ -97,6 +99,8 @@ public class ChatSDKHelper {
                 .subscribe(new Consumer<NetworkEvent>() {
                     @Override
                     public void accept(NetworkEvent networkEvent) throws Exception {
+                        networkEvent.message.setRead(true);
+                        networkEvent.message.update();
                         String json_message = networkEvent.message.getText();
                         LogUtil.i("on json_message  :" + networkEvent.message.getText());
                         try {
@@ -110,10 +114,11 @@ public class ChatSDKHelper {
                                 msg.setConversationPeer(cMsg.getSender().getUser_id());
                                 EImOnNewMessages event = new EImOnNewMessages();
                                 SocketIOConversation conversation = SocketIOManager.getInstance().getConversation(SocketIOConversationType.C2C, cMsg.getSender().getUser_id());
-                                conversation.writeLocalMessage(sMsg, activity);
+                                conversation.writeLocalMessage(sMsg, activity,false);
                                 event.msg = msg;
                                 LogUtil.i("cMsg.getConversationPeer() + " +  msg.getConversationPeer());
                                 SDEventManager.post(event);
+                                ChatMsgStore.postERefreshMsgUnReaded(false);
                             }
                         } catch (JSONException e) {
                             //Log.e(TAG, e.getMessage());
@@ -121,6 +126,7 @@ public class ChatSDKHelper {
                         }
                     }
                 });
+        ChatMsgStore.init(activity);
     }
     public static void loginChatSDK(String raw_userID, String userSig, Activity activity) {
 
@@ -132,6 +138,7 @@ public class ChatSDKHelper {
             LogUtil.e("login  error because of null InitActModel");
             return;
         }
+       userID = raw_userID;
         Action doFinally = new Action() {
             public void run() throws Exception {
                 LogUtil.i("doFinally" );
@@ -202,6 +209,12 @@ public class ChatSDKHelper {
                     });
             });
     }
+    public static void  setCurrentPeer(String currentPeer){
+        peer  = currentPeer;
+    }
+    public static String getUserID(){
+        return userID;
+    }
     public static boolean isConnected(){
         return isConnected;
     }
@@ -255,9 +268,10 @@ public class ChatSDKHelper {
                     if (actModel.isOk()) {
                         String json = customMsg.parsetoSocketIOMessage().getJson();
                         ChatSDK.thread().sendMessageWithText(json, c2cThread).subscribe(messageSendProgress -> {
-                            LogUtil.i("customMsg.parsetoSocketIOMessage().getJson() =  " + json);
+                            //LogUtil.i("customMsg.parsetoSocketIOMessage().getJson() =  " + json);
+                            callback.onSuccess(customMsg.parsetoSocketIOMessage());
                         }, throwable -> {
-
+                            callback.onError(1,"無法傳送訊息");
                         });
                     }
                     else {

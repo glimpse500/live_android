@@ -28,7 +28,7 @@ import java.util.List;
 
 public class ChatMsgStore {
     private static SharedPreferences pref;
-    public ChatMsgStore(Activity activity){
+    public static void init(Activity activity){
         pref = activity.getSharedPreferences("msg_handle", Context.MODE_PRIVATE);
     }
     public static void postERefreshMsgUnReaded(boolean isFromSetLocalReade) {
@@ -53,7 +53,8 @@ public class ChatMsgStore {
                     LogUtil.i("conversation.getPeer()  = " + conversation.getPeer() + " : " + user.getUser_id());
                     if (!conversation.getPeer().equals(user.getUser_id())) {
                         List<SocketIOMessage> list = conversation.getLastMsgs(1);
-                        LogUtil.i("list get i "+ list.get(i).getJson());
+                        LogUtil.i("========= ");
+                        //LogUtil.i("list get i "+ list.get(i).getJson());
                         if (list != null && list.size() > 0) {
                             SocketIOMessage sMsg = list.get(0);
                             MsgModel msg = new LiveMsgModel(sMsg);
@@ -86,6 +87,7 @@ public class ChatMsgStore {
             SocketIOConversationType type = conversation.getType();
             if (type == SocketIOConversationType.C2C) {
                 // 自己对自己发的消息过滤
+                LogUtil.i("getC2CTotalUnreadMessageModel " + conversation.getPeer() + " : " + user.getUser_id());
                 if (!conversation.getPeer().equals(user.getUser_id())) {
                     long unreadnum = conversation.getUnreadMessageNum();
                     if (unreadnum > 0) {

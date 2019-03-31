@@ -178,7 +178,7 @@ public class SocketIOHelper {
                     EImOnNewMessages event = new EImOnNewMessages();
                     SocketIOConversation conversation = SocketIOManager.getInstance().getConversation(SocketIOConversationType.C2C,cMsg.getSender().getUser_id());
 
-                    conversation.writeLocalMessage(sMsg,activity);
+                   // conversation.writeLocalMessage(sMsg,activity,);
                     event.msg = msg;
                     //event.sMsg = sMsg;
                     LogUtil.i("SDEventManager.post(event);  :");
