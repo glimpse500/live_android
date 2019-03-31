@@ -688,6 +688,7 @@ public class LivePrivateChatView extends BaseAppView {
      * @param event
      */
     public void onEventMainThread(EImOnNewMessages event) {
+        LogUtil.i("onEventMainThread + EImOnNewMessages" + event.msg.toString());
         mChatBusiness.onEventMainThread(event);
     }
 

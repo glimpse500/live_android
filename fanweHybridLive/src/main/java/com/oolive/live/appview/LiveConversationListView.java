@@ -6,6 +6,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ListView;
 
+import com.oolive.chat.ChatMsgStore;
 import com.oolive.hybrid.http.AppRequestCallback;
 import com.fanwe.lib.dialog.ISDDialogMenu;
 import com.fanwe.lib.dialog.impl.SDDialogBase;
@@ -161,7 +162,7 @@ public class LiveConversationListView extends BaseAppView {
             public String onBackground() {
                 synchronized (mLock) {
                    // List<MsgModel> listMsg = IMHelper.getC2CMsgList();
-                    List<MsgModel> listMsg = SocketIOHelper.getC2CMsgList(getActivity());
+                    List<MsgModel> listMsg = ChatMsgStore.getC2CMsgList();
                     if (listMsg != null) {
                         mListMsgFollow.clear();
                         mListMsgUnknow.clear();

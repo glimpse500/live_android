@@ -501,7 +501,7 @@ public abstract class MsgModel {
         return conversationtPeer;
     }
 
-    public void setConversationPeer(String conversationtPeerChatID) {
+    public void setConversationPeer(String conversationtPeer) {
         this.conversationtPeer = conversationtPeer;
     }
     public String getConversationPeerChatID() {

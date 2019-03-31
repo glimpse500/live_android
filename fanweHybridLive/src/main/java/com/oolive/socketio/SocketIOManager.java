@@ -1,6 +1,7 @@
 package com.oolive.socketio;
 
 import android.app.Activity;
+import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 
@@ -34,9 +35,10 @@ public class SocketIOManager {
         LogUtil.i("addMessageListener");
         this.msgListeners.add(var1);
     }
-    public long getConversationCount(Activity activity) {
+
+    public long getConversationCount(SharedPreferences pref) {
         //To Do
-        SharedPreferences pref = activity.getSharedPreferences("msg_handle", Context.MODE_PRIVATE);
+        //SharedPreferences pref = activity.getSharedPreferences("msg_handle", Context.MODE_PRIVATE);
         Gson gson = new Gson();
         Type map_type = new TypeToken<HashSet<String>>(){}.getType();
         Set<String> set = gson.fromJson(pref.getString("Conversations", ""), map_type);
@@ -46,8 +48,7 @@ public class SocketIOManager {
         LogUtil.i("set size " + set.size());
         return set.size();
     }
-    public SocketIOConversation getConversationByIndex(Activity activity,int var1) {
-        SharedPreferences pref = activity.getSharedPreferences("msg_handle", Context.MODE_PRIVATE);
+    public SocketIOConversation getConversationByIndex(SharedPreferences pref,int var1) {
         Gson gson = new Gson();
         Type map_type = new TypeToken<HashSet<String>>(){}.getType();
         Set<String> set = gson.fromJson(pref.getString("Conversations", ""), map_type);
@@ -76,10 +77,12 @@ public class SocketIOManager {
     }
 
     public SocketIOConversation getConversation(SocketIOConversationType var1, String var2) {
-        if (!SocketIOHelper.connected()) {
+        /*if (!SocketIOHelper.connected()) {
             LogUtil.i("not connected");
             return this.defaultConversation;
-        } else if (var2 == null) {
+        } else if */
+
+        if (var2 == null) {
             LogUtil.i("get conversation with null peer");
             return this.defaultConversation;
         } else {

@@ -89,7 +89,39 @@ public class ChatSDKHelper {
         }
         FirebaseFileStorageModule.activate();
     }
+    private static void listenMsg(Activity activity){
+        LogUtil.i("監聽訊息開始");
 
+        msgListener = ChatSDK.events().sourceOnMain()
+                .filter(NetworkEvent.filterType(EventType.MessageAdded))
+                .subscribe(new Consumer<NetworkEvent>() {
+                    @Override
+                    public void accept(NetworkEvent networkEvent) throws Exception {
+                        String json_message = networkEvent.message.getText();
+                        LogUtil.i("on json_message  :" + networkEvent.message.getText());
+                        try {
+                            JSONObject message_body = new JSONObject(json_message);
+                            CustomMsg cMsg = LiveMsgBusiness.json2CustomMsg(json_message, Integer.valueOf(message_body.getString("type")));
+                            SocketIOMessage sMsg = cMsg.parsetoSocketIOMessage();
+                            MsgModel msg = new LiveMsgModel(sMsg);
+                            if (msg != null) {
+                                msg.setCustomMsg(cMsg);
+                                LogUtil.i("cMsg.getSender().getUser_id() + " +  cMsg.getSender().getUser_id());
+                                msg.setConversationPeer(cMsg.getSender().getUser_id());
+                                EImOnNewMessages event = new EImOnNewMessages();
+                                SocketIOConversation conversation = SocketIOManager.getInstance().getConversation(SocketIOConversationType.C2C, cMsg.getSender().getUser_id());
+                                conversation.writeLocalMessage(sMsg, activity);
+                                event.msg = msg;
+                                LogUtil.i("cMsg.getConversationPeer() + " +  msg.getConversationPeer());
+                                SDEventManager.post(event);
+                            }
+                        } catch (JSONException e) {
+                            //Log.e(TAG, e.getMessage());
+                            return;
+                        }
+                    }
+                });
+    }
     public static void loginChatSDK(String raw_userID, String userSig, Activity activity) {
 
         if (isInLogin) {
@@ -136,39 +168,7 @@ public class ChatSDKHelper {
             isInLogin = false;
         }
     }
-    private static void listenMsg(Activity activity){
-        LogUtil.i("監聽訊息開始");
-        /*
-        msgListener = ChatSDK.events().sourceOnMain()
-                .filter(NetworkEvent.filterType(EventType.MessageAdded))
-                .subscribe(new Consumer<NetworkEvent>() {
-                    @Override
-                    public void accept(NetworkEvent networkEvent) throws Exception {
-                        String json_message = networkEvent.message.getText();
-                        LogUtil.i("on json_message  :" + networkEvent.message.getText());
-                        try {
-                            JSONObject message_body = new JSONObject(json_message);
-                            CustomMsg cMsg = LiveMsgBusiness.json2CustomMsg(json_message, Integer.valueOf(message_body.getString("type")));
-                            SocketIOMessage sMsg = cMsg.parsetoSocketIOMessage();
-                            MsgModel msg = new LiveMsgModel(sMsg);
-                            if (msg != null) {
-                                msg.setCustomMsg(cMsg);
-                                msg.setConversationPeer(cMsg.getSender().getUser_id());
-                                EImOnNewMessages event = new EImOnNewMessages();
-                                SocketIOConversation conversation = SocketIOManager.getInstance().getConversation(SocketIOConversationType.C2C, cMsg.getSender().getUser_id());
 
-                                conversation.writeLocalMessage(sMsg, activity);
-                                event.msg = msg;
-                                LogUtil.i("SDEventManager.post(event);  :");
-                                SDEventManager.post(event);
-                            }
-                        } catch (JSONException e) {
-                            //Log.e(TAG, e.getMessage());
-                            return;
-                        }
-                    }
-                });*/
-    }
     private static void registe_login(String raw_userID,Activity activity){
         String username = "user_" + raw_userID + "@oolive.com";
         AccountDetails details = new AccountDetails();
@@ -202,6 +202,9 @@ public class ChatSDKHelper {
                     });
             });
     }
+    public static boolean isConnected(){
+        return isConnected;
+    }
     protected static void showProgressDialog( String message,Activity activity) {
         if (progressDialog == null) {
             progressDialog = new ProgressDialog(activity);
@@ -230,17 +233,10 @@ public class ChatSDKHelper {
             ChatSDK.logError(e);
         }
     }
-    public static void loginOrrRegister(String userID,String username){
-
-    }
     public static void logout(){
         isInLogin = false;
         ChatSDKHelper.setChatID(null);
         ChatSDK.auth().logout();
-    }
-    public static void postERefreshMsgUnReaded() {
-
-        postERefreshMsgUnReaded(false);
     }
     public static void  setChatID(String ChatID){
         chat_id = ChatID;
@@ -248,126 +244,7 @@ public class ChatSDKHelper {
     public static String getChatID(){
         return chat_id;
     }
-    public static void postERefreshMsgUnReaded(boolean isFromSetLocalReade) {
-        ERefreshMsgUnReaded event = new ERefreshMsgUnReaded();
-        //event.model = SocketIOHelper.getC2CTotalUnreadMessageModel(appContext);
-        //event.isFromSetLocalReaded = isFromSetLocalReade;
-        //SDEventManager.post(event);
-    }
-    public static void joinGroup(String room_id) {
-        roomID = "room@" + room_id;
-        LogUtil.i("chatSdkUser_self ID = " + chatSdkUser_self.getId());
-        Disposable d = ChatSDK.thread().createThread(roomID, chatSdkUser_self)
-                .observeOn(AndroidSchedulers.mainThread())
-                .doFinally(() -> {
-                })
-                .subscribe(thread -> {
-                    SDToast.showToast("創建房間成功!!" + thread.getEntityID());
-                    thread.setEntityID(roomID);
-                    thread.update();
-                }, throwable -> {
-                    SDToast.showToast("創建房間失敗!! " + throwable.toString());
-                });
-    }
-    public static List<MsgModel> getC2CMsgList(Activity activity) {
-        LogUtil.i("getC2CMsgList");
-        List<MsgModel> listMsg = new ArrayList<>();
-        UserModel user = UserModelDao.query();
-        if (user != null) {
-            long count = SocketIOManager.getInstance().getConversationCount(activity);
-            LogUtil.i("count = " + count);
-            for (int i = 0; i < count; ++i) {
-                SocketIOConversation conversation = SocketIOManager.getInstance().getConversationByIndex(activity,i);
-                LogUtil.i("conversation.getType()  = " + conversation.getType());
-                if (SocketIOConversationType.C2C == conversation.getType()) {
-                    // 自己对自己发的消息过滤
-                    LogUtil.i("conversation.getPeer()  = " + conversation.getPeer() + " : " + user.getUser_id());
-                    if (!conversation.getPeer().equals(user.getUser_id())) {
-                        List<SocketIOMessage> list = conversation.getLastMsgs(1);
-                        LogUtil.i("list get i "+ list.get(i).getJson());
-                        if (list != null && list.size() > 0) {
-                            SocketIOMessage sMsg = list.get(0);
-                            MsgModel msg = new LiveMsgModel(sMsg);
-                            //msg.setConversationPeer(conversation.getPeer());
-                            if (msg.isPrivateMsg()) {
-                                listMsg.add(msg);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        return listMsg;
-    }
-    public static void sendMsgGroup(String id, CustomMsg customMsg) {
-        if (TextUtils.isEmpty(id)) {
-            return;
-        }
-        //String groupId = id;
-        if (ApkConstant.DEBUG)
-            id = "8888";
-        LogUtil.i("sendMsgGroup + "+ customMsg.parsetoSocketIOMessage().getJson() );
-        mSocket.emit("new group_msg",id,customMsg.parsetoSocketIOMessage().getJson());
-        MsgModel msg = customMsg.parseToMsgModel();
-        if (msg != null) {
-            msg.setCustomMsg(customMsg);
-            msg.setLocalPost(true);
-            msg.setSelf(true);
-            EImOnNewMessages event = new EImOnNewMessages();
-            event.msg = msg;
-            SDEventManager.post(event);
-        }
-    }
-    public static boolean connected(){return isConnected;}
 
-    public static TotalConversationUnreadMessageModel getC2CTotalUnreadMessageModel(Activity activity) {
-        TotalConversationUnreadMessageModel totalUnreadMessageModel = new TotalConversationUnreadMessageModel();
-
-        UserModel user = UserModelDao.query();
-        if (user == null) {
-            return totalUnreadMessageModel;
-        }
-
-        long totalUnreadNum = 0;
-        long cnt = SocketIOManager.getInstance().getConversationCount(activity);
-        for (int i = 0; i < cnt; ++i) {
-            SocketIOConversation conversation = SocketIOManager.getInstance().getConversationByIndex(activity,i);
-            SocketIOConversationType type = conversation.getType();
-            if (type == SocketIOConversationType.C2C) {
-                // 自己对自己发的消息过滤
-                if (!conversation.getPeer().equals(user.getUser_id())) {
-                    long unreadnum = conversation.getUnreadMessageNum();
-                    if (unreadnum > 0) {
-                        List<SocketIOMessage> list = conversation.getLastMsgs(1);
-                        if (list != null && list.size() > 0) {
-                            SocketIOMessage msg = list.get(0);
-                            MsgModel msgModel = new LiveMsgModel(msg);
-                            if (msgModel.isPrivateMsg()) {
-                                ConversationUnreadMessageModel unreadMessageModel = new ConversationUnreadMessageModel();
-                                unreadMessageModel.setPeer(conversation.getPeer());
-                                unreadMessageModel.setUnreadnum(unreadnum);
-                                totalUnreadMessageModel.hashConver.put(conversation.getPeer(), unreadMessageModel);
-
-                                totalUnreadNum = totalUnreadNum + unreadnum;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        totalUnreadMessageModel.setTotalUnreadNum(totalUnreadNum);
-        return totalUnreadMessageModel;
-    }
-
-
-    public  static SocketIOConversation getConversationGroup(String id) {
-        SocketIOConversation conversation = null;
-        if (!TextUtils.isEmpty(id)) {
-            conversation = SocketIOManager.getInstance().getConversation(SocketIOConversationType.Group, id);
-        }
-        return conversation;
-    }
     public static void sendMsgC2C(final String id, final Thread c2cThread, final CustomMsg customMsg, final SocketIOValueCallBack<SocketIOMessage> callback) {
         if (TextUtils.isEmpty(id)) {
             callback.onError(0,"無聊天對象");
@@ -390,13 +267,6 @@ public class ChatSDKHelper {
             });
         }
 
-    }
-    public static SocketIOConversation getConversationC2C(String id) {
-        SocketIOConversation conversation = null;
-        if (!TextUtils.isEmpty(id)) {
-            conversation = SocketIOManager.getInstance().getConversation(SocketIOConversationType.C2C, id);
-        }
-        return conversation;
     }
 
 }

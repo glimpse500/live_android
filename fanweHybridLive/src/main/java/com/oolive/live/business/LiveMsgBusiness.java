@@ -103,11 +103,11 @@ public class LiveMsgBusiness extends MsgBusiness {
             //onMsgLargeGift(msg);
         } else if (LiveConstant.CustomMsgType.MSG_PRIVATE_IMAGE == type) {
             LogUtil.i("json to MSG_LARGE_GIFT");
-            cMsg = new Gson().fromJson(json, CustomMsgPrivateVoice.class);
-            //onMsgLargeGift(msg);
-        } else if (LiveConstant.CustomMsgType.MSG_PRIVATE_GIFT == type) {
-            LogUtil.i("json to MSG_LARGE_GIFT");
             cMsg = new Gson().fromJson(json, CustomMsgPrivateImage.class);
+            //onMsgLargeGift(msg);
+        } else if (LiveConstant.CustomMsgType.MSG_PRIVATE_VOICE == type) {
+            LogUtil.i("json to MSG_LARGE_GIFT");
+            cMsg = new Gson().fromJson(json, CustomMsgPrivateVoice.class);
             //onMsgLargeGift(msg);
         } else if (LiveConstant.CustomMsgType.MSG_PRIVATE_GIFT == type) {
             LogUtil.i("json to MSG_LARGE_GIFT");

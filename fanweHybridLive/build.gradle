@@ -123,6 +123,11 @@ dependencies {
     implementation project(':libGame')
     implementation project(':libApp')
     implementation project(':libCore')
+    implementation project(':chat-sdk-ui')
+    implementation project(':chat-sdk-core')
+    implementation project(':chat-sdk-firebase-file-storage')
+    implementation project(':chat-sdk-firebase-adapter')
+
     //----------com.fanwe.android start----------
     implementation 'com.github.zj565061763:blocker:1.0.3'
     implementation 'com.github.zj565061763:cache:1.0.14'
@@ -164,10 +169,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
     androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
-    compile 'co.chatsdk.chatsdk:chat-sdk-core:4.6.4'
-    compile 'co.chatsdk.chatsdk:chat-sdk-ui:4.6.4'
-    compile 'co.chatsdk.chatsdk:chat-sdk-firebase-adapter:4.6.4'
-    compile 'co.chatsdk.chatsdk:chat-sdk-firebase-file-storage:4.6.4'
+
 
 }
 apply plugin: 'com.google.gms.google-services'

@@ -2,6 +2,7 @@ package com.oolive.live;
 
 import android.app.Application;
 
+import com.oolive.chat.ChatMsgStore;
 import com.oolive.hybrid.constant.ApkConstant;
 import com.fanwe.lib.player.SDMediaPlayer;
 import com.oolive.library.common.SDHandlerManager;
@@ -39,7 +40,7 @@ public class LiveInitChat {
                 event.msg = msgModel;
                 SDEventManager.post(event);
                 if (msgModel.isPrivateMsg()) {
-                    SocketIOHelper.postERefreshMsgUnReaded();
+                    ChatMsgStore.postERefreshMsgUnReaded(false);
                 }
             }
             @Override
