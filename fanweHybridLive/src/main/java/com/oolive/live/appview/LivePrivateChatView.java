@@ -166,8 +166,6 @@ public class LivePrivateChatView extends BaseAppView {
     public void setUserId(String userId) {
 
         mChatBusiness.setUserId(userId);
-        ChatSDKHelper.setCurrentPeer(userId);
-
         mChatBusiness.requestUserInfo();
         LogUtil.i("setUserId ,loadHistoryMessage");
         mChatBusiness.loadHistoryMessage(20);

@@ -63,16 +63,11 @@ import io.socket.client.Socket;
 import io.socket.emitter.Emitter;
 
 public class ChatSDKHelper {
-    private static Socket mSocket;
     private static boolean isInLogin = false;
     private static Context appContext = null;
     private static Boolean isConnected = false;
-    private static String roomID;
-    private static User chatSdkUser_self = null;
-    private static ChatSDK chatSDK;
     private static String userID;
     private static String chat_id;
-    private static String peer;
     private static final String password = "oolive_pwd";
     private static ProgressDialog progressDialog;
     private static boolean register = false;
@@ -85,7 +80,6 @@ public class ChatSDKHelper {
             Configuration.Builder builder = new Configuration.Builder(context);
             builder.firebaseRootPath("live_chat");
             ChatSDK.initialize(builder.build(), new FirebaseNetworkAdapter(), new BaseInterfaceAdapter(context));
-
         } catch (ChatSDKException e) {
             e.printStackTrace();
         }
@@ -93,14 +87,12 @@ public class ChatSDKHelper {
     }
     private static void listenMsg(Activity activity){
         LogUtil.i("監聽訊息開始");
-
         msgListener = ChatSDK.events().sourceOnMain()
                 .filter(NetworkEvent.filterType(EventType.MessageAdded))
                 .subscribe(new Consumer<NetworkEvent>() {
                     @Override
                     public void accept(NetworkEvent networkEvent) throws Exception {
                         networkEvent.message.setRead(true);
-                        networkEvent.message.update();
                         String json_message = networkEvent.message.getText();
                         LogUtil.i("on json_message  :" + networkEvent.message.getText());
                         try {
@@ -115,6 +107,8 @@ public class ChatSDKHelper {
                                 EImOnNewMessages event = new EImOnNewMessages();
                                 SocketIOConversation conversation = SocketIOManager.getInstance().getConversation(SocketIOConversationType.C2C, cMsg.getSender().getUser_id());
                                 conversation.writeLocalMessage(sMsg, activity,false);
+                                networkEvent.message.delete();
+                                networkEvent.message.update();
                                 event.msg = msg;
                                 LogUtil.i("cMsg.getConversationPeer() + " +  msg.getConversationPeer());
                                 SDEventManager.post(event);
@@ -138,7 +132,7 @@ public class ChatSDKHelper {
             LogUtil.e("login  error because of null InitActModel");
             return;
         }
-       userID = raw_userID;
+        userID = raw_userID;
         Action doFinally = new Action() {
             public void run() throws Exception {
                 LogUtil.i("doFinally" );
@@ -209,9 +203,6 @@ public class ChatSDKHelper {
                     });
             });
     }
-    public static void  setCurrentPeer(String currentPeer){
-        peer  = currentPeer;
-    }
     public static String getUserID(){
         return userID;
     }
@@ -268,7 +259,6 @@ public class ChatSDKHelper {
                     if (actModel.isOk()) {
                         String json = customMsg.parsetoSocketIOMessage().getJson();
                         ChatSDK.thread().sendMessageWithText(json, c2cThread).subscribe(messageSendProgress -> {
-                            //LogUtil.i("customMsg.parsetoSocketIOMessage().getJson() =  " + json);
                             callback.onSuccess(customMsg.parsetoSocketIOMessage());
                         }, throwable -> {
                             callback.onError(1,"無法傳送訊息");

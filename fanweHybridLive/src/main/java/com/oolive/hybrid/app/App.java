@@ -73,7 +73,6 @@ public class App extends Application implements ITXLiveBaseListener {
         super.onCreate();
         instance = this;
         init();
-
         ChatSDKHelper.init(getApplicationContext());
     }
 
@@ -81,14 +80,11 @@ public class App extends Application implements ITXLiveBaseListener {
         if (SDPackageUtil.isMainProcess(this)) {
             // 主进程
             SDLibrary.getInstance().init(this);
-
             SDDisk.init(this);
             SDDisk.setGlobalObjectConverter(new JsonObjectConverter());
             SDDisk.setDebug(ApkConstant.DEBUG);
-
             LeakCanary.install(this);
             MobclickAgent.setCatchUncaughtExceptions(false);
-            //UMShareAPI.get(this);
             SDEventManager.register(this);
             SDNetworkReceiver.registerReceiver(this);
             SDHeadsetPlugReceiver.registerReceiver(this);
@@ -100,19 +96,9 @@ public class App extends Application implements ITXLiveBaseListener {
             LogUtil.isDebug = ApkConstant.DEBUG;
             DebugHelper.init(this);
 
-
-            if (ApkConstant.DEBUG) {
-                //直播sdk日志
-//                TXLiveBase.getInstance().setLogLevel(TXLiveConstants.LOG_LEVEL_DEBUG);
- //               TXLiveBase.getInstance().listener = this;
-//                LogUtil.i("Tencent Live SDK Version:" + TXLiveBase.getSDKVersionStr());
-            }
-
             //聚宝付初始化
             //FWPay.init(this, getResources().getString(R.string.app_id), true);
         }
-        // 友盟推送需要在每个进程初始化
-        //UmengPushManager.init(this);
     }
 
     private void initSystemListener() {
