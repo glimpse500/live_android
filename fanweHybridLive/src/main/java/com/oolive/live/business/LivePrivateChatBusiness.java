@@ -1,6 +1,6 @@
 package com.oolive.live.business;
 
-import com.oolive.chat.ChatSDKHelper;
+
 import com.oolive.hybrid.http.AppRequestCallback;
 import com.fanwe.library.adapter.http.model.SDResponse;
 import com.oolive.library.receiver.SDNetworkReceiver;
@@ -38,14 +38,7 @@ import java.util.List;
 
 import android.app.Activity;
 
-import co.chatsdk.core.dao.Message;
-import co.chatsdk.core.dao.Thread;
-import co.chatsdk.core.dao.User;
-import co.chatsdk.core.events.EventType;
-import co.chatsdk.core.events.NetworkEvent;
-import co.chatsdk.core.session.ChatSDK;
-import co.chatsdk.firebase.wrappers.UserWrapper;
-import co.chatsdk.ui.utils.ToastHelper;
+
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
@@ -67,8 +60,7 @@ public class LivePrivateChatBusiness extends BaseBusiness {
      */
     private String mUserId;
     private String mChatId;
-    private User userPeer;
-    private co.chatsdk.core.dao.Thread c2cThread;
+
     private static Disposable msgListener;
     private Activity mActivity;
     private LivePrivateChatBusinessCallback mCallback;
@@ -150,11 +142,6 @@ public class LivePrivateChatBusiness extends BaseBusiness {
                     setChatId(actModel.getUser().getChat_id());
                     LogUtil.i("requestUserInfo setChatId  " + actModel.getUser().getChat_id());
                     mCallback.onRequestUserInfoSuccess(actModel.getUser());
-                    UserWrapper wrapper = UserWrapper.initWithEntityId(actModel.getUser().getChat_id());
-                    wrapper.metaOn();
-                    wrapper.onlineOn();
-                    userPeer = wrapper.getModel();
-
                 } else {
 
                 }
@@ -343,7 +330,7 @@ public class LivePrivateChatBusiness extends BaseBusiness {
     public void sendIMMsg(final MsgModel model) {
         final int index = mCallback.onAdapterIndexOf(model);
 
-        ChatSDKHelper.sendMsgC2C(mUserId,userPeer,model.getCustomMsg(),new SocketIOValueCallBack<SocketIOMessage>() {
+        SocketIOHelper.sendMsgC2C(mUserId,model.getCustomMsg(),new SocketIOValueCallBack<SocketIOMessage>() {
             @Override
             public void onSuccess(SocketIOMessage sMsg) {
                 LogUtil.i("sendIMMsg success");

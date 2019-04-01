@@ -123,10 +123,6 @@ dependencies {
     implementation project(':libGame')
     implementation project(':libApp')
     implementation project(':libCore')
-    implementation project(':chat-sdk-ui')
-    implementation project(':chat-sdk-core')
-    implementation project(':chat-sdk-firebase-file-storage')
-    implementation project(':chat-sdk-firebase-adapter')
 
     //----------com.fanwe.android start----------
     implementation 'com.github.zj565061763:blocker:1.0.3'
@@ -165,11 +161,7 @@ dependencies {
     }
     //GSON
     implementation 'com.google.code.gson:gson:2.8.5'
-    implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
-    androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+
 
 
 }
-apply plugin: 'com.google.gms.google-services'

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: :libraryPayBaofoo-release:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/libraryPayBaofoo-release.aar/0b68c79da8c7a3582e86c598e7a1f133/jars/libs/baofoo.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/libraryPayBaofoo-release.aar/0b68c79da8c7a3582e86c598e7a1f133/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/libraryPayBaofoo-release.aar/0b68c79da8c7a3582e86c598e7a1f133/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

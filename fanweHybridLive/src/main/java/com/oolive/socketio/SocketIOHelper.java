@@ -39,29 +39,31 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class SocketIOHelper {
     private static Socket mSocket;
     private static boolean isInLogin = false;
     private static int numUsers;
-
     private static String cur_group = "-1";
     private static Activity activity = null;
     private static Boolean isConnected = false;
     private static String mUsername = null;
     private static String mUserID = null;
     private static Emitter.Listener onLogin = new Emitter.Listener() {
+
         @Override
         public void call(Object... args) {
             JSONObject data = (JSONObject) args[0];
+
             try {
                 numUsers = data.getInt("numUsers");
             } catch (JSONException e) {
                 numUsers = -1;
                 return;
             }
+
         }
     };
+
     public static String getUserID(){
         return mUserID;
     }
@@ -84,26 +86,38 @@ public class SocketIOHelper {
             mSocket.on(Socket.EVENT_CONNECT_ERROR, onConnectError);
             mSocket.on(Socket.EVENT_CONNECT_TIMEOUT, onConnectError);
             IO.Options opts = new IO.Options();
+            // opts.forceNew = true;
+            //opts.reconnection = true;
             mSocket.connect();
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }
+        //mSocket.on("typing", onTyping);
+        //mSocket.on("stop typing", onStopTyping);
+        //mSocket.connect();
+
         mSocket.on("login", onLogin);
         mSocket.on("new message", onNewMessage);
+        LogUtil.i("login : ");
         mSocket.emit("add user", userId);
+        LogUtil.i("add user : " + userId);
         mUsername = userSig;
         mUserID = userId;
         isConnected = true;
         isInLogin = true;
     }
     public static void logoutSocketIO(){
-        try{
-            mSocket.off("login", onLogin);
-        }
-        catch (java.lang.NullPointerException e){
-            LogUtil.e("mSocket not initial");
-        }
+        mSocket.off("login", onLogin);
+    }
+    public static void postERefreshMsgUnReaded() {
+        postERefreshMsgUnReaded(false);
+    }
 
+    public static void postERefreshMsgUnReaded(boolean isFromSetLocalReade) {
+        ERefreshMsgUnReaded event = new ERefreshMsgUnReaded();
+        event.model = SocketIOHelper.getC2CTotalUnreadMessageModel(activity);
+        event.isFromSetLocalReaded = isFromSetLocalReade;
+        SDEventManager.post(event);
     }
     public static void joinGroup(String room_id){
         LogUtil.i("join + " +  room_id);
@@ -117,17 +131,38 @@ public class SocketIOHelper {
             mSocket.emit("join", room_id);
 
         }
+
     }
-    public static SocketIOConversation getConversationC2C(String id) {
-        SocketIOConversation conversation = null;
-        if (!TextUtils.isEmpty(id)) {
-            conversation = SocketIOManager.getInstance().getConversation(SocketIOConversationType.C2C, id);
+    public static List<MsgModel> getC2CMsgList(Activity activity) {
+        LogUtil.i("getC2CMsgList");
+        List<MsgModel> listMsg = new ArrayList<>();
+        UserModel user = UserModelDao.query();
+        if (user != null) {
+            long count = SocketIOManager.getInstance().getConversationCount(activity);
+            LogUtil.i("count = " + count);
+            for (int i = 0; i < count; ++i) {
+                SocketIOConversation conversation = SocketIOManager.getInstance().getConversationByIndex(activity,i);
+                LogUtil.i("conversation.getType()  = " + conversation.getType());
+                if (SocketIOConversationType.C2C == conversation.getType()) {
+                    // 自己对自己发的消息过滤
+                    LogUtil.i("conversation.getPeer()  = " + conversation.getPeer() + " : " + user.getUser_id());
+                    if (!conversation.getPeer().equals(user.getUser_id())) {
+                        List<SocketIOMessage> list = conversation.getLastMsgs(1);
+                        LogUtil.i("list get i "+ list.get(i).getJson());
+                        if (list != null && list.size() > 0) {
+                            SocketIOMessage sMsg = list.get(0);
+                            MsgModel msg = new LiveMsgModel(sMsg);
+                            msg.setConversationPeer(conversation.getPeer());
+                            if (msg.isPrivateMsg()) {
+                                listMsg.add(msg);
+                            }
+                        }
+                    }
+                }
+            }
         }
-        return conversation;
+        return listMsg;
     }
-    public static boolean connected(){
-        return isConnected;
-    };
     public static void sendMsgGroup(String id, CustomMsg customMsg) {
         if (TextUtils.isEmpty(id)) {
             return;
@@ -146,6 +181,140 @@ public class SocketIOHelper {
             event.msg = msg;
             SDEventManager.post(event);
         }
+
+
+        //SocketIOConversation conversation = getConversationGroup(id);
+
+        //SocketIOMessage sMsg = customMsg.parsetoSocketIOMessage();
+
+
+        /*
+
+        conversation.sendMessage(tMsg, new TIMValueCallBack<TIMMessage>() {
+
+            @Override
+            public void onSuccess(TIMMessage timMessage) {
+                if (callback != null) {
+                    callback.onSuccess(timMessage);
+                }
+            }
+
+            @Override
+            public void onError(int code, String desc) {
+                LogUtil.i("sendMsgGroup error:" + code + "," + desc);
+                if (code == 10017 || code == 20012) {
+                    SDToast.showToast("你已被禁言");
+                }
+                if (callback != null) {
+                    callback.onError(code, desc);
+                }
+            }
+        });*/
+    }
+    public static boolean connected(){return isConnected;}
+
+    public static TotalConversationUnreadMessageModel getC2CTotalUnreadMessageModel(Activity activity) {
+        TotalConversationUnreadMessageModel totalUnreadMessageModel = new TotalConversationUnreadMessageModel();
+
+        UserModel user = UserModelDao.query();
+        if (user == null) {
+            return totalUnreadMessageModel;
+        }
+
+        long totalUnreadNum = 0;
+        long cnt = SocketIOManager.getInstance().getConversationCount(activity);
+        for (int i = 0; i < cnt; ++i) {
+            SocketIOConversation conversation = SocketIOManager.getInstance().getConversationByIndex(activity,i);
+            SocketIOConversationType type = conversation.getType();
+            if (type == SocketIOConversationType.C2C) {
+                // 自己对自己发的消息过滤
+                if (!conversation.getPeer().equals(user.getUser_id())) {
+                    long unreadnum = conversation.getUnreadMessageNum();
+                    if (unreadnum > 0) {
+                        List<SocketIOMessage> list = conversation.getLastMsgs(1);
+                        if (list != null && list.size() > 0) {
+                            SocketIOMessage msg = list.get(0);
+                            MsgModel msgModel = new LiveMsgModel(msg);
+                            if (msgModel.isPrivateMsg()) {
+                                ConversationUnreadMessageModel unreadMessageModel = new ConversationUnreadMessageModel();
+                                unreadMessageModel.setPeer(conversation.getPeer());
+                                unreadMessageModel.setUnreadnum(unreadnum);
+                                totalUnreadMessageModel.hashConver.put(conversation.getPeer(), unreadMessageModel);
+
+                                totalUnreadNum = totalUnreadNum + unreadnum;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        totalUnreadMessageModel.setTotalUnreadNum(totalUnreadNum);
+        return totalUnreadMessageModel;
+    }
+
+
+    public  static SocketIOConversation getConversationGroup(String id) {
+        SocketIOConversation conversation = null;
+        if (!TextUtils.isEmpty(id)) {
+            conversation = SocketIOManager.getInstance().getConversation(SocketIOConversationType.Group, id);
+        }
+        return conversation;
+    }
+    public static void sendMsgC2C(final String id,final CustomMsg customMsg,final SocketIOValueCallBack<SocketIOMessage> callback) {
+        if (TextUtils.isEmpty(id)) {
+            callback.onError(0,"無聊天對象");
+        }
+        else if (!isConnected) {
+            SDToast.showToast("聊天室異常");
+            callback.onError(0,"聊天室異常");
+        }
+        else{
+            CommonInterface.requestIs_black(customMsg.getSender().getUser_id(), new AppRequestCallback<User_is_blackActModel>() {
+                protected void onSuccess(SDResponse resp) {
+                    if (actModel.isOk()) {
+                        SocketIOMessage sMsg = customMsg.parsetoSocketIOMessage();
+                        sMsg.setPeer(customMsg.getSender().getUser_id());
+                        mSocket.emit("c2c_msg",id,customMsg.parsetoSocketIOMessage().getJson());
+                        //LogUtil.i("requestIs_black :" + customMsg.parsetoSocketIOMessage().getJson());
+
+                        callback.onSuccess(customMsg.parsetoSocketIOMessage());
+
+                    }
+                    else {
+                        callback.onError(1,"無法傳送訊息");
+                    }
+                }
+
+            });
+        }
+    /*
+        @Override
+        public void onSuccess(TIMMessage timMessage) {
+            if (callback != null) {
+                callback.onSuccess(timMessage);
+            }
+        }
+
+        @Override
+        public void onError(int code, String desc) {
+            LogUtil.i("sendMsgC2C error:" + code + "," + desc);
+            if (code == 10017 || code == 20012) {
+                SDToast.showToast("你已被禁言");
+            }
+            if (callback != null) {
+                callback.onError(code, desc);
+            }
+        }
+    });*/
+        //return sMsg;
+    }
+    public static SocketIOConversation getConversationC2C(String id) {
+        SocketIOConversation conversation = null;
+        if (!TextUtils.isEmpty(id)) {
+            conversation = SocketIOManager.getInstance().getConversation(SocketIOConversationType.C2C, id);
+        }
+        return conversation;
     }
     private static Emitter.Listener onNewMessage = new Emitter.Listener() {
         @Override
@@ -167,7 +336,8 @@ public class SocketIOHelper {
                     msg.setConversationPeer(cMsg.getSender().getUser_id());
                     EImOnNewMessages event = new EImOnNewMessages();
                     SocketIOConversation conversation = SocketIOManager.getInstance().getConversation(SocketIOConversationType.C2C,cMsg.getSender().getUser_id());
-                   // conversation.writeLocalMessage(sMsg,activity,);
+
+                    conversation.writeLocalMessage(sMsg);
                     event.msg = msg;
                     //event.sMsg = sMsg;
                     LogUtil.i("SDEventManager.post(event);  :");
@@ -191,6 +361,7 @@ public class SocketIOHelper {
                             mSocket.emit("add user", mUserID);
                             if (!cur_group.equals("-1"))
                                 joinGroup(cur_group);
+
                         }
                         SDToast.showToast("連接聊天室成功");
                         isConnected = true;

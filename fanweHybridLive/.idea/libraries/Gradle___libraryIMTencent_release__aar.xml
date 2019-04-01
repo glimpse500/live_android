@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="Gradle: :libraryIMTencent-release:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-libraryIMTencent-release.aar/37ca95bcab2abfab51e3c71f97821e08/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-libraryIMTencent-release.aar/37ca95bcab2abfab51e3c71f97821e08/jars/libs/imsdk.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-libraryIMTencent-release.aar/37ca95bcab2abfab51e3c71f97821e08/jars/libs/mobilepb.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-libraryIMTencent-release.aar/37ca95bcab2abfab51e3c71f97821e08/jars/libs/soload.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-libraryIMTencent-release.aar/37ca95bcab2abfab51e3c71f97821e08/jars/libs/wup-1.0.0-SNAPSHOT.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-libraryIMTencent-release.aar/37ca95bcab2abfab51e3c71f97821e08/jars/libs/bugly_2.4.0_imsdk_release.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-libraryIMTencent-release.aar/37ca95bcab2abfab51e3c71f97821e08/jars/libs/qalsdk.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-libraryIMTencent-release.aar/37ca95bcab2abfab51e3c71f97821e08/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-libraryIMTencent-release.aar/37ca95bcab2abfab51e3c71f97821e08/jars/libs/tls_sdk.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

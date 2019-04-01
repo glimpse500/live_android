@@ -1,1 +1,1 @@
-include ':fanweHybridLive', ':libGame', ':libApp', ':libCore', ':chat-sdk-firebase-file-storage', ':chat-sdk-firebase-adapter', ':chat-sdk-ui', ':chat-sdk-core'
+include ':fanweHybridLive', ':libGame', ':libApp', ':libCore'

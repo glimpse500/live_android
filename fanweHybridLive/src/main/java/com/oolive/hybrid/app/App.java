@@ -10,7 +10,7 @@ import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
-import com.oolive.chat.ChatSDKHelper;
+
 import com.oolive.hybrid.activity.MainActivity;
 import com.oolive.hybrid.constant.ApkConstant;
 import com.oolive.hybrid.event.EExitApp;
@@ -51,12 +51,7 @@ import com.umeng.analytics.MobclickAgent;
 
 import org.xutils.x;
 
-import co.chatsdk.core.error.ChatSDKException;
-import co.chatsdk.core.session.ChatSDK;
-import co.chatsdk.core.session.Configuration;
-import co.chatsdk.firebase.FirebaseNetworkAdapter;
-import co.chatsdk.firebase.file_storage.FirebaseFileStorageModule;
-import co.chatsdk.ui.manager.BaseInterfaceAdapter;
+
 import de.greenrobot.event.SubscriberExceptionEvent;
 import io.reactivex.functions.Consumer;
 
@@ -73,7 +68,7 @@ public class App extends Application implements ITXLiveBaseListener {
         super.onCreate();
         instance = this;
         init();
-        ChatSDKHelper.init(getApplicationContext());
+        //ChatSDKHelper.init(getApplicationContext());
     }
 
     private void init() {

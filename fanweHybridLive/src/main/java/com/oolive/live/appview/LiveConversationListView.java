@@ -6,8 +6,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ListView;
 
-import com.oolive.chat.ChatMsgStore;
-import com.oolive.chat.ChatSDKHelper;
+
 import com.oolive.hybrid.http.AppRequestCallback;
 import com.fanwe.lib.dialog.ISDDialogMenu;
 import com.fanwe.lib.dialog.impl.SDDialogBase;

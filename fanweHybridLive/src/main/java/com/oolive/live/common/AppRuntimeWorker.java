@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.text.TextUtils;
 
 import com.fanwe.library.adapter.http.model.SDResponse;
-import com.oolive.chat.ChatSDKHelper;
 import com.oolive.hybrid.dao.InitActModelDao;
 import com.oolive.hybrid.http.AppRequestCallback;
 import com.oolive.hybrid.http.AppRequestCallbackWrapper;
@@ -37,15 +36,8 @@ import com.oolive.live.model.UserModel;
 import com.oolive.live.utils.LiveNetChecker;
 import com.oolive.socketio.SocketIOHelper;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import co.chatsdk.core.dao.Thread;
-import co.chatsdk.core.dao.User;
-import co.chatsdk.core.session.ChatSDK;
-import co.chatsdk.core.types.MessageSendStatus;
-import co.chatsdk.firebase.wrappers.UserWrapper;
-import io.reactivex.android.schedulers.AndroidSchedulers;
 
 public class AppRuntimeWorker {
     /**
@@ -797,16 +789,8 @@ public class AppRuntimeWorker {
             SDToast.showToast("用户id为空");
             return false;
         }
-        String chatID =ChatSDKHelper.getChatID();
-        if (chatID == null) {
-            CommonInterface.requestChatID(null,activity);
-            return false;
-        }
-
         String socketIO_ID = user.getNick_name() + "(" + user.getUser_id()+ ")";
-        LogUtil.i("loginSocketIO " + socketIO_ID);
-        LogUtil.i("chatID " + chatID);
-        ChatSDKHelper.loginChatSDK(identifier, socketIO_ID, activity);
+        SocketIOHelper.loginSocketIO(user.getUser_id(),socketIO_ID,activity);
 
         return true;
     }
@@ -815,9 +799,6 @@ public class AppRuntimeWorker {
      * IM退出登录
      */
     public static void logout() {
-        //TO DO
-        //IMHelper.logoutIM(null);
-        ChatSDKHelper.logout();
         LogUtil.i("ChatSDK logout ");
         SocketIOHelper.logoutSocketIO();
     }

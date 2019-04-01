@@ -3,7 +3,6 @@ package com.oolive.live.common;
 import android.app.Activity;
 import android.text.TextUtils;
 
-import com.oolive.chat.ChatSDKHelper;
 import com.oolive.games.model.App_banker_applyActModel;
 import com.oolive.games.model.App_banker_listActModel;
 import com.oolive.games.model.App_getGamesActModel;
@@ -236,9 +235,8 @@ public class CommonInterface {
             protected void onSuccess(SDResponse resp) {
                 if (actModel.getStatus() == 1) {
                     String chat_ID = actModel.getChat_ID();
-                    ChatSDKHelper.setChatID(actModel.getChat_ID());
-                    LogUtil.i("ChatID = " + chat_ID);
-                    AppRuntimeWorker.startContext(activity);
+                    //LogUtil.i("ChatID = " + chat_ID);
+                    //AppRuntimeWorker.startContext(activity);
 
                 }
             }
@@ -261,7 +259,6 @@ public class CommonInterface {
             protected void onSuccess(SDResponse resp) {
                 if (actModel.getStatus() == 1) {
                     String chat_ID = actModel.getChat_ID();
-                    ChatSDKHelper.setChatID(actModel.getChat_ID());
                 }
             }
         });

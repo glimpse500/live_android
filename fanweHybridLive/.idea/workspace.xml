@@ -1,0 +1,1004 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="df0e7ed5-c609-48c3-875a-7a25fd3b6b0b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_1_1_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_solver_1_1_2_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__io_reactivex_rxjava2_rxandroid_2_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__io_reactivex_rxjava2_rxjava_2_0_7_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Gradle__org_reactivestreams_reactive_streams_1_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle___LiteAVSDK_Professional_3_4_1797__aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle___PushSDK_release__aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle___TimePickerDialog_release__aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___E__LIVE_Live_live_android_fanweHybridLive_libs_aliyun_oss_sdk_android_2_0_1_1_jar_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___E__LIVE_Live_live_android_fanweHybridLive_libs_banksdk2_jar_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___E__LIVE_Live_live_android_fanweHybridLive_libs_okhttp_2_6_0_jar_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___E__LIVE_Live_live_android_libCore_libs_eventbus_1_6_src_modify_jar_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle___fanwei_jubaosdk_release_v5_6__aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle___libraryAdapterHttp_release__aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle___libraryIMTencent_release__aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle___libraryMapTencent_release__aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle___libraryPayAlipay_release__aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle___libraryPayBaofoo_release__aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle___libraryPayUnionpay_release__aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle___libraryPhotoViewMaster_release__aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle___libraryQrcodeZxing_release__aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle___librarySocialUmeng_release__aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle___pickerview_release__aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_0_0_alpha05_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_1_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_1_1_0_alpha02_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_1_1_0_alpha03_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_resources_1_1_0_alpha03_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_common_2_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cardview_cardview_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_collection_collection_1_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_collection_collection_1_1_0_alpha03_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_concurrent_concurrent_futures_1_0_0_alpha02_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_1_1_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_solver_1_1_2_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_1_0_alpha05_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_customview_customview_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_documentfile_documentfile_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_1_0_alpha05_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_ui_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_v4_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_1_0_alpha03_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_1_0_alpha03_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_1_0_alpha03_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_media_media_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_multidex_multidex_2_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_multidex_multidex_instrumentation_2_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_1_0_alpha03_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_savedstate_savedstate_1_0_0_alpha02_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_slidingpanelayout_slidingpanelayout_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_swiperefreshlayout_swiperefreshlayout_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_core_3_1_0_alpha4_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_idling_resource_3_1_0_alpha4_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_monitor_1_1_0_alpha4_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_runner_1_1_0_alpha4_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_0_alpha02_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_ToxicBakery_viewpager_transforms_view_pager_transforms_1_2_32_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_alibaba_fastjson_1_1_45_android_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_cocosw_bottomsheet_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_daimajia_swipelayout_library_1_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fanwe_android_res_1_0_4_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_glide_3_7_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_ctiao_DanmakuFlameMaster_0_5_3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_zj565061763_animator_1_0_7_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_zj565061763_blocker_1_0_3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_zj565061763_cache_1_0_14_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_zj565061763_dialog_1_0_10_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_zj565061763_gridlayout_1_0_11_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_zj565061763_looper_1_0_5_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_zj565061763_player_1_0_3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_zj565061763_poper_1_0_9_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_zj565061763_pulltorefresh_1_0_33_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_zj565061763_recorder_1_0_3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_zj565061763_select_1_1_3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_zj565061763_span_1_0_7_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_zj565061763_statelayout_1_0_6_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_zj565061763_switchbutton_1_0_15_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_zj565061763_viewpager_1_0_18_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_flexbox_0_2_6_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_material_material_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_2_0_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_8_5_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_guava_listenablefuture_1_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_ksyun_media_libksylive_armv7a_2_2_5_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_ksyun_media_libksylive_java_2_2_5_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_makeramen_roundedimageview_2_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_pnikosis_materialish_progress_1_7_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_scottsu_states_layout_1_1_5_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_javawriter_2_1_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_logging_interceptor_3_6_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_okhttp_3_8_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okio_okio_1_13_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_retrofit2_adapter_rxjava2_2_2_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_retrofit2_converter_gson_2_3_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_retrofit2_retrofit_2_3_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_umeng_analytics_analytics_6_1_4_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_yalantis_ucrop_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_zhy_percent_support_extends_1_1_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_reactivex_rxjava2_rxandroid_2_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_reactivex_rxjava2_rxjava_2_0_7_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_socket_engine_io_client_0_8_3_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_socket_socket_io_client_0_8_3_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_inject_javax_inject_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__jp_wasabeef_glide_transformations_2_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__me_iwf_photopicker_PhotoPicker_0_9_5_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__net_sf_kxml_kxml2_2_3_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_http_legacy_android_28.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_reactivestreams_reactive_streams_1_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_xutils_xutils_3_5_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__pl_droidsonroids_gif_android_gif_drawable_1_2_7_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__zlc_season_rxdownload2_2_0_0_beta4_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/chat-sdk-core.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/Tab.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/audio/AudioPlayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/audio/AudioRecorder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/audio/Recording.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/base/AbstractAuthenticationHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/base/AbstractCoreHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/base/AbstractEventHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/base/AbstractMessageViewHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/base/AbstractPublicThreadHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/base/AbstractSearchHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/base/AbstractThreadHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/base/AbstractUploadHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/base/BaseContactHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/base/BaseHookHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/base/BaseImageMessageHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/base/BaseLocationMessageHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/base/BaseNetworkAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/base/LocationProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/ContactLink.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/ContactLinkDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/DaoCore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/DaoMaster.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/DaoSession.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/DatabaseUpgradeHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/FollowerLink.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/FollowerLinkDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/JsonHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/Keys.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/LinkedAccount.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/LinkedAccountDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/Message.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/MessageDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/MessageMetaValue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/MessageMetaValueDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/MetaValue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/MetaValueHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/ProcessForQueryHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/ReadReceiptUserLink.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/ReadReceiptUserLinkDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/Thread.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/ThreadDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/ThreadMetaValue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/ThreadMetaValueDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/UserMetaValue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/UserMetaValueDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/UserThreadLink.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/UserThreadLinkDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/sorter/MessageSorter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/dao/sorter/ThreadsSorter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/defines/Availability.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/enums/AuthStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/error/ChatSDKException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/events/EventType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/events/NetworkEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/AudioMessageHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/AuthenticationHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/BlockingHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/ConfigurationHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/ContactHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/CoreHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/EncryptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/EventHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/FileMessageHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/HookHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/ImageMessageHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/LastOnlineHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/LocationMessageHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/MessageHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/ModerationHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/Module.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/NearbyUsersHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/ProfilePicturesHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/PublicThreadHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/PushHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/ReadReceiptHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/SearchHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/SocialLoginHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/StickerMessageHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/ThreadHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/TypingIndicatorHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/UploadHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/UserHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/handlers/VideoMessageHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/hook/Hook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/hook/HookEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/interfaces/BroadcastHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/interfaces/ChatOption.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/interfaces/ChatOptionsDelegate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/interfaces/ChatOptionsHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/interfaces/CoreEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/interfaces/CrashHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/interfaces/InterfaceAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/interfaces/LocalNotificationHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/interfaces/MessageDisplayHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/interfaces/StorageAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/interfaces/ThreadType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/interfaces/UserListItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/push/AbstractPushHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/push/BaseBroadcastHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/push/DefaultBroadcastReceiver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/rx/ObservableConnector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/session/ChatSDK.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/session/Configuration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/session/InterfaceManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/session/MethodArgument.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/session/NM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/session/StorageManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/types/AccountDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/types/AccountType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/types/AuthKeys.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/types/ChatError.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/types/ChatOptionType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/types/ConnectionType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/types/Defines.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/types/EntityType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/types/FileUploadResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/types/KeyValue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/types/MessageSendProgress.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/types/MessageSendStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/types/MessageType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/types/Progress.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/types/ReadStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/types/SearchActivityType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/ui/ProfileFragmentProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/utils/ActivityResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/utils/ActivityResultPushSubjectHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/utils/AppBackgroundMonitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/utils/CrashReporter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/utils/CrashReportingCompletableObserver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/utils/CrashReportingObserver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/utils/DaoDateTimeConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/utils/DisposableList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/utils/DisposableListenerList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/utils/DisposableMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/utils/FileUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/utils/GoogleUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/utils/HashMapHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/utils/ImageBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/utils/ImageUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/utils/IsDisposable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/utils/NotificationDisplayHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/utils/Permission.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/utils/PermissionRequestHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/utils/StringChecker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/utils/Strings.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/java/co/chatsdk/core/utils/UserListItemConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/res/drawable-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/res/drawable-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/res/drawable-mdpi/ic_launcher_big.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/res/drawable-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/res/drawable-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/res/drawable-xxxhdpi/icn_72_push_mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/res/drawable/icn_32_profile_placeholder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/res/values-es/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/res/values-nl/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/res/values-pt/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/res/values-zh/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-core/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-adapter/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-adapter/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-adapter/chat-sdk-firebase-adapter.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-adapter/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-adapter/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-adapter/src/main/java/co/chatsdk/firebase/FirebaseAuthenticationHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-adapter/src/main/java/co/chatsdk/firebase/FirebaseContactHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-adapter/src/main/java/co/chatsdk/firebase/FirebaseCoreHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-adapter/src/main/java/co/chatsdk/firebase/FirebaseEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-adapter/src/main/java/co/chatsdk/firebase/FirebaseErrors.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-adapter/src/main/java/co/chatsdk/firebase/FirebaseEventHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-adapter/src/main/java/co/chatsdk/firebase/FirebaseEventListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-adapter/src/main/java/co/chatsdk/firebase/FirebaseNetworkAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-adapter/src/main/java/co/chatsdk/firebase/FirebasePaths.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-adapter/src/main/java/co/chatsdk/firebase/FirebasePublicThreadHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-adapter/src/main/java/co/chatsdk/firebase/FirebaseReferenceManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-adapter/src/main/java/co/chatsdk/firebase/FirebaseSearchHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-adapter/src/main/java/co/chatsdk/firebase/FirebaseThreadHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-adapter/src/main/java/co/chatsdk/firebase/utils/FirebaseRX.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-adapter/src/main/java/co/chatsdk/firebase/wrappers/FollowerWrapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-adapter/src/main/java/co/chatsdk/firebase/wrappers/MessageWrapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-adapter/src/main/java/co/chatsdk/firebase/wrappers/ThreadWrapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-adapter/src/main/java/co/chatsdk/firebase/wrappers/UserWrapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-adapter/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-adapter/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-file-storage/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-file-storage/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-file-storage/chat-sdk-firebase-file-storage.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-file-storage/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-file-storage/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-file-storage/src/main/java/co/chatsdk/firebase/file_storage/FirebaseFileStorageModule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-file-storage/src/main/java/co/chatsdk/firebase/file_storage/FirebaseUploadHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-firebase-file-storage/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/chat-sdk-ui.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/proguard-fresco.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/AbstractChatOptionsHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/chat/BaseMessageViewHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/chat/ChatActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/chat/ImageMessageOnClickHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/chat/LocationMessageOnClickHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/chat/LocationSelector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/chat/MediaSelector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/chat/MessageItemSorter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/chat/MessageListAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/chat/MessageListItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/chat/PhotoProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/chat/TextInputDelegate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/chat/TextInputView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/chat/handlers/AbstractMessageDisplayHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/chat/handlers/ImageMessageDisplayHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/chat/handlers/LocationMessageDisplayHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/chat/handlers/TextMessageDisplayHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/chat/options/BaseChatOption.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/chat/options/DialogChatOptionsHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/chat/options/LocationChatOption.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/chat/options/MediaChatOption.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/chat/viewholder/ImageMessageViewHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/chat/viewholder/LocationMessageViewHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/chat/viewholder/TextMessageViewHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/contacts/ContactsFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/contacts/SelectContactActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/contacts/UsersListAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/helpers/DialogUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/helpers/ProfilePictureChooserOnClickListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/login/LoginActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/login/SplashScreenActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/main/BaseActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/main/BaseFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/main/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/main/MainAppBarActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/main/MainDrawActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/main/PagerAdapterTabs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/manager/BaseInterfaceAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/profile/EditProfileActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/profile/ProfileActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/profile/ProfileFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/search/SearchActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/threads/PrivateThreadsFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/threads/PublicThreadsFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/threads/ThreadDetailsActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/threads/ThreadEditDetailsActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/threads/ThreadImageBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/threads/ThreadSorter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/threads/ThreadViewHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/threads/ThreadsFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/threads/ThreadsListAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/utils/AvailabilityHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/utils/Cropper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/utils/InfiniteToast.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/java/co/chatsdk/ui/utils/ToastHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/anim/dummy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/anim/expand_slide_form_left.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/anim/expand_slide_form_right.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/anim/fade_in_expand.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/anim/fade_in_half_and_expand.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/anim/slide_bottom_and_out.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/anim/slide_bottom_top.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/anim/slide_in_from_left.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/anim/slide_in_from_right.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/anim/slide_out_from_left.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/anim/slide_out_from_right.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/anim/slide_out_top_bottom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/anim/slide_top_bottom_out.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/color/chat_sdk_message_option_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/color/chat_sdk_option_button_text_color_selector.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/color/chat_sdk_send_button_text_color_selector.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-hdpi/ic_message_delivered.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-hdpi/ic_message_read.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-hdpi/ic_message_received.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-hdpi/icn_100_profile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxhdpi/ic_action_contacts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxhdpi/ic_action_private.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxhdpi/ic_action_public.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxhdpi/ic_action_user.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxhdpi/ic_cancel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxhdpi/ic_edit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxhdpi/ic_email.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxhdpi/ic_facebook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxhdpi/ic_google.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxhdpi/ic_name.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxhdpi/ic_options.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxhdpi/ic_phone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxhdpi/ic_plus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxhdpi/ic_profile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxhdpi/ic_search.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxhdpi/ic_twitter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxhdpi/ic_users.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/ic_36_mic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/ic_36_send.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/ic_56_save.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/ic_options.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/ic_plus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/icn_100_private_thread.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/icn_100_profile_error.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/icn_100_public_thread.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/icn_200_image_message_error.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/icn_200_image_message_loading.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/icn_200_image_message_placeholder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/icn_20_away.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/icn_20_busy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/icn_20_offline.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/icn_20_online.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/icn_20_xa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/icn_24_chat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/icn_24_save.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/icn_24_settings.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/icn_36_birthday.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/icn_36_block.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/icn_36_delete.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/icn_36_email.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/icn_36_following.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/icn_36_follows.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/icn_36_location.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/icn_36_name.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/icn_36_phone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/icn_36_speech.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/message_neutral.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/message_neutral_2.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/message_received.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/message_received_2.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/message_received_3.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/message_received_alt.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/message_received_alt_2.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/message_sent.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/message_sent_2.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/message_sent_3.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/message_sent_alt.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/message_sent_alt_2.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable-xxxhdpi/push_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable/edit_text_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/drawable/send_message_border.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/layout/chat_sdk_actionbar_chat_activity.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/layout/chat_sdk_activity_chat.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/layout/chat_sdk_activity_draw.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/layout/chat_sdk_activity_edit_thread_details.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/layout/chat_sdk_activity_login.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/layout/chat_sdk_activity_pick_friends.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/layout/chat_sdk_activity_profile.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/layout/chat_sdk_activity_search.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/layout/chat_sdk_activity_splash_screen.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/layout/chat_sdk_activity_thread_details.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/layout/chat_sdk_activity_threads.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/layout/chat_sdk_activity_view_pager.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/layout/chat_sdk_edit_profile.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/layout/chat_sdk_fragment_contacts.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/layout/chat_sdk_popup_touch_image.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/layout/chat_sdk_profile_activity.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/layout/chat_sdk_profile_fragment.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/layout/chat_sdk_row_contact.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/layout/chat_sdk_row_header.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/layout/chat_sdk_row_message_me.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/layout/chat_sdk_row_message_reply.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/layout/chat_sdk_row_thread.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/layout/chat_sdk_view_message_box.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/menu/menu_chat_sdk.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/menu/menu_main_tabbed.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/menu/multi_select_menu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/menu/threads_menu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/values/color.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/values/dimen.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-sdk-ui/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fanweHybridLive.iml" beforeDir="false" afterPath="$PROJECT_DIR$/fanweHybridLive.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/chat/ChatMsgStore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/chat/ChatSDKHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/hybrid/activity/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/hybrid/activity/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/hybrid/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/hybrid/app/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/LiveInitChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/LiveInitChat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/LiveConversationListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/LiveConversationListView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/LivePrivateChatView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/LivePrivateChatView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/business/LivePrivateChatBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/business/LivePrivateChatBusiness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/common/AppRuntimeWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/common/AppRuntimeWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/common/CommonInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/common/CommonInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOConversation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOConversation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libCore/libCore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../libCore/libCore.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../settings.gradle" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="2044016599">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="gradle" value="2" />
+          <entry key="java" value="10" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Groovy" value="2" />
+          <entry key="JAVA" value="10" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="57" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="57" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="263" column="29" selection-start-line="263" selection-start-column="29" selection-end-line="263" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2235#2236#0" expanded="true" />
+                <element signature="e#2265#2266#0" expanded="true" />
+                <element signature="e#3822#3823#0" expanded="true" />
+                <element signature="e#3867#3868#0" expanded="true" />
+                <element signature="e#3918#3919#0" expanded="true" />
+                <element signature="e#3964#3965#0" expanded="true" />
+                <element signature="e#10704#11455#0" expanded="true" />
+                <element signature="e#11454#11455#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOConversation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/appview/LiveConversationListView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="165" column="66" lean-forward="true" selection-start-line="165" selection-start-column="66" selection-end-line="165" selection-end-column="66" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/common/CommonInterface.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/hybrid/activity/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="226">
+              <caret line="773" column="22" selection-start-line="773" selection-start-column="22" selection-end-line="773" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/business/LivePrivateChatBusiness.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/appview/LivePrivateChatView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="93">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/hybrid/app/App.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="53" selection-start-line="53" selection-end-line="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/common/AppRuntimeWorker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="804">
+              <caret line="803" column="5" selection-start-line="803" selection-start-column="5" selection-end-line="803" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/LiveInitChat.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/common/AppRuntimeWorker.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/hybrid/activity/MainActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/LiveInitChat.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/LiveConversationListView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/LivePrivateChatView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/hybrid/app/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOConversation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/business/LivePrivateChatBusiness.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/common/CommonInterface.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="live-android" type="1abcf292:AndroidViewProjectNode" />
+              <item name="fanweHybridLive" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="live-android" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="device.picker.selection" value="13ea17e1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="fanweHybridLive" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="fanweHybridLive" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="df0e7ed5-c609-48c3-875a-7a25fd3b6b0b" name="Default Changelist" comment="" />
+      <created>1554145458609</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1554145458609</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" visible="true" weight="0.32995737" />
+      <window_info id="Structure" side_tool="true" />
+      <window_info id="Build Variants" side_tool="true" />
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Run" />
+      <window_info anchor="bottom" id="Logcat" weight="0.32899022" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TODO" />
+      <window_info anchor="bottom" id="Android Profiler" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Debug" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Build" visible="true" weight="0.02388708" />
+      <window_info anchor="right" id="Device File Explorer" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Gradle" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Palette&#9;" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../libApp/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="912">
+          <caret line="167" selection-start-line="167" selection-end-line="167" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/common/AppRuntimeWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="804">
+          <caret line="803" column="5" selection-start-line="803" selection-start-column="5" selection-end-line="803" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/hybrid/activity/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="773" column="22" selection-start-line="773" selection-start-column="22" selection-end-line="773" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="263" column="29" selection-start-line="263" selection-start-column="29" selection-end-line="263" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2235#2236#0" expanded="true" />
+            <element signature="e#2265#2266#0" expanded="true" />
+            <element signature="e#3822#3823#0" expanded="true" />
+            <element signature="e#3867#3868#0" expanded="true" />
+            <element signature="e#3918#3919#0" expanded="true" />
+            <element signature="e#3964#3965#0" expanded="true" />
+            <element signature="e#10704#11455#0" expanded="true" />
+            <element signature="e#11454#11455#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/LiveInitChat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/appview/LivePrivateChatView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/hybrid/app/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOConversation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/appview/LiveConversationListView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="165" column="66" lean-forward="true" selection-start-line="165" selection-start-column="66" selection-end-line="165" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/business/LivePrivateChatBusiness.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/common/CommonInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
