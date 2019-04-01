@@ -59,17 +59,35 @@ public class SocketIOConversation {
     boolean valid() {
         return this.type != SocketIOConversationType.Invalid;
     }
+    public void delete(Activity activity){
+        SharedPreferences pref = activity.getSharedPreferences("msg_handle", Context.MODE_PRIVATE);
+        Gson gson = new Gson();
+        String key = ChatSDKHelper.getUserID() + "_" +getPeer();
+        LogUtil.i("conversation key  = " + key);
+        Type type = new TypeToken<SocketIOConversation>(){}.getType();
+        String json = pref.getString(key, "");
+        SocketIOConversation conversation = gson.fromJson(json, type);
+        LogUtil.i("conversation size" + conversation.msglist.size());
+        if (conversation == null)
+            conversation = this;
+        conversation.msglist = new ArrayList<SocketIOMessage>();
+        conversation.unReadNum = 0;
+        SharedPreferences.Editor prefsEditor = pref.edit();
+        String save_json = gson.toJson(conversation);
+        prefsEditor.putString(key, save_json);
+        prefsEditor.commit();
+    }
     public void setMsgRead(Activity activity){
         SharedPreferences pref = activity.getSharedPreferences("msg_handle", Context.MODE_PRIVATE);
         Gson gson = new Gson();
         String key = ChatSDKHelper.getUserID() + "_" +getPeer();
+        LogUtil.i("conversation key  = " + key);
         Type type = new TypeToken<SocketIOConversation>(){}.getType();
         String json = pref.getString(key, "");
         SocketIOConversation conversation = gson.fromJson(json, type);
         if (conversation == null)
             conversation = this;
         conversation.unReadNum = 0;
-
         SharedPreferences.Editor prefsEditor = pref.edit();
         String save_json = gson.toJson(conversation);
         prefsEditor.putString(key, save_json);
@@ -83,6 +101,7 @@ public class SocketIOConversation {
                  SharedPreferences pref = activity.getSharedPreferences("msg_handle", Context.MODE_PRIVATE);
                  Gson gson = new Gson();
                  String key = ChatSDKHelper.getUserID() + "_" +getPeer();
+                 LogUtil.i("conversation key = " + key);
                  Type type = new TypeToken<SocketIOConversation>(){}.getType();
                  String json = pref.getString(key, "");
                  SocketIOConversation conversation = gson.fromJson(json, type);
@@ -115,6 +134,7 @@ public class SocketIOConversation {
 
         Gson gson = new Gson();
         String key = ChatSDKHelper.getUserID() + "_" +getPeer();
+        LogUtil.i("conversation key" + key);
         Type type = new TypeToken<SocketIOConversation>(){}.getType();
         String json = pref.getString(key, "");
 

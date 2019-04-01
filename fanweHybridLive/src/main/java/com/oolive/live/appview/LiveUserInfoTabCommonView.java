@@ -61,6 +61,12 @@ public class LiveUserInfoTabCommonView extends BaseAppView {
         tv_focus_count = (TextView) findViewById(R.id.tv_focus_count);
         ll_my_fans = (LinearLayout) findViewById(R.id.ll_my_fans);
         tv_fans_count = (TextView) findViewById(R.id.tv_fans_count);
+
+        //To Do
+        ll_small_video.setVisibility(GONE);
+        tv_small_video_num.setVisibility(GONE);
+        ll_video.setVisibility(GONE);
+        tv_video_num.setVisibility(GONE);
     }
 
     private void initListerner() {
@@ -88,13 +94,13 @@ public class LiveUserInfoTabCommonView extends BaseAppView {
     public void onClick(View v) {
         super.onClick(v);
         if (v == ll_small_video) {
-            clickLlSmallVideo();
+            //clickLlSmallVideo();
         } else if (v == ll_my_focus) {
             clickLlMyFocus();
         } else if (v == ll_my_fans) {
             clickLlMyFans();
         } else if (v == ll_video) {
-            clickRlVideo();
+            //clickRlVideo();
         }
     }
 

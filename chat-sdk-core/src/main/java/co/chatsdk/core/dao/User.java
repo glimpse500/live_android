@@ -290,7 +290,13 @@ public class User implements CoreEntity, UserListItem {
     }
 
     public boolean getIsOnline () {
-        return getAvailability().equals(Availability.Available);
+        try{
+            return getAvailability().equals(Availability.Available);
+        }
+        catch (Exception e){
+            return false;
+        }
+
     }
 
     public void setIsOnline (boolean isOnline) {

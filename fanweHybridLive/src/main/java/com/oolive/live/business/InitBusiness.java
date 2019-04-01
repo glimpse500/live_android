@@ -42,12 +42,9 @@ public class InitBusiness extends BaseBusiness {
         if (ApkConstant.DEBUG) {
             SDFileUtil.copyAnrToCache(activity);
         }
-
-        //UmengSocialManager.init(activity.getApplication());
         SDTencentMapManager.getInstance().startLocation(null);
-
-        int init_delayed_time = activity.getResources().getInteger(R.integer.init_delayed_time);
-        mDelayRunnable.runDelay(init_delayed_time);
+        //int init_delayed_time = activity.getResources().getInteger(R.integer.init_delayed_time);
+        mDelayRunnable.runDelay(0);
     }
 
     private SDDelayRunnable mDelayRunnable = new SDDelayRunnable() {
@@ -61,7 +58,7 @@ public class InitBusiness extends BaseBusiness {
      * 请求初始化接口
      */
     private void requestInit() {
-        dealInitLaunchBusiness(mActivity);
+        //dealInitLaunchBusiness(mActivity);
         CommonInterface.requestInit(new AppRequestCallback<InitActModel>() {
             @Override
             public String getCancelTag() {

@@ -43,17 +43,14 @@ public class LiveMobielRegisterActivity extends BaseTitleActivity {
     private EditText et_image_code;
     @ViewInject(R.id.iv_image_code)
     private ImageView iv_image_code;
-
     @ViewInject(R.id.et_mobile)
     private EditText et_mobile;
     @ViewInject(R.id.et_code)
     private EditText et_code;
     @ViewInject(R.id.btn_send_code)
     private SDSendValidateButton btn_send_code;
-
     @ViewInject(R.id.tv_login)
     private TextView tv_login;
-
     private String strMobile;
     private String strImageCode;
 

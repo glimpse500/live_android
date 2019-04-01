@@ -43,7 +43,7 @@ import com.oolive.live.event.EUserLogout;
 import com.oolive.live.model.App_userinfoActModel;
 import com.oolive.live.utils.StorageFileUtils;
 import com.oolive.socketio.SocketIOHelper;
-import com.squareup.leakcanary.LeakCanary;
+//import com.squareup.leakcanary.LeakCanary;
 import com.sunday.eventbus.SDEventManager;
 import com.tencent.rtmp.ITXLiveBaseListener;
 import com.tencent.rtmp.TXLiveConstants;
@@ -83,7 +83,7 @@ public class App extends Application implements ITXLiveBaseListener {
             SDDisk.init(this);
             SDDisk.setGlobalObjectConverter(new JsonObjectConverter());
             SDDisk.setDebug(ApkConstant.DEBUG);
-            LeakCanary.install(this);
+            //LeakCanary.install(this);
             MobclickAgent.setCatchUncaughtExceptions(false);
             SDEventManager.register(this);
             SDNetworkReceiver.registerReceiver(this);
@@ -164,8 +164,8 @@ public class App extends Application implements ITXLiveBaseListener {
         CommonInterface.requestLogout(null);
         RetryInitWorker.getInstance().start();
         StorageFileUtils.deleteCrop_imageFile();
-
         if (isStartLogin) {
+            LogUtil.i("isStartLogin LiveLoginActivity ");
             Intent intent = new Intent(this, LiveLoginActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             SDActivityManager.getInstance().getLastActivity().startActivity(intent);
@@ -213,7 +213,7 @@ public class App extends Application implements ITXLiveBaseListener {
         SDNetworkReceiver.unregisterReceiver(this);
         SDHandlerManager.stopBackgroundHandler();
         SDMediaRecorder.getInstance().release();
-        AppRuntimeWorker.logout();
+        //AppRuntimeWorker.logout();
         super.onTerminate();
     }
 

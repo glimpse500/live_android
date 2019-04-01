@@ -766,12 +766,12 @@ public class MainActivity extends BaseActivity implements OnCropBitmapListner, P
     }
 
     protected void onFirstLoadCompleteWhenLoginSuccess() {
-        CommonInterface.requestUser_apns(null);
+        //CommonInterface.requestUser_apns(null);
         CommonInterface.requestMyUserInfo(new AppRequestCallback<App_userinfoActModel>() {
             @Override
             protected void onSuccess(SDResponse resp) {
                 if (actModel.getStatus() == 1) {
-                    CommonInterface.requestChatID(null);
+                    CommonInterface.requestChatID(null,getActivity());
                 }
             }
         });

@@ -1,5 +1,6 @@
 package com.oolive.live.common;
 
+import android.app.Activity;
 import android.text.TextUtils;
 
 import com.oolive.chat.ChatSDKHelper;
@@ -225,8 +226,7 @@ public class CommonInterface {
      * 请求当前用户的chatID
      * ChatSDK
      */
-    public static void requestChatID(AppRequestCallback<ChatModel> listener) {
-
+    public static void requestChatID(AppRequestCallback<ChatModel> listener , Activity activity) {
         AppRequestParams params = new AppRequestParams();
         params.putCtl("user");
         params.putAct("chat_id");
@@ -237,7 +237,9 @@ public class CommonInterface {
                 if (actModel.getStatus() == 1) {
                     String chat_ID = actModel.getChat_ID();
                     ChatSDKHelper.setChatID(actModel.getChat_ID());
-                    //AppRuntimeWorker.startContext();
+                    LogUtil.i("ChatID = " + chat_ID);
+                    AppRuntimeWorker.startContext(activity);
+
                 }
             }
         });

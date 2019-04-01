@@ -51,21 +51,17 @@ public class SocketIOHelper {
     private static String mUsername = null;
     private static String mUserID = null;
     private static Emitter.Listener onLogin = new Emitter.Listener() {
-
         @Override
         public void call(Object... args) {
             JSONObject data = (JSONObject) args[0];
-
             try {
                 numUsers = data.getInt("numUsers");
             } catch (JSONException e) {
                 numUsers = -1;
                 return;
             }
-
         }
     };
-
     public static String getUserID(){
         return mUserID;
     }
@@ -81,7 +77,6 @@ public class SocketIOHelper {
             return;
         }
         try {
-
             LogUtil.i("try to connet to SocketIO server : " + SocketIOConstant.CHAT_SERVER_URL);
             mSocket = IO.socket(SocketIOConstant.CHAT_SERVER_URL);
             mSocket.on(Socket.EVENT_CONNECT,onConnect);
@@ -93,7 +88,6 @@ public class SocketIOHelper {
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }
-
         mSocket.on("login", onLogin);
         mSocket.on("new message", onNewMessage);
         mSocket.emit("add user", userId);
@@ -103,10 +97,14 @@ public class SocketIOHelper {
         isInLogin = true;
     }
     public static void logoutSocketIO(){
-        mSocket.off("login", onLogin);
+        try{
+            mSocket.off("login", onLogin);
+        }
+        catch (java.lang.NullPointerException e){
+            LogUtil.e("mSocket not initial");
+        }
+
     }
-
-
     public static void joinGroup(String room_id){
         LogUtil.i("join + " +  room_id);
         if (ApkConstant.DEBUG)
@@ -119,14 +117,6 @@ public class SocketIOHelper {
             mSocket.emit("join", room_id);
 
         }
-
-    }
-    public  static SocketIOConversation getConversationGroup(String id) {
-        SocketIOConversation conversation = null;
-        if (!TextUtils.isEmpty(id)) {
-            conversation = SocketIOManager.getInstance().getConversation(SocketIOConversationType.Group, id);
-        }
-        return conversation;
     }
     public static SocketIOConversation getConversationC2C(String id) {
         SocketIOConversation conversation = null;
@@ -177,7 +167,6 @@ public class SocketIOHelper {
                     msg.setConversationPeer(cMsg.getSender().getUser_id());
                     EImOnNewMessages event = new EImOnNewMessages();
                     SocketIOConversation conversation = SocketIOManager.getInstance().getConversation(SocketIOConversationType.C2C,cMsg.getSender().getUser_id());
-
                    // conversation.writeLocalMessage(sMsg,activity,);
                     event.msg = msg;
                     //event.sMsg = sMsg;
@@ -202,7 +191,6 @@ public class SocketIOHelper {
                             mSocket.emit("add user", mUserID);
                             if (!cur_group.equals("-1"))
                                 joinGroup(cur_group);
-
                         }
                         SDToast.showToast("連接聊天室成功");
                         isConnected = true;

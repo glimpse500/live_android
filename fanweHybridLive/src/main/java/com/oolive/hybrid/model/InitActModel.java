@@ -30,7 +30,7 @@ public class InitActModel extends BaseActModel {
     private int has_wx_login;//是否显示微信登录
     private int has_qq_login;//是否显示QQ登录
     private int has_mobile_login;//是否显示手机登录
-    private int has_visitors_login;//是否显示游客登录
+    private int has_visitors_login = 0;//是否显示游客登录
 
     private List<CustomMsgLiveMsg> listmsg;
     private long monitor_second;// 单位秒

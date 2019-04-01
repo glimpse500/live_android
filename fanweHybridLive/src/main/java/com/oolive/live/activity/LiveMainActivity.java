@@ -20,12 +20,14 @@ import com.oolive.live.appview.main.LiveMainMeView;
 import com.oolive.live.appview.main.LiveMainRankingView;
 import com.oolive.live.common.AppRuntimeWorker;
 import com.oolive.live.common.CommonInterface;
+import com.oolive.live.dao.UserModelDao;
 import com.oolive.live.dialog.LevelLoginFirstDialog;
 import com.oolive.live.dialog.LevelUpgradeDialog;
 import com.oolive.live.dialog.common.AppDialogConfirm;
 import com.oolive.live.event.EIMLoginError;
 import com.oolive.live.event.EImOnForceOffline;
 import com.oolive.live.event.EReSelectTabLiveBottom;
+import com.oolive.live.model.UserModel;
 import com.oolive.xianrou.activity.QKCreateEntranceActivity;
 import com.oolive.xianrou.appview.main.QKTabSmallVideoView;
 import com.sunday.eventbus.SDEventManager;
@@ -99,7 +101,7 @@ public class LiveMainActivity extends BaseActivity {
                         onSelectTabRanking();
                         break;
                     case LiveMainBottomNavigationView.INDEX_SMALL_VIDEO:
-                        onSelectTabSmallVideo();
+                        //onSelectTabSmallVideo();
                         break;
                     case LiveMainBottomNavigationView.INDEX_ME:
                         onSelectTabMe();
@@ -180,7 +182,17 @@ public class LiveMainActivity extends BaseActivity {
     }
 
     private void onClickCreateLive() {
-        startActivity(new Intent(LiveMainActivity.this, QKCreateEntranceActivity.class));
+        //startActivity(new Intent(LiveMainActivity.this, QKCreateEntranceActivity.class));
+        if (AppRuntimeWorker.isLogin(this)) {
+            final UserModel userModel = UserModelDao.query();
+            if (userModel.getIs_agree() == 1) {
+                Intent intent = new Intent(this, LiveCreateRoomActivity.class);
+                startActivity(intent);
+            } else {
+                Intent intent = new Intent(this, LiveCreaterAgreementActivity.class);
+                startActivity(intent);
+            }
+        }
     }
 
     public void onEventMainThread(EIMLoginError event) {

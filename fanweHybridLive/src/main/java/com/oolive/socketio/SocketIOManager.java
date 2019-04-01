@@ -67,6 +67,10 @@ public class SocketIOManager {
     public void setUserStatusListener(SocketIOUserStatusListener var1) {
         this.userStatusListener = var1;
     }
+    public void postOffLine(){
+        LogUtil.i("onForceOffline");
+        this.userStatusListener.onForceOffline();
+    }
 
     public void setLogLevel(SocketIOLogLevel var1) {
         //TO DO

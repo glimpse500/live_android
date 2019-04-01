@@ -61,8 +61,8 @@ public class LiveUserHomeActivity extends BaseActivity {
 
     private ImageView iv_blur_head;
     private View ll_close;
-    private SDTabUnderline tab_left;
-    private SDTabUnderline tab_right;
+    private SDTabUnderline tab_home;
+    private SDTabUnderline tab_live;
     private SDTabUnderline tab_video;
 
     private LiveUserHomeCommonView view_live_user_info;
@@ -127,9 +127,13 @@ public class LiveUserHomeActivity extends BaseActivity {
         lsv = (SlideToBottomScrollView) findViewById(R.id.lsv);
         iv_blur_head = (ImageView) findViewById(R.id.iv_blur_head);
         ll_close = findViewById(R.id.ll_close);
-        tab_left = (SDTabUnderline) findViewById(R.id.tab_left);
-        tab_right = (SDTabUnderline) findViewById(R.id.tab_right);
+        tab_home = (SDTabUnderline) findViewById(R.id.tab_left);
+        tab_live = (SDTabUnderline) findViewById(R.id.tab_right);
         tab_video = (SDTabUnderline) findViewById(R.id.tab_video);
+
+        //To Do
+        tab_live.setVisibility(View.GONE);
+        tab_video.setVisibility(View.GONE);
         view_live_user_info = (LiveUserHomeCommonView) findViewById(R.id.view_live_user_info);
         view_live_user_home_tab = (LiveUserHomeTabCommonView) findViewById(R.id.view_live_user_home_tab);
         ll_cont = (LinearLayout) findViewById(R.id.ll_cont);
@@ -174,13 +178,13 @@ public class LiveUserHomeActivity extends BaseActivity {
     }
 
     private void initTab() {
-        tab_left.setTextTitle("主页");
-        tab_left.getViewConfig(tab_left.mTvTitle).setTextColorNormalResId(R.color.res_text_gray_m).setTextColorSelectedResId(R.color.res_main_color);
-        tab_left.getViewConfig(tab_left.mIvUnderline).setBackgroundColorNormal(Color.TRANSPARENT).setBackgroundColorSelected(SDResourcesUtil.getColor(R.color.res_main_color));
+        tab_home.setTextTitle("主页");
+        tab_home.getViewConfig(tab_home.mTvTitle).setTextColorNormalResId(R.color.res_text_gray_m).setTextColorSelectedResId(R.color.res_main_color);
+        tab_home.getViewConfig(tab_home.mIvUnderline).setBackgroundColorNormal(Color.TRANSPARENT).setBackgroundColorSelected(SDResourcesUtil.getColor(R.color.res_main_color));
 
-        tab_right.setTextTitle("直播");
-        tab_right.getViewConfig(tab_right.mTvTitle).setTextColorNormalResId(R.color.res_text_gray_m).setTextColorSelectedResId(R.color.res_main_color);
-        tab_right.getViewConfig(tab_right.mIvUnderline).setBackgroundColorNormal(Color.TRANSPARENT).setBackgroundColorSelected(SDResourcesUtil.getColor(R.color.res_main_color));
+        tab_live.setTextTitle("直播");
+        tab_live.getViewConfig(tab_live.mTvTitle).setTextColorNormalResId(R.color.res_text_gray_m).setTextColorSelectedResId(R.color.res_main_color);
+        tab_live.getViewConfig(tab_live.mIvUnderline).setBackgroundColorNormal(Color.TRANSPARENT).setBackgroundColorSelected(SDResourcesUtil.getColor(R.color.res_main_color));
 
         tab_video.setTextTitle("小视频");
         tab_video.getViewConfig(tab_video.mTvTitle).setTextColorNormalResId(R.color.res_text_gray_m).setTextColorSelectedResId(R.color.res_main_color);
@@ -207,11 +211,12 @@ public class LiveUserHomeActivity extends BaseActivity {
                     default:
                         break;
                 }
+
             }
         });
 
         mSelectManager.setItems(new SDTabUnderline[]
-                {tab_left, tab_right, tab_video});
+                {tab_home,tab_live, tab_video});
     }
 
     private void joinRoom() {

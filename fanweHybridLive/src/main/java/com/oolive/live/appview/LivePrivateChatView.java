@@ -59,6 +59,8 @@ import com.oolive.live.model.custommsg.MsgModel;
 import com.oolive.live.span.LiveExpressionSpan;
 import com.oolive.live.view.LiveRecordView;
 import com.oolive.live.view.pulltorefresh.IPullToRefreshViewWrapper;
+import com.oolive.socketio.SocketIOConversation;
+import com.oolive.socketio.SocketIOHelper;
 
 import java.io.File;
 import java.util.List;
@@ -167,7 +169,7 @@ public class LivePrivateChatView extends BaseAppView {
 
         mChatBusiness.setUserId(userId);
         mChatBusiness.requestUserInfo();
-        LogUtil.i("setUserId ,loadHistoryMessage");
+        //LogUtil.i("setUserId ,loadHistoryMessage");
         mChatBusiness.loadHistoryMessage(20);
     }
 
@@ -421,7 +423,9 @@ public class LivePrivateChatView extends BaseAppView {
 
         @Override
         public void onClickDelete() {
+
             view_chat_bar.et_content.removeSpan();
+
         }
     };
 

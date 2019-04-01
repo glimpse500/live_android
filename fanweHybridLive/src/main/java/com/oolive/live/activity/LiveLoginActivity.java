@@ -41,9 +41,7 @@ public class LiveLoginActivity extends BaseActivity {
 
     //游客
     private TextView tv_visitors;
-
     private TextView tv_agreement;
-
     private SDDurationBlocker blocker = new SDDurationBlocker(2000);
 
     @Override
@@ -60,7 +58,6 @@ public class LiveLoginActivity extends BaseActivity {
             clickLoginVisitors();
             return;
         }
-
         register();
         bindDefaultData();
         initLoginIcon();
@@ -101,8 +98,10 @@ public class LiveLoginActivity extends BaseActivity {
 
           int has_visitors_login = model.getHas_visitors_login();
             if (has_visitors_login == 1) {
-                SDViewUtil.setVisible(tv_visitors);
+                LogUtil.i("tv_visitors set visible");
+                //SDViewUtil.setVisible(tv_visitors);
           } else {
+                LogUtil.i("tv_visitors set gone");
                SDViewUtil.setGone(tv_visitors);
             }
         }
@@ -114,7 +113,6 @@ public class LiveLoginActivity extends BaseActivity {
         if (blocker.block()) {
             return;
         }
-
 
         if (v == iv_shouji) {
             clickLoginShouJi();

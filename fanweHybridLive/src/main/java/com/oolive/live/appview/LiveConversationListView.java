@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ListView;
 
 import com.oolive.chat.ChatMsgStore;
+import com.oolive.chat.ChatSDKHelper;
 import com.oolive.hybrid.http.AppRequestCallback;
 import com.fanwe.lib.dialog.ISDDialogMenu;
 import com.fanwe.lib.dialog.impl.SDDialogBase;
@@ -29,6 +30,7 @@ import com.oolive.live.model.LiveConversationListModel;
 import com.oolive.live.model.UserModel;
 import com.oolive.live.model.custommsg.MsgModel;
 import com.oolive.live.view.pulltorefresh.IPullToRefreshViewWrapper;
+import com.oolive.socketio.SocketIOConversation;
 import com.oolive.socketio.SocketIOHelper;
 
 import java.util.ArrayList;
@@ -408,7 +410,10 @@ public class LiveConversationListView extends BaseAppView {
             public void onClickItem(View v, int index, SDDialogBase dialog) {
                 switch (index) {
                     case 0:
-                        IMHelper.deleteConversationAndLocalMsgsC2C(model.getPeer());
+                        //IMHelper.deleteConversationAndLocalMsgsC2C(model.getPeer());
+                        LogUtil.i("delete conversation");
+                        SocketIOConversation conversation = SocketIOHelper.getConversationC2C(model.getPeer());
+                        conversation.delete(getActivity());
                         synchronized (mLock) {
                             mAdapter.removeData(model);
                         }

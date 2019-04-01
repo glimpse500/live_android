@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_login"
-    android:gravity="bottom|center_horizontal"
+    android:background="#CCCCCCCC"
+    android:gravity="center|center_horizontal"
     android:orientation="vertical">
 
     <LinearLayout
@@ -88,6 +88,7 @@
         android:layout_marginBottom="50dp"
         android:layout_marginTop="10dp"
         android:textColor="@color/text_login_color"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:visibility="gone"/>
 
 </LinearLayout>

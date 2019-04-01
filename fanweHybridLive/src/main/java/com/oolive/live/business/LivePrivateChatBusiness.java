@@ -44,6 +44,7 @@ import co.chatsdk.core.dao.User;
 import co.chatsdk.core.events.EventType;
 import co.chatsdk.core.events.NetworkEvent;
 import co.chatsdk.core.session.ChatSDK;
+import co.chatsdk.firebase.wrappers.UserWrapper;
 import co.chatsdk.ui.utils.ToastHelper;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -66,6 +67,7 @@ public class LivePrivateChatBusiness extends BaseBusiness {
      */
     private String mUserId;
     private String mChatId;
+    private User userPeer;
     private co.chatsdk.core.dao.Thread c2cThread;
     private static Disposable msgListener;
     private Activity mActivity;
@@ -146,25 +148,12 @@ public class LivePrivateChatBusiness extends BaseBusiness {
             protected void onSuccess(SDResponse resp) {
                 if (actModel.isOk()) {
                     setChatId(actModel.getUser().getChat_id());
-                    LogUtil.i("requestUserInfo setChatId" + actModel.getUser().getChat_id());
+                    LogUtil.i("requestUserInfo setChatId  " + actModel.getUser().getChat_id());
                     mCallback.onRequestUserInfoSuccess(actModel.getUser());
-                    User peer = ChatSDK.db().fetchUserWithEntityID(actModel.getUser().getChat_id());
-                    List<User> user_list = new ArrayList<>();
-                    user_list.add(ChatSDK.currentUser());
-                    user_list.add(peer);
-                    c2cThread = ChatSDK.db().fetchThreadWithUsers(user_list);
-                    if (c2cThread == null){
-                        ChatSDK.thread().createThread("c2cMsgThread", user_list)
-                                .observeOn(AndroidSchedulers.mainThread())
-                                .doFinally(() -> {
-                                    // Runs when process completed with error or success
-                                })
-                                .subscribe(thread -> {
-                                   c2cThread = thread;
-                                }, throwable -> {
-                                    SDToast.showToast("創建私聊異常");
-                                });
-                    }
+                    UserWrapper wrapper = UserWrapper.initWithEntityId(actModel.getUser().getChat_id());
+                    wrapper.metaOn();
+                    wrapper.onlineOn();
+                    userPeer = wrapper.getModel();
 
                 } else {
 
@@ -354,7 +343,7 @@ public class LivePrivateChatBusiness extends BaseBusiness {
     public void sendIMMsg(final MsgModel model) {
         final int index = mCallback.onAdapterIndexOf(model);
 
-        ChatSDKHelper.sendMsgC2C(mUserId,c2cThread,model.getCustomMsg(),new SocketIOValueCallBack<SocketIOMessage>() {
+        ChatSDKHelper.sendMsgC2C(mUserId,userPeer,model.getCustomMsg(),new SocketIOValueCallBack<SocketIOMessage>() {
             @Override
             public void onSuccess(SocketIOMessage sMsg) {
                 LogUtil.i("sendIMMsg success");

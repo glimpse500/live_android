@@ -4,8 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.text.TextUtils;
 
+import com.fanwe.library.adapter.http.model.SDResponse;
 import com.oolive.chat.ChatSDKHelper;
 import com.oolive.hybrid.dao.InitActModelDao;
+import com.oolive.hybrid.http.AppRequestCallback;
+import com.oolive.hybrid.http.AppRequestCallbackWrapper;
 import com.oolive.hybrid.model.Api_linkModel;
 import com.oolive.hybrid.model.InitActModel;
 import com.fanwe.lib.cache.SDDisk;
@@ -24,6 +27,7 @@ import com.oolive.live.activity.room.LivePushViewerActivity;
 import com.oolive.live.dao.UserModelDao;
 import com.oolive.live.model.App_InitH5Model;
 import com.oolive.live.model.App_RegionListActModel;
+import com.oolive.live.model.ChatModel;
 import com.oolive.live.model.CreateLiveData;
 import com.oolive.live.model.HomeTabTitleModel;
 import com.oolive.live.model.JoinLiveData;
@@ -33,7 +37,15 @@ import com.oolive.live.model.UserModel;
 import com.oolive.live.utils.LiveNetChecker;
 import com.oolive.socketio.SocketIOHelper;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import co.chatsdk.core.dao.Thread;
+import co.chatsdk.core.dao.User;
+import co.chatsdk.core.session.ChatSDK;
+import co.chatsdk.core.types.MessageSendStatus;
+import co.chatsdk.firebase.wrappers.UserWrapper;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 
 public class AppRuntimeWorker {
     /**
@@ -785,21 +797,16 @@ public class AppRuntimeWorker {
             SDToast.showToast("用户id为空");
             return false;
         }
-        /*
-        String usersig = getUsersig();
-        if (TextUtils.isEmpty(usersig)) {
-            LogUtil.i("TextUtils.isEmpty(usersig) ");
-            CommonInterface.requestChatID(null);
+        String chatID =ChatSDKHelper.getChatID();
+        if (chatID == null) {
+            CommonInterface.requestChatID(null,activity);
             return false;
-        }*/
-        String chatID = ChatSDKHelper.getChatID();
-        if (chatID == null)
-            CommonInterface.requestChatID(null);
-        CommonInterface.requestChatID(null);
+        }
+
         String socketIO_ID = user.getNick_name() + "(" + user.getUser_id()+ ")";
         LogUtil.i("loginSocketIO " + socketIO_ID);
-        //SocketIOHelper.loginSocketIO(identifier, socketIO_ID,activity);
-        ChatSDKHelper.loginChatSDK(identifier, socketIO_ID,activity);
+        LogUtil.i("chatID " + chatID);
+        ChatSDKHelper.loginChatSDK(identifier, socketIO_ID, activity);
 
         return true;
     }

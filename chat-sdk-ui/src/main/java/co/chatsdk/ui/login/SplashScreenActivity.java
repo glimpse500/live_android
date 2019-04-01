@@ -44,7 +44,7 @@ public class SplashScreenActivity extends BaseActivity {
     protected void onResume() {
         super.onResume();
 
-        startNextActivity();
+        //startNextActivity();
     }
 
     protected void startNextActivity () {
@@ -69,7 +69,7 @@ public class SplashScreenActivity extends BaseActivity {
     }
 
     protected void startLoginActivity () {
-        startActivityForResult(ChatSDK.ui().getLoginIntent(this, extras), AUTH);
+        //startActivityForResult(ChatSDK.ui().getLoginIntent(this, extras), AUTH);
     }
 
     protected void startProgressBar () {

@@ -354,17 +354,13 @@ public class ChatActivity extends BaseActivity implements TextInputDelegate, Cha
                 .filter(NetworkEvent.filterType(EventType.MessageAdded, EventType.ThreadReadReceiptUpdated, EventType.MessageRemoved))
                 .filter(NetworkEvent.filterThreadEntityID(thread.getEntityID()))
                 .subscribe(networkEvent -> {
-
                     Message message = networkEvent.message;
-
                     // Check that the message is relevant to the current thread.
                     if (message.getThreadId() != thread.getId().intValue()) {
                         return;
                     }
-
                     message.setRead(true);
                     message.update();
-
                     boolean isAdded = messageListAdapter.addRow(message, false, false);
                     if(isAdded || message.getMessageStatus() == MessageSendStatus.None) {
                         messageListAdapter.sortAndNotify();
