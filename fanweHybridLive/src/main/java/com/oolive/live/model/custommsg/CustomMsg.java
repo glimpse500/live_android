@@ -19,6 +19,7 @@ public class CustomMsg implements ICustomMsg, Serializable {
     private int type;
     private UserModel user;
     private UserModel sender;
+    private long time_stamp;
     private String deviceType;
 
     /**
@@ -81,6 +82,12 @@ public class CustomMsg implements ICustomMsg, Serializable {
         this.type = type;
     }
 
+    public void setTime_stamp(Long time_stamp){
+        this.time_stamp = time_stamp;
+    }
+    public Long getTime_stamp(){
+        return this.time_stamp;
+    }
     public TIMMessage parsetoTIMMessage() {
         TIMMessage msg = null;
         ByteMsg bMsg = null;
@@ -103,7 +110,7 @@ public class CustomMsg implements ICustomMsg, Serializable {
         }
         return msg;
     }
-    public SocketIOMessage parsetoSocketIOMessage() {
+    public SocketIOMessage parsetoSocketIOMessage(){
         SocketIOMessage sMsg = null;
         try {
             String json = SDJsonUtil.object2Json(this);
@@ -111,6 +118,7 @@ public class CustomMsg implements ICustomMsg, Serializable {
             sMsg = new SocketIOMessage(bytes);
             sMsg.setPeer(user_id);
             sMsg.setPeerChatID(chat_id);
+
             sMsg.setJson(json);
             LogUtil.i("send json:" + json);
         } catch (Exception e) {

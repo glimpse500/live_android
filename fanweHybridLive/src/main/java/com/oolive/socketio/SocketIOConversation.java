@@ -20,7 +20,7 @@ public class SocketIOConversation {
     private String peer = "";
     private String identifer = "";
     private ArrayList<SocketIOMessage> msglist = null;
-    private int unReadNum = 0;
+    private long unReadNum = 0;
     //private SocketIOConversation conversation;
     public SocketIOConversation(){
 
@@ -36,6 +36,9 @@ public class SocketIOConversation {
         return this.peer;
     }
     public long getUnreadMessageNum() {
+        LogUtil.i("getUnreadMessageNum = " + unReadNum);
+        String key = SocketIOHelper.getUserID()+ "_" + peer;
+        SocketIOManager.getInstance().unreadCache.put(key,unReadNum);
         return unReadNum;
     }
     void setPeer(String var1) {
@@ -72,13 +75,13 @@ public class SocketIOConversation {
             conversation = this;
         conversation.msglist = new ArrayList<SocketIOMessage>();
         conversation.unReadNum = 0;
+        SocketIOManager.getInstance().unreadCache.put(key,conversation.unReadNum);
         SharedPreferences.Editor prefsEditor = pref.edit();
         String save_json = gson.toJson(conversation);
         prefsEditor.putString(key, save_json);
         prefsEditor.commit();
     }
-    public void setMsgRead(Activity activity){
-        SharedPreferences pref = activity.getSharedPreferences("msg_handle", Context.MODE_PRIVATE);
+    public void setMsgRead(SharedPreferences pref){
         Gson gson = new Gson();
         String key = SocketIOHelper.getUserID() + "_" +getPeer();
         LogUtil.i("conversation key  = " + key);
@@ -88,12 +91,17 @@ public class SocketIOConversation {
         if (conversation == null)
             conversation = this;
         conversation.unReadNum = 0;
+        SocketIOManager.getInstance().unreadCache.put(key,conversation.unReadNum);
         SharedPreferences.Editor prefsEditor = pref.edit();
         String save_json = gson.toJson(conversation);
         prefsEditor.putString(key, save_json);
         prefsEditor.commit();
     }
-    public void getLocalMessage(int cnt, SocketIOMessage var2, Activity activity, SocketIOValueCallBack<List<SocketIOMessage>> callBack) {
+    public void setMsgRead(Activity activity){
+        SharedPreferences pref = activity.getSharedPreferences("msg_handle", Context.MODE_PRIVATE);
+        setMsgRead(pref);
+    }
+    public void getLocalMessage(int cnt, SocketIOMessage lastMsg, Activity activity, SocketIOValueCallBack<List<SocketIOMessage>> callBack) {
         if (callBack != null) {
              if (!this.valid()) {
                  callBack.onError(6004, "invalid conversation. user not login or peer is null");
@@ -108,12 +116,23 @@ public class SocketIOConversation {
                  if (conversation == null)
                      conversation = this;
                  conversation.unReadNum = 0;
-
+                 SocketIOManager.getInstance().unreadCache.put(key,conversation.unReadNum);
                  List<SocketIOMessage> list = conversation.msglist;
                  List<SocketIOMessage> subList = new ArrayList<SocketIOMessage>();
-                 if (list != null)
-                     subList = list.subList(Math.max(list.size() - cnt, 0), list.size());
 
+                 if (list != null){
+                     int last = list.size();
+                     if (lastMsg != null) {
+                         last = last-1;
+                         LogUtil.i("lastMsg  time stamp = " + lastMsg.getTimeStamp());
+                         while (last > 0 && !lastMsg.getTimeStamp().equals(list.get(last).getTimeStamp())) {
+                             LogUtil.i("time_stamp i " +  (last) +  " " + list.get(last).getTimeStamp());
+                             last = last - 1;
+                         }
+                         LogUtil.i("time_stamp i " +  (last) +  " " + list.get(last).getTimeStamp());
+                     }
+                     subList = list.subList(Math.max(last - cnt, 0), last);
+                 }
                  SharedPreferences.Editor prefsEditor = pref.edit();
                  String save_json = gson.toJson(conversation);
                  prefsEditor.putString(key, save_json);
@@ -146,6 +165,9 @@ public class SocketIOConversation {
         conversation.msglist .add(sMsg);
         if (!fromSelf)
             conversation.unReadNum +=1;
+        SocketIOManager.getInstance().unreadCache.put(key,conversation.unReadNum);
+
+        LogUtil.i("unReadNum = " + conversation.unReadNum);
         LogUtil.i("msglist.size = " + conversation.msglist.size());
         SharedPreferences.Editor prefsEditor = pref.edit();
         String save_json = gson.toJson(conversation);

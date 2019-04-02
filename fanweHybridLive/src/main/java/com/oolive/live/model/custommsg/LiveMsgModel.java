@@ -7,6 +7,7 @@ import com.oolive.live.LiveConstant;
 
 import com.oolive.live.dao.UserModelDao;
 import com.oolive.live.model.UserModel;
+import com.oolive.socketio.SocketIOHelper;
 import com.oolive.socketio.SocketIOMessage;
 
 public class LiveMsgModel extends MsgModel {
@@ -16,6 +17,8 @@ public class LiveMsgModel extends MsgModel {
 
     public LiveMsgModel(SocketIOMessage sMsg) {
         super();
+        if (sMsg.getTimeStamp() != null)
+            this.setTimestamp(sMsg.getTimeStamp());
         setSocketIOMessage(sMsg);
     }
 
@@ -42,6 +45,11 @@ public class LiveMsgModel extends MsgModel {
                 UserModelDao.updateLevelUp(sender);
                 setConversationPeer(sMsg.getPeer());
                 setConversationPeer(sMsg.getPeerChatID());
+                if (sender.getUser_id().equals(SocketIOHelper.getUserID())){
+                    LogUtil.i(sender.getUser_id() + "  " + SocketIOHelper.getUserID() );
+                    setSelf(true);
+                }
+
                 Class realCustomMsgClass = LiveConstant.mapCustomMsgClass.get(type);
                 if (realCustomMsgClass == null) {
                     return;

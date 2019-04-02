@@ -25,12 +25,15 @@ import com.oolive.live.dialog.common.AppDialogMenu;
 import com.oolive.live.event.EImOnNewMessages;
 import com.oolive.live.model.App_BaseInfoActModel;
 import com.oolive.live.model.App_my_follow_ActModel;
+import com.oolive.live.model.App_userinfoActModel;
 import com.oolive.live.model.LiveConversationListModel;
 import com.oolive.live.model.UserModel;
 import com.oolive.live.model.custommsg.MsgModel;
 import com.oolive.live.view.pulltorefresh.IPullToRefreshViewWrapper;
 import com.oolive.socketio.SocketIOConversation;
+import com.oolive.socketio.SocketIOConversationType;
 import com.oolive.socketio.SocketIOHelper;
+import com.oolive.socketio.SocketIOManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,26 +59,20 @@ public class LiveConversationListView extends BaseAppView {
     }
 
     private ListView lv_content;
-
     private LiveConversationListAdapter mAdapter;
     private List<LiveConversationListModel> mListModel = new ArrayList<>();
-
     private List<UserModel> mListFollow = new ArrayList<>();
-
     private List<MsgModel> mListMsgFollow = new ArrayList<>();
     private List<MsgModel> mListMsgUnknow = new ArrayList<>();
-
     private Object mLock = new Object();
 
     /**
      * 是否是关注的聊天列表
      */
     private boolean mIsFollowList;
-
     public void setFollowList(boolean followList) {
         mIsFollowList = followList;
     }
-
     protected void init() {
         setContentView(R.layout.view_live_chat_c2c_list);
         lv_content = (ListView) findViewById(R.id.lv_content);
@@ -101,7 +98,10 @@ public class LiveConversationListView extends BaseAppView {
             @Override
             public void onItemClick(int position, LiveConversationListModel item, View view) {
                 if (onItemClickListener != null) {
-                    IMHelper.setSingleC2CReadMessage(item.getPeer(), false);
+                    //IMHelper.setSingleC2CReadMessage(item.getPeer(), false);
+                    LogUtil.i("setSingleC2CReadMessage" );
+                    SocketIOConversation conversation = SocketIOManager.getInstance().getConversation(SocketIOConversationType.C2C,item.getPeer());
+                    conversation.setMsgRead(getActivity());
                     item.updateUnreadNumber();
                     mAdapter.updateData(mAdapter.indexOf(item));
                     notifyTotalUnreadNumListener();
@@ -163,7 +163,7 @@ public class LiveConversationListView extends BaseAppView {
             public String onBackground() {
                 synchronized (mLock) {
                    // List<MsgModel> listMsg = IMHelper.getC2CMsgList();
-                    List<MsgModel> listMsg = ChatMsgStore.getC2CMsgList();
+                    List<MsgModel> listMsg = SocketIOManager.getInstance().getC2CMsgList();
                     if (listMsg != null) {
                         mListMsgFollow.clear();
                         mListMsgUnknow.clear();
@@ -224,7 +224,6 @@ public class LiveConversationListView extends BaseAppView {
                 return;
             }
         }
-
         SDHandlerManager.getBackgroundHandler().post(new SDTaskRunnable<String>() {
             @Override
             public String onBackground() {
@@ -238,7 +237,6 @@ public class LiveConversationListView extends BaseAppView {
                         sb.append(msg.getConversationPeer()).append(",");
                     }
                     sb.deleteCharAt(sb.lastIndexOf(","));
-
                     return sb.toString();
                 }
             }
@@ -298,13 +296,14 @@ public class LiveConversationListView extends BaseAppView {
         } else {
             if (msg.isPrivateMsg()) {
                 dealNewMsg(msg);
-
             }
         }
     }
 
-    private void dealNewMsg(final MsgModel msg) {
 
+    private void dealNewMsg(final MsgModel msg) {
+        LogUtil.i("dealNewMsg   " + msg.getCustomMsg().getSender().getUser_id());
+        LogUtil.i("dealNewMsg  timestamp " + msg.getTimestamp());
         SDHandlerManager.getBackgroundHandler().post(new SDTaskRunnable<LiveConversationListModel>() {
             @Override
             public LiveConversationListModel onBackground() {
@@ -318,6 +317,7 @@ public class LiveConversationListView extends BaseAppView {
                         }
                     }
                     LiveConversationListModel model = null;
+
                     if (containIndex < 0) {
                         boolean isFollowMsg = false;
                         for (UserModel user : mListFollow) {
@@ -326,7 +326,6 @@ public class LiveConversationListView extends BaseAppView {
                                 break;
                             }
                         }
-
                         if (mIsFollowList) {
                             if (isFollowMsg) {
                                 model = new LiveConversationListModel();
@@ -367,7 +366,6 @@ public class LiveConversationListView extends BaseAppView {
             mAdapter.updateData(mListModel);
         }
     }
-
     /**
      * 计算，并通知总未读数量
      */
@@ -417,6 +415,7 @@ public class LiveConversationListView extends BaseAppView {
                             mAdapter.removeData(model);
                         }
                         notifyTotalUnreadNumListener();
+                        SocketIOManager.getInstance().postERefreshMsgUnReaded(true);
                         break;
                     default:
                         break;

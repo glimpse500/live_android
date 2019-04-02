@@ -55,6 +55,7 @@ import com.oolive.live.view.pulltorefresh.IPullToRefreshViewWrapper;
 import com.oolive.o2o.activity.O2OShoppingMystoreActivity;
 import com.oolive.pay.activity.PayBalanceActivity;
 import com.oolive.shop.activity.ShopMyStoreActivity;
+import com.oolive.socketio.SocketIOManager;
 
 import jp.wasabeef.glide.transformations.BlurTransformation;
 
@@ -467,7 +468,7 @@ public class LiveMainMeView extends BaseAppView {
     }
 
     private void initUnReadNum() {
-        TotalConversationUnreadMessageModel model = IMHelper.getC2CTotalUnreadMessageModel();
+        TotalConversationUnreadMessageModel model = SocketIOManager.getInstance().getC2CTotalUnreadMessageModel();
         setUnReadNumModel(model);
     }
 

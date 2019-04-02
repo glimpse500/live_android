@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.oolive.library.adapter.SDSimpleAdapter;
+import com.oolive.library.utils.LogUtil;
 import com.oolive.library.utils.SDViewBinder;
 import com.oolive.library.utils.SDViewUtil;
 import com.oolive.library.utils.ViewHolder;
@@ -45,8 +46,10 @@ public class LiveConversationListAdapter extends SDSimpleAdapter<LiveConversatio
         TextView tv_time = ViewHolder.get(R.id.tv_time, convertView);
         LiveUnReadNumTextView tv_unreadnum = ViewHolder.get(R.id.tv_unreadnum, convertView);
 
+        LogUtil.i("tv_time = "+ model.getTimeFormat() );
         SDViewBinder.setTextView(tv_time, model.getTimeFormat());
         tv_content.setText(model.getText());
+        LogUtil.i("tv_unreadnum = "+ model.getUnreadNum() );
         if (model.getUnreadNum() > 0) {
             SDViewUtil.setVisible(tv_unreadnum);
             tv_unreadnum.setUnReadNumText(model.getUnreadNum());
@@ -57,6 +60,7 @@ public class LiveConversationListAdapter extends SDSimpleAdapter<LiveConversatio
         SDViewBinder.setTextView(tv_nick_name, model.getNick_name());
         iv_global_male.setImageResource(model.getSexResId());
         iv_rank.setImageResource(model.getLevelImageResId());
+        LogUtil.i("model.getHead_image()" + model.getHead_image());
         GlideUtil.loadHeadImage(model.getHead_image()).into(civ_head_image);
 
         if (!TextUtils.isEmpty(model.getV_icon())) {

@@ -10,6 +10,7 @@ import com.oolive.library.utils.SDViewUtil;
 import com.oolive.live.IMHelper;
 import com.oolive.live.R;
 import com.oolive.live.common.AppRuntimeWorker;
+import com.oolive.socketio.SocketIOManager;
 
 /**
  * 观众底部菜单
@@ -126,7 +127,7 @@ public class RoomViewerBottomView extends RoomBottomView implements BankerBusine
             }
         }
 
-        setUnreadMessageModel(IMHelper.getC2CTotalUnreadMessageModel());
+        setUnreadMessageModel(SocketIOManager.getInstance().getC2CTotalUnreadMessageModel());
     }
 
 

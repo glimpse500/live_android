@@ -7,6 +7,8 @@ import android.util.AttributeSet;
 import com.oolive.live.IMHelper;
 import com.oolive.live.model.ConversationUnreadMessageModel;
 import com.oolive.live.model.TotalConversationUnreadMessageModel;
+import com.oolive.socketio.SocketIOHelper;
+import com.oolive.socketio.SocketIOManager;
 
 /**
  * IMC2C单个用户未读数量TextView
@@ -38,7 +40,7 @@ public class LiveC2CSingleUnreadTextView extends LiveIMUnreadTextView {
             }
             mUserId = userId;
             if (!TextUtils.isEmpty(userId)) {
-                onProcessIMUnread(IMHelper.getC2CTotalUnreadMessageModel());
+                onProcessIMUnread(SocketIOManager.getInstance().getC2CTotalUnreadMessageModel());
             }
         }
     }
@@ -58,6 +60,6 @@ public class LiveC2CSingleUnreadTextView extends LiveIMUnreadTextView {
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        onProcessIMUnread(IMHelper.getC2CTotalUnreadMessageModel());
+        onProcessIMUnread(SocketIOManager.getInstance().getC2CTotalUnreadMessageModel());
     }
 }

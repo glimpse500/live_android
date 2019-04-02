@@ -2,8 +2,14 @@ package com.oolive.live.model;
 
 import android.text.TextUtils;
 
+import com.oolive.library.utils.LogUtil;
 import com.oolive.live.IMHelper;
 import com.oolive.live.model.custommsg.MsgModel;
+import com.oolive.socketio.SocketIOConversation;
+import com.oolive.socketio.SocketIOConversationType;
+import com.oolive.socketio.SocketIOHelper;
+import com.oolive.socketio.SocketIOManager;
+import com.oolive.socketio.SocketIOMessage;
 
 /**
  * Created by Administrator on 2016/12/29.
@@ -43,8 +49,11 @@ public class LiveConversationListModel extends UserModel {
         setPeer(msg.getConversationPeer());
         setPeerChatID(msg.getConversationPeerChatID());
         setText(msg.getCustomMsg().getConversationDesc());
-        setUnreadNum(msg.getUnreadNum());
-        setTime(msg.getTimestamp());
+        //LogUtil.i("fillValue " + msg.getUnreadNum());
+        //setUnreadNum(msg.getUnreadNum());
+        setTime(msg.getTimestamp()/1000);
+        //setTime(msg.getTimestamp()/1000);
+        LogUtil.i("setTimeFormat " + msg.getTimestampFormat());
         setTimeFormat(msg.getTimestampFormat());
         setUser_id(msg.getConversationPeer());
 
@@ -56,7 +65,19 @@ public class LiveConversationListModel extends UserModel {
     }
 
     public void updateUnreadNumber() {
-        setUnreadNum(IMHelper.getC2CUnreadNumber(peer));
+        String key = SocketIOHelper.getUserID()+ "_" + peer;
+        Long unread = new Long(0);
+        if (SocketIOManager.getInstance().unreadCache.keySet().contains(key)){
+            unread = SocketIOManager.getInstance().unreadCache.get(key);
+            LogUtil.i("fin in cache" + SocketIOManager.getInstance().unreadCache.get(key));
+        }
+        else{
+            LogUtil.i("not in cache" + SocketIOManager.getInstance().unreadCache.get(key));
+            SocketIOConversation conversation = SocketIOManager.getInstance().getConversation(SocketIOConversationType.C2C,peer);
+            unread = conversation.getUnreadMessageNum();
+        }
+        setUnreadNum(unread);
+        //setUnreadNum(IMHelper.getC2CUnreadNumber(peer));
     }
     public String getPeerChatID(){
         return peer_chatID;

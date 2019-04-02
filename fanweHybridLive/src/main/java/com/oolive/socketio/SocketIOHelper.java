@@ -67,6 +67,9 @@ public class SocketIOHelper {
     public static String getUserID(){
         return mUserID;
     }
+    public static String getConversationKey(String peer){
+        return getUserID() + "_" + peer;
+    }
     public static void loginSocketIO(String userId, String userSig,Activity act) {
         if (isInLogin) {
             return;
@@ -86,15 +89,11 @@ public class SocketIOHelper {
             mSocket.on(Socket.EVENT_CONNECT_ERROR, onConnectError);
             mSocket.on(Socket.EVENT_CONNECT_TIMEOUT, onConnectError);
             IO.Options opts = new IO.Options();
-            // opts.forceNew = true;
-            //opts.reconnection = true;
+
             mSocket.connect();
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }
-        //mSocket.on("typing", onTyping);
-        //mSocket.on("stop typing", onStopTyping);
-        //mSocket.connect();
 
         mSocket.on("login", onLogin);
         mSocket.on("new message", onNewMessage);
@@ -108,16 +107,6 @@ public class SocketIOHelper {
     }
     public static void logoutSocketIO(){
         mSocket.off("login", onLogin);
-    }
-    public static void postERefreshMsgUnReaded() {
-        postERefreshMsgUnReaded(false);
-    }
-
-    public static void postERefreshMsgUnReaded(boolean isFromSetLocalReade) {
-        ERefreshMsgUnReaded event = new ERefreshMsgUnReaded();
-        event.model = SocketIOHelper.getC2CTotalUnreadMessageModel(activity);
-        event.isFromSetLocalReaded = isFromSetLocalReade;
-        SDEventManager.post(event);
     }
     public static void joinGroup(String room_id){
         LogUtil.i("join + " +  room_id);
@@ -138,10 +127,10 @@ public class SocketIOHelper {
         List<MsgModel> listMsg = new ArrayList<>();
         UserModel user = UserModelDao.query();
         if (user != null) {
-            long count = SocketIOManager.getInstance().getConversationCount(activity);
+            long count = SocketIOManager.getInstance().getConversationCount();
             LogUtil.i("count = " + count);
             for (int i = 0; i < count; ++i) {
-                SocketIOConversation conversation = SocketIOManager.getInstance().getConversationByIndex(activity,i);
+                SocketIOConversation conversation = SocketIOManager.getInstance().getConversationByIndex(i);
                 LogUtil.i("conversation.getType()  = " + conversation.getType());
                 if (SocketIOConversationType.C2C == conversation.getType()) {
                     // 自己对自己发的消息过滤
@@ -182,76 +171,8 @@ public class SocketIOHelper {
             SDEventManager.post(event);
         }
 
-
-        //SocketIOConversation conversation = getConversationGroup(id);
-
-        //SocketIOMessage sMsg = customMsg.parsetoSocketIOMessage();
-
-
-        /*
-
-        conversation.sendMessage(tMsg, new TIMValueCallBack<TIMMessage>() {
-
-            @Override
-            public void onSuccess(TIMMessage timMessage) {
-                if (callback != null) {
-                    callback.onSuccess(timMessage);
-                }
-            }
-
-            @Override
-            public void onError(int code, String desc) {
-                LogUtil.i("sendMsgGroup error:" + code + "," + desc);
-                if (code == 10017 || code == 20012) {
-                    SDToast.showToast("你已被禁言");
-                }
-                if (callback != null) {
-                    callback.onError(code, desc);
-                }
-            }
-        });*/
     }
     public static boolean connected(){return isConnected;}
-
-    public static TotalConversationUnreadMessageModel getC2CTotalUnreadMessageModel(Activity activity) {
-        TotalConversationUnreadMessageModel totalUnreadMessageModel = new TotalConversationUnreadMessageModel();
-
-        UserModel user = UserModelDao.query();
-        if (user == null) {
-            return totalUnreadMessageModel;
-        }
-
-        long totalUnreadNum = 0;
-        long cnt = SocketIOManager.getInstance().getConversationCount(activity);
-        for (int i = 0; i < cnt; ++i) {
-            SocketIOConversation conversation = SocketIOManager.getInstance().getConversationByIndex(activity,i);
-            SocketIOConversationType type = conversation.getType();
-            if (type == SocketIOConversationType.C2C) {
-                // 自己对自己发的消息过滤
-                if (!conversation.getPeer().equals(user.getUser_id())) {
-                    long unreadnum = conversation.getUnreadMessageNum();
-                    if (unreadnum > 0) {
-                        List<SocketIOMessage> list = conversation.getLastMsgs(1);
-                        if (list != null && list.size() > 0) {
-                            SocketIOMessage msg = list.get(0);
-                            MsgModel msgModel = new LiveMsgModel(msg);
-                            if (msgModel.isPrivateMsg()) {
-                                ConversationUnreadMessageModel unreadMessageModel = new ConversationUnreadMessageModel();
-                                unreadMessageModel.setPeer(conversation.getPeer());
-                                unreadMessageModel.setUnreadnum(unreadnum);
-                                totalUnreadMessageModel.hashConver.put(conversation.getPeer(), unreadMessageModel);
-
-                                totalUnreadNum = totalUnreadNum + unreadnum;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        totalUnreadMessageModel.setTotalUnreadNum(totalUnreadNum);
-        return totalUnreadMessageModel;
-    }
 
 
     public  static SocketIOConversation getConversationGroup(String id) {
@@ -263,6 +184,7 @@ public class SocketIOHelper {
     }
     public static void sendMsgC2C(final String id,final CustomMsg customMsg,final SocketIOValueCallBack<SocketIOMessage> callback) {
         if (TextUtils.isEmpty(id)) {
+            SDToast.showToast("無聊天對象");
             callback.onError(0,"無聊天對象");
         }
         else if (!isConnected) {
@@ -272,14 +194,14 @@ public class SocketIOHelper {
         else{
             CommonInterface.requestIs_black(customMsg.getSender().getUser_id(), new AppRequestCallback<User_is_blackActModel>() {
                 protected void onSuccess(SDResponse resp) {
-                    if (actModel.isOk()) {
-                        SocketIOMessage sMsg = customMsg.parsetoSocketIOMessage();
-                        sMsg.setPeer(customMsg.getSender().getUser_id());
+                    if (actModel.isOk() && !actModel.getIs_black()) {
+
+                        SocketIOMessage socketioMsg = customMsg.parsetoSocketIOMessage();
+
+
                         mSocket.emit("c2c_msg",id,customMsg.parsetoSocketIOMessage().getJson());
-                        //LogUtil.i("requestIs_black :" + customMsg.parsetoSocketIOMessage().getJson());
-
-                        callback.onSuccess(customMsg.parsetoSocketIOMessage());
-
+                        callback.onSuccess(socketioMsg);
+                        LogUtil.i("socketioMsg " + socketioMsg.getJson());
                     }
                     else {
                         callback.onError(1,"無法傳送訊息");
@@ -288,26 +210,7 @@ public class SocketIOHelper {
 
             });
         }
-    /*
-        @Override
-        public void onSuccess(TIMMessage timMessage) {
-            if (callback != null) {
-                callback.onSuccess(timMessage);
-            }
-        }
 
-        @Override
-        public void onError(int code, String desc) {
-            LogUtil.i("sendMsgC2C error:" + code + "," + desc);
-            if (code == 10017 || code == 20012) {
-                SDToast.showToast("你已被禁言");
-            }
-            if (callback != null) {
-                callback.onError(code, desc);
-            }
-        }
-    });*/
-        //return sMsg;
     }
     public static SocketIOConversation getConversationC2C(String id) {
         SocketIOConversation conversation = null;
@@ -320,10 +223,10 @@ public class SocketIOHelper {
         @Override
         public void call(final Object... args) {
             JSONObject data = (JSONObject) args[0];
-            String username;
+            //String username;
             String json_message;
             try {
-                username = data.getString("username");
+                //username = data.getString("username");
                 json_message = data.getString("message");
                 LogUtil.i("on json_message  :" + json_message);
                 JSONObject message_body = new JSONObject(json_message);
@@ -332,14 +235,19 @@ public class SocketIOHelper {
                 SocketIOMessage sMsg = cMsg.parsetoSocketIOMessage();
                 MsgModel msg = new LiveMsgModel(sMsg);
                 if (msg != null) {
+
                     msg.setCustomMsg(cMsg);
                     msg.setConversationPeer(cMsg.getSender().getUser_id());
                     EImOnNewMessages event = new EImOnNewMessages();
                     SocketIOConversation conversation = SocketIOManager.getInstance().getConversation(SocketIOConversationType.C2C,cMsg.getSender().getUser_id());
-
-                    conversation.writeLocalMessage(sMsg);
+                    if (msg.isPrivateMsg()){
+                        msg.setTimestamp(cMsg.getTime_stamp());
+                        sMsg.setTimeStamp(cMsg.getTime_stamp());
+                        conversation.writeLocalMessage(sMsg,activity,false);
+                        SocketIOManager.getInstance().postERefreshMsgUnReaded(true);
+                    }
+                    //msg.setSelf(false);
                     event.msg = msg;
-                    //event.sMsg = sMsg;
                     LogUtil.i("SDEventManager.post(event);  :");
                     SDEventManager.post(event);
                 }
@@ -361,7 +269,6 @@ public class SocketIOHelper {
                             mSocket.emit("add user", mUserID);
                             if (!cur_group.equals("-1"))
                                 joinGroup(cur_group);
-
                         }
                         SDToast.showToast("連接聊天室成功");
                         isConnected = true;
@@ -392,7 +299,6 @@ public class SocketIOHelper {
                 @Override
                 public void run() {
                     isConnected = false;
-                    SDToast.showToast("onConnectError");
                 }
             });
         }

@@ -7,6 +7,7 @@ import com.oolive.live.IMHelper;
 import com.oolive.live.event.EIMLoginSuccess;
 import com.oolive.live.event.ERefreshMsgUnReaded;
 import com.oolive.live.model.TotalConversationUnreadMessageModel;
+import com.oolive.socketio.SocketIOManager;
 
 import de.greenrobot.event.EventBus;
 
@@ -36,7 +37,7 @@ public abstract class LiveIMUnreadTextView extends LiveUnreadTextView {
     }
 
     public final void onEventMainThread(EIMLoginSuccess event) {
-        onProcessIMUnread(IMHelper.getC2CTotalUnreadMessageModel());
+        onProcessIMUnread(SocketIOManager.getInstance().getC2CTotalUnreadMessageModel());
     }
 
     /**

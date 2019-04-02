@@ -9,6 +9,7 @@ import com.oolive.games.GameBusiness;
 import com.oolive.library.utils.SDViewUtil;
 import com.oolive.live.IMHelper;
 import com.oolive.live.R;
+import com.oolive.socketio.SocketIOManager;
 
 /**
  * Created by Administrator on 2016/8/4.
@@ -102,7 +103,7 @@ public class RoomCreaterBottomView extends RoomBottomView implements
         menu_open_banker_list.setOnClickListener(this);
         menu_stop_banker.setOnClickListener(this);
 
-        setUnreadMessageModel(IMHelper.getC2CTotalUnreadMessageModel());
+        setUnreadMessageModel(SocketIOManager.getInstance().getC2CTotalUnreadMessageModel());
     }
 
     @Override

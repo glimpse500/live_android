@@ -23,6 +23,7 @@ import com.oolive.live.model.LiveConversationListModel;
 import com.oolive.live.model.TotalConversationUnreadMessageModel;
 import com.oolive.live.model.UserModel;
 import com.oolive.live.view.LiveUnReadNumTextView;
+import com.oolive.socketio.SocketIOManager;
 
 import org.xutils.view.annotation.ViewInject;
 
@@ -135,7 +136,7 @@ public class LiveChatC2CNewView extends BaseAppView {
             return;
         }
 
-        TotalConversationUnreadMessageModel model = IMHelper.getC2CTotalUnreadMessageModel();
+        TotalConversationUnreadMessageModel model = SocketIOManager.getInstance().getC2CTotalUnreadMessageModel();
         if (model.getTotalUnreadNum() > 0) {
             showDeleteUnReadMsgDialog();
         }
@@ -164,7 +165,7 @@ public class LiveChatC2CNewView extends BaseAppView {
     }
 
     private void setAllMsgReaded() {
-        IMHelper.setAllC2CReadMessage();
+        SocketIOManager.getInstance().setAllC2CReadMessage();
         if (liveChatC2CLeftView != null) {
             liveChatC2CLeftView.notifyTotalUnreadNumListener();
             liveChatC2CLeftView.notifyAdapter();

@@ -260,20 +260,7 @@ public class RoomSendMsgView extends RoomView {
             msg.setText(mStrContent);
             LogUtil.i("sendMsgGroup :" + mStrContent);
             SocketIOHelper.sendMsgGroup(getLiveActivity().getGroupId(),msg);
-            /*
-            IMHelper.sendMsgGroup(groupId, msg, new TIMValueCallBack<TIMMessage>() {
-                @Override
-                public void onSuccess(TIMMessage timMessage) {
-                    IMHelper.postMsgLocal(msg, timMessage.getConversation().getPeer());
-                }
 
-                @Override
-                public void onError(int code, String desc) {
-                    if (code == 80001) {
-                        SDToast.showToast("该词已被禁用");
-                    }
-                }
-            });*/
         }
         et_content.setText("");
     }

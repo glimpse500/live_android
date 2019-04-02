@@ -2,7 +2,6 @@ package com.oolive.live.common;
 
 import android.app.Activity;
 import android.text.TextUtils;
-
 import com.oolive.games.model.App_banker_applyActModel;
 import com.oolive.games.model.App_banker_listActModel;
 import com.oolive.games.model.App_getGamesActModel;

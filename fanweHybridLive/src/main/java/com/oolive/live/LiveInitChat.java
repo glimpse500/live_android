@@ -34,13 +34,14 @@ import java.util.List;
 public class LiveInitChat {
 
     public void init(Application app) {
+        SocketIOManager.getInstance().createSharePreFerences(app);
         SocketIOManager.getInstance().addMessageListener(new SocketIOListener() {
             private void postNewMessage(MsgModel msgModel) {
                 EImOnNewMessages event = new EImOnNewMessages();
                 event.msg = msgModel;
                 SDEventManager.post(event);
                 if (msgModel.isPrivateMsg()) {
-                    SocketIOHelper.postERefreshMsgUnReaded();
+                    SocketIOManager.getInstance().postERefreshMsgUnReaded(true);
                 }
             }
             @Override

@@ -8,6 +8,7 @@ import com.oolive.auction.model.custommsg.CustomMsgAuctionPaySuccess;
 import com.oolive.auction.model.custommsg.CustomMsgAuctionSuccess;
 import com.oolive.games.model.custommsg.CustomMsgGameBanker;
 import com.oolive.games.model.custommsg.GameMsgModel;
+import com.oolive.library.utils.LogUtil;
 import com.oolive.library.utils.SDDateUtil;
 import com.oolive.live.LiveConstant;
 import com.oolive.live.dao.UserModelDao;
@@ -192,6 +193,9 @@ public abstract class MsgModel {
         }
         return result;
     }
+    public void setSender(UserModel sender){
+        this.customMsg.setSender(sender);
+    }
 
     /**
      * 重写，用于删除本地缓存的消息
@@ -360,6 +364,7 @@ public abstract class MsgModel {
     }
 
     public void setCustomMsg(CustomMsg customMsg) {
+        LogUtil.i("setCustomMsg" + customMsgType + " " + isSelf);
         this.customMsg = customMsg;
         if (customMsg != null) {
             int type = customMsg.getType();
@@ -418,6 +423,7 @@ public abstract class MsgModel {
                     break;
                 case LiveConstant.CustomMsgType.MSG_PRIVATE_TEXT:
                     // 私聊消息类型
+                    LogUtil.i("MSG_PRIVATE_TEXT" +  isSelf);
                     if (isSelf()) {
                         setPrivateMsgType(LiveConstant.PrivateMsgType.MSG_TEXT_RIGHT);
                     } else {
@@ -514,14 +520,16 @@ public abstract class MsgModel {
     public void setConversationPeerChatID(String conversationtPeerChatID) {
         this.conversationtPeerChatID = conversationtPeerChatID;
     }
+    //public long getTimestamp() {return timestamp;}
     public long getTimestamp() {
         return timestamp;
     }
-
     public void setTimestamp(long timestamp) {
         this.timestamp = timestamp;
 
-        String format = SDDateUtil.formatDuringFrom(timestamp * 1000);
+        //String format = SDDateUtil.formatDuringFrom(timestamp * 1000);
+        String format = SDDateUtil.formatDuringFrom(timestamp);
+        LogUtil.i("format = " + format);
         setTimestampFormat(format);
     }
 

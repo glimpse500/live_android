@@ -24,7 +24,8 @@ public class ItemLiveChatListModel extends UserModel {
         setPeer(msg.getConversationPeer());
         setSelf(msgModel.isSelf());
         setText(customMsg.getConversationDesc());
-        setTime(msgModel.getTimestamp());
+        setTime(msgModel.getTimestamp()/1000);
+        //setTime(msgModel.getTimestamp());
         setTimestampFormat(msgModel.getTimestampFormat());
 
         if (msgModel.isSelf()) {

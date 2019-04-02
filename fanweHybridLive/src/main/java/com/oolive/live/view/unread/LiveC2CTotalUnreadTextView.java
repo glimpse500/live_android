@@ -5,6 +5,7 @@ import android.util.AttributeSet;
 
 import com.oolive.live.IMHelper;
 import com.oolive.live.model.TotalConversationUnreadMessageModel;
+import com.oolive.socketio.SocketIOManager;
 
 /**
  * IMC2C总未读数量TextView
@@ -33,6 +34,6 @@ public class LiveC2CTotalUnreadTextView extends LiveIMUnreadTextView {
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        onProcessIMUnread(IMHelper.getC2CTotalUnreadMessageModel());
+        onProcessIMUnread(SocketIOManager.getInstance().getC2CTotalUnreadMessageModel());
     }
 }

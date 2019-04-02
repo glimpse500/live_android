@@ -8,6 +8,7 @@ import android.widget.ImageView;
 
 import com.oolive.library.adapter.SDRecyclerAdapter;
 import com.oolive.library.adapter.viewholder.SDRecyclerViewHolder;
+import com.oolive.library.utils.LogUtil;
 import com.oolive.live.LiveConstant;
 import com.oolive.live.R;
 import com.oolive.live.activity.PhotoViewActivity;
@@ -40,6 +41,7 @@ public class LivePrivateChatRecyclerAdapter extends SDRecyclerAdapter<MsgModel> 
 
     @Override
     public SDRecyclerViewHolder<MsgModel> onCreateVHolder(ViewGroup parent, int viewType) {
+        LogUtil.i("viewType =" + viewType);
         PrivateChatViewHolder viewHolder = null;
         switch (viewType) {
             case LiveConstant.PrivateMsgType.MSG_TEXT_LEFT:

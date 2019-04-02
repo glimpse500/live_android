@@ -187,7 +187,10 @@ public class LivePrivateChatBusiness extends BaseBusiness {
                 LogUtil.i(" loadHistoryMessage onSuccess = ");
                 if (!SDCollectionUtil.isEmpty(list)) {
                     Collections.reverse(list);
+
+
                     setLastMsg(list.get(0));
+                    LogUtil.i(" last time stamp = "+  mLastsMsg.getTimeStamp());
                     for (SocketIOMessage msg : list) {
                         MsgModel msgModel = new LiveMsgModel(msg);
                         if (msgModel.isPrivateMsg() && msgModel.getStatus() != MsgStatus.HasDeleted) {
@@ -205,42 +208,6 @@ public class LivePrivateChatBusiness extends BaseBusiness {
             }
         });
     }
-    /**
-     * 加载历史消息
-     *
-     * @param count
-     */
-    /*
-    public void loadHistoryMessage(int count) {
-        TIMConversation conversation = IMHelper.getConversationC2C(mUserId);
-        if (conversation == null) {
-            return;
-        }
-        final List<MsgModel> listLocal = new ArrayList<>();
-        conversation.getLocalMessage(count, mLastMsg, new TIMValueCallBack<List<TIMMessage>>() {
-
-            @Override
-            public void onSuccess(List<TIMMessage> list) {
-                if (!SDCollectionUtil.isEmpty(list)) {
-                    Collections.reverse(list);
-                    setLastMsg(list.get(0));
-
-                    for (TIMMessage msg : list) {
-                        MsgModel msgModel = new TIMMsgModel(msg);
-                        if (msgModel.isPrivateMsg() && msgModel.getStatus() != MsgStatus.HasDeleted) {
-                            listLocal.add(msgModel);
-                        }
-                    }
-                }
-                mCallback.onLoadHistoryMessageSuccess(listLocal);
-            }
-
-            @Override
-            public void onError(int arg0, String str) {
-                mCallback.onLoadHistoryMessageError();
-            }
-        });
-    }*/
 
     /**
      * 接收IM新消息的时候调用
@@ -272,7 +239,12 @@ public class LivePrivateChatBusiness extends BaseBusiness {
         msg.setText(content);
         msg.setUser_id(mUserId);
         msg.setChat_id(mChatId);
+        Long tsLong = System.currentTimeMillis();
+        msg.setTime_stamp(tsLong);
+
         MsgModel msgModel = msg.parseToMsgModel();
+        msgModel.setTimestamp(tsLong);
+
         //msgModel.setConversationPeer();
         mCallback.onAdapterAppendData(msgModel);
         LogUtil.i("Send IM Text " + content);
@@ -287,14 +259,17 @@ public class LivePrivateChatBusiness extends BaseBusiness {
     public void sendIMImage(File file) {
         CustomMsgPrivateImage msg = new CustomMsgPrivateImage();
         msg.setPath(file.getAbsolutePath());
+        Long tsLong = System.currentTimeMillis();
+        msg.setTime_stamp(tsLong);
         MsgModel msgModel = msg.parseToMsgModel();
+        msgModel.setTimestamp(tsLong);
         mCallback.onAdapterAppendData(msgModel);
 
         sendIMMsg(msgModel);
     }
 
     /**
-     * 发送IM语音
+     * 发送IM语音f
      *
      * @param file
      * @param duration
@@ -303,8 +278,11 @@ public class LivePrivateChatBusiness extends BaseBusiness {
         CustomMsgPrivateVoice msg = new CustomMsgPrivateVoice();
         msg.setDuration(duration);
         msg.setPath(file.getAbsolutePath());
+        Long tsLong = System.currentTimeMillis();
+        msg.setTime_stamp(tsLong);
 
         MsgModel msgModel = msg.parseToMsgModel();
+        msgModel.setTimestamp(tsLong);
         mCallback.onAdapterAppendData(msgModel);
 
         sendIMMsg(msgModel);
@@ -319,7 +297,8 @@ public class LivePrivateChatBusiness extends BaseBusiness {
         CustomMsgPrivateGift msg = new CustomMsgPrivateGift();
 
         msg.fillData(model);
-
+        Long tsLong = System.currentTimeMillis();
+        msg.setTime_stamp(tsLong);
         MsgModel msgModel = msg.parseToMsgModel();
 
         mCallback.onAdapterAppendData(msgModel);
@@ -329,11 +308,11 @@ public class LivePrivateChatBusiness extends BaseBusiness {
 
     public void sendIMMsg(final MsgModel model) {
         final int index = mCallback.onAdapterIndexOf(model);
-
+        model.setSelf(true);
         SocketIOHelper.sendMsgC2C(mUserId,model.getCustomMsg(),new SocketIOValueCallBack<SocketIOMessage>() {
             @Override
             public void onSuccess(SocketIOMessage sMsg) {
-                LogUtil.i("sendIMMsg success");
+                sMsg.setTimeStamp(model.getTimestamp());
                 SocketIOConversation conversation = SocketIOManager.getInstance().getConversation(SocketIOConversationType.C2C,mUserId);
                 if (mLastsMsg == null) {
                     mLastsMsg = sMsg;
@@ -346,7 +325,7 @@ public class LivePrivateChatBusiness extends BaseBusiness {
                 }
                 //TO DO
                 //model.setTimMessage(timMessage);
-
+                LogUtil.i("sendIMMsg model is self = " + model.isSelf());
                 mCallback.onAdapterUpdateData(index, model);
             }
 

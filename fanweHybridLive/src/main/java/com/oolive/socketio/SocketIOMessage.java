@@ -7,6 +7,7 @@ public class SocketIOMessage {
     String json;
     String peer;
     String peerChatID;
+    Long timeStamp;
     private SocketIOConversation conversation;
 
     public SocketIOMessage()
@@ -27,7 +28,12 @@ public class SocketIOMessage {
     {
         this.text = text;
     }
-
+    public void setTimeStamp(Long timeStamp){
+        this.timeStamp = timeStamp;
+    }
+    public Long getTimeStamp(){
+        return timeStamp;
+    }
     public void setPeer(String peer){
         this.peer = peer;
     }
