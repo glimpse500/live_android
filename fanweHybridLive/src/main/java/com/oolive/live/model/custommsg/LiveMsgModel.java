@@ -45,9 +45,11 @@ public class LiveMsgModel extends MsgModel {
                 UserModelDao.updateLevelUp(sender);
                 setConversationPeer(sMsg.getPeer());
                 setConversationPeer(sMsg.getPeerChatID());
-                if (sender.getUser_id().equals(SocketIOHelper.getUserID())){
-                    LogUtil.i(sender.getUser_id() + "  " + SocketIOHelper.getUserID() );
-                    setSelf(true);
+                if (sender != null) {
+                    if (sender.getUser_id().equals(SocketIOHelper.getUserID())) {
+                        LogUtil.i(sender.getUser_id() + "  " + SocketIOHelper.getUserID());
+                        setSelf(true);
+                    }
                 }
 
                 Class realCustomMsgClass = LiveConstant.mapCustomMsgClass.get(type);

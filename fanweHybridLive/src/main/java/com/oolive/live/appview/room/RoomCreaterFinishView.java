@@ -56,8 +56,13 @@ public class RoomCreaterFinishView extends RoomView {
         tv_viewer_number = (TextView) findViewById(R.id.tv_viewer_number);
         tv_ticket = (TextView) findViewById(R.id.tv_ticket);
         tv_share = (TextView) findViewById(R.id.tv_share);
+
         tv_back_home = (TextView) findViewById(R.id.tv_back_home);
         tv_delete_video = (TextView) findViewById(R.id.tv_delete_video);
+
+        //To do
+        tv_share.setVisibility(GONE);
+        tv_delete_video.setVisibility(GONE);
         TextView tv_nick_name = (TextView) findViewById(R.id.tv_nick_name);
         CircleImageView civ_head_img = (CircleImageView) findViewById(R.id.civ_head_img);
 

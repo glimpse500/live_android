@@ -110,8 +110,10 @@ public class SocketIOHelper {
     }
     public static void joinGroup(String room_id){
         LogUtil.i("join + " +  room_id);
-        if (ApkConstant.DEBUG)
+        if (ApkConstant.DEBUG) {
             room_id = "8888";
+            LogUtil.i("join (debug) + " +  room_id);
+        }
         if (!room_id.equals(cur_group)) {
             LogUtil.i("leave + " +  cur_group);
             mSocket.emit("leave", cur_group);
@@ -267,10 +269,11 @@ public class SocketIOHelper {
                     if(!isConnected) {
                         if(null!=mUsername){
                             mSocket.emit("add user", mUserID);
+                            LogUtil.i("cur_group" + cur_group);
                             if (!cur_group.equals("-1"))
                                 joinGroup(cur_group);
                         }
-                        SDToast.showToast("連接聊天室成功");
+                        SDToast.showToast("連接聊天室成功 (加入房間)");
                         isConnected = true;
                     }
                 }
@@ -285,7 +288,7 @@ public class SocketIOHelper {
                 @Override
                 public void run() {
                     isConnected = false;
-                    cur_group = "-1";
+                    //cur_group = "-1";
                     SDToast.showToast("嘗試重新連接聊天室...");
                 }
             });

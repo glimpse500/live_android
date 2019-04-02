@@ -185,6 +185,13 @@ public class LiveCreateRoomActivity extends BaseActivity implements TencentLocat
         iv_share_wechat.setOnClickListener(this);
         iv_share_qq.setOnClickListener(this);
         iv_share_qqzone.setOnClickListener(this);
+
+        iv_share_weibo.setVisibility(View.GONE);
+        iv_share_timeline.setVisibility(View.GONE);
+        iv_share_wechat.setVisibility(View.GONE);
+        iv_share_qq.setVisibility(View.GONE);
+        iv_share_qqzone.setVisibility(View.GONE);
+
         ll_room_image.setOnClickListener(this);
         mPopTips = new LiveCreateRoomShareTipsPop(this);
         ll_tag.setOnClickListener(this);

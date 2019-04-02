@@ -16,6 +16,7 @@ import com.oolive.live.dao.UserModelDao;
 import com.oolive.live.model.UserModel;
 import com.oolive.live.model.custommsg.CustomMsgLight;
 import com.oolive.live.view.HeartLayout;
+import com.oolive.socketio.SocketIOHelper;
 
 import java.util.LinkedList;
 
@@ -128,11 +129,10 @@ public class RoomHeartView extends RoomLooperMainView<CustomMsgLight> {
 
         if (sendImMsg) {
             LogUtil.i("add heart im");
+            LogUtil.i("mIsNoLight =" +  mIsNoLight);
             String groupId = getLiveActivity().getGroupId();
-           //IMHelper.sendMsgGroup(groupId, msg, null);
-            //SocketIOHelper.sendMsgGroup(groupId,msg);
             if (msg.getShowMsg() == 1) {
-                //SocketIOHelper.sendMsgGroup(groupId,msg);
+                SocketIOHelper.sendMsgGroup(groupId,msg);
             } else {
                 addHeartInside(name);
             }

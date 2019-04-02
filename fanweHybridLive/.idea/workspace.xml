@@ -6,238 +6,21 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="viewType" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="message" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eff4c8f6-ff0f-4e61-b8eb-a9acb7d3cf4f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle___LiteAVSDK_Professional_3_4_1797__aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle___PushSDK_release__aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle___TimePickerDialog_release__aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle____local_aars___E__LIVE_Live_live_android_fanweHybridLive_libs_aliyun_oss_sdk_android_2_0_1_1_jar_unspecified_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle____local_aars___E__LIVE_Live_live_android_fanweHybridLive_libs_banksdk2_jar_unspecified_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle____local_aars___E__LIVE_Live_live_android_fanweHybridLive_libs_okhttp_2_6_0_jar_unspecified_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle____local_aars___E__LIVE_Live_live_android_libCore_libs_eventbus_1_6_src_modify_jar_unspecified_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle___fanwei_jubaosdk_release_v5_6__aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle___libraryAdapterHttp_release__aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle___libraryIMTencent_release__aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle___libraryMapTencent_release__aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle___libraryPayAlipay_release__aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle___libraryPayBaofoo_release__aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle___libraryPayUnionpay_release__aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle___libraryPhotoViewMaster_release__aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle___libraryQrcodeZxing_release__aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle___librarySocialUmeng_release__aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle___pickerview_release__aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_activity_activity_1_0_0_alpha05_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_annotation_annotation_1_0_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_annotation_annotation_1_1_0_alpha02_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_appcompat_appcompat_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_appcompat_appcompat_1_0_2_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_appcompat_appcompat_1_1_0_alpha03_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_appcompat_appcompat_resources_1_1_0_alpha03_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_arch_core_core_common_2_0_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_cardview_cardview_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_collection_collection_1_0_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_collection_collection_1_1_0_alpha03_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_concurrent_concurrent_futures_1_0_0_alpha02_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_2_0_0_alpha3_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_solver_2_0_0_alpha3_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_core_core_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_core_core_1_0_1_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_core_core_1_1_0_alpha05_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_customview_customview_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_documentfile_documentfile_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_exifinterface_exifinterface_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_fragment_fragment_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_fragment_fragment_1_1_0_alpha05_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_legacy_legacy_support_core_ui_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_legacy_legacy_support_v4_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_0_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_1_0_alpha03_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_lifecycle_lifecycle_extensions_2_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_lifecycle_lifecycle_process_2_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_1_0_alpha03_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_lifecycle_lifecycle_service_2_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_1_0_alpha03_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_media_media_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_multidex_multidex_2_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_multidex_multidex_instrumentation_2_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_1_0_alpha03_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_savedstate_savedstate_1_0_0_alpha02_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_slidingpanelayout_slidingpanelayout_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_swiperefreshlayout_swiperefreshlayout_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_test_espresso_espresso_core_3_1_0_alpha4_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_test_espresso_espresso_idling_resource_3_1_0_alpha4_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_test_monitor_1_1_0_alpha4_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_test_runner_1_1_0_alpha4_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_transition_transition_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_0_1_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_0_alpha02_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_ToxicBakery_viewpager_transforms_view_pager_transforms_1_2_32_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_alibaba_fastjson_1_1_45_android_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_cocosw_bottomsheet_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_daimajia_swipelayout_library_1_2_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_facebook_fresco_drawee_1_10_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_facebook_fresco_fbcore_1_10_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_facebook_fresco_fresco_1_10_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_facebook_fresco_imagepipeline_1_10_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_facebook_fresco_imagepipeline_base_1_10_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_facebook_soloader_soloader_0_5_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_fanwe_android_res_1_0_4_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_github_bumptech_glide_glide_3_7_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_github_chrisbanes_PhotoView_2_2_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_github_ctiao_DanmakuFlameMaster_0_5_3_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_github_mukeshsolanki_country_picker_android_2_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_github_zj565061763_animator_1_0_7_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_github_zj565061763_blocker_1_0_3_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_github_zj565061763_cache_1_0_14_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_github_zj565061763_dialog_1_0_10_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_github_zj565061763_gridlayout_1_0_11_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_github_zj565061763_looper_1_0_5_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_github_zj565061763_player_1_0_3_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_github_zj565061763_poper_1_0_9_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_github_zj565061763_pulltorefresh_1_0_33_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_github_zj565061763_recorder_1_0_3_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_github_zj565061763_select_1_1_3_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_github_zj565061763_span_1_0_7_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_github_zj565061763_statelayout_1_0_6_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_github_zj565061763_switchbutton_1_0_15_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_github_zj565061763_viewpager_1_0_18_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_android_flexbox_0_2_6_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_android_gms_play_services_ads_identifier_16_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_android_gms_play_services_base_16_0_1_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_android_gms_play_services_basement_16_0_1_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_android_gms_play_services_basement_16_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_android_gms_play_services_flags_16_0_1_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_android_gms_play_services_location_16_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_android_gms_play_services_maps_16_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_api_16_3_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_base_16_3_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_android_gms_play_services_places_16_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_android_gms_play_services_places_placereport_16_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_android_gms_play_services_stats_16_0_1_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_16_0_1_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_android_material_material_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_code_findbugs_jsr305_2_0_1_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_code_gson_gson_2_8_5_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_firebase_firebase_analytics_16_3_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_firebase_firebase_analytics_impl_16_3_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_firebase_firebase_auth_16_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_firebase_firebase_auth_interop_16_0_1_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_firebase_firebase_common_16_0_4_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_firebase_firebase_core_16_0_7_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_firebase_firebase_database_16_0_6_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_firebase_firebase_database_collection_16_0_1_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_firebase_firebase_iid_17_0_4_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_firebase_firebase_iid_interop_16_0_1_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_firebase_firebase_measurement_connector_17_0_1_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_firebase_firebase_measurement_connector_impl_17_0_5_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_firebase_firebase_storage_16_0_5_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_google_guava_listenablefuture_1_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_jakewharton_timber_timber_4_7_1_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_ksyun_media_libksylive_armv7a_2_2_5_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_ksyun_media_libksylive_java_2_2_5_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_makeramen_roundedimageview_2_3_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_mikepenz_fastadapter_3_3_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_mikepenz_fastadapter_commons_3_3_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_mikepenz_fastadapter_extensions_expandable_3_3_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_mikepenz_iconics_core_3_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_mikepenz_materialdrawer_6_1_2_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_mikepenz_materialize_1_2_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_parse_bolts_bolts_tasks_1_4_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_pnikosis_materialish_progress_1_7_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_scottsu_states_layout_1_1_5_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_squareup_haha_haha_2_0_3_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_squareup_javawriter_2_1_1_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_squareup_leakcanary_leakcanary_analyzer_1_5_1_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_squareup_leakcanary_leakcanary_android_1_5_1_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_squareup_leakcanary_leakcanary_watcher_1_5_1_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_squareup_okhttp3_logging_interceptor_3_6_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_squareup_okhttp3_okhttp_3_8_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_squareup_okio_okio_1_13_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_squareup_retrofit2_adapter_rxjava2_2_2_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_squareup_retrofit2_converter_gson_2_3_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_squareup_retrofit2_retrofit_2_3_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_theartofdev_edmodo_android_image_cropper_2_8_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_umeng_analytics_analytics_6_1_4_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_yalantis_ucrop_2_2_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__com_zhy_percent_support_extends_1_1_1_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__id_zelory_compressor_2_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__io_reactivex_rxjava2_rxandroid_2_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__io_reactivex_rxjava2_rxjava_2_2_3_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__io_socket_engine_io_client_0_8_3_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__io_socket_socket_io_client_0_8_3_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__javax_inject_javax_inject_1_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__joda_time_joda_time_2_10_1_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__jp_wasabeef_glide_transformations_2_0_1_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__junit_junit_4_12_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__me_iwf_photopicker_PhotoPicker_0_9_5_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__net_sf_kxml_kxml2_2_3_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__org_apache_commons_commons_lang3_3_7_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__org_apache_http_legacy_android_28.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__org_greenrobot_greendao_3_2_2_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__org_greenrobot_greendao_api_3_2_2_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__org_jetbrains_annotations_16_0_1_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__org_joda_joda_convert_1_5_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__org_ocpsoft_prettytime_prettytime_4_0_1_Final_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__org_reactivestreams_reactive_streams_1_0_2_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__org_xutils_xutils_3_5_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__pl_droidsonroids_gif_android_gif_drawable_1_2_7_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Gradle__zlc_season_rxdownload2_2_0_0_beta4_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fanweHybridLive.iml" beforeDir="false" afterPath="$PROJECT_DIR$/fanweHybridLive.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/LiveInitChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/LiveInitChat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/adapter/LiveConversationListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/adapter/LiveConversationListAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/adapter/LivePrivateChatRecyclerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/adapter/LivePrivateChatRecyclerAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/LiveChatC2CNewView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/LiveChatC2CNewView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/LiveConversationListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/LiveConversationListView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/main/LiveMainMeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/main/LiveMainMeView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/room/RoomCreaterBottomView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/room/RoomCreaterBottomView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/room/RoomSendMsgView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/room/RoomSendMsgView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/room/RoomViewerBottomView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/room/RoomViewerBottomView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/business/LivePrivateChatBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/business/LivePrivateChatBusiness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/common/CommonInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/common/CommonInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/model/ItemLiveChatListModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/model/ItemLiveChatListModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/model/LiveConversationListModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/model/LiveConversationListModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/CustomMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/CustomMsg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/activity/LiveCreateRoomActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/activity/LiveCreateRoomActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/activity/LiveMainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/activity/LiveMainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/activity/room/LiveLayoutActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/activity/room/LiveLayoutActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/activity/room/LivePushViewerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/activity/room/LivePushViewerActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/room/RoomCreaterFinishView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/room/RoomCreaterFinishView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/room/RoomHeartView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/room/RoomHeartView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/LiveMsgModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/LiveMsgModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/MsgModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/MsgModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/view/unread/LiveC2CSingleUnreadTextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/view/unread/LiveC2CSingleUnreadTextView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/view/unread/LiveC2CTotalUnreadTextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/view/unread/LiveC2CTotalUnreadTextView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/view/unread/LiveIMUnreadTextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/view/unread/LiveIMUnreadTextView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOConversation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOConversation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOMessage.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -257,7 +40,7 @@
     <session id="2044016599">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.opened" value="3" />
@@ -266,25 +49,25 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="2" />
-          <entry key="java" value="202" />
+          <entry key="java" value="237" />
           <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="JAVA" value="202" />
+          <entry key="JAVA" value="237" />
           <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="3702" />
+          <entry key="java" value="3869" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3702" />
+          <entry key="JAVA" value="3869" />
         </counts>
       </usages-collector>
     </session>
@@ -294,8 +77,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="235" column="41" selection-start-line="235" selection-start-column="41" selection-end-line="235" selection-end-column="41" />
+            <state relative-caret-position="301">
+              <caret line="156" column="29" selection-start-line="156" selection-start-column="29" selection-end-line="156" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2323#2324#0" expanded="true" />
@@ -306,56 +89,77 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/LiveMsgModel.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/appview/room/RoomHeartView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+            <state relative-caret-position="532">
+              <caret line="60" column="46" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="46" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/MsgModel.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/common/AppRuntimeWorker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13">
-              <caret line="535" column="24" selection-start-line="535" selection-start-column="24" selection-end-line="535" selection-end-column="24" />
+            <state relative-caret-position="299">
+              <caret line="90" column="32" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/hybrid/model/InitActModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="120" column="46" selection-start-line="120" selection-start-column="35" selection-end-line="120" selection-end-column="46" />
               <folding>
-                <element signature="e#8640#8641#0" expanded="true" />
-                <element signature="e#8686#8687#0" expanded="true" />
-                <element signature="e#16579#16580#0" expanded="true" />
-                <element signature="e#16615#16616#0" expanded="true" />
+                <element signature="e#4003#4004#0" expanded="true" />
+                <element signature="e#4037#4038#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/ItemLiveChatListModel.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/LiveMainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+            <state relative-caret-position="329">
+              <caret line="188" column="59" selection-start-line="188" selection-start-column="49" selection-end-line="188" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/LiveCreateRoomActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="192" column="23" selection-start-line="192" selection-start-column="23" selection-end-line="192" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/room/LiveLayoutCreaterActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="281">
+              <caret line="62" column="22" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/business/LivePrivateChatBusiness.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/appview/room/RoomCreaterFinishView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="310" column="16" selection-start-line="310" selection-start-column="16" selection-end-line="310" selection-end-column="16" />
-              <folding>
-                <element signature="e#2863#2864#0" expanded="true" />
-                <element signature="e#2898#2899#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="281">
+              <caret line="62" column="15" selection-start-line="62" selection-start-column="15" selection-end-line="62" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/CustomMsg.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/LiveCreaterAgreementActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="132" column="44" selection-start-line="132" selection-start-column="32" selection-end-line="132" selection-end-column="44" />
+            <state relative-caret-position="626">
+              <caret line="67" column="23" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -364,16 +168,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getLastMsgs</find>
-      <find>unre</find>
-      <find>getC2CTotalUnreadMessageModel</find>
-      <find>getUnreadMessageNum</find>
-      <find>conversation.getUnreadMessageNum()</find>
-      <find>postERefreshMsgUnReaded</find>
-      <find>conver</find>
-      <find>unreadNum</find>
-      <find>mListModel</find>
-      <find>pref</find>
       <find>setAllC2CReadMessage</find>
       <find>ll_read</find>
       <find>unread</find>
@@ -394,6 +188,16 @@
       <find>setTimestamp</find>
       <find>onCreateVHolder</find>
       <find>msgModel</find>
+      <find>showSendMsgView</find>
+      <find>leave</find>
+      <find>close</find>
+      <find>CustomMsgLight</find>
+      <find>mIsNoLight</find>
+      <find>cur_group</find>
+      <find>is_no_light</find>
+      <find>mIsNeedShowFinish</find>
+      <find>finish</find>
+      <find>tv_delete_video</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -424,9 +228,15 @@
         <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/adapter/LivePrivateChatRecyclerAdapter.java" />
         <option value="$PROJECT_DIR$/../libCore/src/main/java/com/oolive/library/adapter/SDRecyclerAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/CustomMsg.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/LiveMsgModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/business/LivePrivateChatBusiness.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/activity/room/LiveLayoutActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/activity/room/LivePushViewerActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/LiveMsgModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/room/RoomHeartView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/activity/LiveMainActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/activity/LiveCreateRoomActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/room/RoomCreaterFinishView.java" />
       </list>
     </option>
   </component>
@@ -538,7 +348,18 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="oolive" type="462c0819:PsiDirectoryNode" />
-              <item name="socketio" type="462c0819:PsiDirectoryNode" />
+              <item name="live" type="462c0819:PsiDirectoryNode" />
+              <item name="activity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="live-android" type="1abcf292:AndroidViewProjectNode" />
+              <item name="fanweHybridLive" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="oolive" type="462c0819:PsiDirectoryNode" />
+              <item name="live" type="462c0819:PsiDirectoryNode" />
+              <item name="activity" type="462c0819:PsiDirectoryNode" />
+              <item name="room" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -637,9 +458,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.23827292" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.23827292" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -647,13 +469,13 @@
       <window_info id="Designer" order="6" />
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Run" order="0" />
-      <window_info anchor="bottom" id="Logcat" order="1" weight="0.0" />
+      <window_info anchor="bottom" id="Logcat" order="1" visible="true" weight="0.18023887" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" />
       <window_info anchor="bottom" id="Terminal" order="4" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="6" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Build" order="7" visible="true" weight="0.44842562" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.567861" />
       <window_info anchor="bottom" id="Android Profiler" order="8" weight="0.32899022" />
       <window_info anchor="right" id="Preview" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
@@ -667,189 +489,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/common/AppRuntimeWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="792" column="29" selection-start-line="792" selection-start-column="29" selection-end-line="792" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOValueCallBack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/act_live_chat_c2c.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/LiveChatC2CActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOUserStatusListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/business/LiveMsgBusiness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="100" column="53" selection-start-line="100" selection-start-column="53" selection-end-line="100" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/business/BaseBusiness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="36" />
-          <folding>
-            <element signature="e#302#303#0" expanded="true" />
-            <element signature="e#345#346#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../libCore/src/main/java/com/oolive/library/model/SDTaskRunnable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../libCore/src/main/java/com/oolive/library/adapter/SDAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="137" column="21" selection-start-line="137" selection-start-column="21" selection-end-line="137" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-26/android.jar!/android/widget/BaseAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
-          <folding>
-            <element signature="e#753#754#0" expanded="true" />
-            <element signature="e#804#805#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../libCore/src/main/java/com/oolive/library/adapter/SDSimpleAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="35" selection-start-column="35" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="237" column="12" selection-start-line="237" selection-start-column="12" selection-end-line="237" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../libCore/src/main/java/com/oolive/library/activity/SDBaseActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="111" selection-start-line="111" selection-end-line="111" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/event/EImOnNewMessages.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/java/lang/System.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="298" column="35" selection-start-line="298" selection-start-column="35" selection-end-line="298" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/appview/room/RoomSendMsgView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1147">
-          <caret line="261" column="27" selection-start-line="261" selection-start-column="27" selection-end-line="261" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/CustomMsgPrivateText.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="29" lean-forward="true" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/TotalConversationUnreadMessageModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/event/ERefreshMsgUnReaded.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/view/unread/LiveC2CSingleUnreadTextView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="62" column="61" lean-forward="true" selection-start-line="62" selection-start-column="61" selection-end-line="62" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/appview/room/RoomViewerBottomView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="129" column="59" selection-start-line="129" selection-start-column="59" selection-end-line="129" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/appview/room/RoomCreaterBottomView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="105" column="59" selection-start-line="105" selection-start-column="59" selection-end-line="105" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/appview/main/LiveMainMeView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="474" column="62" lean-forward="true" selection-start-line="474" selection-start-column="62" selection-end-line="474" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/view/unread/LiveIMUnreadTextView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/android/content/SharedPreferences.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="73" column="21" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/item_live_chat_user.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
@@ -948,13 +587,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/LiveConstant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="438" column="42" selection-start-line="438" selection-start-column="42" selection-end-line="438" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/appview/SDSelectImageView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
@@ -1034,25 +666,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/CustomMsg.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="132" column="44" selection-start-line="132" selection-start-column="32" selection-end-line="132" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="235" column="41" selection-start-line="235" selection-start-column="41" selection-end-line="235" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2323#2324#0" expanded="true" />
-            <element signature="e#2370#2371#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/MsgModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="13">
@@ -1066,13 +679,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/LiveMsgModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/ItemLiveChatListModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -1080,14 +686,226 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/room/LiveKSYPushCreaterActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/room/LivePushViewerActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="64" column="8" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/room/LiveLayoutExtendActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="40" column="27" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/room/LiveLayoutGameActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/room/LiveLayoutCreaterExtendActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/room/LiveLayoutViewerActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-380">
+          <caret line="51" column="3" selection-start-line="51" selection-start-column="3" selection-end-line="51" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/dao/UserModelDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="149" column="28" selection-start-line="149" selection-start-column="28" selection-end-line="149" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/business/LiveViewerBusiness.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/room/LiveLayoutActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="70" column="36" selection-start-line="70" selection-start-column="31" selection-end-line="70" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/appview/room/RoomSendMsgView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="258" column="22" selection-start-line="258" selection-start-column="22" selection-end-line="258" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/CustomMsg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/CustomMsgText.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/CustomMsgLight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/LiveConstant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="290" column="69" selection-start-line="290" selection-start-column="55" selection-end-line="290" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/LiveMsgModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="50" column="38" lean-forward="true" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/CustomMsgCreaterQuit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/business/LiveMsgBusiness.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="67" column="49" lean-forward="true" selection-start-line="67" selection-start-column="49" selection-end-line="67" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/business/LivePrivateChatBusiness.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="310" column="16" selection-start-line="310" selection-start-column="16" selection-end-line="310" selection-end-column="16" />
+        <state relative-caret-position="-209">
+          <caret line="311" column="23" selection-start-line="311" selection-start-column="23" selection-end-line="311" selection-end-column="23" />
           <folding>
             <element signature="e#2863#2864#0" expanded="true" />
             <element signature="e#2898#2899#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/view/HeartLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="118" column="16" selection-start-line="118" selection-start-column="16" selection-end-line="118" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="156" column="29" selection-start-line="156" selection-start-column="29" selection-end-line="156" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2323#2324#0" expanded="true" />
+            <element signature="e#2370#2371#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/appview/room/RoomHeartView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="60" column="46" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/xianrou/activity/QKCreateEntranceActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-133">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/appview/main/LiveMainBottomNavigationView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/hybrid/model/InitActModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="120" column="46" selection-start-line="120" selection-start-column="35" selection-end-line="120" selection-end-column="46" />
+          <folding>
+            <element signature="e#4003#4004#0" expanded="true" />
+            <element signature="e#4037#4038#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/common/AppRuntimeWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="90" column="32" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/LiveCreaterAgreementActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="626">
+          <caret line="67" column="23" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/LiveMainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="188" column="59" selection-start-line="188" selection-start-column="49" selection-end-line="188" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/LiveCreateRoomActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="192" column="23" selection-start-line="192" selection-start-column="23" selection-end-line="192" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/room/LiveLayoutCreaterActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="62" column="22" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/appview/room/RoomCreaterFinishView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="62" column="15" selection-start-line="62" selection-start-column="15" selection-end-line="62" selection-end-column="15" />
         </state>
       </provider>
     </entry>

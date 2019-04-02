@@ -40,7 +40,7 @@ public class LiveMainActivity extends BaseActivity {
     private LiveMainRankingView mMainRankingView;
     private QKTabSmallVideoView mSmallVideoView;
     private LiveMainMeView mMainMeView;
-    private Socket mSocket;
+    //private Socket mSocket;
     private LiveMainBottomNavigationView mBottomNavigationView;
     @Override
     protected int onCreateContentView() {
@@ -189,6 +189,7 @@ public class LiveMainActivity extends BaseActivity {
                 Intent intent = new Intent(this, LiveCreateRoomActivity.class);
                 startActivity(intent);
             } else {
+                //同意說明
                 Intent intent = new Intent(this, LiveCreaterAgreementActivity.class);
                 startActivity(intent);
             }

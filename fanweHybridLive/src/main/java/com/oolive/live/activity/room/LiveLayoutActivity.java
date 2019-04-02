@@ -84,6 +84,8 @@ public class LiveLayoutActivity extends LiveActivity {
                     } else {
                         rl_root_layout.scrollTo(0, 0);
                         rl_root_layout.requestLayout();
+
+
                         showSendMsgView(false);
                     }
                 }
