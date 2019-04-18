@@ -18,7 +18,7 @@
         android:textColor="@color/white"
         android:textSize="16sp" />
 
-    <com.fanwe.live.appview.LiveCreaterPluginToolView
+    <com.oolive.live.appview.LiveCreaterPluginToolView
         android:id="@+id/view_plugin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

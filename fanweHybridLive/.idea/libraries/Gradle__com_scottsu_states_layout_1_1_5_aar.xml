@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.scottsu:states-layout:1.1.5@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-states-layout-1.1.5.aar/8040da0b5a992a5a21e01894cd6e10e5/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-states-layout-1.1.5.aar/8040da0b5a992a5a21e01894cd6e10e5/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.scottsu/states-layout/1.1.5/c3721c2215ac5a5af4d2a4dcee770805937364f2/states-layout-1.1.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,18 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-
     useLibrary 'org.apache.http.legacy'
-
-    compileSdkVersion 25
-
+    compileSdkVersion 28
     defaultConfig {
-        applicationId "com.fanwe.live"
+        applicationId "com.oolive.live"
         minSdkVersion 15
         targetSdkVersion 22
-        versionCode 2019030202
+        versionCode 190330
         versionName "2.0.18"
-        buildConfigField 'String', 'SERVER_URL_INIT_URL', '"' +'http://34.80.92.191'  + '/app.php?act=init"'
+        buildConfigField 'String', 'SERVER_URL_INIT_URL', '"' + 'http://34.80.92.191' + '/app.php?act=init"'
 
         multiDexEnabled true
 
@@ -20,7 +17,6 @@ android {
             abiFilters "armeabi", "armeabi-v7a", "x86"
         }
     }
-
     //签名
     signingConfigs {
         release {
@@ -36,23 +32,6 @@ android {
             keyPassword "fanwe99cnlin"
         }
     }
-
-    // WFT支付demo签名
-//    signingConfigs {
-//        release {
-//            storeFile file("demo.keystore")
-//            storePassword "android"
-//            keyAlias "demo"
-//            keyPassword "android"
-//        }
-//        release {
-//            storeFile file("demo.keystore")
-//            storePassword "android"
-//            keyAlias "demo"
-//            keyPassword "android"
-//        }
-//    }
-
     buildTypes {
         debug {
             zipAlignEnabled false
@@ -66,9 +45,6 @@ android {
             signingConfig signingConfigs.release
         }
     }
-
-
-
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES.txt'
         exclude 'META-INF/LICENSE.txt'
@@ -81,20 +57,17 @@ android {
         exclude 'META-INF/dependencies.txt'
         exclude 'META-INF/LGPL2.1'
     }
-
     lintOptions {
         abortOnError false
     }
-
     dexOptions {
         javaMaxHeapSize "2g"
     }
-
     flavorDimensions "version"
     productFlavors {
 
         //方维互动直播（演示站）
-        fanwe {
+        oolive {
             dimension "version"
             versionCode 2019030201
             versionName "2.5.3"
@@ -103,21 +76,16 @@ android {
 
 
     }
-
     android.applicationVariants.all { variant ->
         variant.outputs.all {
-            def versionName = variant.versionName
-            def versionCode = variant.versionCode
-            def gitInfoSuffix = getGitInfoSuffix()
-            outputFileName = "${versionName}_${versionCode}_${gitInfoSuffix}.apk"
-//            outputFileName = variant.name
-//                    + "_" + variant.versionName
-//                    + "_" + variant.versionCode
-//                    + getGitInfoSuffix()
-//                    + ".apk";
 
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildToolsVersion '28.0.3'
 }
 
 dependencies {
@@ -143,17 +111,18 @@ dependencies {
     implementation 'com.daimajia.swipelayout:library:1.2.0@aar'
     implementation 'com.github.ctiao:DanmakuFlameMaster:0.5.3'
     //bilibili弹幕
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.1'
-    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+    //debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.1'
+    //releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
     implementation 'com.github.bumptech.glide:glide:3.7.0'
     implementation 'com.google.android:flexbox:0.2.6'
     implementation 'com.yalantis:ucrop:2.2.0'
     implementation 'com.umeng.analytics:analytics:6.1.4'
     implementation 'com.ksyun.media:libksylive-java:2.2.5'
     implementation 'com.ksyun.media:libksylive-armv7a:2.2.5'
-    implementation 'com.android.support:multidex:1.0.1'
+    implementation 'androidx.multidex:multidex:2.0.0'
     implementation project(':libGame')
     implementation project(':libApp')
+    implementation project(':libCore')
 
     //----------com.fanwe.android start----------
     implementation 'com.github.zj565061763:blocker:1.0.3'
@@ -168,31 +137,31 @@ dependencies {
     implementation 'com.github.zj565061763:switchbutton:1.0.15'
     implementation 'com.github.zj565061763:viewpager:1.0.18'
     //----------com.fanwe.android end----------
-
     //图片圆角处理
     implementation 'com.makeramen:roundedimageview:2.3.0'
-
     //鲜肉===============================================start
     implementation 'com.makeramen:roundedimageview:2.3.0'
-    implementation 'com.android.support:cardview-v7:23.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0-beta01'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.0.1'
     implementation 'zlc.season:rxdownload2:2.0.0-beta4'
     implementation 'com.pnikosis:materialish-progress:1.7'
     implementation 'me.iwf.photopicker:PhotoPicker:0.9.5@aar'
     implementation 'com.cocosw:bottomsheet:1.0'
-    implementation 'com.android.support:appcompat-v7:25.2.0'
-    implementation 'com.android.support:design:25.2.0'
+    implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
+    implementation 'com.google.android.material:material:1.0.0-beta01'
     implementation 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32@aar'
     implementation 'jp.wasabeef:glide-transformations:2.0.1'
     implementation 'com.scottsu:states-layout:1.1.5'
     //鲜肉===============================================end
-
     // socketio
-    implementation 'com.android.support:recyclerview-v7:25.0.+'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0-beta01'
     implementation('io.socket:socket.io-client:0.8.3') {
         exclude group: 'org.json', module: 'json'
     }
     //GSON
     implementation 'com.google.code.gson:gson:2.8.5'
+
+
+
 }

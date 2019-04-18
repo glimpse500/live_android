@@ -12,7 +12,7 @@
         android:layout_weight="1"
         android:gravity="center">
 
-        <com.fanwe.live.view.LiveTabMainMenuView
+        <com.oolive.live.view.LiveTabMainMenuView
             android:id="@+id/view_tab_live"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -32,7 +32,7 @@
                 android:textSize="10sp"
                 android:gravity="center"
                 android:text="首页" />
-        </com.fanwe.live.view.LiveTabMainMenuView>
+        </com.oolive.live.view.LiveTabMainMenuView>
     </LinearLayout>
 
     <LinearLayout
@@ -42,7 +42,7 @@
         android:gravity="center">
 
 
-        <com.fanwe.live.view.LiveTabMainMenuView
+        <com.oolive.live.view.LiveTabMainMenuView
             android:id="@+id/view_tab_ranking"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -62,7 +62,7 @@
                 android:textSize="10sp"
                 android:gravity="center"
                 android:text="排行" />
-        </com.fanwe.live.view.LiveTabMainMenuView>
+        </com.oolive.live.view.LiveTabMainMenuView>
 
 
     </LinearLayout>
@@ -84,7 +84,7 @@
         android:gravity="center">
 
 
-        <com.fanwe.live.view.LiveTabMainMenuView
+        <com.oolive.live.view.LiveTabMainMenuView
             android:id="@+id/view_tab_small_video"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -104,7 +104,7 @@
                 android:textSize="10sp"
                 android:gravity="center"
                 android:text="小视频" />
-        </com.fanwe.live.view.LiveTabMainMenuView>
+        </com.oolive.live.view.LiveTabMainMenuView>
 
 
     </LinearLayout>
@@ -115,7 +115,7 @@
         android:layout_weight="1"
         android:gravity="center">
 
-        <com.fanwe.live.view.LiveTabMainMenuView
+        <com.oolive.live.view.LiveTabMainMenuView
             android:id="@+id/view_tab_me"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -135,7 +135,7 @@
                 android:textSize="10sp"
                 android:gravity="center"
                 android:text="我的" />
-        </com.fanwe.live.view.LiveTabMainMenuView>
+        </com.oolive.live.view.LiveTabMainMenuView>
 
     </LinearLayout>
 

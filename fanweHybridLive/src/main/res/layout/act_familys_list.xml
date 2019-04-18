@@ -16,7 +16,7 @@
         android:background="@color/white"
         android:padding="5dp">
 
-        <com.fanwe.live.view.LiveSongSearchView
+        <com.oolive.live.view.LiveSongSearchView
             android:id="@+id/sv_song"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

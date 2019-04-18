@@ -94,7 +94,7 @@
             android:textColor="@color/text_user_home"
             android:textSize="15sp" />
 
-        <com.fanwe.library.customview.SDSendValidateButton
+        <com.oolive.library.customview.SDSendValidateButton
             android:id="@+id/btn_send_code"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

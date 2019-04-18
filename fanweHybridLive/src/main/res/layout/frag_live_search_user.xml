@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
 
-    <com.fanwe.live.appview.LiveSearchUserView
+    <com.oolive.live.appview.LiveSearchUserView
         android:id="@+id/view_user"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

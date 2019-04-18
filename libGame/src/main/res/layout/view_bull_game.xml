@@ -31,13 +31,13 @@
                     android:layout_weight="1"
                     android:background="@drawable/bg_poker_group">
 
-                    <com.fanwe.libgame.poker.bull.view.BullPokerGroupView
+                    <com.oolive.libgame.poker.bull.view.BullPokerGroupView
                         android:id="@+id/view_poker_group_0"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"/>
 
-                    <com.fanwe.libgame.poker.view.PokerResultView
+                    <com.oolive.libgame.poker.view.PokerResultView
                         android:id="@+id/view_poker_result_0"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -55,13 +55,13 @@
                     android:layout_weight="1"
                     android:background="@drawable/bg_poker_group">
 
-                    <com.fanwe.libgame.poker.bull.view.BullPokerGroupView
+                    <com.oolive.libgame.poker.bull.view.BullPokerGroupView
                         android:id="@+id/view_poker_group_1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"/>
 
-                    <com.fanwe.libgame.poker.view.PokerResultView
+                    <com.oolive.libgame.poker.view.PokerResultView
                         android:id="@+id/view_poker_result_1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -77,13 +77,13 @@
                     android:layout_weight="1"
                     android:background="@drawable/bg_poker_group">
 
-                    <com.fanwe.libgame.poker.bull.view.BullPokerGroupView
+                    <com.oolive.libgame.poker.bull.view.BullPokerGroupView
                         android:id="@+id/view_poker_group_2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"/>
 
-                    <com.fanwe.libgame.poker.view.PokerResultView
+                    <com.oolive.libgame.poker.view.PokerResultView
                         android:id="@+id/view_poker_result_2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -107,7 +107,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/bg_poker_bet">
 
-                    <com.fanwe.libgame.poker.view.PokerBetView
+                    <com.oolive.libgame.poker.view.PokerBetView
                         android:id="@+id/view_poker_bet_0"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"/>
@@ -124,7 +124,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/bg_poker_bet">
 
-                    <com.fanwe.libgame.poker.view.PokerBetView
+                    <com.oolive.libgame.poker.view.PokerBetView
                         android:id="@+id/view_poker_bet_1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"/>
@@ -139,7 +139,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/bg_poker_bet">
 
-                    <com.fanwe.libgame.poker.view.PokerBetView
+                    <com.oolive.libgame.poker.view.PokerBetView
                         android:id="@+id/view_poker_bet_2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"/>
@@ -148,7 +148,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <com.fanwe.libgame.view.GameBottomView
+        <com.oolive.libgame.view.GameBottomView
             android:id="@+id/view_poker_bottom"
             android:layout_width="match_parent"
             android:layout_height="45dp"
@@ -156,20 +156,20 @@
             android:background="@color/bg_game_bottom"/>
     </LinearLayout>
 
-    <com.fanwe.libgame.poker.view.PokerFlyView
+    <com.oolive.libgame.poker.view.PokerFlyView
         android:id="@+id/view_poker_fly"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
     <!-- 开牌倒计时 -->
-    <com.fanwe.libgame.poker.view.PokerClockView
+    <com.oolive.libgame.poker.view.PokerClockView
         android:id="@+id/view_clock"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"/>
 
-    <com.fanwe.libgame.poker.view.PokerToastView
+    <com.oolive.libgame.poker.view.PokerToastView
         android:id="@+id/view_poker_toast"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

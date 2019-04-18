@@ -15,7 +15,7 @@
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <com.fanwe.library.view.CircleImageView
+            <com.oolive.library.view.CircleImageView
                 android:id="@+id/iv_head_image"
                 android:layout_width="@dimen/image_head_size"
                 android:layout_height="@dimen/image_head_size"

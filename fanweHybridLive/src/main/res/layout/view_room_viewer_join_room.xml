@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.fanwe.live.view.LiveViewerJoinRoomView
+    <com.oolive.live.view.LiveViewerJoinRoomView
         android:id="@+id/view_viewer_join"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

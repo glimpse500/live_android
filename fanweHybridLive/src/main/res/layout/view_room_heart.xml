@@ -4,9 +4,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.fanwe.live.view.HeartLayout
+    <com.oolive.live.view.HeartLayout
         android:id="@+id/view_heart"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></com.fanwe.live.view.HeartLayout>
+        android:layout_height="match_parent"></com.oolive.live.view.HeartLayout>
 
 </LinearLayout>

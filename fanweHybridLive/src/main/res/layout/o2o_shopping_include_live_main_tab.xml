@@ -12,7 +12,7 @@
         android:layout_weight="1"
         android:gravity="center_horizontal|bottom">
 
-        <com.fanwe.library.view.SDTabMenu
+        <com.oolive.library.view.SDTabMenu
             android:id="@+id/view_tab_1"
             android:layout_width="60dp"
             android:layout_height="51dp"
@@ -25,7 +25,7 @@
         android:layout_weight="1"
         android:gravity="center_horizontal|bottom">
 
-        <com.fanwe.library.view.SDTabMenu
+        <com.oolive.library.view.SDTabMenu
             android:id="@+id/view_tab_2"
             android:layout_width="60dp"
             android:layout_height="51dp"
@@ -45,7 +45,7 @@
         android:layout_weight="1"
         android:gravity="center_horizontal|bottom">
 
-        <com.fanwe.library.view.SDTabMenu
+        <com.oolive.library.view.SDTabMenu
             android:id="@+id/view_tab_3"
             android:layout_width="60dp"
             android:layout_height="51dp"
@@ -58,7 +58,7 @@
         android:layout_weight="1"
         android:gravity="center_horizontal|bottom">
 
-        <com.fanwe.library.view.SDTabMenu
+        <com.oolive.library.view.SDTabMenu
             android:id="@+id/view_tab_4"
             android:layout_width="60dp"
             android:layout_height="51dp"

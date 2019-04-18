@@ -6,14 +6,14 @@
     android:gravity="left|center_vertical"
     android:orientation="horizontal">
 
-    <com.fanwe.live.appview.ItemLiveRoomTabLiveSingle
+    <com.oolive.live.appview.ItemLiveRoomTabLiveSingle
         android:id="@+id/item_view0"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_marginLeftPercent="3%w"
         app:layout_widthPercent="45%w" />
 
-    <com.fanwe.live.appview.ItemLiveRoomTabLiveSingle
+    <com.oolive.live.appview.ItemLiveRoomTabLiveSingle
         android:id="@+id/item_view1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

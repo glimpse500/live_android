@@ -34,14 +34,14 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <com.fanwe.live.view.LiveTabUnderline
+            <com.oolive.live.view.LiveTabUnderline
                 android:id="@+id/tab_rank_merits"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/height_title_bar"
                 android:layout_weight="1"
                 android:background="@color/white" />
 
-            <com.fanwe.live.view.LiveTabUnderline
+            <com.oolive.live.view.LiveTabUnderline
                 android:id="@+id/tab_rank_contribution"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/height_title_bar"
@@ -64,7 +64,7 @@
                 android:layout_centerInParent="true"
                 android:src="@drawable/ic_private_chat_tab_live_title" />
 
-            <com.fanwe.live.view.unread.LiveC2CTotalUnreadTextView
+            <com.oolive.live.view.unread.LiveC2CTotalUnreadTextView
                 android:id="@+id/tv_total_unreadnum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

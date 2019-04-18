@@ -5,8 +5,8 @@
     android:background="@color/black"
     android:orientation="vertical">
 
-    <com.fanwe.live.appview.LiveCropImageView
+    <com.oolive.live.appview.LiveCropImageView
         android:id="@+id/crop_imageview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></com.fanwe.live.appview.LiveCropImageView>
+        android:layout_height="match_parent"></com.oolive.live.appview.LiveCropImageView>
 </LinearLayout>

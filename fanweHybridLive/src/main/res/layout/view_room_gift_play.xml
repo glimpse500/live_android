@@ -5,15 +5,15 @@
     android:orientation="vertical"
     android:paddingLeft="10dp">
 
-    <com.fanwe.live.view.LiveGiftPlayView
+    <com.oolive.live.view.LiveGiftPlayView
         android:id="@+id/view_gift_play0"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></com.fanwe.live.view.LiveGiftPlayView>
+        android:layout_height="wrap_content"></com.oolive.live.view.LiveGiftPlayView>
 
-    <com.fanwe.live.view.LiveGiftPlayView
+    <com.oolive.live.view.LiveGiftPlayView
         android:id="@+id/view_gift_play1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"></com.fanwe.live.view.LiveGiftPlayView>
+        android:layout_marginTop="5dp"></com.oolive.live.view.LiveGiftPlayView>
 
 </LinearLayout>

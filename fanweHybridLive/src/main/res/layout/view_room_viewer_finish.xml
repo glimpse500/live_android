@@ -11,7 +11,7 @@
         android:scaleType="centerCrop"
         android:src="@color/res_blur_m" />
 
-    <com.fanwe.live.view.InterceptTouchEventLinearLayout
+    <com.oolive.live.view.InterceptTouchEventLinearLayout
         android:id="@+id/ll_root"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -26,7 +26,7 @@
             android:textColor="@color/white"
             android:textSize="@dimen/res_text_title_bar" />
 
-        <com.fanwe.library.view.CircleImageView
+        <com.oolive.library.view.CircleImageView
             android:id="@+id/civ_head_img"
             android:layout_width="92dp"
             android:layout_height="92dp"
@@ -101,6 +101,6 @@
             android:textColor="@color/white"
             android:textSize="@dimen/res_text_m" />
 
-    </com.fanwe.live.view.InterceptTouchEventLinearLayout>
+    </com.oolive.live.view.InterceptTouchEventLinearLayout>
 
 </RelativeLayout>

@@ -41,7 +41,7 @@
                 android:background="@color/white"
                 android:overScrollMode="never">
 
-                <com.fanwe.library.view.SDRecyclerView
+                <com.oolive.library.view.SDRecyclerView
                     android:id="@+id/rv_tasks_bm_dialog_daily_tasks"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />

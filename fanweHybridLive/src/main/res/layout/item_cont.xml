@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp">
 
-                <com.fanwe.library.view.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                <com.oolive.library.view.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/civ_head_other"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
@@ -52,7 +52,7 @@
                     app:civ_border_color="@color/white"
                     app:civ_border_width="1dp" />
 
-                <com.fanwe.library.view.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                <com.oolive.library.view.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/civ_level_other"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
@@ -93,7 +93,7 @@
                     android:textColor="@color/text_user_home"
                     android:textSize="10sp" />
 
-                <com.fanwe.live.view.LiveStringTicketTextView
+                <com.oolive.live.view.LiveStringTicketTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/text_user_home"

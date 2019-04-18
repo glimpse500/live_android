@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.cocosw:bottomsheet:1.0@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-bottomsheet-1.0.aar/ebe5c57c665b2e18fcf9de4787584fe6/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-bottomsheet-1.0.aar/ebe5c57c665b2e18fcf9de4787584fe6/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-bottomsheet-1.0.aar/ebe5c57c665b2e18fcf9de4787584fe6/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.cocosw/bottomsheet/1.0/6f63311f5ce749e57f74210723a364cb7510420b/bottomsheet-1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

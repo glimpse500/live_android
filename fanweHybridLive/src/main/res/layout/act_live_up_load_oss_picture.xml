@@ -4,8 +4,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.fanwe.live.appview.LiveOssImageView
+    <com.oolive.live.appview.LiveOssImageView
         android:id="@+id/oss_imageview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></com.fanwe.live.appview.LiveOssImageView>
+        android:layout_height="match_parent"></com.oolive.live.appview.LiveOssImageView>
 </LinearLayout>

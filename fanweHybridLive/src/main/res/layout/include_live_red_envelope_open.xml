@@ -11,7 +11,7 @@
         android:background="@drawable/bg_red_packet_open_head"
         android:orientation="vertical">
 
-        <com.fanwe.library.view.CircleImageView android:id="@+id/iv_envelope_open_head"
+        <com.oolive.library.view.CircleImageView android:id="@+id/iv_envelope_open_head"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="70dp"
             android:layout_height="70dp"

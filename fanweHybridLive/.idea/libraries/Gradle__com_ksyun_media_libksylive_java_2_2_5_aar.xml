@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.ksyun.media:libksylive-java:2.2.5@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-libksylive-java-2.2.5.aar/e39c27e5848e0f1968448f4a6be833e3/jars/libs/ksylive.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-libksylive-java-2.2.5.aar/e39c27e5848e0f1968448f4a6be833e3/jars/libs/libksystat.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-libksylive-java-2.2.5.aar/e39c27e5848e0f1968448f4a6be833e3/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-libksylive-java-2.2.5.aar/e39c27e5848e0f1968448f4a6be833e3/jars/libs/libksyplayer.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-libksylive-java-2.2.5.aar/e39c27e5848e0f1968448f4a6be833e3/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

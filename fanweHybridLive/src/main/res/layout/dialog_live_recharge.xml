@@ -28,7 +28,7 @@
                 android:layout_weight="1"
                 android:gravity="center">
 
-                <com.fanwe.library.view.SDTabUnderline
+                <com.oolive.library.view.SDTabUnderline
                     android:id="@+id/tab_recharge"
                     android:layout_width="51dp"
                     android:layout_height="50dp" />
@@ -47,7 +47,7 @@
                 android:layout_weight="1"
                 android:gravity="center">
 
-                <com.fanwe.library.view.SDTabUnderline
+                <com.oolive.library.view.SDTabUnderline
                     android:id="@+id/tab_game_exchange"
                     android:layout_width="51dp"
                     android:layout_height="50dp" />

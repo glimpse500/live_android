@@ -24,7 +24,7 @@
             android:background="@drawable/selector_song_stop_btn" />
     </LinearLayout>
 
-    <com.fanwe.live.music.lrc.LrcView
+    <com.oolive.live.music.lrc.LrcView
         android:id="@+id/lrc"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

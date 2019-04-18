@@ -13,7 +13,7 @@
         android:clipChildren="false"
         android:clipToPadding="false">
 
-        <com.fanwe.library.view.SDRecyclerView
+        <com.oolive.library.view.SDRecyclerView
             android:id="@+id/view_recycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

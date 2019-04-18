@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: :libraryQrcodeZxing-release:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/libraryQrcodeZxing-release.aar/e01e6d124b4f13fd1700de0e40ef6099/jars/libs/core-2.2.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/libraryQrcodeZxing-release.aar/e01e6d124b4f13fd1700de0e40ef6099/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/libraryQrcodeZxing-release.aar/e01e6d124b4f13fd1700de0e40ef6099/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

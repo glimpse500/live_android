@@ -13,7 +13,7 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <com.fanwe.library.view.CircleImageView
+        <com.oolive.library.view.CircleImageView
             android:id="@+id/iv_head_image"
             android:layout_width="42dp"
             android:layout_height="42dp"
@@ -67,7 +67,7 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <com.fanwe.auction.appview.room.RoomTimerTextView
+            <com.oolive.auction.appview.room.RoomTimerTextView
                 android:id="@+id/tv_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

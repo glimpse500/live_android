@@ -42,7 +42,7 @@
             android:layout_height="@dimen/height_user_head_l"
             android:layout_marginRight="@dimen/margin_xs">
 
-            <com.fanwe.library.view.CircleImageView
+            <com.oolive.library.view.CircleImageView
                 android:id="@+id/iv_user_head_xr_frag_user_dynamic_detail_info_video"
                 android:layout_width="match_parent"
                 tools:src="@drawable/xr_user_head_default_user_center"
@@ -98,7 +98,7 @@
                     android:textColor="@color/textColorTertiary"
                     android:textSize="@dimen/res_text_s" />
 
-                <com.fanwe.xianrou.widget.varunest.sparkbutton.SparkButton
+                <com.oolive.xianrou.widget.varunest.sparkbutton.SparkButton
                     android:id="@+id/spark_button_favorite_xr_frag_user_dynamic_detail_info_video"
                     android:layout_width="@dimen/height_icon_s"
                     android:layout_height="@dimen/height_icon_s"

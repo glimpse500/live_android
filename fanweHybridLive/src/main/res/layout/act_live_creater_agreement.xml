@@ -5,11 +5,11 @@
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
-    <com.fanwe.library.webview.CustomWebView
+    <com.oolive.library.webview.CustomWebView
         android:id="@+id/webview"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"></com.fanwe.library.webview.CustomWebView>
+        android:layout_weight="1"></com.oolive.library.webview.CustomWebView>
 
 
     <TextView

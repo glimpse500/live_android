@@ -4,12 +4,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.fanwe.live.appview.SDSelectImageView
+    <com.oolive.live.appview.SDSelectImageView
         android:id="@+id/view_select_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    </com.fanwe.live.appview.SDSelectImageView>
+    </com.oolive.live.appview.SDSelectImageView>
 
 </LinearLayout>

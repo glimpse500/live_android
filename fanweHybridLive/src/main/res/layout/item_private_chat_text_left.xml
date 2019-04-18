@@ -23,7 +23,7 @@
         android:paddingRight="10dp"
         android:paddingTop="10dp">
 
-        <com.fanwe.live.view.LivePrivateChatSpanTextView
+        <com.oolive.live.view.LivePrivateChatSpanTextView
             android:id="@+id/tv_text"
             style="@style/res.Text"
             android:layout_width="wrap_content"

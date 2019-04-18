@@ -7,7 +7,7 @@
     android:paddingLeft="2.5dp"
     android:paddingRight="2.5dp">
 
-    <com.fanwe.live.appview.ItemLiveTabNewSingle
+    <com.oolive.live.appview.ItemLiveTabNewSingle
         android:id="@+id/item_view0"
         android:layout_width="wrap_content"
         android:layout_height="match_parent" />

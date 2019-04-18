@@ -5,21 +5,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.fanwe.libgame.poker.goldflower.view.GoldFlowerPokerView
+    <com.oolive.libgame.poker.goldflower.view.GoldFlowerPokerView
         android:id="@+id/view_poker_0"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_gravity="left"
         app:layout_widthPercent="52%w"/>
 
-    <com.fanwe.libgame.poker.goldflower.view.GoldFlowerPokerView
+    <com.oolive.libgame.poker.goldflower.view.GoldFlowerPokerView
         android:id="@+id/view_poker_1"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
         app:layout_widthPercent="52%w"/>
 
-    <com.fanwe.libgame.poker.goldflower.view.GoldFlowerPokerView
+    <com.oolive.libgame.poker.goldflower.view.GoldFlowerPokerView
         android:id="@+id/view_poker_2"
         android:layout_width="0dp"
         android:layout_height="match_parent"

@@ -4,13 +4,13 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
-    <com.fanwe.library.customview.SDViewPager
+    <com.oolive.library.customview.SDViewPager
         android:id="@+id/viewPager"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:background="@color/black"
-        android:unselectedAlpha="1"></com.fanwe.library.customview.SDViewPager>
+        android:unselectedAlpha="1"></com.oolive.library.customview.SDViewPager>
 
     <RelativeLayout
         android:layout_width="match_parent"

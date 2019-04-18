@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.fanwe.live.appview.LivePrivateChatView
+    <com.oolive.live.appview.LivePrivateChatView
         android:id="@+id/view_private_chat"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

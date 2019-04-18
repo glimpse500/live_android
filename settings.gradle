@@ -1,1 +1,1 @@
-include ':fanweHybridLive', ':libGame', ':libApp'
+include ':fanweHybridLive', ':libGame', ':libApp', ':libCore'

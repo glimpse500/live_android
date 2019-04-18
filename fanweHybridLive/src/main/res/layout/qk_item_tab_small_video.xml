@@ -37,14 +37,14 @@
             android:orientation="horizontal"
             android:padding="@dimen/base_p_m_10">
 
-            <com.fanwe.library.view.CircleImageView
+            <com.oolive.library.view.CircleImageView
                 android:id="@+id/iv_avatar"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_anim_car1_back_tyre" />
 
-            <android.support.v4.widget.Space
+            <androidx.legacy.widget.Space
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />

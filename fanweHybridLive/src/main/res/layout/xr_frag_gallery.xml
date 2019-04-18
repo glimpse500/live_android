@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.fanwe.xianrou.widget.BigPhotoViewPager
+        <com.oolive.xianrou.widget.BigPhotoViewPager
             android:id="@+id/vp_xr_frag_gallery"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

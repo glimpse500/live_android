@@ -1,0 +1,1148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="eff4c8f6-ff0f-4e61-b8eb-a9acb7d3cf4f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/UserModelSimplified.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/LivePrivateChatMoreView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/LivePrivateChatMoreView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/LivePrivateChatView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/LivePrivateChatView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/model/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/model/UserModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/CustomMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/CustomMsg.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/build/classes/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="live-android" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="2044016599">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="6" />
+          <entry key="project.open.time.6" value="3" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="2" />
+          <entry key="java" value="261" />
+          <entry key="xml" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="2" />
+          <entry key="JAVA" value="261" />
+          <entry key="XML" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="4182" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="4182" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/adapter/LiveConversationListAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="388">
+              <caret line="51" column="44" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/LiveConversationListModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3216#3217#0" expanded="true" />
+                <element signature="e#3248#3249#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/appview/LiveConversationListView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="59">
+              <caret line="281" column="65" selection-start-line="281" selection-start-column="65" selection-end-line="281" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/UserModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="26" selection-start-line="26" selection-end-line="26" selection-end-column="36" />
+              <folding>
+                <element signature="e#10196#10197#0" expanded="true" />
+                <element signature="e#10222#10223#0" expanded="true" />
+                <element signature="e#10257#10258#0" expanded="true" />
+                <element signature="e#10287#10288#0" expanded="true" />
+                <element signature="e#11003#11004#0" expanded="true" />
+                <element signature="e#11036#11037#0" expanded="true" />
+                <element signature="e#11329#11330#0" expanded="true" />
+                <element signature="e#11359#11360#0" expanded="true" />
+                <element signature="e#14752#14753#0" expanded="true" />
+                <element signature="e#14784#14785#0" expanded="true" />
+                <element signature="e#14686#14687#0" expanded="true" />
+                <element signature="e#14728#14729#0" expanded="true" />
+                <element signature="e#14763#14764#0" expanded="true" />
+                <element signature="e#14794#14795#0" expanded="true" />
+                <element signature="e#14842#14843#0" expanded="true" />
+                <element signature="e#14882#14883#0" expanded="true" />
+                <element signature="e#14915#14916#0" expanded="true" />
+                <element signature="e#14944#14945#0" expanded="true" />
+                <element signature="e#14988#14989#0" expanded="true" />
+                <element signature="e#15024#15025#0" expanded="true" />
+                <element signature="e#15057#15058#0" expanded="true" />
+                <element signature="e#15086#15087#0" expanded="true" />
+                <element signature="e#15130#15131#0" expanded="true" />
+                <element signature="e#15166#15167#0" expanded="true" />
+                <element signature="e#15202#15203#0" expanded="true" />
+                <element signature="e#15234#15235#0" expanded="true" />
+                <element signature="e#15284#15285#0" expanded="true" />
+                <element signature="e#15326#15327#0" expanded="true" />
+                <element signature="e#15370#15371#0" expanded="true" />
+                <element signature="e#15397#15398#0" expanded="true" />
+                <element signature="e#15450#15451#0" expanded="true" />
+                <element signature="e#15482#15483#0" expanded="true" />
+                <element signature="e#15531#15532#0" expanded="true" />
+                <element signature="e#15562#15563#0" expanded="true" />
+                <element signature="e#15625#15626#0" expanded="true" />
+                <element signature="e#15665#15666#0" expanded="true" />
+                <element signature="e#15701#15702#0" expanded="true" />
+                <element signature="e#15735#15736#0" expanded="true" />
+                <element signature="e#15787#15788#0" expanded="true" />
+                <element signature="e#15833#15834#0" expanded="true" />
+                <element signature="e#15988#15989#0" expanded="true" />
+                <element signature="e#16026#16027#0" expanded="true" />
+                <element signature="e#16085#16086#0" expanded="true" />
+                <element signature="e#16139#16140#0" expanded="true" />
+                <element signature="e#16173#16174#0" expanded="true" />
+                <element signature="e#16206#16207#0" expanded="true" />
+                <element signature="e#16255#16256#0" expanded="true" />
+                <element signature="e#16299#16300#0" expanded="true" />
+                <element signature="e#16336#16337#0" expanded="true" />
+                <element signature="e#16372#16373#0" expanded="true" />
+                <element signature="e#16427#16428#0" expanded="true" />
+                <element signature="e#16477#16478#0" expanded="true" />
+                <element signature="e#16509#16510#0" expanded="true" />
+                <element signature="e#16540#16541#0" expanded="true" />
+                <element signature="e#16585#16586#0" expanded="true" />
+                <element signature="e#16625#16626#0" expanded="true" />
+                <element signature="e#16667#16668#0" expanded="true" />
+                <element signature="e#16708#16709#0" expanded="true" />
+                <element signature="e#16870#16871#0" expanded="true" />
+                <element signature="e#16906#16907#0" expanded="true" />
+                <element signature="e#16961#16962#0" expanded="true" />
+                <element signature="e#17011#17012#0" expanded="true" />
+                <element signature="e#17051#17052#0" expanded="true" />
+                <element signature="e#17090#17091#0" expanded="true" />
+                <element signature="e#17242#17243#0" expanded="true" />
+                <element signature="e#17276#17277#0" expanded="true" />
+                <element signature="e#17327#17328#0" expanded="true" />
+                <element signature="e#17373#17374#0" expanded="true" />
+                <element signature="e#17415#17416#0" expanded="true" />
+                <element signature="e#17456#17457#0" expanded="true" />
+                <element signature="e#17618#17619#0" expanded="true" />
+                <element signature="e#17654#17655#0" expanded="true" />
+                <element signature="e#17709#17710#0" expanded="true" />
+                <element signature="e#17759#17760#0" expanded="true" />
+                <element signature="e#17792#17793#0" expanded="true" />
+                <element signature="e#17824#17825#0" expanded="true" />
+                <element signature="e#17871#17872#0" expanded="true" />
+                <element signature="e#17913#17914#0" expanded="true" />
+                <element signature="e#17953#17954#0" expanded="true" />
+                <element signature="e#17992#17993#0" expanded="true" />
+                <element signature="e#18150#18151#0" expanded="true" />
+                <element signature="e#18190#18191#0" expanded="true" />
+                <element signature="e#18345#18346#0" expanded="true" />
+                <element signature="e#18378#18379#0" expanded="true" />
+                <element signature="e#18427#18428#0" expanded="true" />
+                <element signature="e#18471#18472#0" expanded="true" />
+                <element signature="e#18510#18511#0" expanded="true" />
+                <element signature="e#18545#18546#0" expanded="true" />
+                <element signature="e#18601#18602#0" expanded="true" />
+                <element signature="e#18649#18650#0" expanded="true" />
+                <element signature="e#18691#18692#0" expanded="true" />
+                <element signature="e#18732#18733#0" expanded="true" />
+                <element signature="e#18891#18892#0" expanded="true" />
+                <element signature="e#18924#18925#0" expanded="true" />
+                <element signature="e#18973#18974#0" expanded="true" />
+                <element signature="e#19017#19018#0" expanded="true" />
+                <element signature="e#19050#19051#0" expanded="true" />
+                <element signature="e#19082#19083#0" expanded="true" />
+                <element signature="e#19129#19130#0" expanded="true" />
+                <element signature="e#19171#19172#0" expanded="true" />
+                <element signature="e#19206#19207#0" expanded="true" />
+                <element signature="e#19240#19241#0" expanded="true" />
+                <element signature="e#19291#19292#0" expanded="true" />
+                <element signature="e#19337#19338#0" expanded="true" />
+                <element signature="e#19375#19376#0" expanded="true" />
+                <element signature="e#19412#19413#0" expanded="true" />
+                <element signature="e#19469#19470#0" expanded="true" />
+                <element signature="e#19521#19522#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/UserModelSimplified.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="589">
+              <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+              <folding>
+                <element signature="e#683#684#0" expanded="true" />
+                <element signature="e#713#714#0" expanded="true" />
+                <element signature="e#1472#1473#0" expanded="true" />
+                <element signature="e#1501#1502#0" expanded="true" />
+                <element signature="e#1545#1546#0" expanded="true" />
+                <element signature="e#1581#1582#0" expanded="true" />
+                <element signature="e#1644#1645#0" expanded="true" />
+                <element signature="e#1677#1678#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/CustomMsg.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="145" column="13" selection-start-line="145" selection-start-column="13" selection-end-line="145" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="341">
+              <caret line="235" column="63" selection-start-line="235" selection-start-column="49" selection-end-line="235" selection-end-column="63" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2323#2324#0" expanded="true" />
+                <element signature="e#2370#2371#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/business/LivePrivateChatBusiness.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="237" column="50" selection-start-line="237" selection-start-column="39" selection-end-line="237" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/CustomMsgPrivateText.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>cur_group</find>
+      <find>is_no_light</find>
+      <find>mIsNeedShowFinish</find>
+      <find>finish</find>
+      <find>tv_delete_video</find>
+      <find>fl_bottom_extend</find>
+      <find>view_more</find>
+      <find>onClickPhoto</find>
+      <find>iv_photo</find>
+      <find>h</find>
+      <find>lv_content</find>
+      <find>onAdapterAppendData</find>
+      <find>appendData</find>
+      <find>compes</find>
+      <find>public void</find>
+      <find>bin</find>
+      <find>nick</find>
+      <find>setItem</find>
+      <find>user_id</find>
+      <find>getHead_image</find>
+      <find>getNick_name</find>
+      <find>nick_name</find>
+      <find>getSex</find>
+      <find>getV_icon</find>
+      <find>v_icon</find>
+      <find>getUser_level</find>
+      <find>user_level</find>
+      <find>sender</find>
+      <find>compress</find>
+      <find>sex</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>compress_model.</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/common/CommonInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/LiveInitChat.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/room/RoomSendMsgView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/model/ItemLiveChatListModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOMessage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/view/unread/LiveC2CSingleUnreadTextView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/view/unread/LiveC2CTotalUnreadTextView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/room/RoomViewerBottomView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/room/RoomCreaterBottomView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/main/LiveMainMeView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/view/unread/LiveIMUnreadTextView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOConversation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/LiveChatC2CNewView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/model/LiveConversationListModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/LiveConversationListView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/adapter/LiveConversationListAdapter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/MsgModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/adapter/LivePrivateChatRecyclerAdapter.java" />
+        <option value="$PROJECT_DIR$/../libCore/src/main/java/com/oolive/library/adapter/SDRecyclerAdapter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/business/LivePrivateChatBusiness.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/activity/room/LiveLayoutActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/activity/room/LivePushViewerActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/LiveMsgModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/room/RoomHeartView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/activity/LiveMainActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/activity/LiveCreateRoomActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/room/RoomCreaterFinishView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/LivePrivateChatView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/appview/LivePrivateChatMoreView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/CustomMsg.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/model/UserModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/UserModelSimplified.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="live-android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fanweHybridLive" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="live-android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fanweHybridLive" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="live-android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fanweHybridLive" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="live-android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fanweHybridLive" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="live-android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fanweHybridLive" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="live-android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fanweHybridLive" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="oolive" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="live-android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fanweHybridLive" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="oolive" type="462c0819:PsiDirectoryNode" />
+              <item name="chat" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="live-android" type="1abcf292:AndroidViewProjectNode" />
+              <item name="fanweHybridLive" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="live-android" type="1abcf292:AndroidViewProjectNode" />
+              <item name="fanweHybridLive" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="live-android" type="1abcf292:AndroidViewProjectNode" />
+              <item name="fanweHybridLive" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="live-android" type="1abcf292:AndroidViewProjectNode" />
+              <item name="fanweHybridLive" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="oolive" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="live-android" type="1abcf292:AndroidViewProjectNode" />
+              <item name="fanweHybridLive" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="oolive" type="462c0819:PsiDirectoryNode" />
+              <item name="live" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="live-android" type="1abcf292:AndroidViewProjectNode" />
+              <item name="fanweHybridLive" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="oolive" type="462c0819:PsiDirectoryNode" />
+              <item name="live" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="live-android" type="1abcf292:AndroidViewProjectNode" />
+              <item name="fanweHybridLive" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="oolive" type="462c0819:PsiDirectoryNode" />
+              <item name="live" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="custommsg" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="live-android" type="1abcf292:AndroidViewProjectNode" />
+              <item name="fanweHybridLive" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="oolive" type="462c0819:PsiDirectoryNode" />
+              <item name="socketio" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="device.picker.selection" value="c45b7df5" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="fanweHybridLive" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="fanweHybridLive" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="eff4c8f6-ff0f-4e61-b8eb-a9acb7d3cf4f" name="Default Changelist" comment="" />
+      <created>1554145458609</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1554145458609</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.23827292" />
+      <window_info id="Structure" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Build Variants" order="4" side_tool="true" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="Designer" order="6" />
+      <window_info id="Capture Tool" order="7" />
+      <window_info anchor="bottom" id="Run" order="0" />
+      <window_info anchor="bottom" id="Logcat" order="1" weight="0.07709012" />
+      <window_info anchor="bottom" id="TODO" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" />
+      <window_info anchor="bottom" id="Terminal" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="6" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Build" order="7" visible="true" weight="0.055374593" />
+      <window_info anchor="bottom" id="Android Profiler" order="8" weight="0.32899022" />
+      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Gradle" order="2" weight="0.32995737" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Preview" order="5" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/UserModel.java</url>
+          <line>22</line>
+          <properties field="chat_id" class="com.oolive.live.model.UserModel" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/appview/SDSelectImageView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="179" column="57" lean-forward="true" selection-start-line="179" selection-start-column="57" selection-end-line="179" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/headerfooter/songhang/library/RecyclerViewAdapterWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/TIMMsgModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="56" column="32" lean-forward="true" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/IMHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="205" column="20" selection-start-line="205" selection-start-column="20" selection-end-line="205" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/MsgModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13">
+          <caret line="535" column="24" selection-start-line="535" selection-start-column="24" selection-end-line="535" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/ItemLiveChatListModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/room/LivePushViewerActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="64" column="8" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/room/LiveLayoutExtendActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="40" column="27" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/room/LiveLayoutGameActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/room/LiveLayoutCreaterExtendActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/room/LiveLayoutViewerActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-380">
+          <caret line="51" column="3" selection-start-line="51" selection-start-column="3" selection-end-line="51" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/dao/UserModelDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="149" column="28" selection-start-line="149" selection-start-column="28" selection-end-line="149" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/business/LiveViewerBusiness.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/appview/room/RoomSendMsgView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="258" column="22" selection-start-line="258" selection-start-column="22" selection-end-line="258" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/CustomMsgText.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/CustomMsgLight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/LiveConstant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="290" column="69" selection-start-line="290" selection-start-column="55" selection-end-line="290" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/LiveMsgModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="50" column="38" lean-forward="true" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/CustomMsgCreaterQuit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/business/LiveMsgBusiness.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="67" column="49" lean-forward="true" selection-start-line="67" selection-start-column="49" selection-end-line="67" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/view/HeartLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="118" column="16" selection-start-line="118" selection-start-column="16" selection-end-line="118" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/xianrou/activity/QKCreateEntranceActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-133">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/appview/main/LiveMainBottomNavigationView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/appview/room/RoomHeartView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="60" column="46" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/common/AppRuntimeWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1026">
+          <caret line="90" column="32" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/hybrid/model/InitActModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2109">
+          <caret line="120" column="46" selection-start-line="120" selection-start-column="35" selection-end-line="120" selection-end-column="46" />
+          <folding>
+            <element signature="e#4003#4004#0" expanded="true" />
+            <element signature="e#4037#4038#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/LiveMainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2698">
+          <caret line="188" column="59" selection-start-line="188" selection-start-column="49" selection-end-line="188" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/LiveCreateRoomActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2679">
+          <caret line="192" column="23" selection-start-line="192" selection-start-column="23" selection-end-line="192" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/room/LiveLayoutCreaterActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="62" column="22" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/LiveCreaterAgreementActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="874">
+          <caret line="67" column="23" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/appview/room/RoomCreaterFinishView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="62" column="15" selection-start-line="62" selection-start-column="15" selection-end-line="62" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/room/LiveKSYPushCreaterActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/appview/LivePrivateChatMoreView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="893">
+          <caret line="53" column="35" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/LivePrivateChatActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/LiveChatC2CActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/appview/main/LiveMainMeView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="581" column="50" selection-start-line="581" selection-start-column="50" selection-end-line="581" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/adapter/LivePrivateChatRecyclerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="28" column="64" selection-start-line="28" selection-start-column="64" selection-end-line="28" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/appview/LivePrivateChatView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="103" column="26" selection-start-line="103" selection-start-column="26" selection-end-line="103" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../libCore/src/main/java/com/oolive/library/adapter/SDRecyclerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="303" column="26" selection-start-line="303" selection-start-column="16" selection-end-line="303" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/activity/room/LiveLayoutActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="70" column="36" selection-start-line="70" selection-start-column="31" selection-end-line="70" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOConversation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="607">
+          <caret line="103" column="27" selection-start-line="103" selection-start-column="27" selection-end-line="103" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/CustomMsgPrivateText.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/business/LivePrivateChatBusiness.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="237" column="50" selection-start-line="237" selection-start-column="39" selection-end-line="237" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/socketio/SocketIOHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="235" column="63" selection-start-line="235" selection-start-column="49" selection-end-line="235" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2323#2324#0" expanded="true" />
+            <element signature="e#2370#2371#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/UserModelSimplified.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/adapter/LiveConversationListAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="51" column="44" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/appview/LiveConversationListView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="281" column="65" selection-start-line="281" selection-start-column="65" selection-end-line="281" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/CustomMsg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="145" column="13" selection-start-line="145" selection-start-column="13" selection-end-line="145" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/LiveConversationListModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3216#3217#0" expanded="true" />
+            <element signature="e#3248#3249#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/UserModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="26" selection-start-line="26" selection-end-line="26" selection-end-column="36" />
+          <folding>
+            <element signature="e#10196#10197#0" expanded="true" />
+            <element signature="e#10222#10223#0" expanded="true" />
+            <element signature="e#10257#10258#0" expanded="true" />
+            <element signature="e#10287#10288#0" expanded="true" />
+            <element signature="e#11003#11004#0" expanded="true" />
+            <element signature="e#11036#11037#0" expanded="true" />
+            <element signature="e#11329#11330#0" expanded="true" />
+            <element signature="e#11359#11360#0" expanded="true" />
+            <element signature="e#14752#14753#0" expanded="true" />
+            <element signature="e#14784#14785#0" expanded="true" />
+            <element signature="e#14686#14687#0" expanded="true" />
+            <element signature="e#14728#14729#0" expanded="true" />
+            <element signature="e#14763#14764#0" expanded="true" />
+            <element signature="e#14794#14795#0" expanded="true" />
+            <element signature="e#14842#14843#0" expanded="true" />
+            <element signature="e#14882#14883#0" expanded="true" />
+            <element signature="e#14915#14916#0" expanded="true" />
+            <element signature="e#14944#14945#0" expanded="true" />
+            <element signature="e#14988#14989#0" expanded="true" />
+            <element signature="e#15024#15025#0" expanded="true" />
+            <element signature="e#15057#15058#0" expanded="true" />
+            <element signature="e#15086#15087#0" expanded="true" />
+            <element signature="e#15130#15131#0" expanded="true" />
+            <element signature="e#15166#15167#0" expanded="true" />
+            <element signature="e#15202#15203#0" expanded="true" />
+            <element signature="e#15234#15235#0" expanded="true" />
+            <element signature="e#15284#15285#0" expanded="true" />
+            <element signature="e#15326#15327#0" expanded="true" />
+            <element signature="e#15370#15371#0" expanded="true" />
+            <element signature="e#15397#15398#0" expanded="true" />
+            <element signature="e#15450#15451#0" expanded="true" />
+            <element signature="e#15482#15483#0" expanded="true" />
+            <element signature="e#15531#15532#0" expanded="true" />
+            <element signature="e#15562#15563#0" expanded="true" />
+            <element signature="e#15625#15626#0" expanded="true" />
+            <element signature="e#15665#15666#0" expanded="true" />
+            <element signature="e#15701#15702#0" expanded="true" />
+            <element signature="e#15735#15736#0" expanded="true" />
+            <element signature="e#15787#15788#0" expanded="true" />
+            <element signature="e#15833#15834#0" expanded="true" />
+            <element signature="e#15988#15989#0" expanded="true" />
+            <element signature="e#16026#16027#0" expanded="true" />
+            <element signature="e#16085#16086#0" expanded="true" />
+            <element signature="e#16139#16140#0" expanded="true" />
+            <element signature="e#16173#16174#0" expanded="true" />
+            <element signature="e#16206#16207#0" expanded="true" />
+            <element signature="e#16255#16256#0" expanded="true" />
+            <element signature="e#16299#16300#0" expanded="true" />
+            <element signature="e#16336#16337#0" expanded="true" />
+            <element signature="e#16372#16373#0" expanded="true" />
+            <element signature="e#16427#16428#0" expanded="true" />
+            <element signature="e#16477#16478#0" expanded="true" />
+            <element signature="e#16509#16510#0" expanded="true" />
+            <element signature="e#16540#16541#0" expanded="true" />
+            <element signature="e#16585#16586#0" expanded="true" />
+            <element signature="e#16625#16626#0" expanded="true" />
+            <element signature="e#16667#16668#0" expanded="true" />
+            <element signature="e#16708#16709#0" expanded="true" />
+            <element signature="e#16870#16871#0" expanded="true" />
+            <element signature="e#16906#16907#0" expanded="true" />
+            <element signature="e#16961#16962#0" expanded="true" />
+            <element signature="e#17011#17012#0" expanded="true" />
+            <element signature="e#17051#17052#0" expanded="true" />
+            <element signature="e#17090#17091#0" expanded="true" />
+            <element signature="e#17242#17243#0" expanded="true" />
+            <element signature="e#17276#17277#0" expanded="true" />
+            <element signature="e#17327#17328#0" expanded="true" />
+            <element signature="e#17373#17374#0" expanded="true" />
+            <element signature="e#17415#17416#0" expanded="true" />
+            <element signature="e#17456#17457#0" expanded="true" />
+            <element signature="e#17618#17619#0" expanded="true" />
+            <element signature="e#17654#17655#0" expanded="true" />
+            <element signature="e#17709#17710#0" expanded="true" />
+            <element signature="e#17759#17760#0" expanded="true" />
+            <element signature="e#17792#17793#0" expanded="true" />
+            <element signature="e#17824#17825#0" expanded="true" />
+            <element signature="e#17871#17872#0" expanded="true" />
+            <element signature="e#17913#17914#0" expanded="true" />
+            <element signature="e#17953#17954#0" expanded="true" />
+            <element signature="e#17992#17993#0" expanded="true" />
+            <element signature="e#18150#18151#0" expanded="true" />
+            <element signature="e#18190#18191#0" expanded="true" />
+            <element signature="e#18345#18346#0" expanded="true" />
+            <element signature="e#18378#18379#0" expanded="true" />
+            <element signature="e#18427#18428#0" expanded="true" />
+            <element signature="e#18471#18472#0" expanded="true" />
+            <element signature="e#18510#18511#0" expanded="true" />
+            <element signature="e#18545#18546#0" expanded="true" />
+            <element signature="e#18601#18602#0" expanded="true" />
+            <element signature="e#18649#18650#0" expanded="true" />
+            <element signature="e#18691#18692#0" expanded="true" />
+            <element signature="e#18732#18733#0" expanded="true" />
+            <element signature="e#18891#18892#0" expanded="true" />
+            <element signature="e#18924#18925#0" expanded="true" />
+            <element signature="e#18973#18974#0" expanded="true" />
+            <element signature="e#19017#19018#0" expanded="true" />
+            <element signature="e#19050#19051#0" expanded="true" />
+            <element signature="e#19082#19083#0" expanded="true" />
+            <element signature="e#19129#19130#0" expanded="true" />
+            <element signature="e#19171#19172#0" expanded="true" />
+            <element signature="e#19206#19207#0" expanded="true" />
+            <element signature="e#19240#19241#0" expanded="true" />
+            <element signature="e#19291#19292#0" expanded="true" />
+            <element signature="e#19337#19338#0" expanded="true" />
+            <element signature="e#19375#19376#0" expanded="true" />
+            <element signature="e#19412#19413#0" expanded="true" />
+            <element signature="e#19469#19470#0" expanded="true" />
+            <element signature="e#19521#19522#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/oolive/live/model/custommsg/UserModelSimplified.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+          <folding>
+            <element signature="e#683#684#0" expanded="true" />
+            <element signature="e#713#714#0" expanded="true" />
+            <element signature="e#1472#1473#0" expanded="true" />
+            <element signature="e#1501#1502#0" expanded="true" />
+            <element signature="e#1545#1546#0" expanded="true" />
+            <element signature="e#1581#1582#0" expanded="true" />
+            <element signature="e#1644#1645#0" expanded="true" />
+            <element signature="e#1677#1678#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

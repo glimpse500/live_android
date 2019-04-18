@@ -12,7 +12,7 @@
         android:layout_marginTop="6dp"
         android:background="@color/white">
 
-        <com.fanwe.library.customview.SDGridLinearLayout
+        <com.oolive.library.customview.SDGridLinearLayout
             android:id="@+id/ll_topic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

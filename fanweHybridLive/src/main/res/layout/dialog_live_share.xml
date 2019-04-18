@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.fanwe.live.view.LiveShareView
+    <com.oolive.live.view.LiveShareView
         android:id="@+id/view_share"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

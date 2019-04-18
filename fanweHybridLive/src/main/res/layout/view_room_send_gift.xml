@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <com.fanwe.live.appview.LiveSendGiftView
+    <com.oolive.live.appview.LiveSendGiftView
         android:id="@+id/view_send_gift"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

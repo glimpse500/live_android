@@ -19,11 +19,11 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <com.fanwe.library.customview.SDGridLinearLayout
+        <com.oolive.library.customview.SDGridLinearLayout
             android:id="@+id/gll_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"></com.fanwe.library.customview.SDGridLinearLayout>
+            android:background="@color/white"></com.oolive.library.customview.SDGridLinearLayout>
 
         <include
             android:id="@+id/view_no_jilu"

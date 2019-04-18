@@ -15,7 +15,7 @@
             android:layout_height="1dp"
             android:background="@color/res_stroke" />
 
-        <com.fanwe.library.customview.SDGridLinearLayout
+        <com.oolive.library.customview.SDGridLinearLayout
             android:id="@+id/ll_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />

@@ -12,7 +12,7 @@
 
         <include layout="@layout/include_live_title_bar_back" />
 
-        <com.fanwe.live.view.LiveSongSearchView
+        <com.oolive.live.view.LiveSongSearchView
             android:id="@+id/sv_song"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

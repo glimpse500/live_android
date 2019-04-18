@@ -18,7 +18,7 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <com.fanwe.live.view.LiveStringTicketTextView
+            <com.oolive.live.view.LiveStringTicketTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="before总"
@@ -41,7 +41,7 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <com.fanwe.live.view.LiveStringTicketTextView
+            <com.oolive.live.view.LiveStringTicketTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="before今日可领取"
@@ -65,14 +65,14 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <com.fanwe.live.view.LiveStringTicketTextView
+        <com.oolive.live.view.LiveStringTicketTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="before提现"
             android:textColor="@color/res_text_gray_m"
             android:textSize="15sp" />
 
-        <com.fanwe.library.customview.ClearEditText
+        <com.oolive.library.customview.ClearEditText
             android:id="@+id/et_reward_num"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

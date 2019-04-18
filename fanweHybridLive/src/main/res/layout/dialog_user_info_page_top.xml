@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp">
 
-        <com.fanwe.library.view.CircleImageView android:id="@+id/iv_pic"
+        <com.oolive.library.view.CircleImageView android:id="@+id/iv_pic"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -66,7 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true">
 
-            <com.fanwe.library.view.CircleImageView android:id="@+id/iv_head"
+            <com.oolive.library.view.CircleImageView android:id="@+id/iv_head"
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
@@ -74,7 +74,7 @@
                 app:civ_border_color="@color/white"
                 app:civ_border_width="2dp" />
 
-            <com.fanwe.library.view.CircleImageView android:id="@+id/iv_level"
+            <com.oolive.library.view.CircleImageView android:id="@+id/iv_level"
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
@@ -123,7 +123,7 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <com.fanwe.live.view.LiveStringAccountTextView
+        <com.oolive.live.view.LiveStringAccountTextView
             style="@style/res.Text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -338,7 +338,7 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <com.fanwe.live.view.LiveStringTicketTextView
+                <com.oolive.live.view.LiveStringTicketTextView
                     style="@style/res.Text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

@@ -5,7 +5,7 @@
     android:background="#F2FFFFFF"
     android:orientation="vertical">
 
-    <android.support.v4.widget.Space
+    <androidx.legacy.widget.Space
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="8" />
@@ -16,7 +16,7 @@
         android:orientation="horizontal">
         android:layoutAnimation="@anim/qk_layout_scale_in"
 
-        <android.support.v4.widget.Space
+        <androidx.legacy.widget.Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
@@ -44,7 +44,7 @@
                 android:textSize="13sp" />
         </LinearLayout>
 
-        <android.support.v4.widget.Space
+        <androidx.legacy.widget.Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
@@ -71,13 +71,13 @@
                 android:textSize="13sp" />
         </LinearLayout>
 
-        <android.support.v4.widget.Space
+        <androidx.legacy.widget.Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
     </LinearLayout>
 
-    <android.support.v4.widget.Space
+    <androidx.legacy.widget.Space
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="2" />

@@ -6,7 +6,7 @@
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
-    <com.fanwe.library.view.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+    <com.oolive.library.view.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/iv_head"
         android:layout_width="80dp"
         android:layout_height="80dp"
@@ -67,7 +67,7 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <com.fanwe.library.view.SDTabImage
+        <com.oolive.library.view.SDTabImage
             android:id="@+id/tab_male"
             android:layout_width="40dp"
             android:layout_height="40dp" />
@@ -82,7 +82,7 @@
             android:textSize="12sp" />
 
 
-        <com.fanwe.library.view.SDTabImage
+        <com.oolive.library.view.SDTabImage
             android:id="@+id/tab_right"
             android:layout_width="40dp"
             android:layout_height="40dp"

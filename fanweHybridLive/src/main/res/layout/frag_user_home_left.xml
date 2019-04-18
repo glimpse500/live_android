@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <com.fanwe.library.customview.SDGridLinearLayout
+    <com.oolive.library.customview.SDGridLinearLayout
         android:id="@+id/gll_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

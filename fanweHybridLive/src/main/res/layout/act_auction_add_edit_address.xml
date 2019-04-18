@@ -26,7 +26,7 @@
                 android:textColor="@color/res_text_gray_l"
                 android:textSize="14sp" />
 
-            <com.fanwe.library.customview.ClearEditText
+            <com.oolive.library.customview.ClearEditText
                 android:id="@+id/cet_name"
                 style="@style/res.Edit"
                 android:layout_width="match_parent"
@@ -59,7 +59,7 @@
                 android:textColor="@color/res_text_gray_l"
                 android:textSize="14sp" />
 
-            <com.fanwe.library.customview.ClearEditText
+            <com.oolive.library.customview.ClearEditText
                 android:id="@+id/cet_phone"
                 style="@style/res.Edit"
                 android:layout_width="match_parent"
@@ -146,7 +146,7 @@
                 android:textColor="@color/res_text_gray_l"
                 android:textSize="14sp" />
 
-            <com.fanwe.library.customview.ClearEditText
+            <com.oolive.library.customview.ClearEditText
                 android:id="@+id/cet_address_detail"
                 style="@style/res.Edit"
                 android:layout_width="match_parent"

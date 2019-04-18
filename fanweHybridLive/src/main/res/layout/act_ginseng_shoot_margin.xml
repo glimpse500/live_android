@@ -113,7 +113,7 @@
                     android:textColor="@color/res_text_gray_l"
                     android:textSize="13sp" />
 
-                <com.fanwe.library.customview.ClearEditText
+                <com.oolive.library.customview.ClearEditText
                     android:id="@+id/cet_contacts"
                     style="@style/res.Edit"
                     android:layout_width="match_parent"
@@ -145,7 +145,7 @@
                     android:textColor="@color/res_text_gray_l"
                     android:textSize="13sp" />
 
-                <com.fanwe.library.customview.ClearEditText
+                <com.oolive.library.customview.ClearEditText
                     android:id="@+id/cet_phone"
                     style="@style/res.Edit"
                     android:layout_width="match_parent"

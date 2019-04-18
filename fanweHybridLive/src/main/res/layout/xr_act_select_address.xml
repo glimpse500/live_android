@@ -73,7 +73,7 @@
         android:layout_height="1dp"
         android:background="@color/res_stroke_deep" />
 
-    <com.fanwe.library.view.SDRecyclerView
+    <com.oolive.library.view.SDRecyclerView
         android:id="@+id/rv_content"
         android:layout_width="match_parent"
         android:layout_height="0dp"

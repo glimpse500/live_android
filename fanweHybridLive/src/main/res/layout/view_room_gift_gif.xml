@@ -10,27 +10,27 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.fanwe.live.view.LiveGiftGifPlayView
+        <com.oolive.live.view.LiveGiftGifPlayView
             android:id="@+id/view_gif0"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <com.fanwe.live.view.LiveGiftGifPlayView
+        <com.oolive.live.view.LiveGiftGifPlayView
             android:id="@+id/view_gif1"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <com.fanwe.live.view.LiveGiftGifPlayView
+        <com.oolive.live.view.LiveGiftGifPlayView
             android:id="@+id/view_gif2"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <com.fanwe.live.view.LiveGiftGifPlayView
+        <com.oolive.live.view.LiveGiftGifPlayView
             android:id="@+id/view_gif3"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <com.fanwe.live.view.LiveGiftGifPlayView
+        <com.oolive.live.view.LiveGiftGifPlayView
             android:id="@+id/view_gif4"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

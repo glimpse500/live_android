@@ -25,7 +25,7 @@
                 android:layout_width="@dimen/height_user_head_l"
                 android:layout_height="@dimen/height_user_head_l">
 
-                <com.fanwe.library.view.CircleImageView
+                <com.oolive.library.view.CircleImageView
                     android:id="@+id/iv_user_head_xr_view_holder_user_dynamic_comment_normal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -62,7 +62,7 @@
                         android:textColor="@color/textColorPrimary"
                         android:textSize="@dimen/text_size_body" />
 
-                    <android.support.v4.widget.Space
+                    <androidx.legacy.widget.Space
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1" />

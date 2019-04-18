@@ -10,14 +10,14 @@
         android:layout_height="45dp"
         android:orientation="horizontal">
 
-        <com.fanwe.live.view.LiveTabUnderline
+        <com.oolive.live.view.LiveTabUnderline
             android:id="@+id/tab_con_today"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="@dimen/height_title_bar"
             android:background="@color/white" />
 
-        <com.fanwe.live.view.LiveTabUnderline
+        <com.oolive.live.view.LiveTabUnderline
             android:id="@+id/tab_con_total"
             android:layout_width="0dp"
             android:layout_weight="1"
