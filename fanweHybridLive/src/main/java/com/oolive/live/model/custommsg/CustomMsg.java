@@ -36,6 +36,7 @@ public class CustomMsg implements ICustomMsg, Serializable {
         type = LiveConstant.CustomMsgType.MSG_NONE;
         deviceType = "Android";
         sender = UserModelDao.query();
+        //sender = sender.compress();
         if (sender == null) {
             LogUtil.i("sender is null--------------------------------------");
         }

@@ -49,6 +49,9 @@ public class LivePrivateChatMoreView extends BaseAppView implements ILivePrivate
         iv_photo.setOnClickListener(this);
         iv_send_coin.setOnClickListener(this);
         iv_send_diamond.setOnClickListener(this);
+
+        //To do
+        iv_photo.setVisibility(GONE);
     }
 
     public void setCallback(PrivateChatMoreViewCallback callback) {

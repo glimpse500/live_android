@@ -544,6 +544,20 @@ public class UserModel implements SDSelectManager.Selectable, Serializable {
         return true;
     }
 
+    //only left useful data
+    public UserModel compress(){
+        UserModel compress_model = new UserModel();
+        String id = compress_model.getUser_id();
+
+        compress_model.setUser_id(this.getUser_id());
+        compress_model.setHead_image(this.getHead_image());
+        compress_model.setNick_name(this.getNick_name());
+        compress_model.setSex(this.getSex());
+        compress_model.setV_icon(this.getV_icon());
+        compress_model.setUser_level(this.getUser_level());
+        return compress_model;
+    }
+
     public String getSignature() {
         return signature;
     }

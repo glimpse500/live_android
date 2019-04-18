@@ -150,8 +150,13 @@ public class LivePrivateChatView extends BaseAppView {
             setVoiceModeEnable(false);
             setTakePhotoEnable(false);
         } else {
+
+            setVoiceModeEnable(false);
+            setTakePhotoEnable(false);
+      /*To do
             setVoiceModeEnable(true);
             setTakePhotoEnable(true);
+            */
         }
 
         dealHasPrivateChat();
