@@ -158,7 +158,7 @@ public class App extends Application implements ITXLiveBaseListener {
         AppRuntimeWorker.logout();
         CommonInterface.requestLogout(null);
         RetryInitWorker.getInstance().start();
-        StorageFileUtils.deleteCrop_imageFile();
+        SocketIOHelper.logoutSocketIO();
         if (isStartLogin) {
             LogUtil.i("isStartLogin LiveLoginActivity ");
             Intent intent = new Intent(this, LiveLoginActivity.class);

@@ -107,6 +107,7 @@ public class SocketIOHelper {
     }
     public static void logoutSocketIO(){
         mSocket.off("login", onLogin);
+        isInLogin = false;
     }
     public static void joinGroup(String room_id){
         LogUtil.i("join + " +  room_id);

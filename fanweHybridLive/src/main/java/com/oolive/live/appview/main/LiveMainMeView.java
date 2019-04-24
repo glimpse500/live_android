@@ -321,11 +321,14 @@ public class LiveMainMeView extends BaseAppView {
             SDViewUtil.setGone(ll_game_currency_exchange);
         }
 
-        if (AppRuntimeWorker.getOpen_family_module() == 1) {
-            SDViewUtil.setVisible(ll_family);
-        } else {
-            SDViewUtil.setGone(ll_family);
-        }
+//        if (AppRuntimeWorker.getOpen_family_module() == 1) {
+//            SDViewUtil.setVisible(ll_family);
+//        } else {
+//            SDViewUtil.setGone(ll_family);
+//        }
+        SDViewUtil.setGone(ll_family);
+        SDViewUtil.setGone(rel_upgrade);
+
 
         if (AppRuntimeWorker.getOpen_sociaty_module() == 1) {
             SDViewUtil.setVisible(rel_sociaty);
