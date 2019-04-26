@@ -24,6 +24,7 @@ import com.oolive.live.model.App_userinfoActModel;
 import com.oolive.live.model.RoomShareModel;
 import com.oolive.live.model.UserModel;
 import com.oolive.live.utils.GlideUtil;
+import com.oolive.socketio.SocketIOHelper;
 import com.umeng.socialize.UMShareListener;
 import com.umeng.socialize.bean.SHARE_MEDIA;
 
@@ -185,7 +186,8 @@ public class LiveUserInfoCommonView extends BaseAppView {
         if (v == iv_share) {
             clickIvShare();
         } else if (v == fl_head) {
-            clickFlHead();
+            if(mUserModel.getUser_id().equals(SocketIOHelper.getUserID()))
+                clickFlHead();
         } else if (v == iv_remark) {
             clickIvRemark();
         }
