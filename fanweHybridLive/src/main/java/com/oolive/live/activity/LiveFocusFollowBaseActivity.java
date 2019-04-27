@@ -10,6 +10,7 @@ import android.widget.ListView;
 import com.oolive.hybrid.activity.BaseTitleActivity;
 import com.fanwe.lib.pulltorefresh.SDPullToRefreshView;
 import com.fanwe.lib.statelayout.SDStateLayout;
+import com.oolive.library.title.SDTitleItem;
 import com.oolive.library.utils.SDToast;
 import com.oolive.live.R;
 import com.oolive.live.adapter.LiveUserModelAdapter;
@@ -30,6 +31,7 @@ import java.util.List;
  */
 public class LiveFocusFollowBaseActivity extends BaseTitleActivity {
     public static final String EXTRA_USER_ID = "extra_user_id";
+    public static final String EXTRA_USER = "extra_user";
 
     @ViewInject(R.id.list)
     protected ListView list;
@@ -42,6 +44,13 @@ public class LiveFocusFollowBaseActivity extends BaseTitleActivity {
     protected String to_user_id = "";
     protected int page = 1;
 
+    protected UserModel mUser = null;
+    @Override
+    public void onCLickLeft_SDTitleSimple(SDTitleItem v) {
+        Intent intent = new Intent();
+        LiveFocusFollowBaseActivity.this.setResult(LiveMainActivity.RETURN_FROM_FANS_LIST, intent);
+        LiveFocusFollowBaseActivity.this.finish();    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,8 +60,9 @@ public class LiveFocusFollowBaseActivity extends BaseTitleActivity {
     }
 
     protected void init() {
+        initData();
         initView();
-        judgeWhoLogin();
+        //judgeWhoLogin();
         register();
         bindAdapter();
     }
@@ -60,6 +70,9 @@ public class LiveFocusFollowBaseActivity extends BaseTitleActivity {
     private void initView() {
         view_state_layout = (SDStateLayout) findViewById(R.id.view_state_layout);
         setStateLayout(view_state_layout);
+    }
+    private void initData() {
+        mUser = (UserModel)getIntent().getSerializableExtra(LiveFocusFollowBaseActivity.EXTRA_USER);
     }
 
     protected String getIntentUserId() {
@@ -71,7 +84,7 @@ public class LiveFocusFollowBaseActivity extends BaseTitleActivity {
     }
 
     private void judgeWhoLogin() {
-        UserModel user = UserModelDao.query();
+        UserModel user =mUser;
         if (user != null) {
             this.to_user_id = getIntentUserId();
             // 查看的是自己主页
@@ -101,9 +114,14 @@ public class LiveFocusFollowBaseActivity extends BaseTitleActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 UserModel user = listModel.get((int) id);
                 if (user != null) {
-                    Intent intent = new Intent(LiveFocusFollowBaseActivity.this, LiveUserHomeActivity.class);
-                    intent.putExtra(LiveUserHomeActivity.EXTRA_USER_ID, user.getUser_id());
-                    startActivity(intent);
+//                    Intent intent = new Intent(LiveFocusFollowBaseActivity.this, LiveUserHomeActivity.class);
+//                    intent.putExtra(LiveUserHomeActivity.EXTRA_USER_ID, user.getUser_id());
+//                    startActivity(intent);
+//                    Intent intent = new Intent(LiveFocusFollowBaseActivity.this, LiveMainActivity.class);
+                    Intent intent = new Intent();
+                    intent.putExtra("otherID", user.getUser_id());
+                    LiveFocusFollowBaseActivity.this.setResult(LiveMainActivity.RETURN_FROM_FOCUS_LIST, intent);
+                    LiveFocusFollowBaseActivity.this.finish();
                 }
             }
         });

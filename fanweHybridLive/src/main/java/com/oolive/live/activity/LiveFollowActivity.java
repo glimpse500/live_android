@@ -33,7 +33,7 @@ public class LiveFollowActivity extends LiveFocusFollowBaseActivity {
 
     private void initTitle() {
         mTitle.setMiddleTextTop("关注的人");
-        UserModel user = UserModelDao.query();
+        UserModel user = mUser;
         if (user.getUser_id().equals(getIntentUserId())) {
             mTitle.initRightItem(1);
             mTitle.getItemRight(0).setImageLeft(R.drawable.ic_add_friend);

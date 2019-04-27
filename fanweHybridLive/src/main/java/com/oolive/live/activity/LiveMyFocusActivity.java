@@ -18,6 +18,7 @@ public class LiveMyFocusActivity extends LiveFocusFollowBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        super.init();
         initTitle();
     }
 
@@ -27,7 +28,7 @@ public class LiveMyFocusActivity extends LiveFocusFollowBaseActivity {
 
     @Override
     protected void request(final boolean isLoadMore) {
-        CommonInterface.requestMy_focus(page, to_user_id, new AppRequestCallback<App_focus_follow_ActModel>() {
+        CommonInterface.requestMy_focus(page, mUser.getUser_id(), new AppRequestCallback<App_focus_follow_ActModel>() {
             @Override
             protected void onSuccess(SDResponse resp) {
                 if (actModel.getStatus() == 1) {

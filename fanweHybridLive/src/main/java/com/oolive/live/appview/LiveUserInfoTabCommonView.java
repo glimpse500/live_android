@@ -2,6 +2,7 @@ package com.oolive.live.appview;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import com.oolive.library.utils.SDViewBinder;
 import com.oolive.live.R;
 import com.oolive.live.activity.LiveFollowActivity;
+import com.oolive.live.activity.LiveMainActivity;
 import com.oolive.live.activity.LiveMyFocusActivity;
 import com.oolive.live.activity.LiveUserHomeReplayActivity;
 import com.oolive.live.dao.UserModelDao;
@@ -30,6 +32,8 @@ public class LiveUserInfoTabCommonView extends BaseAppView {
     private TextView tv_focus_count;
     private LinearLayout ll_my_fans;
     private TextView tv_fans_count;
+
+    private UserModel mUser = null; // 不一定是使用者的id
 
     public LiveUserInfoTabCommonView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -80,6 +84,7 @@ public class LiveUserInfoTabCommonView extends BaseAppView {
         if (user == null) {
             return;
         }
+        mUser = user;
 
         SDViewBinder.setTextView(tv_small_video_num, String.valueOf(user.getN_svideo_count()));
 
@@ -114,20 +119,47 @@ public class LiveUserInfoTabCommonView extends BaseAppView {
 
     // 我关注的人
     protected void clickLlMyFocus() {
-        UserModel user = UserModelDao.query();
+        //UserModel user = UserModelDao.query();
+        UserModel user = mUser;
+
         if (user == null) {
             return;
         }
         String user_id = user.getUser_id();
         Intent intent = new Intent(getActivity(), LiveFollowActivity.class);
         intent.putExtra(LiveFollowActivity.EXTRA_USER_ID, user_id);
-        getActivity().startActivity(intent);
+        Bundle bundle=new Bundle();
+        bundle.putSerializable(LiveFollowActivity.EXTRA_USER, mUser);
+        intent.putExtras(bundle);
+        getActivity().startActivityForResult(intent, LiveMainActivity.RETURN_FROM_FOCUS_LIST);
+
     }
 
     // 我的粉丝
     protected void clickLlMyFans() {
+//        Intent intent = new Intent(getActivity(), LiveMyFocusActivity.class);
+//        intent.putExtra(LiveFollowActivity.EXTRA_USER_ID, mUser.getUser_id());
+//
+////        getActivity().startActivity(intent);
+//        getActivity().startActivityForResult(intent, LiveMainActivity.RETURN_FROM_FOCUS_LIST);
+//        UserModel user = mUser;
+//
+//        if (user == null) {
+//            return;
+//        }
+        UserModel user = mUser;
+        if (user == null) {
+            return;
+        }
+        String user_id = user.getUser_id();
         Intent intent = new Intent(getActivity(), LiveMyFocusActivity.class);
-        getActivity().startActivity(intent);
+        intent.putExtra(LiveMyFocusActivity.EXTRA_USER_ID, user_id);
+        Bundle bundle=new Bundle();
+        bundle.putSerializable(LiveMyFocusActivity.EXTRA_USER, mUser);
+        intent.putExtras(bundle);
+        getActivity().startActivityForResult(intent, LiveMainActivity.RETURN_FROM_FOCUS_LIST);
+
+
     }
 
     // 回放列表

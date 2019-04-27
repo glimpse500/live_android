@@ -5,7 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -14,6 +16,7 @@ import android.widget.TextView;
 import com.oolive.hybrid.http.AppRequestCallback;
 import com.fanwe.library.adapter.http.model.SDResponse;
 import com.oolive.library.common.SDSelectManager;
+import com.oolive.library.utils.LogUtil;
 import com.oolive.library.utils.SDResourcesUtil;
 import com.oolive.library.utils.SDViewBinder;
 import com.oolive.library.utils.SDViewUtil;
@@ -26,6 +29,7 @@ import com.oolive.live.activity.LiveDistributionActivity;
 import com.oolive.live.activity.LiveFamilyDetailsActivity;
 import com.oolive.live.activity.LiveGamesDistributionActivity;
 import com.oolive.live.activity.LiveMySelfContActivity;
+import com.oolive.live.activity.LivePrivateChatActivity;
 import com.oolive.live.activity.LiveRechargeDiamondsActivity;
 import com.oolive.live.activity.LiveRechargeVipActivity;
 import com.oolive.live.activity.LiveSearchUserActivity;
@@ -46,12 +50,14 @@ import com.oolive.live.dialog.LiveGameExchangeDialog;
 import com.oolive.live.event.ERefreshMsgUnReaded;
 import com.oolive.live.event.EUpdateUserInfo;
 import com.oolive.live.model.App_InitH5Model;
+import com.oolive.live.model.App_followActModel;
 import com.oolive.live.model.App_gameExchangeRateActModel;
 import com.oolive.live.model.App_user_homeActModel;
 import com.oolive.live.model.App_userinfoActModel;
 import com.oolive.live.model.Deal_send_propActModel;
 import com.oolive.live.model.TotalConversationUnreadMessageModel;
 import com.oolive.live.model.UserModel;
+import com.oolive.live.model.User_set_blackActModel;
 import com.oolive.live.utils.GlideUtil;
 import com.oolive.live.utils.LiveUtils;
 import com.oolive.live.view.LiveStringTicketTextView;
@@ -68,37 +74,38 @@ import jp.wasabeef.glide.transformations.BlurTransformation;
  * Created by yhz on 2017/9/11.
  */
 
-public class LiveMainMeView extends BaseAppView {
-    public LiveMainMeView(Context context, AttributeSet attrs, int defStyle) {
+public class LiveMainOtherView extends BaseAppView {
+    public LiveMainOtherView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init();
     }
 
-    public LiveMainMeView(Context context, AttributeSet attrs) {
+    public LiveMainOtherView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public LiveMainMeView(Context context) {
+    public LiveMainOtherView(Context context) {
         super(context);
         init();
     }
 
-    public LiveMainMeView(Context context, String otherID) {
+    public LiveMainOtherView(Context context, String otherID) {
         super(context);
         mOtherID = otherID;
         init();
     }
 
-    private String mOtherID = null;
 
 
 
 
 
-
+    private LinearLayout ll_function_layout;
     private ImageView iv_blur_head;
     private LinearLayout ll_search;   //搜索
+    private LinearLayout ll_back;   //back
+
     private RelativeLayout ll_chat;
     private LiveUnReadNumTextView tv_total_unreadnum;
     private LiveUserInfoCommonView mLiveUserInfoCommonView;
@@ -164,11 +171,22 @@ public class LiveMainMeView extends BaseAppView {
 
     private App_userinfoActModel app_userinfoActModel;
 
+    private App_user_homeActModel app_user_homeActModel;
+    private String mOtherID = null;
+    private LiveUserHomeTabCommonView view_live_user_home_tab;
+    private ImageView iv_follow;
+    private LinearLayout ll_follow;// 关注
+    private TextView tv_follow;
+    private LinearLayout ll_letter;// 私信
+    private LinearLayout ll_set_black;// 拉黑
+    private TextView tv_set_black;
+
+
     private LiveAddNewFamilyDialog dialogFam;
 
     @Override
     protected int onCreateContentView() {
-        return R.layout.frag_live_new_tab_me_black;
+        return R.layout.frag_live_new_tab_other_black;
     }
 
     protected void init() {
@@ -181,9 +199,20 @@ public class LiveMainMeView extends BaseAppView {
     private void initView() {
 
 
+        view_live_user_home_tab = (LiveUserHomeTabCommonView) findViewById(R.id.view_live_user_home_tab);
+        iv_follow = (ImageView) findViewById(R.id.iv_follow);
+        ll_follow = (LinearLayout) findViewById(R.id.ll_follow);
+        tv_follow = (TextView) findViewById(R.id.tv_follow);
+
+        ll_letter = (LinearLayout) findViewById(R.id.ll_letter);
+        ll_set_black = (LinearLayout) findViewById(R.id.ll_set_black);
+        tv_set_black = (TextView) findViewById(R.id.tv_set_black);
+
 
         iv_blur_head = (ImageView) findViewById(R.id.iv_blur_head);
         ll_search = (LinearLayout) findViewById(R.id.ll_search);
+        ll_back = (LinearLayout) findViewById(R.id.ll_back);
+
         ll_chat = (RelativeLayout) findViewById(R.id.ll_chat);
         tv_total_unreadnum = (LiveUnReadNumTextView) findViewById(R.id.tv_total_unreadnum);
 
@@ -247,7 +276,13 @@ public class LiveMainMeView extends BaseAppView {
     }
 
     private void initListener() {
+        ll_follow.setOnClickListener(this);
+        ll_letter.setOnClickListener(this);
+        ll_set_black.setOnClickListener(this);
+
         ll_search.setOnClickListener(this);
+        ll_back.setOnClickListener(this);
+
         ll_chat.setOnClickListener(this);
 
         rl_accout.setOnClickListener(this);
@@ -349,7 +384,15 @@ public class LiveMainMeView extends BaseAppView {
 //        }
         SDViewUtil.setGone(ll_family);
         SDViewUtil.setGone(rel_upgrade);
-        //SDViewUtil.setGone(view_live_user_home_tab.getStateLayout());
+        SDViewUtil.setGone(ll_setting);
+        SDViewUtil.setGone(ll_show_podcast_goods);
+        SDViewUtil.setGone(ll_show_user_order);
+        SDViewUtil.setGone(ll_show_podcast_order);
+        SDViewUtil.setGone(ll_show_shopping_cart);
+        SDViewUtil.setGone(ll_show_user_pai);
+        SDViewUtil.setGone(ll_show_podcast_pai);
+        SDViewUtil.setGone(ll_open_podcast_goods);
+
 
 
         if (AppRuntimeWorker.getOpen_sociaty_module() == 1) {
@@ -364,35 +407,87 @@ public class LiveMainMeView extends BaseAppView {
             SDViewUtil.setGone(rl_games_distribution);
         }
     }
+    private void setIsFollow(int has_focus) {
+        if (has_focus == 1) {
+            tv_follow.setText("已关注");
+            iv_follow.setImageResource(R.drawable.ic_follow_selected);
+        } else {
+            tv_follow.setText("关注");
+            iv_follow.setImageResource(R.drawable.ic_follow_normal);
+        }
+    }
+
+    // 设置个人信息拉黑按钮
+    private void setIsSet_black(int has_black) {
+        if (has_black == 1) {
+            tv_set_black.setText("解除拉黑");
+        } else {
+            tv_set_black.setText("拉黑");
+        }
+    }
 
     private void request() {
-            CommonInterface.requestMyUserInfo(new AppRequestCallback<App_userinfoActModel>() {
+        if(mOtherID != null){
+            CommonInterface.requestUser_home(mOtherID, new AppRequestCallback<App_user_homeActModel>() {
+                @Override
+                protected void onSuccess(SDResponse resp) {
+                    if (actModel.getStatus() == 1) {
+                        app_user_homeActModel = actModel;
+                        setIsSet_black(actModel.getHas_black());
+                        setIsFollow(actModel.getHas_focus());
+
+                    }
+                }
+            });
+
+            CommonInterface.requestUserInfo(null, mOtherID, new AppRequestCallback<App_userinfoActModel>() {
+
+
                 @Override
                 protected void onSuccess(SDResponse resp) {
                     if (actModel.getStatus() == 1) {
                         app_userinfoActModel = actModel;
                         mLiveUserInfoCommonView.setData(app_userinfoActModel);
-                        UserModelDao.insertOrUpdate(actModel.getUser());
+                        setIsFollow(actModel.getHas_focus());
+                        bindNormalData(actModel.getUser());
                     }
                 }
-
-                @Override
-                protected void onFinish(SDResponse resp) {
-                    super.onFinish(resp);
-                    getPullToRefreshViewWrapper().stopRefreshing();
-                }
             });
+
+
+        }
+
+
+    }
+
+    private void bindData(App_user_homeActModel actModel) {
+//        if (actModel.getVideo() != null) {
+//            SDViewUtil.setVisible(ll_broadcast_entrance);
+//            if (actModel.getVideo().getLive_in() == 1) {
+//                tv_broadcast_entrance.setText("直播中");
+//            } else if (actModel.getVideo().getLive_in() == 3) {
+//                tv_broadcast_entrance.setText("回播中");
+//            }
+//            } else {
+//                SDViewUtil.setInvisible(ll_broadcast_entrance);
+//        }
+
+//        UserModel user = actModel.getUser();
+//        if (user == null) {
+//            return;
+//        }
+//
+//        GlideUtil.load(user.getHead_image()).bitmapTransform(new BlurTransformation(getActivity(), 10)).into(iv_blur_head);
+//        app_userinfoActModel = actModel;
+//        view_live_user_info.setUserData(user);
+//        view_live_user_home_tab.setData(user);
     }
 
     private void bindNormalData(UserModel user) {
         if (user == null) {
             return;
         }
-
-        if (view_live_user_info_tab != null) {
-            view_live_user_info_tab.setData(user);
-        }
-
+        view_live_user_info_tab.setData(user);
         GlideUtil.load(user.getHead_image()).bitmapTransform(new BlurTransformation(getActivity(), 20)).into(iv_blur_head);
 
         if (user.getSociety_id() == 0) {
@@ -435,61 +530,61 @@ public class LiveMainMeView extends BaseAppView {
 
         SDViewBinder.setTextView(tv_game_currency, LiveUtils.getFormatNumber(user.getCoin()) + SDResourcesUtil.getString(R.string.game_currency));
 
-        if (user.getShow_podcast_goods() == 1) {
-            SDViewUtil.setVisible(ll_show_podcast_goods);
-            String podcast_goods_dec = String.valueOf(user.getPodcast_goods()) + "个商品";
-            SDViewBinder.setTextView(tv_show_podcast_goods, podcast_goods_dec);
-        } else {
-            SDViewUtil.setGone(ll_show_podcast_goods);
-        }
-
-        if (user.getShow_user_order() == 1) {
-            SDViewUtil.setVisible(ll_show_user_order);
-            String user_order_dec = String.valueOf(user.getUser_order()) + "个订单";
-            SDViewBinder.setTextView(tv_show_user_order, user_order_dec);
-        } else {
-            SDViewUtil.setGone(ll_show_user_order);
-        }
-
-        if (user.getShow_podcast_order() == 1) {
-            SDViewUtil.setVisible(ll_show_podcast_order);
-            String podcast_order_dec = String.valueOf(user.getPodcast_order()) + "个订单";
-            SDViewBinder.setTextView(tv_show_podcast_order, podcast_order_dec);
-        } else {
-            SDViewUtil.setGone(ll_show_podcast_order);
-        }
-
-        if (user.getShow_shopping_cart() == 1) {
-            SDViewUtil.setVisible(ll_show_shopping_cart);
-            String shopping_cart_dec = String.valueOf(user.getShopping_cart()) + "个商品";
-            SDViewBinder.setTextView(tv_show_shopping_cart, shopping_cart_dec);
-        } else {
-            SDViewUtil.setGone(ll_show_shopping_cart);
-        }
-
-        if (user.getShow_user_pai() == 1) {
-            SDViewUtil.setVisible(ll_show_user_pai);
-            String user_pai_dec = String.valueOf(user.getUser_pai()) + "个竞拍";
-            SDViewBinder.setTextView(tv_show_user_pai, user_pai_dec);
-        } else {
-            SDViewUtil.setGone(ll_show_user_pai);
-        }
-
-        if (user.getShow_podcast_pai() == 1) {
-            SDViewUtil.setVisible(ll_show_podcast_pai);
-            String podcast_pai_dec = String.valueOf(user.getPodcast_pai()) + "个竞拍";
-            SDViewBinder.setTextView(tv_show_podcast_pai, podcast_pai_dec);
-        } else {
-            SDViewUtil.setGone(ll_show_podcast_pai);
-        }
-
-        if (user.getOpen_podcast_goods() == 1) {
-            SDViewUtil.setVisible(ll_open_podcast_goods);
-            String shop_goods = String.valueOf(user.getShop_goods()) + "个商品";
-            SDViewBinder.setTextView(tv_open_podcast_goods, shop_goods);
-        } else {
-            SDViewUtil.setGone(ll_open_podcast_goods);
-        }
+//        if (user.getShow_podcast_goods() == 1) {
+//            SDViewUtil.setVisible(ll_show_podcast_goods);
+//            String podcast_goods_dec = String.valueOf(user.getPodcast_goods()) + "个商品";
+//            SDViewBinder.setTextView(tv_show_podcast_goods, podcast_goods_dec);
+//        } else {
+//            SDViewUtil.setGone(ll_show_podcast_goods);
+//        }
+//
+//        if (user.getShow_user_order() == 1) {
+//            SDViewUtil.setVisible(ll_show_user_order);
+//            String user_order_dec = String.valueOf(user.getUser_order()) + "个订单";
+//            SDViewBinder.setTextView(tv_show_user_order, user_order_dec);
+//        } else {
+//            SDViewUtil.setGone(ll_show_user_order);
+//        }
+//
+//        if (user.getShow_podcast_order() == 1) {
+//            SDViewUtil.setVisible(ll_show_podcast_order);
+//            String podcast_order_dec = String.valueOf(user.getPodcast_order()) + "个订单";
+//            SDViewBinder.setTextView(tv_show_podcast_order, podcast_order_dec);
+//        } else {
+//            SDViewUtil.setGone(ll_show_podcast_order);
+//        }
+//
+//        if (user.getShow_shopping_cart() == 1) {
+//            SDViewUtil.setVisible(ll_show_shopping_cart);
+//            String shopping_cart_dec = String.valueOf(user.getShopping_cart()) + "个商品";
+//            SDViewBinder.setTextView(tv_show_shopping_cart, shopping_cart_dec);
+//        } else {
+//            SDViewUtil.setGone(ll_show_shopping_cart);
+//        }
+//
+//        if (user.getShow_user_pai() == 1) {
+//            SDViewUtil.setVisible(ll_show_user_pai);
+//            String user_pai_dec = String.valueOf(user.getUser_pai()) + "个竞拍";
+//            SDViewBinder.setTextView(tv_show_user_pai, user_pai_dec);
+//        } else {
+//            SDViewUtil.setGone(ll_show_user_pai);
+//        }
+//
+//        if (user.getShow_podcast_pai() == 1) {
+//            SDViewUtil.setVisible(ll_show_podcast_pai);
+//            String podcast_pai_dec = String.valueOf(user.getPodcast_pai()) + "个竞拍";
+//            SDViewBinder.setTextView(tv_show_podcast_pai, podcast_pai_dec);
+//        } else {
+//            SDViewUtil.setGone(ll_show_podcast_pai);
+//        }
+//
+//        if (user.getOpen_podcast_goods() == 1) {
+//            SDViewUtil.setVisible(ll_open_podcast_goods);
+//            String shop_goods = String.valueOf(user.getShop_goods()) + "个商品";
+//            SDViewBinder.setTextView(tv_open_podcast_goods, shop_goods);
+//        } else {
+//            SDViewUtil.setGone(ll_open_podcast_goods);
+//        }
     }
 
     private void initUnReadNum() {
@@ -506,8 +601,11 @@ public class LiveMainMeView extends BaseAppView {
      * @param event 接收刷新UserModel信息事件
      */
     public void onEventMainThread(EUpdateUserInfo event) {
-        UserModel user = event.user;
-        bindNormalData(user);
+//        if(mOtherID != null){
+//            UserModel user = event.user;
+//            bindNormalData(user);
+//        }
+
     }
 
 
@@ -525,6 +623,9 @@ public class LiveMainMeView extends BaseAppView {
         switch (v.getId()) {
             case R.id.ll_search:
                 clickLLSearch();
+                break;
+            case R.id.ll_back:
+                clickLLBack();
                 break;
             case R.id.ll_chat:
                 clickLlChat();
@@ -591,15 +692,103 @@ public class LiveMainMeView extends BaseAppView {
             case R.id.ll_setting:
                 clickSetting();
                 break;
+
+            case R.id.ll_follow:
+                clickLlFollow();
+                break;
+            case R.id.ll_letter:
+                clickLlLetter();
+                break;
+            case R.id.ll_set_black:
+                clickLlSetBlack();
+                break;
             default:
                 break;
         }
+    }
+
+    private void clickLlFollow() {
+        requestFollow();
+    }
+
+    private void clickLlLetter() {
+        if (app_user_homeActModel == null) {
+            return;
+        }
+        UserModel to_user = app_user_homeActModel.getUser();
+        if (to_user == null) {
+            return;
+        }
+
+        Intent intent = new Intent(getActivity(), LivePrivateChatActivity.class);
+        intent.putExtra(LivePrivateChatActivity.EXTRA_USER_ID, to_user.getUser_id());
+        intent.putExtra(LivePrivateChatActivity.EXTRA_CHAT_ID, to_user.getChat_id());
+        getActivity().startActivity(intent);
+    }
+
+    private void clickLlSetBlack() {
+        requestSet_black();
+    }
+
+    private void requestSet_black() {
+        CommonInterface.requestSet_black(mOtherID, new AppRequestCallback<User_set_blackActModel>() {
+            @Override
+            protected void onSuccess(SDResponse resp) {
+                if (actModel.getStatus() == 1) {
+                    // 已拉黑则刷新接口
+                    if (actModel.getHas_black() == 1) {
+                        requestUser_home(true);
+                    }
+                    setIsSet_black(actModel.getHas_black());
+                }
+            }
+        });
+    }
+
+    private void requestFollow() {
+        CommonInterface.requestFollow(mOtherID, 0, new AppRequestCallback<App_followActModel>() {
+
+            @Override
+            protected void onSuccess(SDResponse resp) {
+                if (actModel.getStatus() == 1) {
+                    // 已关注则刷新接口
+                    if (actModel.getHas_focus() == 1) {
+                        requestUser_home(true);
+                    }
+                    setIsFollow(actModel.getHas_focus());
+                }
+            }
+        });
+    }
+
+    private void requestUser_home(final boolean isRefresh) {
+        CommonInterface.requestUser_home(mOtherID, new AppRequestCallback<App_user_homeActModel>() {
+            @Override
+            protected void onSuccess(SDResponse resp) {
+                if (actModel.getStatus() == 1) {
+                    app_user_homeActModel = actModel;
+
+//                    if (!isRefresh) {
+//                        mSelectManager.performClick(mSelectTabIndex);
+//                    }
+
+                    setIsFollow(actModel.getHas_focus());
+                    setIsSet_black(actModel.getHas_black());
+                    bindData(actModel);
+                    //bindLlCont(actModel);
+                }
+            }
+        });
     }
 
     // 搜索
     private void clickLLSearch() {
         Intent intent = new Intent(getActivity(), LiveSearchUserActivity.class);
         getActivity().startActivity(intent);
+    }
+    //back
+    private void clickLLBack() {
+        SDViewUtil.toggleView((FrameLayout) getActivity().findViewById(R.id.fl_main_content), new LiveMainMeView(getContext()));
     }
 
     //聊天

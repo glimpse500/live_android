@@ -17,6 +17,7 @@ import com.oolive.library.utils.LogUtil;
 import com.oolive.live.appview.main.LiveMainBottomNavigationView;
 import com.oolive.live.appview.main.LiveMainHomeView;
 import com.oolive.live.appview.main.LiveMainMeView;
+import com.oolive.live.appview.main.LiveMainOtherView;
 import com.oolive.live.appview.main.LiveMainRankingView;
 import com.oolive.live.common.AppRuntimeWorker;
 import com.oolive.live.common.CommonInterface;
@@ -31,20 +32,58 @@ import com.oolive.live.model.UserModel;
 import com.oolive.xianrou.activity.QKCreateEntranceActivity;
 import com.oolive.xianrou.appview.main.QKTabSmallVideoView;
 import com.sunday.eventbus.SDEventManager;
+import com.umeng.analytics.MobclickAgent;
 
 import io.socket.client.Socket;
 
 public class LiveMainActivity extends BaseActivity {
+    public static final int RETURN_FROM_FOCUS_LIST = 10;
+    public static final int RETURN_FROM_FANS_LIST = 11;
+
     private FrameLayout fl_main_content;
     private LiveMainHomeView mMainHomeView;
     private LiveMainRankingView mMainRankingView;
     private QKTabSmallVideoView mSmallVideoView;
     private LiveMainMeView mMainMeView;
+    private LiveMainOtherView mMainOtherView;
+
+    private String mOtherID = null;
     //private Socket mSocket;
     private LiveMainBottomNavigationView mBottomNavigationView;
     @Override
     protected int onCreateContentView() {
         return R.layout.act_live_main;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode,int resultCode,Intent data) {
+
+        switch (resultCode) {
+            case RETURN_FROM_FOCUS_LIST:
+                Bundle bundle = data.getExtras();
+                mOtherID = bundle.getString("otherID", null);
+                //mOtherID = getIntent().getStringExtra("otherID");
+                if(mOtherID != null){
+                    onSelectTabMe();
+                }
+                break;
+            case RETURN_FROM_FANS_LIST:
+//                mOtherID = getIntent().getStringExtra("otherID");
+//                if(mOtherID != null){
+//                    onSelectTabMe();
+//                }
+                break;
+            default:
+                break;
+        }
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+//        mOtherID = getIntent().getStringExtra("otherID");
+//        if(mOtherID != null){
+//            onSelectTabMe();
+//        }
     }
 
     @Override
@@ -62,9 +101,13 @@ public class LiveMainActivity extends BaseActivity {
 
         checkVideo();
         initTabs();
+        initIntentExtra();
 
         //initUpgradeDialog();
         //initLoginfirstDialog();
+    }
+    private void initIntentExtra(){
+        mOtherID = getIntent().getStringExtra("otherID");
     }
 
     @Override
@@ -114,6 +157,10 @@ public class LiveMainActivity extends BaseActivity {
                 EReSelectTabLiveBottom event = new EReSelectTabLiveBottom();
                 event.index = index;
                 SDEventManager.post(event);
+                if(index == 3)
+                {
+                    onSelectTabMe();
+                }
             }
 
             @Override
@@ -151,6 +198,13 @@ public class LiveMainActivity extends BaseActivity {
             mMainMeView = new LiveMainMeView(this);
         }
         return mMainMeView;
+
+    }
+
+    public LiveMainOtherView getMainOtherMeView() {
+        mMainOtherView = new LiveMainOtherView(this, mOtherID);
+        return mMainOtherView;
+
     }
 
     /**
@@ -178,7 +232,14 @@ public class LiveMainActivity extends BaseActivity {
      * 个人中心
      */
     protected void onSelectTabMe() {
-        SDViewUtil.toggleView(fl_main_content, getMainMeView());
+        if(mOtherID == null){
+            SDViewUtil.toggleView(fl_main_content, getMainMeView());
+
+        }
+        else{
+            SDViewUtil.toggleView(fl_main_content, getMainOtherMeView());
+            mOtherID = null;
+        }
     }
 
     private void onClickCreateLive() {
